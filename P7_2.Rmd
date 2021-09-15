@@ -1,0 +1,6 @@
+---
+title: "Tarea 4. Pregunta 7.2"
+---
+
+Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad y $X$ una v.a. definida en $\Omega$. Si $X \geq 0$ y $\mathbb{E}(X) = 0$ entonces $X$ es cero salvo en un conjunto de medida cero. Si se quita la hipótesis $X \geq 0$ es cierto el resultado?
+
