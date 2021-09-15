@@ -5,10 +5,17 @@ title: "Tareas del curso de probabilidad I"
 En esta página encontraras mis tareas del curso de probabilidad I.
 
 Tarea 4:
+
+
   **[Pregunta 7.1.](https://austriamax.github.io/austriamax.proba1.github.io/P7_1.html)**
+  
   **[Pregunta 7.2.](https://austriamax.github.io/austriamax.proba1.github.io/P7_2.html)**
+  
   **[Pregunta 7.3.](https://austriamax.github.io/austriamax.proba1.github.io/P7_3.html)**
+  
   **[Pregunta 7.4.](https://austriamax.github.io/austriamax.proba1.github.io/P7_4.html)**
+  
   **[Pregunta 7.5.](https://austriamax.github.io/austriamax.proba1.github.io/P7_5.html)**
+  
   **[Pregunta 7.6.](https://austriamax.github.io/austriamax.proba1.github.io/P7_6.html)**
   
