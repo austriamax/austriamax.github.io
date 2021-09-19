@@ -1,0 +1,6 @@
+---
+title: "Tarea 5. Pregunta 10.3."
+---
+
+Dado un conjunto $A$  Lebesgue medible, en $\mathbb{R}$, existe un conjunto de Borel $B \subseteq  \mathbb{R}$ tal que $\lambda^{*}(A-B) = 0$. Muestre que la completación de la $\sigma$-álgebra de Borel respecto a la medida de Lebesgue es precisamente $\mathscr{A}^{*}$.
+

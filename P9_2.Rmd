@@ -1,0 +1,10 @@
+---
+title: "Tarea 5. Pregunta 9.2."
+---
+
+Pruebe si $X, Y$ v.a., $a\in\mathbb{R}$ entonces:
+
+$(aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})$
+
+
+$(X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-})$.

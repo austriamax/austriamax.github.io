@@ -1,0 +1,5 @@
+---
+title: "Tarea 5. Pregunta 10.1."
+---
+
+Pruebe que $\mathscr{A}^{*}$ definida $(1)$ de las notas, es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.

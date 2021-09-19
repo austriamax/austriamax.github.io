@@ -1,0 +1,7 @@
+---
+title: "Tarea 5. Pregunta 10.4."
+---
+
+Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abierto $U$ y un cerrado $C$ de $\mathbb{R}$, tales que $C \subset A \subset U$ y $\lambda(U-C) \leq \epsilon$.
+
+Si $A \in \mathscr{A}^{*}$ sigue siendo cierto el resultado??
