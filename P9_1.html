@@ -265,6 +265,19 @@ $(document).ready(function () {
 
 
 <p>Prueba que al máximo de un número finito de v. a. simples es v. a. simple.</p>
+<p>Demostración.</p>
+<p>Haremos la demostración usando la siguiente proposición que se encuentra en las notas de clase del 31 de agosto.</p>
+<p>#–</p>
+<p>Si <span class="math inline">\(X_i: \Omega \to \mathbb{R}\)</span> son medibles para <span class="math inline">\(i = 1, 2, 3, \dots, k\)</span> y <span class="math inline">\(f:\mathbb{R}^k \to \mathbb{R}\)</span> es Borel-medible, entonces <span class="math inline">\(f(X_1,X_2, \dots, X_k): \Omega \to \mathbb{R}\)</span> es medible, es decir, es v.a.</p>
+<p>#–</p>
+<p>Así solo falta mostrar que <span class="math inline">\(\max\{X_1, X_2, \dots, X_k\}\)</span> es Borel-medible, donde <span class="math inline">\(X_i: \Omega \to \mathbb{R}\)</span> para <span class="math inline">\(i = 1, 2, 3, \dots, k\)</span> son variables aleatorias.</p>
+<p>Como sabemos, la función máximo es continua pues:</p>
+<p><span class="math display">\[\max\{a, b\} = \frac{|a-b| + a + b}{2}\]</span></p>
+<p>Y el máximo de <span class="math inline">\(k\)</span> terminos es una composición de máximos:</p>
+<p><span class="math display">\[\max\{X_1, X_2, \dots, X_k\} = \max\{X_1, \max\{X_2, \max\{X_3,\max\{\dots, \max\{X_{k-1}, X_k\}\}\}\}\} \]</span></p>
+<p>Por lo que sigue siendo continua. Y toda función <span class="math inline">\(f:\mathbb{R}^m \to \mathbb{R}^n\)</span> continua es medible*.</p>
+<p><span class="math inline">\(\therefore \quad \max\{X_1, X_2, \dots, X_k\}\)</span> es v.a.</p>
+<p><span class="math inline">\(*\)</span> Para demostrar lo anterior hace falta notar que la <span class="math inline">\(\sigma\)</span>-álgebra de Borel <span class="math inline">\(\mathscr{B}(\mathbb{R}^k)\)</span>es generada por los conjuntos abiertos y como sabemos, las preimagenes de abiertos son abiertos para las funciones continuas. Por lo que si <span class="math inline">\(A \in \mathbb{R}\)</span> es abierto entonces <span class="math inline">\(\max^{-1}(A) \in \mathscr{B}(\mathbb{R}^k)\)</span></p>
 
 
 

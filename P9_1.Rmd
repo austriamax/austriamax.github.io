@@ -4,3 +4,35 @@ title: "Tarea 5. Pregunta 9.1."
 
 Prueba que al máximo de un número finito de v. a. simples es v. a. simple.
 
+
+Demostración.
+
+
+Haremos la demostración usando la siguiente proposición que se encuentra en las notas de clase del 31 de agosto.
+
+#--
+
+Si $X_i: \Omega \to \mathbb{R}$ son medibles para $i = 1, 2, 3, \dots, k$ y $f:\mathbb{R}^k \to \mathbb{R}$ es Borel-medible, entonces $f(X_1,X_2, \dots, X_k): \Omega \to \mathbb{R}$ es medible, es decir, es v.a.
+
+#--
+
+Así solo falta mostrar que $\max\{X_1, X_2, \dots, X_k\}$ es Borel-medible, donde $X_i: \Omega \to \mathbb{R}$ para $i = 1, 2, 3, \dots, k$ son variables aleatorias.
+
+
+Como sabemos, la función máximo es continua pues:
+
+\[\max\{a, b\} = \frac{|a-b| + a + b}{2}\]
+
+Y el máximo de $k$ terminos es una composición de máximos:
+
+\[\max\{X_1, X_2, \dots, X_k\} = \max\{X_1, \max\{X_2, \max\{X_3,\max\{\dots, \max\{X_{k-1}, X_k\}\}\}\}\} \]
+
+Por lo que sigue siendo continua. Y toda función  $f:\mathbb{R}^m \to \mathbb{R}^n$ continua es medible*. 
+
+
+$\therefore \quad \max\{X_1, X_2, \dots, X_k\}$ es v.a.
+
+
+$*$ Para demostrar lo anterior hace falta notar que la $\sigma$-álgebra de Borel $\mathscr{B}(\mathbb{R}^k)$es generada por los conjuntos abiertos y como sabemos, las preimagenes de abiertos son abiertos para las funciones continuas. Por lo que si $A \in \mathbb{R}$ es abierto entonces $\max^{-1}(A) \in \mathscr{B}(\mathbb{R}^k)$
+
+
