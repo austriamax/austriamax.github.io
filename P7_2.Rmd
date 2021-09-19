@@ -4,3 +4,30 @@ title: "Tarea 4. Pregunta 7.2"
 
 Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad y $X$ una v.a. definida en $\Omega$. Si $X \geq 0$ y $\mathbb{E}(X) = 0$ entonces $X$ es cero salvo en un conjunto de medida cero. Si se quita la hipótesis $X \geq 0$ es cierto el resultado?
 
+Demostración.
+
+Definamos el evento $A_x := X \geq x$. Si tomamos $x>0$ entonces:
+
+\[X \geq x 1_{A_x}\]
+
+Puesto que si $X \geq x$ entonces $1_{A_x} = 1$ y se cumple la desigualdad. En el otro caso $1_{A_x} = 0$ por lo que se cumpliria la desigualdad por hipótesis.
+
+Tomando esperanzas:
+
+\[\mathbb{E}(X) \geq \mathbb{E}(x 1_{A_x})\]
+
+Y recordando que la esperanza de una indicadora es la probabilidad del evento tenemos que:
+
+\[\mathbb{E}(X) \geq x\mathbb{P}(A_x) \quad \forall x>0.\]
+
+Considerando que $\mathbb{E}(X)$ obtenemos que $\mathbb{P}(A_x) = 0 \quad \forall x>0$. Le daremos a $x$ la serie de valores $(\frac{1}{n})_{n \in \mathbb{N}}$ para obtener lo siguiente.
+
+\[(X>0) = \cup_n (X \geq \frac{1}{n}) = \cup_n A_{\frac{1}{n}} \]
+
+Y como vimos, cada $A_{\frac{1}{n}}$ tiene probabilidad cero por lo que:
+
+\[\mathbb{P}(X>0) = 0 \quad \therefore \mathbb{P}(X = 0) = 1\].
+
+
+Si se quita la hipótesis de que $X \geq 0$ el resultado no es verdadero. Contraejemplo: Normal(0,1).
+

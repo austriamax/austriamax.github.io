@@ -3,3 +3,39 @@ title: "Tarea 4. Pregunta 7.1"
 ---
 
 Sean $(\Omega,\mathscr{A})$ y $(G,\mathscr{G})$ dos espacios medibles y $X:\Omega \longmapsto G$ una función medible. Muestre que $\mathscr{F} = X^{-1}(\mathscr{G})$ es una $\sigma$-álgebra en $\Omega$ y que es la mínima $\sigma$-álgebra que hace que de $X$ una función medible.
+
+Demostración:
+
+PD. $\mathscr{F}$ es una $\sigma$-álgebra.
+
+
+La demostración se hara desde la definición.
+
+
+1. PD. $\Omega \in \mathscr{F}$.
+
+Como $G \in \mathscr{G}$ entonces $X^{-1}(G) \in \mathscr{F}$ con $X^{-1}(G) = \Omega$ (por ser $X$ función).
+
+2. PD Si $A \in \mathscr{F}$ entonces $A^c \in \mathscr{F}$.
+
+Si $A \in \mathscr{F}$ entonces $\exists B \in \mathscr{G}$ tal que $X(A) = B$. Así  $B^c \in \mathscr{G}$ por lo que $X(A^c) \in \mathscr{F}$ pues $X(A^c) = B^c$.
+
+3. PD. Si $A_n \in \mathscr{F} \quad \forall n= 1,2,3, \dots$ entonces $\cup_n A_n \in \mathscr{F}$. 
+
+Como $A_n \in \mathscr{F}$ para cada $n = 1, 2, 3, \dots$ entonces $\exists X(A_n) \in \mathscr{G}$ por lo que $\cup_n X(A_n) \in \mathscr{G}$ (por ser $\sigma$-álgebra). Además $\cup_n X(A_n) = X(\cup_n A_n)$. Por lo que $X(\cup_n A_n) \in \mathscr{F}$.
+
+Hasta aquí hemos demostrado que la imagen inversa de $\mathscr{G}$ es $\sigma$-álgebra. Ahora mostraremos que es mínima.
+
+Sea $S$ una $\sigma$-álgebra que haga que $X$ sea una función medible.
+
+4. PD. $\mathscr{F} \subset S$.
+
+Sea $A_1 \in \mathscr{F}$, entonces $\exists B \in \mathscr{G}$ tal que $X(A_1) = B$. Pero como $X$ es medible con $S$, entonces existe $A_2 \in S$ tal que $X(A_2) = B$. Así $X(A_1) = X(A_2)$ por lo que $A_1 = A_2$. Por lo que $A_1 \in S$ para cualquier $A_1 \in \mathscr{F}$. 
+
+Así $\mathscr{F} \subset S$, para cualquier $S$ $\sigma$-álgebra que haga medible a $X$.
+
+Por lo tanto $\mathscr{F}$ es la minima $\sigma$-álgebra que hace a $X$ medible.
+
+
+
+

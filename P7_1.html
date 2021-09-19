@@ -265,6 +265,29 @@ $(document).ready(function () {
 
 
 <p>Sean <span class="math inline">\((\Omega,\mathscr{A})\)</span> y <span class="math inline">\((G,\mathscr{G})\)</span> dos espacios medibles y <span class="math inline">\(X:\Omega \longmapsto G\)</span> una función medible. Muestre que <span class="math inline">\(\mathscr{F} = X^{-1}(\mathscr{G})\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra en <span class="math inline">\(\Omega\)</span> y que es la mínima <span class="math inline">\(\sigma\)</span>-álgebra que hace que de <span class="math inline">\(X\)</span> una función medible.</p>
+<p>Demostración:</p>
+<p>PD. <span class="math inline">\(\mathscr{F}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<p>La demostración se hara desde la definición.</p>
+<ol style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\Omega \in \mathscr{F}\)</span>.</li>
+</ol>
+<p>Como <span class="math inline">\(G \in \mathscr{G}\)</span> entonces <span class="math inline">\(X^{-1}(G) \in \mathscr{F}\)</span> con <span class="math inline">\(X^{-1}(G) = \Omega\)</span> (por ser <span class="math inline">\(X\)</span> función).</p>
+<ol start="2" style="list-style-type: decimal">
+<li>PD Si <span class="math inline">\(A \in \mathscr{F}\)</span> entonces <span class="math inline">\(A^c \in \mathscr{F}\)</span>.</li>
+</ol>
+<p>Si <span class="math inline">\(A \in \mathscr{F}\)</span> entonces <span class="math inline">\(\exists B \in \mathscr{G}\)</span> tal que <span class="math inline">\(X(A) = B\)</span>. Así <span class="math inline">\(B^c \in \mathscr{G}\)</span> por lo que <span class="math inline">\(X(A^c) \in \mathscr{F}\)</span> pues <span class="math inline">\(X(A^c) = B^c\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>PD. Si <span class="math inline">\(A_n \in \mathscr{F} \quad \forall n= 1,2,3, \dots\)</span> entonces <span class="math inline">\(\cup_n A_n \in \mathscr{F}\)</span>.</li>
+</ol>
+<p>Como <span class="math inline">\(A_n \in \mathscr{F}\)</span> para cada <span class="math inline">\(n = 1, 2, 3, \dots\)</span> entonces <span class="math inline">\(\exists X(A_n) \in \mathscr{G}\)</span> por lo que <span class="math inline">\(\cup_n X(A_n) \in \mathscr{G}\)</span> (por ser <span class="math inline">\(\sigma\)</span>-álgebra). Además <span class="math inline">\(\cup_n X(A_n) = X(\cup_n A_n)\)</span>. Por lo que <span class="math inline">\(X(\cup_n A_n) \in \mathscr{F}\)</span>.</p>
+<p>Hasta aquí hemos demostrado que la imagen inversa de <span class="math inline">\(\mathscr{G}\)</span> es <span class="math inline">\(\sigma\)</span>-álgebra. Ahora mostraremos que es mínima.</p>
+<p>Sea <span class="math inline">\(S\)</span> una <span class="math inline">\(\sigma\)</span>-álgebra que haga que <span class="math inline">\(X\)</span> sea una función medible.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mathscr{F} \subset S\)</span>.</li>
+</ol>
+<p>Sea <span class="math inline">\(A_1 \in \mathscr{F}\)</span>, entonces <span class="math inline">\(\exists B \in \mathscr{G}\)</span> tal que <span class="math inline">\(X(A_1) = B\)</span>. Pero como <span class="math inline">\(X\)</span> es medible con <span class="math inline">\(S\)</span>, entonces existe <span class="math inline">\(A_2 \in S\)</span> tal que <span class="math inline">\(X(A_2) = B\)</span>. Así <span class="math inline">\(X(A_1) = X(A_2)\)</span> por lo que <span class="math inline">\(A_1 = A_2\)</span>. Por lo que <span class="math inline">\(A_1 \in S\)</span> para cualquier <span class="math inline">\(A_1 \in \mathscr{F}\)</span>.</p>
+<p>Así <span class="math inline">\(\mathscr{F} \subset S\)</span>, para cualquier <span class="math inline">\(S\)</span> <span class="math inline">\(\sigma\)</span>-álgebra que haga medible a <span class="math inline">\(X\)</span>.</p>
+<p>Por lo tanto <span class="math inline">\(\mathscr{F}\)</span> es la minima <span class="math inline">\(\sigma\)</span>-álgebra que hace a <span class="math inline">\(X\)</span> medible.</p>
 
 
 

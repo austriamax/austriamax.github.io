@@ -265,6 +265,19 @@ $(document).ready(function () {
 
 
 <p>Sea <span class="math inline">\((\Omega,\mathscr{A},\mathbb{P})\)</span> un espacio de probabilidad y <span class="math inline">\(X\)</span> una v.a. definida en <span class="math inline">\(\Omega\)</span>. Si <span class="math inline">\(X \geq 0\)</span> y <span class="math inline">\(\mathbb{E}(X) = 0\)</span> entonces <span class="math inline">\(X\)</span> es cero salvo en un conjunto de medida cero. Si se quita la hipótesis <span class="math inline">\(X \geq 0\)</span> es cierto el resultado?</p>
+<p>Demostración.</p>
+<p>Definamos el evento <span class="math inline">\(A_x := X \geq x\)</span>. Si tomamos <span class="math inline">\(x&gt;0\)</span> entonces:</p>
+<p><span class="math display">\[X \geq x 1_{A_x}\]</span></p>
+<p>Puesto que si <span class="math inline">\(X \geq x\)</span> entonces <span class="math inline">\(1_{A_x} = 1\)</span> y se cumple la desigualdad. En el otro caso <span class="math inline">\(1_{A_x} = 0\)</span> por lo que se cumpliria la desigualdad por hipótesis.</p>
+<p>Tomando esperanzas:</p>
+<p><span class="math display">\[\mathbb{E}(X) \geq \mathbb{E}(x 1_{A_x})\]</span></p>
+<p>Y recordando que la esperanza de una indicadora es la probabilidad del evento tenemos que:</p>
+<p><span class="math display">\[\mathbb{E}(X) \geq x\mathbb{P}(A_x) \quad \forall x&gt;0.\]</span></p>
+<p>Considerando que <span class="math inline">\(\mathbb{E}(X)\)</span> obtenemos que <span class="math inline">\(\mathbb{P}(A_x) = 0 \quad \forall x&gt;0\)</span>. Le daremos a <span class="math inline">\(x\)</span> la serie de valores <span class="math inline">\((\frac{1}{n})_{n \in \mathbb{N}}\)</span> para obtener lo siguiente.</p>
+<p><span class="math display">\[(X&gt;0) = \cup_n (X \geq \frac{1}{n}) = \cup_n A_{\frac{1}{n}} \]</span></p>
+<p>Y como vimos, cada <span class="math inline">\(A_{\frac{1}{n}}\)</span> tiene probabilidad cero por lo que:</p>
+<p><span class="math display">\[\mathbb{P}(X&gt;0) = 0 \quad \therefore \mathbb{P}(X = 0) = 1\]</span>.</p>
+<p>Si se quita la hipótesis de que <span class="math inline">\(X \geq 0\)</span> el resultado no es verdadero. Contraejemplo: Normal(0,1).</p>
 
 
 
