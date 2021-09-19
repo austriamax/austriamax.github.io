@@ -6,18 +6,18 @@ title: "Tarea 4. Pregunta 7.6"
 
 Contraejemplo:
 
-Sea $G_n(x) = n 1_{(0,1/n)}(x)$. 
+Sean $G_n:[0,1] \to \mathbb{R}$ para $n \in \mathbb{N}$ dadas por $G_n(x) = n 1_{(0,1/n)}(x)$. 
 
-Así $\lim_{n \to \infty} G_n(x) = 0 \quad \forall x \in \mathbb{R}$.
+Así $\lim_{n \to \infty} G_n(x) = 0 \quad \forall x \in [0,1]$.
 
-Por lo que \[\int_{\mathbb{R}} \lim_{n \to \infty} G_n(x)dx = 0 \].
+Por lo que \[\int_{[0,1]} \lim_{n \to \infty} G_n(x)dx = 0 \].
 
 
 ![Límite de $G_n(x)$](limGn.png)
 
 Por otro lado
 
-\[\int_{\mathbb{R}} G_n(x)dx = n (\frac{1}{n}) = 1 \quad \forall n \in  \mathbb{N}\] 
+\[\int_{[0,1] } G_n(x)dx = n (\frac{1}{n}) = 1 \quad \forall n \in  \mathbb{N}\] 
 
 Por lo que 
 
