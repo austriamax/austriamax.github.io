@@ -3,3 +3,46 @@ title: "Tarea 4. Pregunta 7.4"
 ---
 
 Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Si $X,Y: \Omega \longmapsto \mathbb{R}$ son dos v.a.en $\mathscr{L}_1$ y $\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)$, para cada $A \in \mathscr{A}$ es cierto que $X(\omega) = Y(\omega)$ salvo en un conjunto de medida cero?
+
+Demostración:
+
+Definamos dos sucesiones.
+\begin{equation}
+A_n = \{X-Y>\frac{1}{n}\}\\\\
+B_n = \{Y-X>\frac{1}{n}\}
+\end{equation}
+
+Así podemos contruir dos v.a. que acoten la diferencia de $X-Y$ y $Y-X$ cuando son positivas.
+\[(X-Y)1_{X-Y>0} \geq \frac{1}{n}1_{A_n}\]
+\[(Y-X)1_{X-Y>0} \geq \frac{1}{n}1_{B_n}\]
+Tomando esperanzas
+\[\mathbb{E}[(X-Y)1_{X-Y>0}] \geq \frac{1}{n}\mathbb{P}(A_n)\]
+\[\mathbb{E}[(Y-X)1_{X-Y>0}] \geq \frac{1}{n}\mathbb{P}(B_n)\]
+
+Recordando que
+\[\mathbb{E}[(X-Y)1_{X-Y>0}] = \mathbb{E}[X1_{X-Y>0}] - \mathbb{E}[Y1_{X-Y>0}] = 0\]
+\[\mathbb{E}[(Y-X)1_{Y-X>0}] = \mathbb{E}[Y1_{Y-X>0}] - \mathbb{E}[X1_{Y-X>0}] = 0\]
+
+Tenemos que
+
+\[\mathbb{P}(A_n) = 0  \quad \forall n \in \mathbb{N}\]
+\[\mathbb{P}(B_n) = 0  \quad \forall n \in \mathbb{N}\]
+
+Pero también
+
+\[(X-Y>0) = \cup_{n \in \mathbb{N}} A_n\]
+\[(Y-X>0) = \cup_{n \in \mathbb{N}} B_n\]
+
+Por lo tanto
+
+\[\mathbb{P}(X-Y>0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = 0\]
+\[\mathbb{P}(X-Y<0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(B_n) = 0\]
+
+Así 
+\begin{align*}
+\mathbb{P}(X-Y= 0) &= 1 - \mathbb{P}(X-Y \neq 0)\\\\
+&= 1 - [\mathbb{P}(X-Y > 0) + \mathbb{P}(X-Y < 0)]\\
+&= 1
+\end{align*}
+
+\[\therefore X \overset{c.s}{=} Y\]

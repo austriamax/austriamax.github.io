@@ -265,8 +265,43 @@ $(document).ready(function () {
 
 
 <p>Pruebe si <span class="math inline">\(X, Y\)</span> v.a., <span class="math inline">\(a\in\mathbb{R}\)</span> entonces:</p>
-<p><span class="math inline">\((aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})\)</span></p>
-<p><span class="math inline">\((X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-})\)</span>.</p>
+<p>9.2.1 <span class="math inline">\((aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})\)</span>.</p>
+<p>Demostración:</p>
+<p>Sabemos que</p>
+<p><span class="math display">\[\begin{align*}
+(aX)^{+} &amp;:= \max\{aX,0\} \\\\
+&amp;= \frac{|aX - 0| + aX + 0}{2}\\\\
+&amp;= \frac{|a||X| + aX}{2}\\\\
+&amp;= |a|\frac{|X| + signo(a)X}{2}\\\\
+\end{align*}\]</span></p>
+<p>De manera análoga :</p>
+<p><span class="math display">\[\begin{align*}
+(aX)^{-} &amp;:= \max\{-aX,0\} \\\\
+&amp;= \frac{|-aX - 0| - aX + 0}{2}\\\\
+&amp;= \frac{|a||X| - aX}{2}\\\\
+&amp;= |a|\frac{|X| - signo(a)X}{2}\\\\
+\end{align*}\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[\begin{align*}
+(aX)^{+} + (aX)^{-} &amp;:= |a|\frac{|X| + signo(a)X}{2} + |a|\frac{|X| - signo(a)X}{2}\\\\
+&amp;= |a|(\frac{|X| + signo(a)X}{2} + \frac{|X| - signo(a)X}{2})\\\\
+&amp;= |a||X|\\\\
+&amp;= |a|[\max\{aX,0\} + \max\{-aX,0\}]\\\\
+&amp;= |a|[(X)^{+} + (X)^{-}].
+\end{align*}\]</span> Por lo tanto <span class="math display">\[\begin{align*}
+ (aX)^{+} + (aX)^{-} = |a|[(X)^{+} + (X)^{-}].
+\end{align*}\]</span></p>
+<p>9.2.2 <span class="math inline">\((X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-}\)</span>. Observemos que:</p>
+<p><span class="math display">\[X^{+} = \max\{X,0\} = \frac{|X|+X}{2}\]</span> <span class="math display">\[X^{-} = \max\{-X,0\} = \frac{|X|-X}{2}\]</span></p>
+<p>Análogamente</p>
+<p><span class="math display">\[Y^{+} = \frac{|Y|+Y}{2}\]</span> <span class="math display">\[Y^{-} = \frac{|Y|-Y}{2}\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[X^{+} + Y^{+} = \frac{|X| + |Y| + (X + Y)}{2}\]</span> <span class="math display">\[X^{-} + Y^{-} = \frac{|X| + |Y| - (X + Y)}{2}\]</span></p>
+<p>Aplicando la desigualdad del triángulo.</p>
+<p><span class="math display">\[X^{+} + Y^{+} = \frac{|X| + |Y| + (X + Y)}{2} \geq \frac{|X + Y| + (X + Y)}{2} = \max\{X+Y,0\} = (X + Y)^{+}\]</span></p>
+<p><span class="math display">\[X^{-} + Y^{-} = \frac{|X| + |Y| - (X + Y)}{2} \geq \frac{|X + Y| - (X + Y)}{2} = \max\{-(X+Y),0\} = (X + Y)^{-}\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[(X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-} \]</span></p>
 
 
 

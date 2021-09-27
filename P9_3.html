@@ -266,6 +266,33 @@ $(document).ready(function () {
 
 <p>Si <span class="math inline">\((\Omega,\mathscr{A},\mathbb{P})\)</span> es un espacio de probabilidad, <span class="math inline">\(X: \Omega \longmapsto \mathbb{R}\)</span> es v.a. positiva, y <span class="math inline">\(\mu(A) := \mathbb{E}(1_AX)\)</span> para cada <span class="math inline">\(A \in \mathscr{A}\)</span>, pruebe que <span class="math inline">\(\mu\)</span> es medida en <span class="math inline">\((\Omega,\mathscr{A})\)</span> y si <span class="math inline">\(X \in \mathscr{L}_1\)</span>, se puede definir una nueva medida de probabilidad en <span class="math inline">\((\Omega, \mathscr{A})\)</span> de la siguiente manera:</p>
 <p><span class="math inline">\(\mathbb{P}_1(A) = \frac{\mu(A)}{\mu(\Omega)}\)</span>.</p>
+<p>PD. <span class="math inline">\(\mu\)</span> es medida.</p>
+<p>Como <span class="math inline">\(1_A\)</span> y <span class="math inline">\(X\)</span> son medibles y <span class="math inline">\(\mathbb{E}(1_AX) \in \mathbb{R}\)</span> entonces <span class="math inline">\(\mu: \mathscr{A} \longmapsto \mathscr{R}\)</span>. Por lo que sólo falta mostrar que:</p>
+<ol style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mu(\emptyset) = 0\)</span>.</li>
+</ol>
+<p><span class="math display">\[\mu(\emptyset) = \mathbb{E}(1_{\emptyset}X) = \mathbb{E}(0X) = 0\]</span></p>
+<p><span class="math inline">\(\therefore \mu(\emptyset) = 0\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mu(A) \geq 0 \quad \forall A \in \mathscr{A}\)</span>.</li>
+</ol>
+<p>Sea <span class="math inline">\(A \in \mathscr{A}\)</span> entonces:</p>
+<p><span class="math inline">\(1_A \geq 0\)</span> y por hipótesis <span class="math inline">\(X \geq 0\)</span>, así <span class="math inline">\(1_AX \geq 0\)</span>. Lo que implica que <span class="math inline">\(\mathbb{E}(1_{A}X) \geq 0\)</span>.</p>
+<p><span class="math inline">\(\therefore \mu(A) \geq 0\)</span>.</p>
+<p>Hasta aquí sabemos que <span class="math inline">\(\mu\)</span> es una medida, mostraremos que es <span class="math inline">\(\sigma\)</span>-aditiva.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mu(A_n)\)</span> donde <span class="math inline">\(A_i \cap A_j = \emptyset\)</span> si <span class="math inline">\(i \neq j\)</span>.</li>
+</ol>
+<p><span class="math display">\[\mu(\cup_{n \in \mathbb{N}} A_n) = \mathbb{E}(1_{\cup_{n \in \mathbb{N}} A_n}X)\]</span></p>
+<p>Dado que <span class="math inline">\(A_i \cap A_j = \emptyset\)</span> si <span class="math inline">\(i \neq j\)</span> entonces</p>
+<p><span class="math display">\[\mathbb{E}(1_{\cup_{n \in \mathbb{N}} A_n}X) = \mathbb{E}[\sum_{n \in \mathbb{N}} 1_{A_n}X]\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mathbb{E}(1_{A_n}X) \]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mu(1_{A_n}X)\]</span>.</p>
+<p>Por último, si <span class="math inline">\(X \overset{c.s}{\neq} 0\)</span> y <span class="math inline">\(X \in \mathscr{L}_1\)</span> es inmediato demostrar que <span class="math inline">\(\mathbb{P}\)</span> es finita pues:</p>
+<p><span class="math display">\[\mathbb{P}(\Omega) = \frac{\mu(\Omega)}{\mu(\Omega)} = 1\]</span>.</p>
+<p>Por lo que <span class="math inline">\(0 \leq \mathbb{P}(\Omega) \leq 1 \quad \forall A \in \mathscr{A}\)</span>.</p>
 
 
 

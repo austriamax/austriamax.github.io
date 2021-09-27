@@ -4,3 +4,33 @@ title: "Tarea 5. Pregunta 9.4."
 
 Pruebe que la relación entre las v.a. $X, Y$ dada por ($X$ es igual a $Y$ c.s.), i.e. $X \approx Y$, es una relación de equivalencia.
 
+Demostración:
+
+1. PD. "$\overset{c.s}{=}$" es una relación reflexiva.
+
+Es inmediata. $\mathbb{P}(X = X) = 1$.
+
+2. PD. "$\overset{c.s}{=}$" es una relación simétrica.
+
+Supongase que $X \overset{c.s}{=} Y$. PD $Y \overset{c.s}{=} X$. 
+
+$1  = \mathbb{P}(X = Y) = \mathbb{P}(Y = X)$. 
+
+$\therefore Y \overset{c.s}{=} X$
+
+3. PD. "$\overset{c.s}{=}$" es una relación transitiva.
+
+Supongase que $X \overset{c.s}{=} Y$  y  $Y \overset{c.s}{=} Z$. PD. $X \overset{c.s}{=} Z$.
+
+\begin{align*}
+P(X = Z) &= P((X = Y) \cap (Y = Z))\\\\
+&= P(X = Y) + P(Y = Z) - P((X = Y) \cup (Y = X))\\\\
+&= 1 + 1 - 1 \quad \mbox{ya que } P(X = Y)= P(Y = Z) = 1 \quad \mbox{ y } (X = Y) \subset ((X = Y) \cup (Y = X))
+\end{align*}
+
+$\therefore P(X = Z) = 1$. 
+
+Es decir, $X \overset{c.s}{=} Z$.
+
+
+Por lo tanto, "$\overset{c.s}{=}$" es una relación de equivalencia.

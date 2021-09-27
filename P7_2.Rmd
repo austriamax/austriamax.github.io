@@ -6,13 +6,22 @@ Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad y $X$ una v.a. 
 
 Demostración.
 
-Definamos el evento $A_x := X \geq x$. Si tomamos $x>0$ entonces:
+Observemos que 
+
+\begin{align*}
+\mathbb{E}(X) &= \int_{\Omega} Xd\mathbb{P}\\\\
+&= \int_{\{X = 0\} \cup \{X>0\}} Xd\mathbb{P}\\\\
+&= \int_{\{X = 0\}} Xd\mathbb{P} + \int_{\{X>0\}} Xd\mathbb{P}\\\\
+&= \int_{\{X>0\}} Xd\mathbb{P}
+\end{align*}
+
+Lo anterior nos motiva a definir el evento $A_x := X \geq x$ con $x>0$. De esta manera podemos construir una v.a. que acote inferiormente a $X$.
 
 \[X \geq x 1_{A_x}\]
 
-Puesto que si $X \geq x$ entonces $1_{A_x} = 1$ y se cumple la desigualdad. En el otro caso $1_{A_x} = 0$ por lo que se cumpliria la desigualdad por hipótesis.
+Puesto que si $1_{A_x} = 1$ entonces $X \geq x$ y se cumple la desigualdad. En el otro caso $1_{A_x} = 0$ por lo que se cumpliria la desigualdad por la hipótesis de no negatividad de $X$.
 
-Tomando esperanzas:
+Y si tomamos esperanzas:
 
 \[\mathbb{E}(X) \geq \mathbb{E}(x 1_{A_x})\]
 
@@ -20,11 +29,23 @@ Y recordando que la esperanza de una indicadora es la probabilidad del evento te
 
 \[\mathbb{E}(X) \geq x\mathbb{P}(A_x) \quad \forall x>0.\]
 
-Considerando que $\mathbb{E}(X)$ obtenemos que $\mathbb{P}(A_x) = 0 \quad \forall x>0$. Le daremos a $x$ la serie de valores $(\frac{1}{n})_{n \in \mathbb{N}}$ para obtener lo siguiente.
+Así, cuando $x = \frac{1}{n}$ con $n \in \mathbb{N}$ tenemos que:
+
+\[\frac{1}{n}\mathbb{P}(A_{\frac{1}{n}}) \leq \int_{A_{\frac{1}{n}}} Xd\mathbb{P} \leq \int_{X > 0} Xd\mathbb{P} = 0\]
+
+Por lo que 
+
+\[\mathbb{P}(A_{\frac{1}{n}}) = 0 \quad \forall n \in \mathbb{N}\]
+
+Y observando que
 
 \[(X>0) = \cup_n (X \geq \frac{1}{n}) = \cup_n A_{\frac{1}{n}} \]
 
-Y como vimos, cada $A_{\frac{1}{n}}$ tiene probabilidad cero por lo que:
+Se sigue que
+
+\[\mathbb{P}(X>0) \leq \sum_{n \in \mathbb{N}}\mathbb{P}(A_{\frac{1}{n}}) = 0\]
+
+Por lo tanto:
 
 \[\mathbb{P}(X>0) = 0 \quad \therefore \mathbb{P}(X = 0) = 1\].
 

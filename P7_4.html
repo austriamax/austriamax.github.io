@@ -265,6 +265,25 @@ $(document).ready(function () {
 
 
 <p>Sea <span class="math inline">\((\Omega,\mathscr{A},\mathbb{P})\)</span> un espacio de probabilidad. Si <span class="math inline">\(X,Y: \Omega \longmapsto \mathbb{R}\)</span> son dos v.a.en <span class="math inline">\(\mathscr{L}_1\)</span> y <span class="math inline">\(\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)\)</span>, para cada <span class="math inline">\(A \in \mathscr{A}\)</span> es cierto que <span class="math inline">\(X(\omega) = Y(\omega)\)</span> salvo en un conjunto de medida cero?</p>
+<p>Demostración:</p>
+<p>Definamos dos sucesiones. <span class="math display">\[\begin{equation}
+A_n = \{X-Y&gt;\frac{1}{n}\}\\\\
+B_n = \{Y-X&gt;\frac{1}{n}\}
+\end{equation}\]</span></p>
+<p>Así podemos contruir dos v.a. que acoten la diferencia de <span class="math inline">\(X-Y\)</span> y <span class="math inline">\(Y-X\)</span> cuando son positivas. <span class="math display">\[(X-Y)1_{X-Y&gt;0} \geq \frac{1}{n}1_{A_n}\]</span> <span class="math display">\[(Y-X)1_{X-Y&gt;0} \geq \frac{1}{n}1_{B_n}\]</span> Tomando esperanzas <span class="math display">\[\mathbb{E}[(X-Y)1_{X-Y&gt;0}] \geq \frac{1}{n}\mathbb{P}(A_n)\]</span> <span class="math display">\[\mathbb{E}[(Y-X)1_{X-Y&gt;0}] \geq \frac{1}{n}\mathbb{P}(B_n)\]</span></p>
+<p>Recordando que <span class="math display">\[\mathbb{E}[(X-Y)1_{X-Y&gt;0}] = \mathbb{E}[X1_{X-Y&gt;0}] - \mathbb{E}[Y1_{X-Y&gt;0}] = 0\]</span> <span class="math display">\[\mathbb{E}[(Y-X)1_{Y-X&gt;0}] = \mathbb{E}[Y1_{Y-X&gt;0}] - \mathbb{E}[X1_{Y-X&gt;0}] = 0\]</span></p>
+<p>Tenemos que</p>
+<p><span class="math display">\[\mathbb{P}(A_n) = 0  \quad \forall n \in \mathbb{N}\]</span> <span class="math display">\[\mathbb{P}(B_n) = 0  \quad \forall n \in \mathbb{N}\]</span></p>
+<p>Pero también</p>
+<p><span class="math display">\[(X-Y&gt;0) = \cup_{n \in \mathbb{N}} A_n\]</span> <span class="math display">\[(Y-X&gt;0) = \cup_{n \in \mathbb{N}} B_n\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\mathbb{P}(X-Y&gt;0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = 0\]</span> <span class="math display">\[\mathbb{P}(X-Y&lt;0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(B_n) = 0\]</span></p>
+<p>Así <span class="math display">\[\begin{align*}
+\mathbb{P}(X-Y= 0) &amp;= 1 - \mathbb{P}(X-Y \neq 0)\\\\
+&amp;= 1 - [\mathbb{P}(X-Y &gt; 0) + \mathbb{P}(X-Y &lt; 0)]\\
+&amp;= 1
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore X \overset{c.s}{=} Y\]</span></p>
 
 
 

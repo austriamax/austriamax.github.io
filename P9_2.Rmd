@@ -4,7 +4,66 @@ title: "Tarea 5. Pregunta 9.2."
 
 Pruebe si $X, Y$ v.a., $a\in\mathbb{R}$ entonces:
 
-$(aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})$
+9.2.1 $(aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})$.
+
+Demostración: 
+
+Sabemos que
+
+\begin{align*}
+(aX)^{+} &:= \max\{aX,0\} \\\\
+&= \frac{|aX - 0| + aX + 0}{2}\\\\
+&= \frac{|a||X| + aX}{2}\\\\
+&= |a|\frac{|X| + signo(a)X}{2}\\\\
+\end{align*}
+
+De manera análoga :
+
+\begin{align*}
+(aX)^{-} &:= \max\{-aX,0\} \\\\
+&= \frac{|-aX - 0| - aX + 0}{2}\\\\
+&= \frac{|a||X| - aX}{2}\\\\
+&= |a|\frac{|X| - signo(a)X}{2}\\\\
+\end{align*}
+
+Así
+
+\begin{align*}
+(aX)^{+} + (aX)^{-} &:= |a|\frac{|X| + signo(a)X}{2} + |a|\frac{|X| - signo(a)X}{2}\\\\
+&= |a|(\frac{|X| + signo(a)X}{2} + \frac{|X| - signo(a)X}{2})\\\\
+&= |a||X|\\\\
+&= |a|[\max\{aX,0\} + \max\{-aX,0\}]\\\\
+&= |a|[(X)^{+} + (X)^{-}].
+\end{align*}
+Por lo tanto
+\begin{align*}
+ (aX)^{+} + (aX)^{-} = |a|[(X)^{+} + (X)^{-}].
+\end{align*}
 
 
-$(X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-})$.
+9.2.2 $(X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-}$.
+Observemos que:
+
+\[X^{+} = \max\{X,0\} = \frac{|X|+X}{2}\]
+\[X^{-} = \max\{-X,0\} = \frac{|X|-X}{2}\]
+
+Análogamente
+
+\[Y^{+} = \frac{|Y|+Y}{2}\]
+\[Y^{-} = \frac{|Y|-Y}{2}\]
+
+Así
+
+\[X^{+} + Y^{+} = \frac{|X| + |Y| + (X + Y)}{2}\]
+\[X^{-} + Y^{-} = \frac{|X| + |Y| - (X + Y)}{2}\]
+
+Aplicando la desigualdad del triángulo.
+
+\[X^{+} + Y^{+} = \frac{|X| + |Y| + (X + Y)}{2} \geq \frac{|X + Y| + (X + Y)}{2} = \max\{X+Y,0\} = (X + Y)^{+}\]
+
+\[X^{-} + Y^{-} = \frac{|X| + |Y| - (X + Y)}{2} \geq \frac{|X + Y| - (X + Y)}{2} = \max\{-(X+Y),0\} = (X + Y)^{-}\]
+
+Por lo tanto
+
+\[(X + Y)^{+} + (X + Y)^{-} \leq X^{+} + X^{-} + Y^{+} + Y^{-} \]
+

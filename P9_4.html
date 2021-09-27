@@ -265,6 +265,29 @@ $(document).ready(function () {
 
 
 <p>Pruebe que la relación entre las v.a. <span class="math inline">\(X, Y\)</span> dada por (<span class="math inline">\(X\)</span> es igual a <span class="math inline">\(Y\)</span> c.s.), i.e. <span class="math inline">\(X \approx Y\)</span>, es una relación de equivalencia.</p>
+<p>Demostración:</p>
+<ol style="list-style-type: decimal">
+<li>PD. “<span class="math inline">\(\overset{c.s}{=}\)</span>” es una relación reflexiva.</li>
+</ol>
+<p>Es inmediata. <span class="math inline">\(\mathbb{P}(X = X) = 1\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>PD. “<span class="math inline">\(\overset{c.s}{=}\)</span>” es una relación simétrica.</li>
+</ol>
+<p>Supongase que <span class="math inline">\(X \overset{c.s}{=} Y\)</span>. PD <span class="math inline">\(Y \overset{c.s}{=} X\)</span>.</p>
+<p><span class="math inline">\(1 = \mathbb{P}(X = Y) = \mathbb{P}(Y = X)\)</span>.</p>
+<p><span class="math inline">\(\therefore Y \overset{c.s}{=} X\)</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>PD. “<span class="math inline">\(\overset{c.s}{=}\)</span>” es una relación transitiva.</li>
+</ol>
+<p>Supongase que <span class="math inline">\(X \overset{c.s}{=} Y\)</span> y <span class="math inline">\(Y \overset{c.s}{=} Z\)</span>. PD. <span class="math inline">\(X \overset{c.s}{=} Z\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+P(X = Z) &amp;= P((X = Y) \cap (Y = Z))\\\\
+&amp;= P(X = Y) + P(Y = Z) - P((X = Y) \cup (Y = X))\\\\
+&amp;= 1 + 1 - 1 \quad \mbox{ya que } P(X = Y)= P(Y = Z) = 1 \quad \mbox{ y } (X = Y) \subset ((X = Y) \cup (Y = X))
+\end{align*}\]</span></p>
+<p><span class="math inline">\(\therefore P(X = Z) = 1\)</span>.</p>
+<p>Es decir, <span class="math inline">\(X \overset{c.s}{=} Z\)</span>.</p>
+<p>Por lo tanto, “<span class="math inline">\(\overset{c.s}{=}\)</span>” es una relación de equivalencia.</p>
 
 
 

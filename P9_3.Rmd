@@ -6,3 +6,45 @@ Si $(\Omega,\mathscr{A},\mathbb{P})$ es un espacio de probabilidad, $X: \Omega \
 
 $\mathbb{P}_1(A) = \frac{\mu(A)}{\mu(\Omega)}$.
 
+PD. $\mu$ es medida.
+
+  Como $1_A$ y  $X$ son medibles y $\mathbb{E}(1_AX) \in \mathbb{R}$ entonces $\mu: \mathscr{A} \longmapsto \mathscr{R}$. Por lo que sólo falta mostrar que:
+  
+  1. PD. $\mu(\emptyset) = 0$.
+  
+  \[\mu(\emptyset) = \mathbb{E}(1_{\emptyset}X) = \mathbb{E}(0X) = 0\]
+  
+  $\therefore \mu(\emptyset) = 0$.
+  
+  2. PD. $\mu(A) \geq 0 \quad \forall A \in \mathscr{A}$.
+  
+  Sea $A \in \mathscr{A}$ entonces:
+  
+  $1_A \geq 0$ y por hipótesis $X \geq 0$, así $1_AX \geq 0$. Lo que implica que $\mathbb{E}(1_{A}X) \geq 0$.
+  
+   $\therefore \mu(A) \geq 0$.
+   
+   Hasta aquí sabemos que $\mu$ es una medida, mostraremos que es $\sigma$-aditiva.
+  
+  3. PD. $\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mu(A_n)$ donde $A_i \cap A_j = \emptyset$ si $i \neq j$.
+  
+  \[\mu(\cup_{n \in \mathbb{N}} A_n) = \mathbb{E}(1_{\cup_{n \in \mathbb{N}} A_n}X)\]
+  
+  Dado que $A_i \cap A_j = \emptyset$ si $i \neq j$ entonces
+  
+  \[\mathbb{E}(1_{\cup_{n \in \mathbb{N}} A_n}X) = \mathbb{E}[\sum_{n \in \mathbb{N}} 1_{A_n}X]\]
+  
+  Así
+  
+  \[\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mathbb{E}(1_{A_n}X) \]
+  
+  Por lo tanto
+  
+   \[\mu(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mu(1_{A_n}X)\].
+   
+  Por último, si $X \overset{c.s}{\neq} 0$ y $X \in \mathscr{L}_1$ es inmediato demostrar que $\mathbb{P}$ es finita pues:
+  
+  \[\mathbb{P}(\Omega) = \frac{\mu(\Omega)}{\mu(\Omega)} = 1\].
+  
+  Por lo que $0 \leq \mathbb{P}(\Omega)  \leq 1 \quad \forall A \in \mathscr{A}$.
+  
