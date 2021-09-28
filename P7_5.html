@@ -266,6 +266,39 @@ $(document).ready(function () {
 
 <p>Sea <span class="math inline">\((\Omega,\mathscr{A},\mathbb{P})\)</span> un espacio de probabilidad. Si <span class="math inline">\(X,Y: \Omega \longmapsto \mathbb{R}\)</span> son dos v.a.en <span class="math inline">\(\mathscr{L}_1\)</span> y <span class="math inline">\(\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)\)</span>, para cada <span class="math inline">\(A \in \mathscr{C}\)</span> donde <span class="math inline">\(\mathscr{C}\)</span> es un <span class="math inline">\(\pi\)</span>-sistema que genera a <span class="math inline">\(\mathscr{A}\)</span>. Es cierto que <span class="math inline">\(X(\omega) = Y(\omega)\)</span> salvo en un conjunto de medida cero?</p>
 <p>Demostración:</p>
+<p>La demostración se hará mostrando las hipótesis del lema de clases monótonas usando propiedades de las funciones indicadoras y el teorema de convergencia dominada.</p>
+<p>De acuerdo a lo dicho en el whatsapp del grupo, consideraremos que <span class="math inline">\(\Omega \in \mathscr{C}\)</span>.</p>
+<p>Ahora propondremos la clase monótona como:</p>
+<p><span class="math display">\[\mathscr{M} = \{A \in \mathscr{A}| \mathbb{E}[(X-Y)1_A] = 0\}\]</span></p>
+<p>(una observación inmediata es que <span class="math inline">\(\Omega \in \mathscr{M}\)</span>)</p>
+<p>PD. <span class="math inline">\(\mathscr{M}\)</span> es clase monótona.</p>
+<ol style="list-style-type: decimal">
+<li>PD. Si <span class="math inline">\(A_1 \subseteq A2\)</span> con <span class="math inline">\(A_1, A_2 \in \mathscr{M}\)</span> entonces <span class="math inline">\(A_2 - A_1 \in \mathscr{M}\)</span>.</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[(X-Y)1_{A_2-A_1}] &amp;=  \mathbb{E}[(X-Y)1_{A_2 \cap A_1^c}] \\\\
+&amp;=\mathbb{E}[(X-Y)1_{A_2}1_{A_1^c}] \\\\
+&amp;=\mathbb{E}[(X-Y)1_{A_2}(1-1_{A_1})] \\\\
+&amp;=\mathbb{E}[(X-Y)1_{A_2} - (X-Y)1_{A_1}]\\\\
+&amp;=\mathbb{E}[(X-Y)1_{A_2}] - \mathbb{E}[(X-Y)1_{A_1}]\\\\
+&amp;= 0 - 0\\\\
+&amp;= 0.
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore A_2-A_1 \in \mathscr{M}.\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>PD. Si <span class="math inline">\((A_n)_{n\in\mathbb{N}}\)</span> es una sucesión de eventos en <span class="math inline">\(\mathscr{M}\)</span> no decreciente (es decir, <span class="math inline">\(A_1 \subseteq A_2 \subseteq \dots\)</span>) entonces <span class="math inline">\(\cup_{n\in\mathbb{N}} A_n \in \mathscr{M}\)</span>.</li>
+</ol>
+<p>Nombremos <span class="math inline">\(B = \cup_{n\in\mathbb{N}} A_n\)</span>.</p>
+<p>Para utilizar el teorema de convergencia dominada necesitamos una sucesión de funciones (en este caso v.a.) cuyo valor absoluto este acotado superiormente por otra función (v.a.) y todas tendan esperanza finita. Propongamos tales v.a.</p>
+<p>Sea <span class="math display">\[((X-Y)1_{A_n})_{n\in\mathbb{N}}\]</span> una sucesión de funciones con <span class="math inline">\((A_n)_{n\in\mathbb{N}}\)</span> no decreciente en <span class="math inline">\(\mathscr{M}\)</span>. Y proponemos como cota a <span class="math display">\[(X-Y)\]</span>.</p>
+<p>Veamos que <span class="math inline">\(|(X-Y)1_{A_n}| \leq |(X-Y)|\)</span>, pues si ocurre <span class="math inline">\(\omega \in A_n\)</span> entonces ocurre la igualdad y en el otro caso se tiene <span class="math inline">\(0 \leq |(X-Y)|\)</span>.</p>
+<p>Además <span class="math inline">\((X-Y)1_{A_n} \to (X-Y)1_{B}\)</span> (convergencia puntual). Así:</p>
+<p><span class="math display">\[\mathbb{E}[(X-Y)1_{B}] &lt; \infty\]</span> y <span class="math display">\[\mathbb{E}[(X-Y)1_{B}] = \lim_{n\to \infty}  \mathbb{E}[(X-Y)1_{A_n}]\]</span></p>
+<p>Luego <span class="math inline">\(\mathbb{E}[(X-Y)1_{B}] = 0\)</span>.</p>
+<p><span class="math display">\[\therefore B \in \mathscr{M}\]</span></p>
+<p>Por lo tanto <span class="math inline">\(\mathscr{M}\)</span> es una clase monótona.</p>
+<p>Y como <span class="math inline">\(\sigma(\mathscr{M}) = \mathscr{A}\)</span>, Por lo que <span class="math inline">\(\mathscr{A} = \mathscr{M}\)</span>.</p>
+<p>Por lo tanto <span class="math inline">\(X = Y\)</span> al menos casi segura.</p>
 
 
 

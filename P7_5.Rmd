@@ -5,3 +5,57 @@ title: "Tarea 4. Pregunta 7.5"
 Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Si $X,Y: \Omega \longmapsto \mathbb{R}$ son dos v.a.en $\mathscr{L}_1$ y $\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)$, para cada $A \in \mathscr{C}$ donde $\mathscr{C}$ es un $\pi$-sistema que genera a $\mathscr{A}$.  Es cierto que $X(\omega) = Y(\omega)$ salvo en un conjunto de medida cero?
 
 Demostración:
+
+La demostración se hará mostrando las hipótesis del lema de clases monótonas usando propiedades de las funciones indicadoras y el teorema de convergencia dominada.
+
+
+De acuerdo a lo dicho en el whatsapp del grupo, consideraremos que $\Omega \in \mathscr{C}$.
+
+
+Ahora propondremos la clase monótona como:
+
+\[\mathscr{M} = \{A \in \mathscr{A}| \mathbb{E}[(X-Y)1_A] = 0\}\]
+
+(una observación inmediata es que $\Omega \in \mathscr{M}$)
+
+
+PD. $\mathscr{M}$ es clase monótona.
+
+  1) PD. Si $A_1 \subseteq A2$ con $A_1, A_2 \in \mathscr{M}$ entonces $A_2 - A_1 \in \mathscr{M}$.
+  
+\begin{align*}
+\mathbb{E}[(X-Y)1_{A_2-A_1}] &=  \mathbb{E}[(X-Y)1_{A_2 \cap A_1^c}] \\\\
+&=\mathbb{E}[(X-Y)1_{A_2}1_{A_1^c}] \\\\
+&=\mathbb{E}[(X-Y)1_{A_2}(1-1_{A_1})] \\\\
+&=\mathbb{E}[(X-Y)1_{A_2} - (X-Y)1_{A_1}]\\\\
+&=\mathbb{E}[(X-Y)1_{A_2}] - \mathbb{E}[(X-Y)1_{A_1}]\\\\
+&= 0 - 0\\\\
+&= 0.
+\end{align*}
+
+\[\therefore A_2-A_1 \in \mathscr{M}.\]
+
+  2) PD. Si $(A_n)_{n\in\mathbb{N}}$ es una sucesión de eventos en $\mathscr{M}$ no decreciente (es decir, $A_1 \subseteq A_2 \subseteq \dots$) entonces $\cup_{n\in\mathbb{N}} A_n \in \mathscr{M}$.
+  
+  Nombremos $B = \cup_{n\in\mathbb{N}} A_n$.
+  
+  Para utilizar el teorema de convergencia dominada necesitamos una sucesión de funciones (en este caso v.a.) cuyo valor absoluto este acotado superiormente por otra función (v.a.) y todas tendan esperanza finita. Propongamos tales v.a.
+  
+  Sea \[((X-Y)1_{A_n})_{n\in\mathbb{N}}\] una sucesión de funciones con $(A_n)_{n\in\mathbb{N}}$ no decreciente en $\mathscr{M}$. Y proponemos como cota a \[(X-Y)\].
+  
+  Veamos que $|(X-Y)1_{A_n}| \leq |(X-Y)|$, pues si ocurre $\omega \in A_n$ entonces ocurre la igualdad y en el otro caso se tiene $0 \leq |(X-Y)|$.
+  
+  Además $(X-Y)1_{A_n} \to (X-Y)1_{B}$ (convergencia puntual). Así:
+  
+  \[\mathbb{E}[(X-Y)1_{B}] < \infty\] y \[\mathbb{E}[(X-Y)1_{B}] = \lim_{n\to \infty}  \mathbb{E}[(X-Y)1_{A_n}]\]
+  
+  Luego $\mathbb{E}[(X-Y)1_{B}] = 0$.
+  
+  \[\therefore B \in \mathscr{M}\]
+
+Por lo tanto $\mathscr{M}$ es una clase monótona.
+
+Y como $\sigma(\mathscr{M}) = \mathscr{A}$, Por lo que $\mathscr{A} = \mathscr{M}$.
+
+Por lo tanto $X = Y$ al menos casi segura.
+
