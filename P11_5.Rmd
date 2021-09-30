@@ -1,0 +1,9 @@
+---
+title: "Tarea 7. Pregunta 11.5."
+---
+
+1) Pruebe que si una v.a. $X$ definida en $(\Omega,\mathscr{A},\mathbb{P})$ y cumple que $\mathbb{E}(|X|^n) < \infty$; se cumple que $\mathbb{E}(|X|^m) < \infty$.
+
+
+2) Y si $\mathbb{E}(|X|) = 0$ entonces $X \overset{c.s}{=} 0$.
+

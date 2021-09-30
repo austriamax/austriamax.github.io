@@ -1,0 +1,9 @@
+---
+title: "Tarea 7. Pregunta 11.1"
+---
+
+1) Pruebe que $\mathscr{B}(\mathbb{R})\times\mathscr{B}(\mathbb{R}) = \mathscr{B}(\mathbb{R}^2)$, 
+
+
+2) ¿Se cumple para $n,m \in\mathbb{N}$?
+

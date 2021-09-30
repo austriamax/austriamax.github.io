@@ -1,0 +1,6 @@
+---
+title: "Tarea 7. Pregunta 11.6."
+---
+
+Construct an example to show that $\mathbb{E}\{XY\} = \mathbb{E}\{X\}\mathbb{E}\{Y\}$ does not imply in general that $X$ and $Y$ are independent r.v.s (we assume $X$, $Y$ and $XY$ are all in $\mathscr{L}_1$).
+

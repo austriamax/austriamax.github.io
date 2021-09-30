@@ -2,4 +2,13 @@
 title: "Tarea 5. Pregunta 10.1."
 ---
 
-Pruebe que $\mathscr{A}^{*}$ definida $(1)$ de las notas, es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.
+Sea $\mathscr{A}$ el álgebra formada por uniones finitas de intervalos de la forma $(-\infty, b]$, $(c,\infty)$, con $b, c \in \mathbb{R}$. Si definimos $\lambda(a,b) = b-a$ (longitud del intervalo $(a,b)$ o  $[a,b]$) y se aplica el teorema de extensión de Caratheodory, se obtiene la medida de Lebesgue en la $\sigma$-álgebra $\mathscr{A}^*$.
+
+Pruebe que es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.
+
+1) PD. $\mathscr{A}^*$ es completa.
+
+
+2) PD. $\lambda^*(E) = 0$ si y sólo si $E$ tiene $\mathscr{L}$-medida cero.
+
+

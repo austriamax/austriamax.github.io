@@ -2,7 +2,7 @@
 title: "Tarea 4. Pregunta 7.5"
 ---
 
-Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Si $X,Y: \Omega \longmapsto \mathbb{R}$ son dos v.a.en $\mathscr{L}_1$ y $\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)$, para cada $A \in \mathscr{C}$ donde $\mathscr{C}$ es un $\pi$-sistema que genera a $\mathscr{A}$.  Es cierto que $X(\omega) = Y(\omega)$ salvo en un conjunto de medida cero?
+Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Si $X,Y: \Omega \longmapsto \mathbb{R}$ son dos v.a.en $\mathscr{L}_1$ y $\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)$, para cada $A \in \mathscr{C}$ donde $\mathscr{C}$ es un $\pi$-sistema tal que $\Omega \in \mathscr{C}$ y $\mathscr{A} = \sigma(\mathscr{C})$.  Es cierto que $X = Y$ salvo en un conjunto de medida cero?
 
 Demostración:
 
