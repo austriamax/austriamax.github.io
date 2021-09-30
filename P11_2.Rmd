@@ -2,11 +2,11 @@
 title: "Tarea 7. Pregunta 11.2"
 ---
 
-1) Pruebe que si $(X_i)_{i = 1}^2$ son independientes con distribución $N(0, \sigma_i)$ para $i = 1, 2$, entonces, $X_1 + X_2$ también es normal.
+#1) Pruebe que si $(X_i)_{i = 1}^2$ son independientes con distribución $N(0, \sigma_i)$ para $i = 1, 2$, entonces, $X_1 + X_2$ también es normal.
 
 
-2) ¿Es cierto un resultado análogo si cada $X_i$ tiene distribución $Poisson(\lambda_i)$ para $i = 1,2$.
+#2) ¿Es cierto un resultado análogo si cada $X_i$ tiene distribución $Poisson(\lambda_i)$ para $i = 1,2$.
 
 
-3) ¿Es cierto algo similar para la suma de $N$ variables independientes (Normales o Poisson)?
+#3) ¿Es cierto algo similar para la suma de $N$ variables independientes (Normales o Poisson)?
 

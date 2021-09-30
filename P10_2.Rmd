@@ -1,8 +1,8 @@
 ---
 title: "Tarea 5. Pregunta 10.2."
+subtitle: Calcular la medida asociada a cada $g_i$ de los siguientes intervalos.
 ---
 
-Calcular la medida asociada a cada $g_i$ de los siguientes intervalos:
 
 1. $(0,2], [0, \frac{1}{2}], (-\infty, 0], (3,10]$.
 

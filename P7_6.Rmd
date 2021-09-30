@@ -1,8 +1,8 @@
 ---
 title: "Tarea 4. Pregunta 7.6"
+subtitle: Dar un ejemplo de una sucesión de funciones $f_n:[a,b]\longmapsto \mathbb{R}$ con $n = 1, 2, \dots$ que sean Riemann integrables tales que $\lim_n f_n(x)$ existe para cada $x \in [a,b]$ pero no es Riemann integrable o bien no se cumple que $\int_a^b\lim_n f_n(x)dx = \lim_n \int_a^b f_n(x)dx$.
 ---
 
-7.6. Dar un ejemplo de una sucesión de funciones $f_n:[a,b]\longmapsto \mathbb{R}$ con $n = 1, 2, \dots$ que sean Riemann integrables tales que $\lim_n f_n(x)$ existe para cada $x \in [a,b]$ pero no es Riemann integrable o bien no se cumple que $\int_a^b\lim_n f_n(x)dx = \lim_n \int_a^b f_n(x)dx$.
 
 Contraejemplo:
 

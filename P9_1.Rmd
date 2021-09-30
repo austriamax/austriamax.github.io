@@ -1,8 +1,7 @@
 ---
 title: "Tarea 5. Pregunta 9.1."
+subtitle: Prueba que al máximo de un número finito de v. a. simples es v. a. simple.
 ---
-
-Prueba que al máximo de un número finito de v. a. simples es v. a. simple.
 
 
 Demostración.

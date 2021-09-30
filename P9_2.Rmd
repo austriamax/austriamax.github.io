@@ -1,8 +1,8 @@
 ---
 title: "Tarea 5. Pregunta 9.2."
+subtitle: Pruebe si $X, Y$ v.a., $a\in\mathbb{R}$ entonces
 ---
 
-Pruebe si $X, Y$ v.a., $a\in\mathbb{R}$ entonces:
 
 9.2.1 $(aX)^{+} + (aY)^{-} \leq |a|(X^{+} + Y^{-})$.
 

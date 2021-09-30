@@ -2,9 +2,12 @@
 title: "Tarea 5. Pregunta 9.3."
 ---
 
-Si $(\Omega,\mathscr{A},\mathbb{P})$ es un espacio de probabilidad, $X: \Omega \longmapsto \mathbb{R}$ es v.a. positiva, y $\mu(A) := \mathbb{E}(1_AX)$ para cada $A \in \mathscr{A}$, pruebe que $\mu$ es medida en $(\Omega,\mathscr{A})$ y si $X \in \mathscr{L}_1$, se puede definir una nueva medida de probabilidad en $(\Omega, \mathscr{A})$ de la siguiente manera:
+-------------------------------------------------------------------------------------------
+Si $(\Omega,\mathscr{A},\mathbb{P})$ es un espacio de probabilidad, $X: \Omega \longmapsto \mathbb{R}$ es v.a. positiva, y $\mu(A) := \mathbb{E}(1_AX)$ para cada $A \in \mathscr{A}$, pruebe que $\mu$ es medida en $(\Omega,\mathscr{A})$ y si $X \in \mathscr{L}_1$, se puede definir una nueva medida de probabilidad en $(\Omega, \mathscr{A})$ de la siguiente manera
 
-$\mathbb{P}_1(A) = \frac{\mu(A)}{\mu(\Omega)}$.
+\[\mathbb{P}_1(A) = \frac{\mu(A)}{\mu(\Omega)}\].
+-------------------------------------------------------------------------------------------
+
 
 PD. $\mu$ es medida.
 

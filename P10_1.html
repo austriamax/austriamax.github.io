@@ -264,12 +264,85 @@ $(document).ready(function () {
 </div>
 
 
-<p>Sea <span class="math inline">\(\mathscr{A}\)</span> el álgebra formada por uniones finitas de intervalos de la forma <span class="math inline">\((-\infty, b]\)</span>, <span class="math inline">\((c,\infty)\)</span>, con <span class="math inline">\(b, c \in \mathbb{R}\)</span>. Si definimos <span class="math inline">\(\lambda(a,b) = b-a\)</span> (longitud del intervalo <span class="math inline">\((a,b)\)</span> o <span class="math inline">\([a,b]\)</span>) y se aplica el teorema de extensión de Caratheodory, se obtiene la medida de Lebesgue en la <span class="math inline">\(\sigma\)</span>-álgebra <span class="math inline">\(\mathscr{A}^*\)</span>.</p>
-<p>Pruebe que es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.</p>
-<ol style="list-style-type: decimal">
-<li><p>PD. <span class="math inline">\(\mathscr{A}^*\)</span> es completa.</p></li>
-<li><p>PD. <span class="math inline">\(\lambda^*(E) = 0\)</span> si y sólo si <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</p></li>
-</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td>Sea <span class="math inline">\(\mathscr{A}\)</span> el álgebra formada por uniones finitas de intervalos de la forma <span class="math inline">\((-\infty, b]\)</span>, <span class="math inline">\((c,\infty)\)</span>, con <span class="math inline">\(b, c \in \mathbb{R}\)</span>. Si definimos <span class="math inline">\(\lambda(a,b) = b-a\)</span> (longitud del intervalo <span class="math inline">\((a,b)\)</span> o <span class="math inline">\([a,b]\)</span>) y se aplica el teorema de extensión de Caratheodory, se obtiene la medida de Lebesgue en la <span class="math inline">\(\sigma\)</span>-álgebra <span class="math inline">\(\mathscr{A}^*\)</span>. Pruebe que es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">1) PD. <span class="math inline">\(\mathscr{A}^*\)</span> es completa.</td>
+</tr>
+</tbody>
+</table>
+<p>Sea <span class="math inline">\(E \in N(\lambda^*)\)</span> y <span class="math inline">\(F \subset E\)</span>.</p>
+<p>PD. <span class="math inline">\(F \in \mathscr{A}^*\)</span>. PD. <span class="math inline">\(\lambda^*(A) = \lambda^*(A-F) + \lambda^*(A\cap F) \quad \forall A \subset \mathbb{R}\)</span>.</p>
+<p>Sea <span class="math inline">\(A \subset \mathbb{R}\)</span>.</p>
+<p>Por la sub-aditividad de <span class="math inline">\(\lambda^*\)</span> es claro que: <span class="math display">\[\lambda^*(A) \leq \lambda^*(A-F) + \lambda^*(A\cap F)\]</span> Por lo que sólo nos falta mostrar la otra desigualdad.</p>
+<p>Como <span class="math inline">\(A\cap F \subseteq F \subseteq E\)</span> se obtien la siguiente relación: <span class="math display">\[0 \leq \lambda^*(A\cap F) \leq \lambda^*(F) \leq \lambda^*(E) = 0 \]</span></p>
+<p>Por lo tanto <span class="math inline">\(\lambda^*(A\cap F) = 0\)</span>. Por otro lado <span class="math inline">\(A-F \subseteq A\)</span>, por lo que: <span class="math display">\[\lambda^*(A-F) \leq  \lambda^*(A)\]</span></p>
+<p>De lo anterior se concluye que: <span class="math display">\[\lambda^*(A) \geq \lambda^*(A\cap F) + \lambda^*(A - F)\]</span></p>
+<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(F\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible.</p>
+<p><span class="math inline">\(\therefore \quad F \in \mathscr{A}^*\)</span></p>
+<p>Asi se concluye que <span class="math inline">\(\mathscr{A}^*\)</span> es completa.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>2) PD. <span class="math inline">\(\lambda^*(E) = 0\)</span> si y sólo si <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</td>
+</tr>
+</tbody>
+</table>
+<p>Antes de empezar la demostración, recordemos la definición de la tarea 3.</p>
+<p>Definición. <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</p>
+<p>Se dice que <span class="math inline">\(U \subset \mathbb{R}\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero si <span class="math inline">\(\forall \epsilon &gt;0 \quad \exists \{I_n\}_{n \in \mathbb{N}}\)</span> tal que <span class="math display">\[U \subset \cup_{n \in \mathbb{N}}I_n \quad \mbox{ y } \quad \sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\]</span> donde <span class="math inline">\(\lambda(I_n)\)</span> es la longitud del intervalo <span class="math inline">\(I_n = (a_n,b_n)\)</span>.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Rightarrow\)</span>) PD. Si <span class="math inline">\(\lambda^*(E) = 0\)</span> entonces <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</td>
+</tr>
+</tbody>
+</table>
+<p>Sea <span class="math inline">\(E \subset \mathbb{R}\)</span> tal que <span class="math inline">\(\lambda^*(E) = 0\)</span>.</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
+<p>Nombremos <span class="math inline">\(\mathscr{S}(E) = \{\sum_{n \in \mathbb{N}} \lambda^*(A_n) | \forall n \quad A_n \in \mathscr{A} \quad \mbox{y} \quad E \subseteq \cup_{n \in \mathbb{N}} A_n \}\)</span>.</p>
+<p>Por definición <span class="math inline">\(\lambda^*(E) = \inf\{\mathscr{S}(E)\}\)</span> lo que implica que existe <span class="math inline">\(s \in \mathscr{S}\)</span> tal que <span class="math inline">\(s \leq \inf\{\mathscr{S}(E)\} + \frac{\epsilon}{2}\)</span>.</p>
+<p>Así <span class="math inline">\(s \leq \lambda^*(E) + \frac{\epsilon}{2} = \frac{\epsilon}{2}\)</span>. Donde <span class="math inline">\(s\)</span> tiene la forma</p>
+<p><span class="math display">\[s = \sum_{n \in \mathbb{N}}  \lambda^*(A_n) \leq \frac{\epsilon}{2}  \quad \mbox{con} \quad (\forall n \quad A_n \in \mathscr{A}) \quad \mbox{y} \quad E \subseteq \cup_{n \in \mathbb{N}} A_n\]</span></p>
+<p>Como <span class="math inline">\(\sum_{n \in \mathbb{N}} \lambda^*(A_n) \leq \frac{\epsilon}{2}\)</span> entonces cada <span class="math inline">\(\lambda^*(A_n) &lt; \infty\)</span>. Y sabiendo que <span class="math inline">\(A_n \in \mathscr{A}\)</span> el álgebra formada por intervalos de la forma <span class="math inline">\((-\infty, b]\)</span>, <span class="math inline">\((c,\infty)\)</span> obtenermos que:</p>
+<p><span class="math display">\[A_n = (a_n,b_n] \mbox{  con } a_n,b_n \in \mathbb{R}\]</span></p>
+<p>Pues la única forma conlongitud finita que se crea con un número finito de operaciones con los intervalos que definen al álgebra <span class="math inline">\((a,b] = (a,\infty) \cap (-\infty,b] = ((a,\infty)^c \cup (-\infty,b]^c )^c\)</span>.</p>
+<p>Así proponemos <span class="math inline">\(I_n = (a_n,b_n + \frac{\epsilon}{2^{n+1}})\)</span> (para cumplir con la forma de la definición).</p>
+<p>Es claro que <span class="math inline">\(A_n \subset I_n \quad \forall n \in \mathbb{N}\)</span> y por lo tanto <span class="math inline">\(E \subset \cup_{n \in \mathbb{N}} I_n\)</span>. Así <span class="math display">\[\lambda(I_n) = \lambda(A_n) + \frac{\epsilon}{2^{n+1}}\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[\begin{align*}
+\sum_{n \in \mathbb{N}} \lambda(I_n) &amp;= \sum_{n \in \mathbb{N}}\lambda(A_n) + \sum_{n \in \mathbb{N}}\frac{\epsilon}{2^{n+1}}\\\\
+&amp;= \sum_{n \in \mathbb{N}}\lambda(A_n) + \frac{\epsilon}{2} \quad \mbox{(serie geométrica)}\\\\
+&amp;\leq \frac{\epsilon}{2} + \frac{\epsilon}{2}\\\
+&amp; = \epsilon
+\end{align*}\]</span></p>
+<p><span class="math inline">\(\therefore \quad \forall \epsilon &gt;0 \quad \exists (I_n)_{n \in \mathbb{N}}\)</span> tal que <span class="math inline">\(E\subset \cup_{n \in \mathbb{N}} \lambda(I_n)\)</span> y <span class="math inline">\(\sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\)</span>.</p>
+<p>Por lo tanto, <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Leftarrow\)</span>) PD. Si <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero entonces <span class="math inline">\(\lambda^*(E) = 0\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p>Sea <span class="math inline">\(E \subset \mathbb{R}\)</span> con <span class="math inline">\(\mathscr{L}\)</span>-medida cero.</p>
+<p>PD. <span class="math inline">\(\lambda^*(E) = 0\)</span>.</p>
+<p>PD <span class="math inline">\(\inf\{\mathscr{S}(E)\} = 0\)</span>.</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
+<p>Como <span class="math inline">\(E\)</span> tiene <span class="math inline">\(\mathscr{L}\)</span>-medida cero entonces existe una la familia <span class="math inline">\(\{I_n\}_{n \in \mathbb{N}}\)</span> tal que <span class="math inline">\(\sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\)</span> y <span class="math inline">\(E \subset \cup_{n \in \mathbb{N}} I_n\)</span> con <span class="math inline">\(I_n = (a_n,b_n) \quad a_n, b_n \in \mathbb{R}\)</span>.</p>
+<p>Sea <span class="math inline">\(A_n = (a_n,b_n]\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span>. Así <span class="math inline">\(A_n \in \mathscr{A}\)</span> pues <span class="math inline">\((a,b] = (a,\infty) \cap (-\infty,b] = ((a,\infty)^c \cup (-\infty,b]^c )^c\)</span> y además <span class="math inline">\(\lambda(A_n) = b_n-a_n\)</span> (la longitud el intervalo <span class="math inline">\((a_n,b_n)\)</span>). Luego</p>
+<p><span class="math display">\[\sum_{n \in \mathbb{N}}\lambda(A_n) = \sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\]</span></p>
+<p>Por lo que <span class="math display">\[0 \leq \inf\{\mathscr{S}(E)\} \leq \sum_{n \in \mathbb{N}}\lambda(A_n) \leq \epsilon\]</span></p>
+<p>Como es para un <span class="math inline">\(\epsilon &gt;0\)</span> arbitrario. Entonces</p>
+<p><span class="math inline">\(\inf\{\mathscr{S}(E)\} = 0\)</span>.</p>
+<p><span class="math inline">\(\therefore \quad \lambda^*(E) = 0\)</span>.</p>
 
 
 

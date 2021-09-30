@@ -1,8 +1,8 @@
 ---
 title: "Tarea 7. Pregunta 11.4."
+subtitle: Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Prueba que si $A,B \in \mathscr{A}$ entonces son equivalentes
 ---
 
-Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Prueba que si $A,B \in \mathscr{A}$ entonces son equivalentes:
 
 (i) $A$ es independiente de $B$.
 

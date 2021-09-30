@@ -2,5 +2,7 @@
 title: "Tarea 7. Pregunta 11.8."
 ---
 
+-----------------------------------------------------------------------------------------------
 Let $X$, $Y$ be independent geometric random variables with parameters $\lambda$ and $\mu$. Let $Z = \min(X,Y)$. Show $Z$ is geometric and find its parameter. 
+-----------------------------------------------------------------------------------------------
 

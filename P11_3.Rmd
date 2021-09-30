@@ -1,21 +1,17 @@
 ---
 title: "Tarea 7. Pregunta 11.3"
+subtitle: Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad. Si $(X_n)_n$ es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro $p \in (0,1)$ considere para cada $\omega \in \Omega$ la función definida por \[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\] con la convención de que $\inf\{\emptyset\} = \infty$.
 ---
 
-Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad. Si $(X_n)_n$ es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro $p \in (0,1)$ considere para cada $\omega \in \Omega$ la función definida por 
 
-\[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\]
-
-con la convención de que $\inf\{\emptyset\} = \infty$. 
-
-1) Muestre que $T$ es una v.a. que toma valores en $ \mathbb{N} \cup \{\infty\}$.
+#1) Muestre que $T$ es una v.a. que toma valores en $ \mathbb{N} \cup \{\infty\}$.
 
 
-2) Calcule su ley.
+#2) Calcule su ley.
 
 
-3) Calcule su esperanza.
+#3) Calcule su esperanza.
 
 
-4) Encuentre la ley $S_k = \sum_{i = 1}^k X_i$ para $k \geq 2$.
+#4) Encuentre la ley $S_k = \sum_{i = 1}^k X_i$ para $k \geq 2$.
 

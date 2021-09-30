@@ -2,13 +2,125 @@
 title: "Tarea 5. Pregunta 10.1."
 ---
 
-Sea $\mathscr{A}$ el álgebra formada por uniones finitas de intervalos de la forma $(-\infty, b]$, $(c,\infty)$, con $b, c \in \mathbb{R}$. Si definimos $\lambda(a,b) = b-a$ (longitud del intervalo $(a,b)$ o  $[a,b]$) y se aplica el teorema de extensión de Caratheodory, se obtiene la medida de Lebesgue en la $\sigma$-álgebra $\mathscr{A}^*$.
+---------------------------------------------------------------------------------------------
+Sea $\mathscr{A}$ el álgebra formada por uniones finitas de intervalos de la forma $(-\infty, b]$, $(c,\infty)$, con $b, c \in \mathbb{R}$. Si definimos $\lambda(a,b) = b-a$ (longitud del intervalo $(a,b)$ o  $[a,b]$) y se aplica el teorema de extensión de Caratheodory, se obtiene la medida de Lebesgue en la $\sigma$-álgebra $\mathscr{A}^*$. Pruebe que es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.
+---------------------------------------------------------------------------------------------
 
-Pruebe que es completa y que sus conjuntos nulos son exactamente los conjuntos nulos de la tarea 3.
-
+------------------------------------
 1) PD. $\mathscr{A}^*$ es completa.
+------------------------------------
 
 
+Sea $E \in N(\lambda^*)$ y $F \subset E$.
+
+
+
+PD. $F \in \mathscr{A}^*$.
+PD. $\lambda^*(A) = \lambda^*(A-F) + \lambda^*(A\cap F) \quad  \forall A \subset \mathbb{R}$.
+
+
+Sea $A \subset \mathbb{R}$.
+
+Por la sub-aditividad de $\lambda^*$ es claro que:
+\[\lambda^*(A) \leq \lambda^*(A-F) + \lambda^*(A\cap F)\]
+Por lo que sólo nos falta mostrar la otra desigualdad.
+
+Como $A\cap F \subseteq F \subseteq E$ se obtien la siguiente relación:
+\[0 \leq \lambda^*(A\cap F) \leq \lambda^*(F) \leq \lambda^*(E) = 0 \]
+
+Por lo tanto $\lambda^*(A\cap F) = 0$.
+Por otro lado $A-F \subseteq A$, por lo que:
+\[\lambda^*(A-F) \leq  \lambda^*(A)\]
+
+
+De lo anterior se concluye que:
+\[\lambda^*(A) \geq \lambda^*(A\cap F) + \lambda^*(A - F)\]
+
+$\therefore$ $F$ es $\lambda^*$-medible.
+
+$\therefore \quad F \in \mathscr{A}^*$
+
+Asi se concluye que $\mathscr{A}^*$ es completa.
+
+
+---------------------------------------------------------------------------
 2) PD. $\lambda^*(E) = 0$ si y sólo si $E$ tiene $\mathscr{L}$-medida cero.
+----------------------------------------------------------------------------
 
 
+Antes de empezar la demostración, recordemos la definición de la tarea 3.
+
+Definición. $\mathscr{L}$-medida cero.
+
+Se dice que  $U \subset \mathbb{R}$ tiene $\mathscr{L}$-medida cero si $\forall \epsilon >0 \quad \exists \{I_n\}_{n \in \mathbb{N}}$ tal que \[U \subset \cup_{n \in \mathbb{N}}I_n \quad \mbox{ y } \quad \sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\] donde $\lambda(I_n)$ es la longitud del intervalo $I_n = (a_n,b_n)$.
+
+
+--------------
+$\Rightarrow$) PD. Si $\lambda^*(E) = 0$ entonces $E$ tiene $\mathscr{L}$-medida cero.
+--------------
+
+Sea $E \subset \mathbb{R}$ tal que $\lambda^*(E) = 0$.
+
+Sea $\epsilon >0$.
+
+Nombremos $\mathscr{S}(E) = \{\sum_{n \in \mathbb{N}} \lambda^*(A_n) | \forall n \quad A_n \in \mathscr{A} \quad \mbox{y} \quad E \subseteq \cup_{n \in \mathbb{N}} A_n \}$.
+
+Por definición  $\lambda^*(E)  = \inf\{\mathscr{S}(E)\}$ lo que implica que existe $s \in \mathscr{S}$ tal que $s \leq \inf\{\mathscr{S}(E)\} + \frac{\epsilon}{2}$.
+
+Así $s \leq \lambda^*(E) + \frac{\epsilon}{2} = \frac{\epsilon}{2}$. Donde $s$ tiene la forma
+
+\[s = \sum_{n \in \mathbb{N}}  \lambda^*(A_n) \leq \frac{\epsilon}{2}  \quad \mbox{con} \quad (\forall n \quad A_n \in \mathscr{A}) \quad \mbox{y} \quad E \subseteq \cup_{n \in \mathbb{N}} A_n\]
+
+Como $\sum_{n \in \mathbb{N}}  \lambda^*(A_n) \leq \frac{\epsilon}{2}$ entonces cada $\lambda^*(A_n) < \infty$. Y sabiendo que $A_n \in \mathscr{A}$ el álgebra formada por  intervalos de la forma $(-\infty, b]$, $(c,\infty)$ obtenermos que:
+
+\[A_n = (a_n,b_n] \mbox{  con } a_n,b_n \in \mathbb{R}\]
+
+Pues la única forma conlongitud finita que se crea con  un número finito de operaciones con los intervalos  que definen al álgebra $(a,b] = (a,\infty) \cap (-\infty,b] = ((a,\infty)^c \cup (-\infty,b]^c )^c$.
+
+
+Así proponemos $I_n = (a_n,b_n + \frac{\epsilon}{2^{n+1}})$ (para cumplir con la forma de la definición).
+
+Es claro que $A_n \subset I_n \quad \forall n \in \mathbb{N}$ y por lo tanto $E \subset \cup_{n \in \mathbb{N}} I_n$. Así
+\[\lambda(I_n) = \lambda(A_n) + \frac{\epsilon}{2^{n+1}}\]
+
+Luego
+
+\begin{align*}
+\sum_{n \in \mathbb{N}} \lambda(I_n) &= \sum_{n \in \mathbb{N}}\lambda(A_n) + \sum_{n \in \mathbb{N}}\frac{\epsilon}{2^{n+1}}\\\\
+&= \sum_{n \in \mathbb{N}}\lambda(A_n) + \frac{\epsilon}{2} \quad \mbox{(serie geométrica)}\\\\
+&\leq \frac{\epsilon}{2} + \frac{\epsilon}{2}\\\
+& = \epsilon
+\end{align*}
+
+$\therefore \quad \forall \epsilon >0 \quad \exists (I_n)_{n \in \mathbb{N}}$ tal que $E\subset \cup_{n \in \mathbb{N}} \lambda(I_n)$ y $\sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon$.
+
+
+Por lo tanto, $E$ tiene $\mathscr{L}$-medida cero.
+
+--------------
+$\Leftarrow$) PD. Si $E$ tiene $\mathscr{L}$-medida cero entonces $\lambda^*(E) = 0$.
+--------------
+
+Sea $E \subset \mathbb{R}$ con $\mathscr{L}$-medida cero. 
+
+PD. $\lambda^*(E) = 0$.
+
+PD $\inf\{\mathscr{S}(E)\} = 0$.
+
+Sea $\epsilon >0$.
+
+Como $E$ tiene $\mathscr{L}$-medida cero entonces existe una la familia $\{I_n\}_{n \in \mathbb{N}}$ tal que $\sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon$ y $E \subset \cup_{n \in \mathbb{N}} I_n$ con $I_n = (a_n,b_n) \quad a_n, b_n \in \mathbb{R}$.
+
+Sea $A_n = (a_n,b_n]$ con $n \in \mathbb{N}$. Así $A_n \in \mathscr{A}$ pues $(a,b] = (a,\infty) \cap (-\infty,b] = ((a,\infty)^c \cup (-\infty,b]^c )^c$ y además $\lambda(A_n) = b_n-a_n$ (la longitud el intervalo $(a_n,b_n)$). Luego
+
+
+\[\sum_{n \in \mathbb{N}}\lambda(A_n) = \sum_{n \in \mathbb{N}}\lambda(I_n) \leq \epsilon\]
+
+Por lo que 
+\[0 \leq \inf\{\mathscr{S}(E)\} \leq \sum_{n \in \mathbb{N}}\lambda(A_n) \leq \epsilon\]
+
+Como es para un $\epsilon >0$ arbitrario. Entonces
+
+$\inf\{\mathscr{S}(E)\}  = 0$.
+
+$\therefore \quad \lambda^*(E) = 0$.

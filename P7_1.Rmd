@@ -1,8 +1,7 @@
 ---
 title: "Tarea 4. Pregunta 7.1"
+subtitle: Sean $(\Omega,\mathscr{A})$ y $(G,\mathscr{G})$ dos espacios medibles y $X:\Omega \longmapsto G$ una función medible. Muestre que $\mathscr{F} = X^{-1}(\mathscr{G})$ es una $\sigma$-álgebra en $\Omega$ y que es la mínima $\sigma$-álgebra que hace que de $X$ una función medible.
 ---
-
-Sean $(\Omega,\mathscr{A})$ y $(G,\mathscr{G})$ dos espacios medibles y $X:\Omega \longmapsto G$ una función medible. Muestre que $\mathscr{F} = X^{-1}(\mathscr{G})$ es una $\sigma$-álgebra en $\Omega$ y que es la mínima $\sigma$-álgebra que hace que de $X$ una función medible.
 
 Demostración:
 

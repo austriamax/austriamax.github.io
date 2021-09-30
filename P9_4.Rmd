@@ -1,8 +1,8 @@
 ---
 title: "Tarea 5. Pregunta 9.4."
+subtitle: Pruebe que la relación entre las v.a. $X, Y$ dada por ($X$ es igual a $Y$ c.s.), i.e. $X \approx Y$, es una relación de equivalencia.
 ---
 
-Pruebe que la relación entre las v.a. $X, Y$ dada por ($X$ es igual a $Y$ c.s.), i.e. $X \approx Y$, es una relación de equivalencia.
 
 Demostración:
 

@@ -1,11 +1,17 @@
 ---
 title: "Tarea 5. Pregunta 10.3."
 ---
+-------------------------------------------------------------------------------------------
+Sean los espacios de medida $(\mathbb{R}, \mathscr{M}_{\lambda^*},\lambda^*)$, donde $\lambda^*$ y  $\mathscr{M}_{\lambda^*}$ son ambas la medida y la $\sigma$-álgebra de Lebesgue y $(\mathbb{R},\mathbb{B}(\mathbb{R}),\lambda)$ el espacio de medida donde $\mathbb{B}(\mathbb{R})$ es la $\sigma$-álgebra de Borel y $\lambda = \lambda^*|_{\mathbb{B}(\mathbb{R})}$.
+-------------------------------------------------------------------------------------------
 
-Sean los espacios de medida $(\mathbb{R}, \mathscr{M}_{\lambda^*},\lambda^*)$, donde $\lambda^*$ y  $\mathscr{M}_{\lambda^*}$ son ambas la medida y la $\sigma$-álgebra de Lebesgue y $(\mathbb{R},\mathbb{B}(\mathbb{R}),\lambda)$ el espacio de medida donde $\mathbb{B}(\mathbb{R})$ es la $\sigma$-álgebra de Borel y $\lambda = \lambda^*|_{\mathbb{B}(\mathbb{R})}$. Demuestre lo siguiente:
+Demuestre lo siguiente:
 
+-------------------------------------------------------------------------------------------
 1) Dado un conjunto $A \in \mathscr{M}_{\lambda^*}$, $\exists B \in \mathbb{B}(\mathbb{R})$, $B \subset A$ tal que $\lambda^*(A-B) = 0$.
+-------------------------------------------------------------------------------------------
 
-
+-------------------------------------------------------------------------------------------
 2) Muestre que la completación de la $\sigma$-álgebra de Borel respecto a la medida de Lebesque es precisamente $\mathscr{M}_{\lambda^*}$.
+-------------------------------------------------------------------------------------------
 
