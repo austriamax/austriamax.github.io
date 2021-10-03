@@ -2,11 +2,79 @@
 title: "Tarea 7. Pregunta 11.2"
 ---
 
-#1) Pruebe que si $(X_i)_{i = 1}^2$ son independientes con distribución $N(0, \sigma_i)$ para $i = 1, 2$, entonces, $X_1 + X_2$ también es normal.
+-----------------------------------------------------------------------------
+1) Pruebe que si $(X_i)_{i = 1}^2$ son independientes con distribución $N(0, \sigma_i^2)$ para $i = 1, 2$, entonces, $X_1 + X_2$ también es normal.
+-----------------------------------------------------------------------------
+Solución:
+
+Sabemos que la función caracteristica de una v.a. $Z \sim N(\mu, \sigma^2)$ es \[M_Z(t) = e^{i\mu t - \frac{\sigma^2t^2}{2}}.\]
+
+Así
+
+\begin{align*}
+C_{X + Y}(t) &= C_X(t)* C_Y(t) \quad \mbox{(Independencia)}\\\\
+&= (e^{i(0)t - \frac{\sigma_1^2t^2}{2}})* (e^{i(0)t - \frac{\sigma_2^2t^2}{2}}) \quad \mbox{(FC de normales)}\\\\
+&= e^{-\frac{\sigma_1^2t^2}{2} - \frac{\sigma_2^2t^2}{2}}\\\\
+&= e^{-\frac{(\sigma_1^2 + \sigma_2^2)t^2}{2}}
+\end{align*}
+
+\[\therefore \quad X + Y \sim N(0, \sigma_1^2 + \sigma_2^2).\]
+
+-----------------------------------------------------------------------------
+2) ¿Es cierto un resultado análogo si cada $X_i$ tiene distribución $Poisson(\lambda_i)$ para $i = 1,2$.
+-----------------------------------------------------------------------------
+Solución:
+
+Sabemos que la función caracteristica de una v.a. $Z \sim Poisson(\lambda)$ es \[C_Z(t) = e^{\lambda(e^t - 1)}.\]
+
+Así
+
+\begin{align*}
+C_{X + Y}(t) &= C_X(t)* C_Y(t) \quad \mbox{(Independencia)}\\\\
+&= (e^{\lambda_1(e^t - 1)})* (e^{\lambda_2(e^t - 1)}) \quad \mbox{(FC de Poisson)}\\\\
+&= e^{\lambda_1(e^t - 1) + \lambda_2(e^t - 1)}\\\\
+&= e^{(\lambda_1 + \lambda_2)(e^t - 1)}\\\\
+\end{align*}
+
+\[\therefore \quad X + Y \sim Poisson(\lambda_1 + \lambda_2).\]
+
+-----------------------------------------------------------------------------
+3) ¿Es cierto algo similar para la suma de $N$ variables independientes (Normales o Poisson)?
+-----------------------------------------------------------------------------
+
+Es cierto. 
 
 
-#2) ¿Es cierto un resultado análogo si cada $X_i$ tiene distribución $Poisson(\lambda_i)$ para $i = 1,2$.
+Es inmedito de demostrar que la función característica de la suma de variables aleatorias independientes es el producto de sus funciones características.
 
 
-#3) ¿Es cierto algo similar para la suma de $N$ variables independientes (Normales o Poisson)?
+PD. \[C_{\sum_{i = 1}^n X_i} = \prod_{i = 1}^n C_{X_i}\]
+
+
+Base: PD. $C_{X_1 + X_2} = C_{X_1}*C_{X_2}$.
+
+
+\[C_{X_1 + X_2} \overset{Def.}{=} \mathbb{E}[e^{it(X+Y)}] = \mathbb{E}[e^{itX}e^{itY}]  \overset{Ind.}{=} \mathbb{E}[e^{itX}]\mathbb{E}[e^{itY}] \overset{Def.}{=} C_{X_1}*C_{X_2}\]
+
+
+Paso Inductivo: 
+
+Supongase que $C_{\sum_{i = 1}^k X_i} = \prod_{i = 1}^k C_{X_i}$ para alguna $k \in \mathbb{N}$.
+
+PD. $C_{\sum_{i = 1}^{k+1} X_i} = \prod_{i = 1}^{k+1} C_{X_i}$.
+
+
+\begin{align*}
+C_{\sum_{i = 1}^{k+1} X_i}(t) &= C_{(\sum_{i = 1}^{k} X_i) + X_{k+1}}\\\\
+&= C_{(\sum_{i = 1}^{k} X_i)}* C_{X_{k+1}} && \mbox{(Caso base)}\\\\
+&= \prod_{i = 1}^{k} C_{X_i}* C_{X_{k+1}} && \mbox{(Hipótesis de inducción)}\\\\
+&= \prod_{i = 1}^{k+1} C_{X_i}
+\end{align*}
+
+
+Entonces
+
+\[\therefore \quad \mbox{Si } Z_i \sim N(0, \sigma_i^2), \quad i = 1, \dots, n.\implies \sum_{i=1}^n Z_i \sim N(0, \sum_{i = 1}^n \sigma_i^2)\]
+
+\[\therefore \quad \mbox{Si } Z_i \sim Poisson(\lambda_i), \quad i = 1, \dots, n.\implies \sum_{i=1}^n Z_i \sim Poisson(\sum_{i=1}^n\lambda_i)\]
 

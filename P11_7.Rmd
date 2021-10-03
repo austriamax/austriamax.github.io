@@ -7,18 +7,88 @@ subtitle: Let $X$, $Y$ be independent random variables taking values in $\mathbb
 a) $\mathbb{P}(\min\{X,Y\} \leq i)$.
 -------------------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------------------
+Solución: 
+
+Notemos que $F_X(i) = F_Y(i) = \mathbb{P}(Y \leq i) = \sum_{n=1}^i \frac{1}{2^n} = 1 - (\frac{1}{2})^i$.
+
+Ahora hagamos el calculo.
+\begin{align*}
+\mathbb{P}(\min\{X,Y\} \leq i) &= 1 - \mathbb{P}(\min\{X,Y\} > i)\\\\
+&= 1 - \mathbb{P}(X > i,Y > i)\\\\
+&= 1 - \mathbb{P}(X > i)\mathbb{P}(Y > i) && \mbox{(Independencia)}\\\\
+&= 1 - \mathbb{P}(X > i)^2 && \mbox{(Identica distribución)}\\\\
+&= 1 - (1 - \mathbb{P}(X \leq i))^2\\\\
+&= 1 - (1 - F_X(i))^2\\\\
+&= 1 - [1 - (1 - (\frac{1}{2})^i)]^2\\\\
+&= 1 - [(\frac{1}{2})^i)]^2\\\\
+&= 1 - (\frac{1}{4})^i
+\end{align*}
+
+
+----------------------------------------------------------------------------------
 b) $\mathbb{P}(X = Y)$.
--------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------------------
-c) $\mathbb{P}(Y = X)$
--------------------------------------------------------------------------------------------
+Solución:
 
--------------------------------------------------------------------------------------------
-d) $\mathbb{P}(X$ divides $ Y)$.
--------------------------------------------------------------------------------------------
+\begin{align*}
+\mathbb{P}(X = Y) &= \sum_{i = 1}^{\infty} \mathbb{P}(X = Y|Y = i)\mathbb{P}(Y = i) && \mbox{(Probabilidad Total)}\\\\
+&= \sum_{i = 1}^{\infty} \mathbb{P}(X = i)(\frac{1}{2^i})\\\\
+&= \sum_{i = 1}^{\infty} (\frac{1}{2^i})(\frac{1}{2^i})\\\\
+&= \sum_{i = 1}^{\infty} \frac{1}{4^i}\\\\
+&= \frac{1}{3} && \mbox{(Serie geométrica)}
+\end{align*}
 
--------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+c) $\mathbb{P}(Y > X)$
+----------------------------------------------------------------------------------
+Solución:
+
+\begin{align*}
+\mathbb{P}(X > Y) &= 1 -  \mathbb{P}(X \leq Y)\\\\
+&= 1 - \sum_{i = 1}^{\infty} \mathbb{P}(X \leq Y|Y = i)\mathbb{P}(Y = i) && \mbox{(Probabilidad Total)}\\\\
+&= 1 - \sum_{i = 1}^{\infty} \mathbb{P}(X \leq i)(\frac{1}{2^i})\\\\
+&= 1 - \sum_{i = 1}^{\infty} [1 - (\frac{1}{2})^i](\frac{1}{2^i})\\\\
+&= 1 - \sum_{i = 1}^{\infty} [\frac{1}{2^i} - \frac{1}{4^i}]\\\
+&= \sum_{i = 1}^{\infty} \frac{1}{4^i}\\\
+&= \frac{1}{3}.
+\end{align*}
+
+----------------------------------------------------------------------------------
+d) $\mathbb{P}(X$ divides $Y)$.
+----------------------------------------------------------------------------------
+Solución:
+
+\begin{align*}
+\mathbb{P}(X \mbox{ divides } Y) &= \sum_{i = 1}^{\infty} \mathbb{P}(X \mbox{ divides } Y | X = i)\mathbb{P}(X = i)  && \mbox{(Probabilidad Total)}\\\\
+
+&=  \sum_{i = 1}^{\infty} \sum_{k = 1}^{\infty} \mathbb{P}(Y = kX | X = i)\mathbb{P}(X = i)   && \mbox{(Eventos disjuntos)}\\\\
+
+&= \sum_{i = 1}^{\infty} \sum_{k = 1}^{\infty} \mathbb{P}(Y = ki)(\frac{1}{2^i})\\\\
+&= \sum_{i = 1}^{\infty}\sum_{k = 1}^{\infty}\frac{1}{2^{ki}}\frac{1}{2^i}\\\\
+&= \sum_{i = 1}^{\infty}\frac{1}{2^i}\sum_{k = 1}^{\infty}\frac{1}{2^{ki}}\\\\
+&= \sum_{i = 1}^{\infty}\frac{1}{2^i}[\frac{1/2^{i}}{1- 1/2^{i}}]\\\\ 
+&= \sum_{i = 1}^{\infty}\frac{1}{2^i} \frac{1}{2^i-1}
+\end{align*}
+
+
+----------------------------------------------------------------------------------
 e) $\mathbb{P}(X \geq kY)$ for a given positive integer $k$.
--------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+Solución:
+
+Sea $k \in \mathbb{N}$.
+
+\begin{align*}
+\mathbb{P}(X \geq kY) &= \sum_{i = 1}^{\infty} \mathbb{P}(X \geq kY)| X = i)\mathbb{P}(X = i)  && \mbox{(Probabilidad Total)}\\\\
+&= \sum_{i = 1}^{\infty} \mathbb{P}(Y \geq ki)(\frac{1}{2^i})\\\\
+&= \sum_{i = 1}^{\infty} [\sum_{j = ki}^{\infty} \frac{1}{2^j}](\frac{1}{2^i})\\\\
+&= \sum_{i = 1}^{\infty} \frac{1}{2^i} \sum_{j = ki}^{\infty} \frac{1}{2^j}\\\\
+&= \sum_{i = 1}^{\infty} \frac{1}{2^i} \frac{1}{2^{ki-1}}\\\\
+&= 2\sum_{i = 1}^{\infty}\frac{1}{2^{(k+1)i}}\\\\
+&= 2[\frac{1/2^{k+1}}{1 - 1/2^{k+1}}]\\\\
+&= \frac{2}{2^{k+1}-1}
+\end{align*}
+
+

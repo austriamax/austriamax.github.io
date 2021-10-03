@@ -3,5 +3,26 @@ title: "Tarea 7. Pregunta 11.6."
 subtitle: Construct an example to show that $\mathbb{E}\{XY\} = \mathbb{E}\{X\}\mathbb{E}\{Y\}$ does not imply in general that $X$ and $Y$ are independent r.v.s (we assume $X$, $Y$ and $XY$ are all in $\mathscr{L}_1$).
 ---
 
+Contraejemplo:
 
+Sea $X \sim Unif(-\pi, \pi)$.
 
+Sea $Y = cos(x)$.
+
+Claramente $Y$ no es independiente de $X$.
+
+Así
+
+\[\mathbb{E}(X) = \int_{-\pi}^{\pi} x(\frac{1}{2\pi})dx = \frac{1}{2\pi}\int_{-\pi}^{\pi} xdx = 0.\]
+
+\[\mathbb{E}(Y) = \int_{-\pi}^{\pi} \cos(x) (\frac{1}{2\pi})dx  = \frac{1}{2\pi}\int_{-\pi}^{\pi} \cos(x) dx = \frac{1}{2\pi}[\sin(x)]_{-\pi}^{\pi}  = 0.\]
+
+\begin{align*}
+\mathbb{E}(XY) &= \int_{-\pi}^{\pi} x\cos(x) (\frac{1}{2\pi})dx\\\\
+&=  (\frac{1}{2\pi})\int_{-\pi}^{\pi} x\cos(x)dx\\\\
+&=  (\frac{1}{2\pi})[\int_{-\pi}^{0} x\cos(x)dx + \int_{0}^{\pi} x\cos(x)dx]\\\\
+&=  (\frac{1}{2\pi})[-\int_{0}^{\pi} x\cos(x)dx + \int_{0}^{\pi} x\cos(x)dx^] \quad \mbox{(cos(x) es una función par)}\\\\
+&= 0
+\end{align*}
+
+Por lo tanto: $\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)$ pero $X \not\perp Y$.

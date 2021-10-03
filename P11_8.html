@@ -271,6 +271,29 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Solución:</p>
+<p>Encontremos la distribución de <span class="math inline">\(X\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+F_X(x) &amp;= \sum_{i = 0}^x f(i)\\\\
+&amp;= \sum_{i = 0}^x \lambda(1-\lambda)^i\\\\
+&amp;= \lambda \sum_{i = 0}^x (1-\lambda)^i\\\\
+&amp;= \lambda \frac{1-(1-\lambda)^{x+1}}{1-(1-\lambda)}\\\\
+&amp;= 1-(1-\lambda)^{x+1}.
+\end{align*}\]</span></p>
+<p>Ahora calcularemos la distribución de <span class="math inline">\(Z\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(Z \leq z) &amp;= \mathbb{P}(\min\{X,Y\} \leq z)\\\\
+&amp;= 1 - \mathbb{P}(\min\{X,Y\} &gt; z)\\\\
+&amp;= 1 - \mathbb{P}(X &gt; z,Y &gt; z)\\\\
+&amp;= 1 - \mathbb{P}(X &gt; z)\mathbb{P}(Y &gt; z) &amp;&amp; \mbox{(Independencia)}\\\\
+&amp;= 1 - [1-F_X(z)][1-F_Y(z)]\\\\
+&amp;= 1 - \{1 - [1-(1-\lambda)^{z+1}]\}\{1 - [1-(1-\mu)^{z+1}]\}\\\\
+&amp;= 1 - (1 - \lambda)^{z+1}(1 - \mu)^{z+1}\\\\
+&amp;= 1 - [(1 - \lambda)(1 - \mu)]^{z+1}\\\\
+&amp;= 1 - [1 - (\mu - \lambda \mu +  \lambda)]^{z+1}\\\\
+\end{align*}\]</span></p>
+<p>Por lo tanto:</p>
+<p><span class="math display">\[\therefore Z \sim Geo(\mu - \lambda \mu +  \lambda).\]</span></p>
 
 
 

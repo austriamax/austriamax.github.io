@@ -265,7 +265,21 @@ $(document).ready(function () {
 </div>
 
 
-
+<p>Contraejemplo:</p>
+<p>Sea <span class="math inline">\(X \sim Unif(-\pi, \pi)\)</span>.</p>
+<p>Sea <span class="math inline">\(Y = cos(x)\)</span>.</p>
+<p>Claramente <span class="math inline">\(Y\)</span> no es independiente de <span class="math inline">\(X\)</span>.</p>
+<p>Así</p>
+<p><span class="math display">\[\mathbb{E}(X) = \int_{-\pi}^{\pi} x(\frac{1}{2\pi})dx = \frac{1}{2\pi}\int_{-\pi}^{\pi} xdx = 0.\]</span></p>
+<p><span class="math display">\[\mathbb{E}(Y) = \int_{-\pi}^{\pi} \cos(x) (\frac{1}{2\pi})dx  = \frac{1}{2\pi}\int_{-\pi}^{\pi} \cos(x) dx = \frac{1}{2\pi}[\sin(x)]_{-\pi}^{\pi}  = 0.\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}(XY) &amp;= \int_{-\pi}^{\pi} x\cos(x) (\frac{1}{2\pi})dx\\\\
+&amp;=  (\frac{1}{2\pi})\int_{-\pi}^{\pi} x\cos(x)dx\\\\
+&amp;=  (\frac{1}{2\pi})[\int_{-\pi}^{0} x\cos(x)dx + \int_{0}^{\pi} x\cos(x)dx]\\\\
+&amp;=  (\frac{1}{2\pi})[-\int_{0}^{\pi} x\cos(x)dx + \int_{0}^{\pi} x\cos(x)dx^] \quad \mbox{(cos(x) es una función par)}\\\\
+&amp;= 0
+\end{align*}\]</span></p>
+<p>Por lo tanto: <span class="math inline">\(\mathbb{E}(XY) = \mathbb{E}(X)\mathbb{E}(Y)\)</span> pero <span class="math inline">\(X \not\perp Y\)</span>.</p>
 
 
 

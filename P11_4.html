@@ -269,6 +269,29 @@ $(document).ready(function () {
 <li><p><span class="math inline">\(A\)</span> es independiente de <span class="math inline">\(B\)</span>.</p></li>
 <li><p><span class="math inline">\(A^c\)</span> es independiente de <span class="math inline">\(B^c\)</span>.</p></li>
 </ol>
+<p>Demostración:</p>
+<p><span class="math inline">\(\Rightarrow\)</span>) PD. (i) <span class="math inline">\(\Rightarrow\)</span> (ii)</p>
+<p>Sean <span class="math inline">\(A,B \in \mathscr{A}\)</span> tales que <span class="math inline">\(A\)</span> es independiente de <span class="math inline">\(B\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(A^c \cap B^c) &amp;= \mathbb{P}[(A \cup B)^c]\\\\
+&amp;= 1 - \mathbb{P}(A \cup B)\\\\
+&amp;= 1 - [\mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)]\\\\
+&amp;= 1 - \mathbb{P}(A) - \mathbb{P}(B) + \mathbb{P}(A \cap B)\\\\
+&amp;= 1 - \mathbb{P}(A) - \mathbb{P}(B) + \mathbb{P}(A)\mathbb{P}(B) &amp;&amp; \mbox{(Independencia)}\\\\
+&amp;= (1 - \mathbb{P}(A)) - (1 - \mathbb{P}(A))\mathbb{P}(B)\\\\
+&amp;= (1 - \mathbb{P}(A))(1 - \mathbb{P}(B))\\\\
+&amp;= \mathbb{P}(A^c)\mathbb{P}(B^c)
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore A^c \mbox{ es independiente de } B^c\]</span></p>
+<p><span class="math inline">\(\Leftarrow\)</span>) PD. (ii) <span class="math inline">\(\Rightarrow\)</span> (i).</p>
+<p>Sean <span class="math inline">\(A,B \in \mathscr{A}\)</span> tales que <span class="math inline">\(A^c\)</span> es independiente de <span class="math inline">\(B^c\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(A \cap B) &amp;= \mathbb{P}[(A^c)^c \cap (B^c)^c]\\\\
+&amp;= \mathbb{P}[(A^c)^c]\mathbb{P}[(B^c)^c] &amp;&amp; \mbox{(Inciso anterior)}\\\\
+&amp;= \mathbb{P}(A)\mathbb{P}(B)\\\\
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore A \mbox{ es independiente de } B\]</span></p>
+<p>Por lo tanto <span class="math display">\[(i) \Leftrightarrow  (ii).\]</span></p>
 
 
 

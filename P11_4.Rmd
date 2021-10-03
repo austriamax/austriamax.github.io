@@ -8,3 +8,39 @@ subtitle: Sea $(\Omega,\mathscr{A},\mathbb{P})$ un espacio de probabilidad. Prue
 
 (ii) $A^c$ es independiente de $B^c$.
 
+
+Demostración:
+
+
+$\Rightarrow$) PD. (i) $\Rightarrow$ (ii)
+
+Sean $A,B \in \mathscr{A}$ tales que $A$ es independiente de $B$.
+
+\begin{align*}
+\mathbb{P}(A^c \cap B^c) &= \mathbb{P}[(A \cup B)^c]\\\\
+&= 1 - \mathbb{P}(A \cup B)\\\\
+&= 1 - [\mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)]\\\\
+&= 1 - \mathbb{P}(A) - \mathbb{P}(B) + \mathbb{P}(A \cap B)\\\\
+&= 1 - \mathbb{P}(A) - \mathbb{P}(B) + \mathbb{P}(A)\mathbb{P}(B) && \mbox{(Independencia)}\\\\
+&= (1 - \mathbb{P}(A)) - (1 - \mathbb{P}(A))\mathbb{P}(B)\\\\
+&= (1 - \mathbb{P}(A))(1 - \mathbb{P}(B))\\\\
+&= \mathbb{P}(A^c)\mathbb{P}(B^c)
+\end{align*}
+
+\[\therefore A^c \mbox{ es independiente de } B^c\]
+
+
+$\Leftarrow$) PD. (ii) $\Rightarrow$ (i).
+
+Sean $A,B \in \mathscr{A}$ tales que $A^c$ es independiente de $B^c$.
+
+\begin{align*}
+\mathbb{P}(A \cap B) &= \mathbb{P}[(A^c)^c \cap (B^c)^c]\\\\
+&= \mathbb{P}[(A^c)^c]\mathbb{P}[(B^c)^c] && \mbox{(Inciso anterior)}\\\\
+&= \mathbb{P}(A)\mathbb{P}(B)\\\\
+\end{align*}
+
+\[\therefore A \mbox{ es independiente de } B\]
+
+
+Por lo tanto \[(i) \Leftrightarrow  (ii).\]

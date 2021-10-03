@@ -264,9 +264,75 @@ $(document).ready(function () {
 </div>
 
 
-<p>#1) Pruebe que si <span class="math inline">\((X_i)_{i = 1}^2\)</span> son independientes con distribución <span class="math inline">\(N(0, \sigma_i)\)</span> para <span class="math inline">\(i = 1, 2\)</span>, entonces, <span class="math inline">\(X_1 + X_2\)</span> también es normal.</p>
-<p>#2) ¿Es cierto un resultado análogo si cada <span class="math inline">\(X_i\)</span> tiene distribución <span class="math inline">\(Poisson(\lambda_i)\)</span> para <span class="math inline">\(i = 1,2\)</span>.</p>
-<p>#3) ¿Es cierto algo similar para la suma de <span class="math inline">\(N\)</span> variables independientes (Normales o Poisson)?</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>1) Pruebe que si <span class="math inline">\((X_i)_{i = 1}^2\)</span> son independientes con distribución <span class="math inline">\(N(0, \sigma_i^2)\)</span> para <span class="math inline">\(i = 1, 2\)</span>, entonces, <span class="math inline">\(X_1 + X_2\)</span> también es normal.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Solución:</td>
+</tr>
+<tr class="even">
+<td>Sabemos que la función caracteristica de una v.a. <span class="math inline">\(Z \sim N(\mu, \sigma^2)\)</span> es <span class="math display">\[M_Z(t) = e^{i\mu t - \frac{\sigma^2t^2}{2}}.\]</span></td>
+</tr>
+<tr class="odd">
+<td>Así</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\begin{align*}
+C_{X + Y}(t) &amp;= C_X(t)* C_Y(t) \quad \mbox{(Independencia)}\\\\
+&amp;= (e^{i(0)t - \frac{\sigma_1^2t^2}{2}})* (e^{i(0)t - \frac{\sigma_2^2t^2}{2}}) \quad \mbox{(FC de normales)}\\\\
+&amp;= e^{-\frac{\sigma_1^2t^2}{2} - \frac{\sigma_2^2t^2}{2}}\\\\
+&amp;= e^{-\frac{(\sigma_1^2 + \sigma_2^2)t^2}{2}}
+\end{align*}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\therefore \quad X + Y \sim N(0, \sigma_1^2 + \sigma_2^2).\]</span></td>
+</tr>
+</tbody>
+</table>
+<div id="es-cierto-un-resultado-análogo-si-cada-x_i-tiene-distribución-poissonlambda_i-para-i-12." class="section level2">
+<h2>2) ¿Es cierto un resultado análogo si cada <span class="math inline">\(X_i\)</span> tiene distribución <span class="math inline">\(Poisson(\lambda_i)\)</span> para <span class="math inline">\(i = 1,2\)</span>.</h2>
+<p>Solución:</p>
+<p>Sabemos que la función caracteristica de una v.a. <span class="math inline">\(Z \sim Poisson(\lambda)\)</span> es <span class="math display">\[C_Z(t) = e^{\lambda(e^t - 1)}.\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[\begin{align*}
+C_{X + Y}(t) &amp;= C_X(t)* C_Y(t) \quad \mbox{(Independencia)}\\\\
+&amp;= (e^{\lambda_1(e^t - 1)})* (e^{\lambda_2(e^t - 1)}) \quad \mbox{(FC de Poisson)}\\\\
+&amp;= e^{\lambda_1(e^t - 1) + \lambda_2(e^t - 1)}\\\\
+&amp;= e^{(\lambda_1 + \lambda_2)(e^t - 1)}\\\\
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \quad X + Y \sim Poisson(\lambda_1 + \lambda_2).\]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>3) ¿Es cierto algo similar para la suma de <span class="math inline">\(N\)</span> variables independientes (Normales o Poisson)?</td>
+</tr>
+</tbody>
+</table>
+<p>Es cierto.</p>
+<p>Es inmedito de demostrar que la función característica de la suma de variables aleatorias independientes es el producto de sus funciones características.</p>
+<p>PD. <span class="math display">\[C_{\sum_{i = 1}^n X_i} = \prod_{i = 1}^n C_{X_i}\]</span></p>
+<p>Base: PD. <span class="math inline">\(C_{X_1 + X_2} = C_{X_1}*C_{X_2}\)</span>.</p>
+<p><span class="math display">\[C_{X_1 + X_2} \overset{Def.}{=} \mathbb{E}[e^{it(X+Y)}] = \mathbb{E}[e^{itX}e^{itY}]  \overset{Ind.}{=} \mathbb{E}[e^{itX}]\mathbb{E}[e^{itY}] \overset{Def.}{=} C_{X_1}*C_{X_2}\]</span></p>
+<p>Paso Inductivo:</p>
+<p>Supongase que <span class="math inline">\(C_{\sum_{i = 1}^k X_i} = \prod_{i = 1}^k C_{X_i}\)</span> para alguna <span class="math inline">\(k \in \mathbb{N}\)</span>.</p>
+<p>PD. <span class="math inline">\(C_{\sum_{i = 1}^{k+1} X_i} = \prod_{i = 1}^{k+1} C_{X_i}\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+C_{\sum_{i = 1}^{k+1} X_i}(t) &amp;= C_{(\sum_{i = 1}^{k} X_i) + X_{k+1}}\\\\
+&amp;= C_{(\sum_{i = 1}^{k} X_i)}* C_{X_{k+1}} &amp;&amp; \mbox{(Caso base)}\\\\
+&amp;= \prod_{i = 1}^{k} C_{X_i}* C_{X_{k+1}} &amp;&amp; \mbox{(Hipótesis de inducción)}\\\\
+&amp;= \prod_{i = 1}^{k+1} C_{X_i}
+\end{align*}\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\therefore \quad \mbox{Si } Z_i \sim N(0, \sigma_i^2), \quad i = 1, \dots, n.\implies \sum_{i=1}^n Z_i \sim N(0, \sum_{i = 1}^n \sigma_i^2)\]</span></p>
+<p><span class="math display">\[\therefore \quad \mbox{Si } Z_i \sim Poisson(\lambda_i), \quad i = 1, \dots, n.\implies \sum_{i=1}^n Z_i \sim Poisson(\sum_{i=1}^n\lambda_i)\]</span></p>
+</div>
 
 
 

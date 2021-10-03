@@ -265,12 +265,63 @@ $(document).ready(function () {
 </div>
 
 
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\((0,2], [0, \frac{1}{2}], (-\infty, 0], (3,10]\)</span>.</p></li>
-<li><p><span class="math inline">\(g_1(x) = 2x\)</span>.</p></li>
-<li><p><span class="math inline">\(g_2(x) = arc tan(x)\)</span>.</p></li>
-<li><p><span class="math inline">\(g_3(x) = 1_{[0, \infty)}(x)\)</span>.</p></li>
-<li><p><span class="math inline">\(g_4(x) = x1_{[1,\infty)}(x)\)</span>.</p></li>
+<ol style="list-style-type: upper-alpha">
+<li><p><span class="math inline">\((0,2]\)</span></p></li>
+<li><p><span class="math inline">\([0, \frac{1}{2}]\)</span></p></li>
+<li><p><span class="math inline">\((-\infty, 0]\)</span></p></li>
+<li><p><span class="math inline">\((3,10]\)</span>.</p></li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">1. <span class="math inline">\(g_1(x) = 2x\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: upper-alpha">
+<li><p><span class="math display">\[\lambda_{g_1}((0,2]) = 2(2) - 2(0) = 4.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_1}([0, \frac{1}{2}]) = 2(\frac{1}{2}) - 2(0) = 1.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_1}((-\infty, 0]) = 2(0) - \lim_{x \to -\infty} 2x = \infty.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_1}((3,10]) = 2(10) - 2(3) = 4.\]</span></p></li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">2. <span class="math inline">\(g_2(x) = \arctan{(x)}\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: upper-alpha">
+<li><p><span class="math display">\[\lambda_{g_2}((0,2]) = \arctan{(2)}- \arctan{(0)} = \arctan{(2)}.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_2}([0, \frac{1}{2}]) = \arctan{(\frac{1}{2})} - \arctan{(0)} = \arctan{(\frac{1}{2})}.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_2}((-\infty, 0]) = \arctan{(0)} - \lim_{x \to -\infty} \arctan{(x)} = 0 - (-\frac{\pi}{2}) = \frac{\pi}{2}.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_2}((3,10]) = \arctan{(10)} - \arctan{(3)}.\]</span></p></li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">3. <span class="math inline">\(g_3(x) = 1_{[0, \infty)}(x)\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: upper-alpha">
+<li><p><span class="math display">\[\lambda_{g_3}((0,2]) = 1_{[0, \infty)}(2) - 1_{[0, \infty)}(0) = 1 - 1 = 0.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_3}([0, \frac{1}{2}]) = 1_{[0, \infty)}(\frac{1}{2}) - 1_{[0, \infty)}(0)  = 1 - 1 = 0.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_3}((-\infty, 0]) = 1_{[0, \infty)}(0) - \lim_{x \to -\infty} 1_{[0, \infty)}(x) = 1 - 0 = 1.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_3}((3,10]) = 1_{[0, \infty)}(10) - 1_{[0, \infty)}(3) = 0.\]</span></p></li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">4. <span class="math inline">\(g_4(x) = x1_{[1,\infty)}(x)\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: upper-alpha">
+<li><p><span class="math display">\[\lambda_{g_4}((0,2]) = 2*1_{[1,\infty)}(2) - 0*1_{[1,\infty)}(0) = 2 - 0 = 2.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_4}([0, \frac{1}{2}]) = \frac{1}{2}*1_{[1,\infty)}(\frac{1}{2}) - 0*1_{[1,\infty)}(0)  = 0 - 0 = 0.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_4}((-\infty, 0]) = 0*1_{[1,\infty)}(0) - \lim_{x \to -\infty} x1_{[1,\infty)}(x) = 0 - 0 = 0.\]</span></p></li>
+<li><p><span class="math display">\[\lambda_{g_4}((3,10]) = 10*1_{[1,\infty)}(10) - 3*1_{[1,\infty)}(3) = 10-3 = 7.\]</span></p></li>
 </ol>
 
 

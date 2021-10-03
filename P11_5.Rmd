@@ -2,8 +2,42 @@
 title: "Tarea 7. Pregunta 11.5."
 ---
 
-#1) Pruebe que si una v.a. $X$ definida en $(\Omega,\mathscr{A},\mathbb{P})$ y cumple que $\mathbb{E}(|X|^n) < \infty$; se cumple que $\mathbb{E}(|X|^m) < \infty$.
+
+--------------------------------------------------------------------------------
+1) Pruebe que si una v.a. $X$ definida en $(\Omega,\mathscr{A},\mathbb{P})$ y cumple que $\mathbb{E}(|X|^n) < \infty$ entonces para $m \leq n$ con $m \in \mathbb{N}$ se cumple que $\mathbb{E}(|X|^m) < \infty$.
+--------------------------------------------------------------------------------
+Demostración:
+
+Sea $X$ v.a. tal que $\mathbb{E}(|X|^n) < \infty$
+
+Por la desigualdad de Hölder's, sabemos que:
+
+\[\mathbb{E}(|YZ|) \leq \mathbb{E}(|Y|^p)^{\frac{1}{p}} \mathbb{E}(|Z|^q)^{\frac{1}{q}} \]
+
+Con $\frac{1}{p} + \frac{1}{q} = 1$.
+
+Propondremos:
+
+  - $Y =|X|^m$.
+  - $Z = 1_{\Omega}$.
+  - $p = \frac{n}{m}$.
+  - $q = \frac{p}{p-1}$.
+
+Por lo que la desigualdad toma la forma:
+
+\[\mathbb{E}(|X|^m) \leq  \mathbb{E}(|X|^n)^{\frac{m}{n}}\]
+
+Por lo tanto:
+
+\[\mathbb{E}(|X|^n) < \infty \Rightarrow \mathbb{E}(|X|^m) < \infty \quad \mbox{con } m \leq n, n,m \in \mathbb{N}.\]
 
 
-#2) Y si $\mathbb{E}(|X|) = 0$ entonces $X \overset{c.s}{=} 0$.
+--------------------------------------------------------------------------------
+2) Y si $\mathbb{E}(|X|) = 0$ entonces $X \overset{c.s}{=} 0$.
+--------------------------------------------------------------------------------
+
+Si proponemos $Z = |X|$, entonces $Z \geq 0$ y $\mathbb{E}(Z) = 0$, así que cumplimos las hipótesis del **[ejercicio 7.2.](https://austriamax.github.io/austriamax.proba1.github.io/P7_2.html)**, por o que  $Z \overset{c.s}{=} 0$.
+
+Lo que implica  $X \overset{c.s}{=} 0$.
+
 

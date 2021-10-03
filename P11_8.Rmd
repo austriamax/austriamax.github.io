@@ -2,7 +2,38 @@
 title: "Tarea 7. Pregunta 11.8."
 ---
 
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Let $X$, $Y$ be independent geometric random variables with parameters $\lambda$ and $\mu$. Let $Z = \min(X,Y)$. Show $Z$ is geometric and find its parameter. 
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Solución:
+
+Encontremos la distribución  de $X$.
+
+\begin{align*}
+F_X(x) &= \sum_{i = 0}^x f(i)\\\\
+&= \sum_{i = 0}^x \lambda(1-\lambda)^i\\\\
+&= \lambda \sum_{i = 0}^x (1-\lambda)^i\\\\
+&= \lambda \frac{1-(1-\lambda)^{x+1}}{1-(1-\lambda)}\\\\
+&= 1-(1-\lambda)^{x+1}.
+\end{align*}
+
+Ahora calcularemos la distribución de $Z$.
+
+
+\begin{align*}
+\mathbb{P}(Z \leq z) &= \mathbb{P}(\min\{X,Y\} \leq z)\\\\
+&= 1 - \mathbb{P}(\min\{X,Y\} > z)\\\\
+&= 1 - \mathbb{P}(X > z,Y > z)\\\\
+&= 1 - \mathbb{P}(X > z)\mathbb{P}(Y > z) && \mbox{(Independencia)}\\\\
+&= 1 - [1-F_X(z)][1-F_Y(z)]\\\\
+&= 1 - \{1 - [1-(1-\lambda)^{z+1}]\}\{1 - [1-(1-\mu)^{z+1}]\}\\\\
+&= 1 - (1 - \lambda)^{z+1}(1 - \mu)^{z+1}\\\\
+&= 1 - [(1 - \lambda)(1 - \mu)]^{z+1}\\\\
+&= 1 - [1 - (\mu - \lambda \mu +  \lambda)]^{z+1}\\\\
+\end{align*}
+
+
+Por lo tanto:
+
+\[\therefore Z \sim Geo(\mu - \lambda \mu +  \lambda).\]
 
