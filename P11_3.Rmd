@@ -3,15 +3,91 @@ title: "Tarea 7. Pregunta 11.3"
 subtitle: Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad. Si $(X_n)_n$ es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro $p \in (0,1)$ considere para cada $\omega \in \Omega$ la función definida por \[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\] con la convención de que $\inf\{\emptyset\} = \infty$.
 ---
 
+--------------------------------------------------------------------------------
+1) Muestre que $T$ es una v.a. que toma valores en $\mathbb{N} \cup \{\infty\}$.
 
-#1) Muestre que $T$ es una v.a. que toma valores en $ \mathbb{N} \cup \{\infty\}$.
+PD. $T$ es v.a.
+
+Sea $c \in \mathbb{R} \cup \{\infty\}$.
+
+Caso A: $c \in \mathbb{R}$.
+
+\[T^{-1}([c,\infty)) = \{\omega \in \Omega | T(w) \geq c \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq c\} \]
+
+Como cada $nX_n$ es medible entonces $\{\omega \in \Omega | nX_n(\omega) \geq c\} \in \mathscr{A}$. Luego
+\[T^{-1}([c,\infty)) \in \mathscr{A}.\]
+
+\[\therefore  \quad T \mbox{ es v.a.}\]
+
+Caso B: $c = \infty$.
+
+\[T^{-1}(\{\infty\}) = \{\omega \in \Omega | T(w) \geq \infty \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq \infty\} = \emptyset \]
+Así
+\[T^{-1}(\{\infty\})  \in \mathscr{A}.\]
+
+Si alguna v.a. $X_n(\omega) = 1$, entonces por el principio del buen orden $T(\omega) \in \mathbb{N}$. En otro caso $T(\omega) = \infty$.
+
+En ambos casos $T(\omega) \in \mathbb{N} \cup \{\infty\}$.
+
+--------------------------------------------------------------------------------
+
+2) Calcule su ley.
 
 
-#2) Calcule su ley.
+\begin{align*}
+\mathbb{P}(T\leq n) &= 1 - \mathbb{P}(T > n)\\\\
+&= 1 - \mathbb{P}(X_1 = 0, X_2 = 0, \dots, X_n = 0)\\\\
+&= 1 - \mathbb{P}(X_1 = 0)\mathbb{P}(X_2 = 0) \dots \mathbb{P}(X_n = 0) && \mbox{(Independencia)}\\\\
+&= 1- \mathbb{P}(X = 0)^n && \mbox{(Identica distribución)}\\\\
+&= 1 - (1-p)^n.
+\end{align*}
+
+Por lo tanto
+\[F_T(n) = 1 - (1-p)^n\]
+
+Entonces podemos decir que $T \sim Geo(p)$ con soporte $1,2,\dots$.
+
+\[\therefore P(T = n) = p(1-p)^{n-1}\]
 
 
-#3) Calcule su esperanza.
+--------------------------------------------------------------------------------
+
+3) Calcule su esperanza.
 
 
-#4) Encuentre la ley $S_k = \sum_{i = 1}^k X_i$ para $k \geq 2$.
+Como ya dijimos que $T \sim Geo(p)$ con soporte $1,2,\dots$
+Es bien conocido que:
 
+\[\mathbb{E}(T) = \frac{1}{p}\]
+
+Veamos
+
+\begin{align*}
+\sum_{i = 1}^{\infty} n\mathbb{P}(T = n) &= \sum_{i = 1}^{\infty} np(1-p)^{n-1}\\\\
+&= p\sum_{n = 1}^{\infty} [(n-1)+1](1-p)^{n-1}\\\\
+&= p\sum_{n = 1}^{\infty} (n-1)(1-p)^{n-1} + p\sum_{n = 1}^{\infty}(1-p)^{n-1} \\\\
+&= p\sum_{m = 0}^{\infty} m(1-p)^m + p\sum_{m = 0}^{\infty}(1-p)^{m} \\\\
+&= p\frac{1-p}{[1-(1-p)]^2} + p\sum_{m = 0}^{\infty}(1-p)^{m} && \mbox{(Serie telescópica)}\\\\
+&= p\frac{1-p}{p^2} + p\frac{1}{1-(1-p)} && \mbox{(Serie geométrica)}\\\\
+&= \frac{1-p}{p} + \frac{p}{p}\\\\
+&= \frac{1}{p}.
+\end{align*}
+
+
+--------------------------------------------------------------------------------
+
+4) Encuentre la ley $S_k = \sum_{i = 1}^k X_i$ para $k \geq 2$.
+
+
+\begin{align*}
+C_{S_k}(t) &= \prod_{i=1}^k  C_{X_k}(t) && \mbox{(Independiencia)}\\\\
+&= C_{X}(t)^k && \mbox{(Idéntica distribución)}\\\\
+&= [\mathbb{E}(exp(itX))]^k\\\\
+&= [(1-p)e^{it0}+pe^{it1}]^k\\\\
+&= [1-p+pe^{it}]^k\\\\
+\end{align*}
+
+Y como vimos en clase. Si $B \sim Binom(n,p)$ entonces su función característica es de la forma $C_B(t) = [1-p+pe^{it}]^n$.
+
+Por lo tanto:
+\[S_k \sim Bin(k,p).\]

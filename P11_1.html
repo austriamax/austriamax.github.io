@@ -265,19 +265,126 @@ $(document).ready(function () {
 
 
 <table>
+<colgroup>
+<col width="100%" />
+</colgroup>
 <tbody>
 <tr class="odd">
-<td>1) Pruebe que <span class="math inline">\(\mathscr{B}(\mathbb{R})\times\mathscr{B}(\mathbb{R}) = \mathscr{B}(\mathbb{R}^2)\)</span>,</td>
+<td>1) Pruebe que <span class="math inline">\(\mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R}) = \mathscr{B}(\mathbb{R}^2)\)</span>,</td>
+</tr>
+<tr class="even">
+<td>Demostración:</td>
+</tr>
+<tr class="odd">
+<td>Demostraremos la igualdad mostrando que las contenciones.</td>
+</tr>
+<tr class="even">
+<td>1.1 PD. <span class="math inline">\(\mathscr{B}(\mathbb{R}^2) \subseteq \mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R})\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>Sean <span class="math inline">\(a,b,c,d \in \mathbb{R}\)</span> tales que <span class="math inline">\((a,b) \times (c,d)\)</span> formen algun rectángulo (arbitrario) en <span class="math inline">\(\mathbb{R}^2\)</span>.</td>
+</tr>
+<tr class="even">
+<td>Así</td>
+</tr>
+<tr class="odd">
+<td>(a) <span class="math inline">\((a,b) \times (c,d) \in \mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R})\)</span> pues <span class="math inline">\((a,b), (c,d) \in \mathscr{B}(\mathbb{R})\)</span>.</td>
+</tr>
+<tr class="even">
+<td>(b)<span class="math inline">\((a,b) \times (c,d) \in \mathscr{B}(\mathbb{R}^2)\)</span> pues <span class="math inline">\(\mathscr{B}(\mathbb{R}^2)\)</span> es generada por los rectangulos de <span class="math inline">\(\mathbb{R}^2\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>Pero <span class="math inline">\(\mathscr{B}(\mathbb{R}^2)\)</span> es la mínima que contiene a todos los rectangulos, por lo que:</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\mathscr{B}(\mathbb{R}^2) \subseteq \mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R})\]</span></td>
+</tr>
+<tr class="odd">
+<td>1.2 PD. <span class="math inline">\(\mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R}) \subseteq \mathscr{B}(\mathbb{R}^2)\)</span>.</td>
+</tr>
+<tr class="even">
+<td>Sea <span class="math display">\[S_{I} = \{A \subseteq \mathbb{R} | A \times \mathbb{R} \in \mathscr{B}(\mathbb{R}^2)\}.\]</span> (La <span class="math inline">\(I\)</span> es porque varia el termino de la izquierda).</td>
+</tr>
+<tr class="odd">
+<td>Mostraremos que es una <span class="math inline">\(\sigma\)</span>-álgebra.</td>
+</tr>
+<tr class="even">
+<td>(a) <span class="math inline">\(\mathbb{R} \in S\)</span> ya que <span class="math inline">\(\mathbb{R} \times \mathbb{R} \in \mathscr{B}(\mathbb{R}^2)\}\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>(b) Si <span class="math inline">\(A \in S\)</span> entonces <span class="math inline">\(A^c \in S\)</span>.</td>
+</tr>
+<tr class="even">
+<td>Sea <span class="math inline">\(A \in S\)</span>. <span class="math display">\[A^c \times \mathbb{R} = (A \times \mathbb{R})^c \in  \mathscr{B}(\mathbb{R}^2) \quad \mbox{(pues } \mathscr{B}(\mathbb{R}^2) \mbox{ es } \sigma-\mbox{álgebra)}\]</span> <span class="math display">\[\therefore A^c \in S\]</span></td>
+</tr>
+<tr class="odd">
+<td>(c) Sean <span class="math inline">\((A_n)_{n \in \mathbb{N}} \in S\)</span> entonces <span class="math inline">\(\cup_{n \in \mathbb{N}} A_n \in S\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[(\cup_{n \in \mathbb{N}} A_n) \times \mathbb{R} = \cup_{n \in \mathbb{N}} (A_n \times \mathbb{R}) \in  \mathscr{B}(\mathbb{R}^2) \quad \mbox{(pues } \mathscr{B}(\mathbb{R}^2) \mbox{ es } \sigma-\mbox{álgebra)}\]</span></td>
+</tr>
+<tr class="odd">
+<td>De (a), (b) y (c) concluimos que <span class="math inline">\(S\)</span> es <span class="math inline">\(\sigma\)</span>-álgebra.</td>
+</tr>
+<tr class="even">
+<td>Es fácil ver que los intervalos <span class="math inline">\((a,b) \in S\)</span>. Por lo que <span class="math inline">\(\mathscr{B}(\mathbb{R}) \subseteq S\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>Si definimos <span class="math inline">\(S_D = \{B \in \mathscr{B}(\mathbb{R})| \mathbb{R} \times B \in \mathscr{B}(\mathbb{R}^2)\}\)</span> podemos mostrar que es una <span class="math inline">\(\sigma\)</span>-álgebra.</td>
+</tr>
+<tr class="even">
+<td>Luego, para cualquier par <span class="math inline">\(A,B \in \mathscr{B}(\mathbb{R})\)</span> se cumple que</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[A\times B = (A \times \mathbb{R}) \cap (\mathbb{R} \times B) \in  \mathscr{B}(\mathbb{R}^2)\]</span></td>
+</tr>
+<tr class="even">
+<td>Por lo que</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R}) \subseteq \mathscr{B}(\mathbb{R}^2)\]</span></td>
+</tr>
+<tr class="even">
+<td>De ambos casos se concluye que</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mathscr{B}(\mathbb{R})\otimes\mathscr{B}(\mathbb{R}) = \mathscr{B}(\mathbb{R}^2)\]</span></td>
 </tr>
 </tbody>
 </table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">2) ¿Se cumple para <span class="math inline">\(n,m \in\mathbb{N}\)</span>?</td>
-</tr>
-</tbody>
-</table>
+<ol start="2" style="list-style-type: decimal">
+<li>¿Se cumple para <span class="math inline">\(n,m \in\mathbb{N}\)</span>?</li>
+</ol>
+<p>Sí, si se cumple. (Es análogo)</p>
+<p>Sean <span class="math inline">\(a_i,b_i \in \mathbb{R}\)</span> para <span class="math inline">\(i = 1, \dots, m+n\)</span> tales que <span class="math inline">\((a_1,b_1) \times (a_2,b_2) \times \dots \times (a_{n+m},b_{n+m})\)</span> formen algún hiperectangulo (arbitrario) en <span class="math inline">\(\mathbb{R}^{n+m}\)</span>.</p>
+<p>Así</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\prod_{i=1}^{n+m} (a_i,b_i) \in \mathscr{B}(\mathbb{R}^n)\otimes\mathscr{B}(\mathbb{R}^m)\)</span> pues <span class="math inline">\(\prod_{i=1}^{n}(a_i,b_i) \in \mathscr{B}(\mathbb{R}^n)\)</span> y <span class="math inline">\(\prod_{i=n+1}^{n+m} (a_i,b_i) \in \mathscr{B}(\mathbb{R}^{m+n})\)</span>.</li>
+</ol>
+<p>(b)<span class="math inline">\(\prod_{i=1}^{n+m} (a_i,b_i) \in \mathscr{B}(\mathbb{R}^{n+m})\)</span> pues <span class="math inline">\(\mathscr{B}(\mathbb{R}^{n+m})\)</span> es generada por los rectangulos de <span class="math inline">\(\mathbb{R}^{n+m}\)</span>.</p>
+<p>Pero <span class="math inline">\(\mathbb{R}^{n+m}\)</span> es la mínima que contiene a todos los rectangulos, por lo que:</p>
+<p><span class="math display">\[\mathscr{B}(\mathbb{R}^{n+m}) \subseteq \mathscr{B}(\mathbb{R}^{n})\otimes\mathscr{B}(\mathbb{R}^{m})\]</span></p>
+<p>1.2 PD. <span class="math inline">\(\mathscr{B}(\mathbb{R}^n)\otimes\mathscr{B}(\mathbb{R}^m) \subseteq \mathscr{B}(\mathbb{R}^{n+m})\)</span>.</p>
+<p>Sea <span class="math display">\[S_{I} = \{A \subseteq \mathbb{R}^n | A \times \mathbb{R}^m \in \mathscr{B}(\mathbb{R}^{n+m})\}.\]</span> (La <span class="math inline">\(I\)</span> es porque varia el termino de la izquierda).</p>
+<p>Mostraremos que es una <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\mathbb{R}^n \in S\)</span> ya que <span class="math inline">\(\mathbb{R}^n \times \mathbb{R}^m \in \mathscr{B}(\mathbb{R}^{n+m})\}\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A \in S\)</span> entonces <span class="math inline">\(A^c \in S\)</span>.</p></li>
+</ol>
+<p>Sea <span class="math inline">\(A \in S\)</span>. <span class="math display">\[A^c \times \mathbb{R}^m = (A \times \mathbb{R}^m)^c \in  \mathscr{B}(\mathbb{R}^{n+m}) \quad \mbox{(pues } \mathscr{B}(\mathbb{R}^{n+m}) \mbox{ es } \sigma-\mbox{álgebra)}\]</span> <span class="math display">\[\therefore A^c \in S\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Sean <span class="math inline">\((A_n)_{n \in \mathbb{N}} \in S\)</span> entonces <span class="math inline">\(\cup_{n \in \mathbb{N}} A_n \in S\)</span>.</li>
+</ol>
+<p><span class="math display">\[(\cup_{n \in \mathbb{N}} A_n) \times \mathbb{R}^m = \cup_{n \in \mathbb{N}} (A_n \times \mathbb{R}^m) \in  \mathscr{B}(\mathbb{R}^{n+m}) \quad \mbox{(pues } \mathscr{B}(\mathbb{R}^{n+m}) \mbox{ es } \sigma-\mbox{álgebra)}\]</span></p>
+<p>De (a), (b) y (c) concluimos que <span class="math inline">\(S\)</span> es <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<p>Es fácil ver que los intervalos <span class="math inline">\((a,b) \in S\)</span>. Por lo que <span class="math inline">\(\mathscr{B}(\mathbb{R}) \subseteq S\)</span>.</p>
+<p>Si definimos <span class="math inline">\(S_D = \{B \in \mathscr{B}(\mathbb{R}^m)| \mathbb{R}^n \times B \in \mathscr{B}(\mathbb{R}^{n+m})\}\)</span> podemos mostrar que es una <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<p>Luego, para cualquier <span class="math inline">\(A \in \mathscr{B}(\mathbb{R}^n)\)</span> y <span class="math inline">\(B \in \mathscr{B}(\mathbb{R}^m)\)</span> se cumple que</p>
+<p><span class="math display">\[A\times B = (A \times \mathbb{R}^m) \cap (\mathbb{R}^n \times B) \in  \mathscr{B}(\mathbb{R}^{n+m})\]</span></p>
+<p>Por lo que</p>
+<p><span class="math display">\[\mathscr{B}(\mathbb{R}^n)\otimes\mathscr{B}(\mathbb{R}^m) \subseteq \mathscr{B}(\mathbb{R}^{n+m})\]</span></p>
+<p>De ambos casos se concluye que</p>
+<p><span class="math display">\[\mathscr{B}(\mathbb{R}^n)\otimes\mathscr{B}(\mathbb{R}^m) = \mathscr{B}(\mathbb{R}^{n+m}).\]</span></p>
 
 
 

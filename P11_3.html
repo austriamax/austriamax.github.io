@@ -265,10 +265,89 @@ $(document).ready(function () {
 </div>
 
 
-<p>#1) Muestre que <span class="math inline">\(T\)</span> es una v.a. que toma valores en $  {}$.</p>
-<p>#2) Calcule su ley.</p>
-<p>#3) Calcule su esperanza.</p>
-<p>#4) Encuentre la ley <span class="math inline">\(S_k = \sum_{i = 1}^k X_i\)</span> para <span class="math inline">\(k \geq 2\)</span>.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>1) Muestre que <span class="math inline">\(T\)</span> es una v.a. que toma valores en <span class="math inline">\(\mathbb{N} \cup \{\infty\}\)</span>.</td>
+</tr>
+<tr class="even">
+<td>PD. <span class="math inline">\(T\)</span> es v.a.</td>
+</tr>
+<tr class="odd">
+<td>Sea <span class="math inline">\(c \in \mathbb{R} \cup \{\infty\}\)</span>.</td>
+</tr>
+<tr class="even">
+<td>Caso A: <span class="math inline">\(c \in \mathbb{R}\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[T^{-1}([c,\infty)) = \{\omega \in \Omega | T(w) \geq c \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq c\} \]</span></td>
+</tr>
+<tr class="even">
+<td>Como cada <span class="math inline">\(nX_n\)</span> es medible entonces <span class="math inline">\(\{\omega \in \Omega | nX_n(\omega) \geq c\} \in \mathscr{A}\)</span>. Luego <span class="math display">\[T^{-1}([c,\infty)) \in \mathscr{A}.\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\therefore  \quad T \mbox{ es v.a.}\]</span></td>
+</tr>
+<tr class="even">
+<td>Caso B: <span class="math inline">\(c = \infty\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[T^{-1}(\{\infty\}) = \{\omega \in \Omega | T(w) \geq \infty \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq \infty\} = \emptyset \]</span> Así <span class="math display">\[T^{-1}(\{\infty\})  \in \mathscr{A}.\]</span></td>
+</tr>
+<tr class="even">
+<td>Si alguna v.a. <span class="math inline">\(X_n(\omega) = 1\)</span>, entonces por el principio del buen orden <span class="math inline">\(T(\omega) \in \mathbb{N}\)</span>. En otro caso <span class="math inline">\(T(\omega) = \infty\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>En ambos casos <span class="math inline">\(T(\omega) \in \mathbb{N} \cup \{\infty\}\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>Calcule su ley.</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(T\leq n) &amp;= 1 - \mathbb{P}(T &gt; n)\\\\
+&amp;= 1 - \mathbb{P}(X_1 = 0, X_2 = 0, \dots, X_n = 0)\\\\
+&amp;= 1 - \mathbb{P}(X_1 = 0)\mathbb{P}(X_2 = 0) \dots \mathbb{P}(X_n = 0) &amp;&amp; \mbox{(Independencia)}\\\\
+&amp;= 1- \mathbb{P}(X = 0)^n &amp;&amp; \mbox{(Identica distribución)}\\\\
+&amp;= 1 - (1-p)^n.
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[F_T(n) = 1 - (1-p)^n\]</span></p>
+<p>Entonces podemos decir que <span class="math inline">\(T \sim Geo(p)\)</span> con soporte <span class="math inline">\(1,2,\dots\)</span>.</p>
+<p><span class="math display">\[\therefore P(T = n) = p(1-p)^{n-1}\]</span></p>
+<hr />
+<ol start="3" style="list-style-type: decimal">
+<li>Calcule su esperanza.</li>
+</ol>
+<p>Como ya dijimos que <span class="math inline">\(T \sim Geo(p)\)</span> con soporte <span class="math inline">\(1,2,\dots\)</span> Es bien conocido que:</p>
+<p><span class="math display">\[\mathbb{E}(T) = \frac{1}{p}\]</span></p>
+<p>Veamos</p>
+<p><span class="math display">\[\begin{align*}
+\sum_{i = 1}^{\infty} n\mathbb{P}(T = n) &amp;= \sum_{i = 1}^{\infty} np(1-p)^{n-1}\\\\
+&amp;= p\sum_{n = 1}^{\infty} [(n-1)+1](1-p)^{n-1}\\\\
+&amp;= p\sum_{n = 1}^{\infty} (n-1)(1-p)^{n-1} + p\sum_{n = 1}^{\infty}(1-p)^{n-1} \\\\
+&amp;= p\sum_{m = 0}^{\infty} m(1-p)^m + p\sum_{m = 0}^{\infty}(1-p)^{m} \\\\
+&amp;= p\frac{1-p}{[1-(1-p)]^2} + p\sum_{m = 0}^{\infty}(1-p)^{m} &amp;&amp; \mbox{(Serie telescópica)}\\\\
+&amp;= p\frac{1-p}{p^2} + p\frac{1}{1-(1-p)} &amp;&amp; \mbox{(Serie geométrica)}\\\\
+&amp;= \frac{1-p}{p} + \frac{p}{p}\\\\
+&amp;= \frac{1}{p}.
+\end{align*}\]</span></p>
+<hr />
+<ol start="4" style="list-style-type: decimal">
+<li>Encuentre la ley <span class="math inline">\(S_k = \sum_{i = 1}^k X_i\)</span> para <span class="math inline">\(k \geq 2\)</span>.</li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+C_{S_k}(t) &amp;= \prod_{i=1}^k  C_{X_k}(t) &amp;&amp; \mbox{(Independiencia)}\\\\
+&amp;= C_{X}(t)^k &amp;&amp; \mbox{(Idéntica distribución)}\\\\
+&amp;= [\mathbb{E}(exp(itX))]^k\\\\
+&amp;= [(1-p)e^{it0}+pe^{it1}]^k\\\\
+&amp;= [1-p+pe^{it}]^k\\\\
+\end{align*}\]</span></p>
+<p>Y como vimos en clase. Si <span class="math inline">\(B \sim Binom(n,p)\)</span> entonces su función característica es de la forma <span class="math inline">\(C_B(t) = [1-p+pe^{it}]^n\)</span>.</p>
+<p>Por lo tanto: <span class="math display">\[S_k \sim Bin(k,p).\]</span></p>
 
 
 
