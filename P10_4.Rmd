@@ -1,7 +1,171 @@
 ---
 title: "Tarea 5. Pregunta 10.4."
-subtitle: Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abierto $U$ y un cerrado $C$ de $\mathbb{R}$, tales que $C \subset A \subset U$ y $\lambda(U-C) \leq \epsilon$.
 ---
 
+1) Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abierto $U$ y un cerrado $C$ de $\mathbb{R}$, tales que $C \subset A \subset U$ y $\lambda(U-C) \leq \epsilon$.
 
-Si $A \in \mathscr{A}^{*}$ sigue siendo cierto el resultado??
+Demostración:
+
+En la demostración mostraremos que el conjunto de conjuntos $S \subseteq \mathscr{B}(\mathbb{R})$ que cumplen la propiedad que nos interesa es una $\sigma$-álgebra que contiene a los intervalos $(a,b]$ (y por lo tanto a $\mathscr{B}(\mathbb{R})$).
+
+Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \exists C,U \subseteq \mathbb{R} \mbox{ tal que } C \subseteq A \subseteq U \mbox{ con } C \mbox{ cerrado y } U \mbox{ abierto}\}.\]
+
+
+  1.1) PD. $S$ es una $\sigma$-álgebra.
+
+
+  (a) PD. $\mathbb{R} \in S$.
+  
+  Notemos que $\mathbb{R}$ es abierto pues cumple la definición.
+  
+  \[\forall x \in \mathbb{R} \quad \exists B(x,r) \subset \mathbb{R} \mbox{ (bola de radio } r>0 \mbox{).}\]
+  
+  \[\therefore \mathbb{R} \mbox{ es abierto.}\]
+  
+  Además sabemos que :
+    Un conjunto $A$ es abierto si y sólo $A^c$ es cerrado.
+    
+  Y pensando en lo anterior mostramos que $\emptyset$ es abierto.
+    
+  $\emptyset$ es abierto pues: si $x\in \emptyset$ entonces existe una bola $B(x.r) \subseteq \emptyset$, se cumple por vacuidad.
+  
+  \[\therefore \mathbb{R} \mbox{ es cerrado.}\]
+  
+  
+  Ahora, proponiendo $U = C = \mathbb{R}$ tenemos que 
+  
+  \[\forall \epsilon>0 \quad C \subseteq \mathbb{R}\subseteq U \mbox{ con } \lambda(C-U) = 0.\]
+  
+  Por lo tanto
+   \[\therefore \mathbb{R} \in S.\]
+  
+  
+  
+  (b) PD. Si $A \in S$ entonces $A^c \in S$.
+  
+  
+  Sea $A \in S$ y $epsilon >0$ arbitrario. 
+  
+  Entonces existen $U$ abierto y $C$ cerrado tales que $C \subseteq A \subseteq U$ con $\lambda(U-C) \leq \epsilon$. Así
+  
+  \[U^c \subseteq A^c \subseteq C^c \quad \mbox{(Leyes de D'Morgan)}\]
+
+  Con $U^c$ cerrado (pues su complemento es abierto) y $C^c$ abierto (la misma razón). Además
+  
+  \begin{align*}
+\lambda(C^c-U^c) &= \lambda(C^c\cap (U^c)^c) \\\\
+&= \lambda(C^c\cap U) \\\\
+&= \lambda(U\cap C^c) \\\\
+&= \lambda(U - C) \\\\
+&\leq \epsilon.
+\end{align*}
+  
+  Por lo tanto 
+  \[A^c \in S.\]
+  
+  
+  (c) PD. Si $A_n \in S$ para $n = 1, 2, \dots$ entonces $\cup_{n \in \mathbb{N}A_n }\in S$.
+  
+  Sea $\epsilon >0$ arbitrario.
+  
+  Sea $(A_n)_{n \in \mathbb{N}}$ una famila de subconjuntos de $S$.
+  
+  Sea $(\epsilon_n)_{n \in \mathbb{N}}$ tales que $\epsilon_n = \frac{\epsilon}{3^n}$.
+  
+  Así, existen $(U_n)_{n\in \mathbb{N}}$ una familia de abiertos y $(C_n)_{n\in \mathbb{N}}$ tales que
+  
+  \[C_n \subseteq A_n \subseteq U_n \quad \mbox{con} \quad \lambda(U_n-C_n) \leq \frac{\epsilon}{3^n}.\]
+  
+  Con todas estas hipótesis podemos ver que 
+  
+  \[\cup_{n \in \mathbb{N}} C_n \subseteq \cup_{n \in \mathbb{N}} A_n \subseteq \cup_{n \in \mathbb{N}} U_n\]
+  
+  Donde $\cup_{n \in \mathbb{N}} C_n$ no necesariamente es cerrado pero $\cup_{n \in \mathbb{N}} U_n$ es abierto.
+
+Por la continuidad de la medida $\exists N \in \mathbb{N}$ tal que 
+
+\[\lambda(\cup_{n = 1}^\infty C_n - \cup_{n = 1}^N C_n) \leq \frac{\epsilon}{3}.\]
+
+Donde sabemos que $\cup_{n = 1}^N C_n$ es cerrado (por ser union finita de cerrados). Así proponemos
+
+\[C = \cup_{n = 1}^N C_n\]
+
+\[U = \cup_{n=1}^\infty U_n \]
+
+Sabemos que 
+
+\[C \subseteq \cup_{n=1}^\infty A_n \subseteq U\]
+
+Con $C$ es cerrado y $U$ abierto (union arbitraria de abiertos es abierto).
+
+
+Ahora sólo falta ver la condición de la medida. Notemos dos cosas:
+
+  (c.1) $\lambda(U - \cup_{n \in \mathbb{N}}C_n) \leq \frac{\epsilon}{2}$
+
+\begin{align*}
+\lambda(U - \cup_{n \in \mathbb{N}}C_n) &\leq \lambda(\cup_{n \in \mathbb{N}}(U_n - C_n)) && \mbox{ (pues } U - \cup_{n \in \mathbb{N}}C_n \subseteq \cup_{n \in \mathbb{N}}(U_n - C_n) \mbox{)}.\\\\
+&\leq \sum_{n = 1}^\infty \lambda(U_n - C_n) \\\\
+&\leq \sum_{n = 1}^\infty \frac{\epsilon}{3^n}\\\\
+&= \frac{\epsilon}{2}.
+\end{align*}
+  
+  (c.2) \[U-C = (U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\]
+  
+  Es decir, sólo partimos la $U-C$ en lo que nunca se iba quitar $(U-\cup_{n \in \mathbb{N}}C_n)$ y la parte que en algun momento se iba quitar $[U\cap(\cup_{n \in \mathbb{N}}C_n - C)$.
+  
+  Así
+  
+  \begin{align*}
+\lambda(U - \cup_{n \in \mathbb{N}}C_n) &= \lambda[(U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\\\\
+&\leq \lambda(U-\cup_{n \in \mathbb{N}}C_n) + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
+&= \frac{\epsilon}{2} + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
+&\leq \frac{\epsilon}{2} + \lambda[(\cup_{n \in \mathbb{N}}C_n - C)] && (\mbox{pues } U\cap(\cup_{n \in \mathbb{N}}C_n - C) \subseteq (\cup_{n \in \mathbb{N}}C_n - C))\\\\
+&\leq \frac{\epsilon}{2} +  \frac{\epsilon}{2}\\\\
+&= \epsilon.
+\end{align*}
+
+Por lo tanto 
+\[\cup_{n \in \mathbb{N}}A_n \in S\]
+
+Es decir, $S$ es una $\sigma$-álgebra.
+
+  1.2) PD. $S$ contiene a los intervalos de la forma $(a,b] \subset \mathbb{R}$.
+
+Sea $(a,b] \subset \mathbb{R}$.
+
+Sea $\epsilon >0$.
+
+Sea $\epsilon_m = min\{\epsilon,\frac{b-a}{2}\}$.
+
+Proponemos $U = (a,b+\frac{\epsilon_m}{2})$ que es abierto. Y $C = [a+\frac{\epsilon_m}{2},b]$.
+
+Así
+
+\[C \subseteq (a,b] \subseteq U\]
+
+Y además
+
+\[\lambda(U-C) \leq \lambda((a,a + \frac{\epsilon_m}{2})) + \lambda((b,b + \frac{\epsilon_m}{2})) = \frac{\epsilon_m}{2} + \frac{\epsilon_m}{2} \leq \epsilon\]
+
+Por lo tanto $(a,b] \in S$.
+
+Como $\mathscr{B}(\mathbb{R})$ es la mínima $\sigma$-álgebra que contiene a los intervalos $(a,b]$ entonces 
+\[\mathscr{B}(\mathbb{R}) \subseteq S\]
+
+Por lo tanto:
+
+\[\mathscr{B}(\mathbb{R}) = S\]
+
+Es decir, 
+
+Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abierto $U$ y un cerrado $C$ de $\mathbb{R}$, tales que $C \subset A \subset U$ y $\lambda(U-C) \leq \epsilon$.
+
+--------------------------------------------------------------------------------
+2) Si $A \in \mathscr{A}^{*}$ sigue siendo cierto el resultado??
+
+
+Sí, continua siendo cierto.
+
+
+

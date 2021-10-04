@@ -1,33 +1,69 @@
 ---
 title: "Tarea 7. Pregunta 11.3"
 subtitle: Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad. Si $(X_n)_n$ es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro $p \in (0,1)$ considere para cada $\omega \in \Omega$ la función definida por \[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\] con la convención de que $\inf\{\emptyset\} = \infty$.
----
-
 --------------------------------------------------------------------------------
+
+
 1) Muestre que $T$ es una v.a. que toma valores en $\mathbb{N} \cup \{\infty\}$.
 
-PD. $T$ es v.a.
+1.1: PD. $T$ toma valores en $\mathbb{N} \cup \{\infty\}$.
+
+Demostración por casos.
+
+Caso a: Supongase que $\exists n \in \mathbb{N}$ tal que $X_n(\omega) = 1$.
+
+Como $\exists n \in \mathbb{N}$ tal que $X_n(\omega) = 1$, entonces el conjunto 
+$\{n \in \mathbb{N} | X_n(\omega) = 1\}$ es no vacío. Por el principio del buen orden, tiene primer elemento.
+
+Por lo que 
+
+\[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\} = \min\{n \in \mathbb{N} | X_n(\omega) = 1\} \in \mathbb{N}\]
+
+Caso b: Supongase que $X_n(\omega) = 0 \quad \forall n \in \mathbb{N}$.
+
+Por convención $T(\omega) = \infty$
+
+De ambos casos se concluye que $T(\omega) \in \mathbb{N} \cup \{\infty\} \quad \forall \omega \in \Omega$.
+
+1.2: PD. $T$ es v.a.
 
 Sea $c \in \mathbb{R} \cup \{\infty\}$.
 
-Caso A: $c \in \mathbb{R}$.
 
-\[T^{-1}([c,\infty)) = \{\omega \in \Omega | T(w) \geq c \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq c\} \]
+Pd.  $T^{-1}((-\infty,c]) \in \mathscr{A}$. Demostración por casos.
 
-Como cada $nX_n$ es medible entonces $\{\omega \in \Omega | nX_n(\omega) \geq c\} \in \mathscr{A}$. Luego
-\[T^{-1}([c,\infty)) \in \mathscr{A}.\]
+Caso a: $c < 1$.
+
+\[T^{-1}((-\infty,c]) = \{\omega \in \Omega | T(w) \leq c \} = \emptyset \quad \mbox{(Por la proposición anterior)}\]
+
+Así $T^{-1}((-\infty,c]) \in \mathscr{A}$.
+
+Caso b: $1 \leq c < \infty$.
+
+\[T^{-1}((-\infty,c]) = \{\omega \in \Omega | T(w) \leq c \} = \cup_{i=1}^{n_c} \{ \omega \in \Omega | X_n(\omega) = 1\}\]
+
+Con $n_c:=$ el mayor entero menor o igual a c.
+
+
+Como cada $X_n$ es medible entonces $\{ \omega \in \Omega | X_n(\omega) = 1\} \in \mathscr{A}$. Luego
+\[T^{-1}((-\infty, c]) \in \mathscr{A}.\]
 
 \[\therefore  \quad T \mbox{ es v.a.}\]
 
-Caso B: $c = \infty$.
+Caso c: $c = \infty$.
 
-\[T^{-1}(\{\infty\}) = \{\omega \in \Omega | T(w) \geq \infty \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq \infty\} = \emptyset \]
+\[T^{-1}((-\infty,c]) = \Omega\]
+
 Así
-\[T^{-1}(\{\infty\})  \in \mathscr{A}.\]
+\[T^{-1}((-\infty,c])  \in \mathscr{A}.\]
 
-Si alguna v.a. $X_n(\omega) = 1$, entonces por el principio del buen orden $T(\omega) \in \mathbb{N}$. En otro caso $T(\omega) = \infty$.
 
-En ambos casos $T(\omega) \in \mathbb{N} \cup \{\infty\}$.
+
+De todos los casos, se concluye que \[T^{-1}((-\infty,c])  \in \mathscr{A}.\].
+
+\[\therefore \quad T \mbox{ es v.a.}\]
+
+
 
 --------------------------------------------------------------------------------
 

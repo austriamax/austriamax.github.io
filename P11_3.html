@@ -11,7 +11,7 @@
 
 
 
-<title>Tarea 7. Pregunta 11.3</title>
+<title>P11_3.knit</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -262,52 +262,49 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tarea 7. Pregunta 11.3</h1>
-<h3 class="subtitle">Sea <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span> un espacio de probabilidad. Si <span class="math inline">\((X_n)_n\)</span> es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro <span class="math inline">\(p \in (0,1)\)</span> considere para cada <span class="math inline">\(\omega \in \Omega\)</span> la función definida por <span class="math display">\[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\]</span> con la convención de que <span class="math inline">\(\inf\{\emptyset\} = \infty\)</span>.</h3>
 
 </div>
 
 
 <table>
-<colgroup>
-<col width="100%" />
-</colgroup>
 <tbody>
 <tr class="odd">
-<td>1) Muestre que <span class="math inline">\(T\)</span> es una v.a. que toma valores en <span class="math inline">\(\mathbb{N} \cup \{\infty\}\)</span>.</td>
+<td>title: “Tarea 7. Pregunta 11.3”</td>
 </tr>
 <tr class="even">
-<td>PD. <span class="math inline">\(T\)</span> es v.a.</td>
-</tr>
-<tr class="odd">
-<td>Sea <span class="math inline">\(c \in \mathbb{R} \cup \{\infty\}\)</span>.</td>
-</tr>
-<tr class="even">
-<td>Caso A: <span class="math inline">\(c \in \mathbb{R}\)</span>.</td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[T^{-1}([c,\infty)) = \{\omega \in \Omega | T(w) \geq c \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq c\} \]</span></td>
-</tr>
-<tr class="even">
-<td>Como cada <span class="math inline">\(nX_n\)</span> es medible entonces <span class="math inline">\(\{\omega \in \Omega | nX_n(\omega) \geq c\} \in \mathscr{A}\)</span>. Luego <span class="math display">\[T^{-1}([c,\infty)) \in \mathscr{A}.\]</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[\therefore  \quad T \mbox{ es v.a.}\]</span></td>
-</tr>
-<tr class="even">
-<td>Caso B: <span class="math inline">\(c = \infty\)</span>.</td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[T^{-1}(\{\infty\}) = \{\omega \in \Omega | T(w) \geq \infty \} = \cap_{i=1}^{\infty} \{ \omega \in \Omega | nX_n(\omega) \geq \infty\} = \emptyset \]</span> Así <span class="math display">\[T^{-1}(\{\infty\})  \in \mathscr{A}.\]</span></td>
-</tr>
-<tr class="even">
-<td>Si alguna v.a. <span class="math inline">\(X_n(\omega) = 1\)</span>, entonces por el principio del buen orden <span class="math inline">\(T(\omega) \in \mathbb{N}\)</span>. En otro caso <span class="math inline">\(T(\omega) = \infty\)</span>.</td>
-</tr>
-<tr class="odd">
-<td>En ambos casos <span class="math inline">\(T(\omega) \in \mathbb{N} \cup \{\infty\}\)</span>.</td>
+<td>subtitle: Sea <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span> un espacio de probabilidad. Si <span class="math inline">\((X_n)_n\)</span> es una sucesión de v.a. independientes, todas con ley de Bernoulli de parámetro <span class="math inline">\(p \in (0,1)\)</span> considere para cada <span class="math inline">\(\omega \in \Omega\)</span> la función definida por <span class="math display">\[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\}\]</span> con la convención de que <span class="math inline">\(\inf\{\emptyset\} = \infty\)</span>.</td>
 </tr>
 </tbody>
 </table>
+<ol style="list-style-type: decimal">
+<li>Muestre que <span class="math inline">\(T\)</span> es una v.a. que toma valores en <span class="math inline">\(\mathbb{N} \cup \{\infty\}\)</span>.</li>
+</ol>
+<p>1.1: PD. <span class="math inline">\(T\)</span> toma valores en <span class="math inline">\(\mathbb{N} \cup \{\infty\}\)</span>.</p>
+<p>Demostración por casos.</p>
+<p>Caso a: Supongase que <span class="math inline">\(\exists n \in \mathbb{N}\)</span> tal que <span class="math inline">\(X_n(\omega) = 1\)</span>.</p>
+<p>Como <span class="math inline">\(\exists n \in \mathbb{N}\)</span> tal que <span class="math inline">\(X_n(\omega) = 1\)</span>, entonces el conjunto <span class="math inline">\(\{n \in \mathbb{N} | X_n(\omega) = 1\}\)</span> es no vacío. Por el principio del buen orden, tiene primer elemento.</p>
+<p>Por lo que</p>
+<p><span class="math display">\[T(\omega) = \inf\{n \in \mathbb{N} | X_n(\omega) = 1\} = \min\{n \in \mathbb{N} | X_n(\omega) = 1\} \in \mathbb{N}\]</span></p>
+<p>Caso b: Supongase que <span class="math inline">\(X_n(\omega) = 0 \quad \forall n \in \mathbb{N}\)</span>.</p>
+<p>Por convención <span class="math inline">\(T(\omega) = \infty\)</span></p>
+<p>De ambos casos se concluye que <span class="math inline">\(T(\omega) \in \mathbb{N} \cup \{\infty\} \quad \forall \omega \in \Omega\)</span>.</p>
+<p>1.2: PD. <span class="math inline">\(T\)</span> es v.a.</p>
+<p>Sea <span class="math inline">\(c \in \mathbb{R} \cup \{\infty\}\)</span>.</p>
+<p>Pd. <span class="math inline">\(T^{-1}((-\infty,c]) \in \mathscr{A}\)</span>. Demostración por casos.</p>
+<p>Caso a: <span class="math inline">\(c &lt; 1\)</span>.</p>
+<p><span class="math display">\[T^{-1}((-\infty,c]) = \{\omega \in \Omega | T(w) \leq c \} = \emptyset \quad \mbox{(Por la proposición anterior)}\]</span></p>
+<p>Así <span class="math inline">\(T^{-1}((-\infty,c]) \in \mathscr{A}\)</span>.</p>
+<p>Caso b: <span class="math inline">\(1 \leq c &lt; \infty\)</span>.</p>
+<p><span class="math display">\[T^{-1}((-\infty,c]) = \{\omega \in \Omega | T(w) \leq c \} = \cup_{i=1}^{n_c} \{ \omega \in \Omega | X_n(\omega) = 1\}\]</span></p>
+<p>Con <span class="math inline">\(n_c:=\)</span> el mayor entero menor o igual a c.</p>
+<p>Como cada <span class="math inline">\(X_n\)</span> es medible entonces <span class="math inline">\(\{ \omega \in \Omega | X_n(\omega) = 1\} \in \mathscr{A}\)</span>. Luego <span class="math display">\[T^{-1}((-\infty, c]) \in \mathscr{A}.\]</span></p>
+<p><span class="math display">\[\therefore  \quad T \mbox{ es v.a.}\]</span></p>
+<p>Caso c: <span class="math inline">\(c = \infty\)</span>.</p>
+<p><span class="math display">\[T^{-1}((-\infty,c]) = \Omega\]</span></p>
+<p>Así <span class="math display">\[T^{-1}((-\infty,c])  \in \mathscr{A}.\]</span></p>
+<p>De todos los casos, se concluye que <span class="math display">\[T^{-1}((-\infty,c])  \in \mathscr{A}.\]</span>.</p>
+<p><span class="math display">\[\therefore \quad T \mbox{ es v.a.}\]</span></p>
+<hr />
 <ol start="2" style="list-style-type: decimal">
 <li>Calcule su ley.</li>
 </ol>

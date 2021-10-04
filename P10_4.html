@@ -263,12 +263,105 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Tarea 5. Pregunta 10.4.</h1>
-<h3 class="subtitle">Si <span class="math inline">\(A \in \mathscr{B}(\mathbb{R})\)</span> y <span class="math inline">\(\epsilon &gt; 0\)</span> muestre que existe un abierto <span class="math inline">\(U\)</span> y un cerrado <span class="math inline">\(C\)</span> de <span class="math inline">\(\mathbb{R}\)</span>, tales que <span class="math inline">\(C \subset A \subset U\)</span> y <span class="math inline">\(\lambda(U-C) \leq \epsilon\)</span>.</h3>
 
 </div>
 
 
-<p>Si <span class="math inline">\(A \in \mathscr{A}^{*}\)</span> sigue siendo cierto el resultado??</p>
+<ol style="list-style-type: decimal">
+<li>Si <span class="math inline">\(A \in \mathscr{B}(\mathbb{R})\)</span> y <span class="math inline">\(\epsilon &gt; 0\)</span> muestre que existe un abierto <span class="math inline">\(U\)</span> y un cerrado <span class="math inline">\(C\)</span> de <span class="math inline">\(\mathbb{R}\)</span>, tales que <span class="math inline">\(C \subset A \subset U\)</span> y <span class="math inline">\(\lambda(U-C) \leq \epsilon\)</span>.</li>
+</ol>
+<p>Demostración:</p>
+<p>En la demostración mostraremos que el conjunto de conjuntos <span class="math inline">\(S \subseteq \mathscr{B}(\mathbb{R})\)</span> que cumplen la propiedad que nos interesa es una <span class="math inline">\(\sigma\)</span>-álgebra que contiene a los intervalos <span class="math inline">\((a,b]\)</span> (y por lo tanto a <span class="math inline">\(\mathscr{B}(\mathbb{R})\)</span>).</p>
+<p>Sea <span class="math display">\[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon&gt;0 \mbox{ } \exists C,U \subseteq \mathbb{R} \mbox{ tal que } C \subseteq A \subseteq U \mbox{ con } C \mbox{ cerrado y } U \mbox{ abierto}\}.\]</span></p>
+<p>1.1) PD. <span class="math inline">\(S\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<ol style="list-style-type: lower-alpha">
+<li>PD. <span class="math inline">\(\mathbb{R} \in S\)</span>.</li>
+</ol>
+<p>Notemos que <span class="math inline">\(\mathbb{R}\)</span> es abierto pues cumple la definición.</p>
+<p><span class="math display">\[\forall x \in \mathbb{R} \quad \exists B(x,r) \subset \mathbb{R} \mbox{ (bola de radio } r&gt;0 \mbox{).}\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{R} \mbox{ es abierto.}\]</span></p>
+<p>Además sabemos que : Un conjunto <span class="math inline">\(A\)</span> es abierto si y sólo <span class="math inline">\(A^c\)</span> es cerrado.</p>
+<p>Y pensando en lo anterior mostramos que <span class="math inline">\(\emptyset\)</span> es abierto.</p>
+<p><span class="math inline">\(\emptyset\)</span> es abierto pues: si <span class="math inline">\(x\in \emptyset\)</span> entonces existe una bola <span class="math inline">\(B(x.r) \subseteq \emptyset\)</span>, se cumple por vacuidad.</p>
+<p><span class="math display">\[\therefore \mathbb{R} \mbox{ es cerrado.}\]</span></p>
+<p>Ahora, proponiendo <span class="math inline">\(U = C = \mathbb{R}\)</span> tenemos que</p>
+<p><span class="math display">\[\forall \epsilon&gt;0 \quad C \subseteq \mathbb{R}\subseteq U \mbox{ con } \lambda(C-U) = 0.\]</span></p>
+<p>Por lo tanto <span class="math display">\[\therefore \mathbb{R} \in S.\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>PD. Si <span class="math inline">\(A \in S\)</span> entonces <span class="math inline">\(A^c \in S\)</span>.</li>
+</ol>
+<p>Sea <span class="math inline">\(A \in S\)</span> y <span class="math inline">\(epsilon &gt;0\)</span> arbitrario.</p>
+<p>Entonces existen <span class="math inline">\(U\)</span> abierto y <span class="math inline">\(C\)</span> cerrado tales que <span class="math inline">\(C \subseteq A \subseteq U\)</span> con <span class="math inline">\(\lambda(U-C) \leq \epsilon\)</span>. Así</p>
+<p><span class="math display">\[U^c \subseteq A^c \subseteq C^c \quad \mbox{(Leyes de D&#39;Morgan)}\]</span></p>
+<p>Con <span class="math inline">\(U^c\)</span> cerrado (pues su complemento es abierto) y <span class="math inline">\(C^c\)</span> abierto (la misma razón). Además</p>
+<p><span class="math display">\[\begin{align*}
+\lambda(C^c-U^c) &amp;= \lambda(C^c\cap (U^c)^c) \\\\
+&amp;= \lambda(C^c\cap U) \\\\
+&amp;= \lambda(U\cap C^c) \\\\
+&amp;= \lambda(U - C) \\\\
+&amp;\leq \epsilon.
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[A^c \in S.\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>PD. Si <span class="math inline">\(A_n \in S\)</span> para <span class="math inline">\(n = 1, 2, \dots\)</span> entonces <span class="math inline">\(\cup_{n \in \mathbb{N}A_n }\in S\)</span>.</li>
+</ol>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span> arbitrario.</p>
+<p>Sea <span class="math inline">\((A_n)_{n \in \mathbb{N}}\)</span> una famila de subconjuntos de <span class="math inline">\(S\)</span>.</p>
+<p>Sea <span class="math inline">\((\epsilon_n)_{n \in \mathbb{N}}\)</span> tales que <span class="math inline">\(\epsilon_n = \frac{\epsilon}{3^n}\)</span>.</p>
+<p>Así, existen <span class="math inline">\((U_n)_{n\in \mathbb{N}}\)</span> una familia de abiertos y <span class="math inline">\((C_n)_{n\in \mathbb{N}}\)</span> tales que</p>
+<p><span class="math display">\[C_n \subseteq A_n \subseteq U_n \quad \mbox{con} \quad \lambda(U_n-C_n) \leq \frac{\epsilon}{3^n}.\]</span></p>
+<p>Con todas estas hipótesis podemos ver que</p>
+<p><span class="math display">\[\cup_{n \in \mathbb{N}} C_n \subseteq \cup_{n \in \mathbb{N}} A_n \subseteq \cup_{n \in \mathbb{N}} U_n\]</span></p>
+<p>Donde <span class="math inline">\(\cup_{n \in \mathbb{N}} C_n\)</span> no necesariamente es cerrado pero <span class="math inline">\(\cup_{n \in \mathbb{N}} U_n\)</span> es abierto.</p>
+<p>Por la continuidad de la medida <span class="math inline">\(\exists N \in \mathbb{N}\)</span> tal que</p>
+<p><span class="math display">\[\lambda(\cup_{n = 1}^\infty C_n - \cup_{n = 1}^N C_n) \leq \frac{\epsilon}{3}.\]</span></p>
+<p>Donde sabemos que <span class="math inline">\(\cup_{n = 1}^N C_n\)</span> es cerrado (por ser union finita de cerrados). Así proponemos</p>
+<p><span class="math display">\[C = \cup_{n = 1}^N C_n\]</span></p>
+<p><span class="math display">\[U = \cup_{n=1}^\infty U_n \]</span></p>
+<p>Sabemos que</p>
+<p><span class="math display">\[C \subseteq \cup_{n=1}^\infty A_n \subseteq U\]</span></p>
+<p>Con <span class="math inline">\(C\)</span> es cerrado y <span class="math inline">\(U\)</span> abierto (union arbitraria de abiertos es abierto).</p>
+<p>Ahora sólo falta ver la condición de la medida. Notemos dos cosas:</p>
+<p>(c.1) <span class="math inline">\(\lambda(U - \cup_{n \in \mathbb{N}}C_n) \leq \frac{\epsilon}{2}\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\lambda(U - \cup_{n \in \mathbb{N}}C_n) &amp;\leq \lambda(\cup_{n \in \mathbb{N}}(U_n - C_n)) &amp;&amp; \mbox{ (pues } U - \cup_{n \in \mathbb{N}}C_n \subseteq \cup_{n \in \mathbb{N}}(U_n - C_n) \mbox{)}.\\\\
+&amp;\leq \sum_{n = 1}^\infty \lambda(U_n - C_n) \\\\
+&amp;\leq \sum_{n = 1}^\infty \frac{\epsilon}{3^n}\\\\
+&amp;= \frac{\epsilon}{2}.
+\end{align*}\]</span></p>
+<p>(c.2) <span class="math display">\[U-C = (U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\]</span></p>
+<p>Es decir, sólo partimos la <span class="math inline">\(U-C\)</span> en lo que nunca se iba quitar <span class="math inline">\((U-\cup_{n \in \mathbb{N}}C_n)\)</span> y la parte que en algun momento se iba quitar <span class="math inline">\([U\cap(\cup_{n \in \mathbb{N}}C_n - C)\)</span>.</p>
+<p>Así</p>
+<p><span class="math display">\[\begin{align*}
+\lambda(U - \cup_{n \in \mathbb{N}}C_n) &amp;= \lambda[(U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\\\\
+&amp;\leq \lambda(U-\cup_{n \in \mathbb{N}}C_n) + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
+&amp;= \frac{\epsilon}{2} + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
+&amp;\leq \frac{\epsilon}{2} + \lambda[(\cup_{n \in \mathbb{N}}C_n - C)] &amp;&amp; (\mbox{pues } U\cap(\cup_{n \in \mathbb{N}}C_n - C) \subseteq (\cup_{n \in \mathbb{N}}C_n - C))\\\\
+&amp;\leq \frac{\epsilon}{2} +  \frac{\epsilon}{2}\\\\
+&amp;= \epsilon.
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[\cup_{n \in \mathbb{N}}A_n \in S\]</span></p>
+<p>Es decir, <span class="math inline">\(S\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra.</p>
+<p>1.2) PD. <span class="math inline">\(S\)</span> contiene a los intervalos de la forma <span class="math inline">\((a,b] \subset \mathbb{R}\)</span>.</p>
+<p>Sea <span class="math inline">\((a,b] \subset \mathbb{R}\)</span>.</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
+<p>Sea <span class="math inline">\(\epsilon_m = min\{\epsilon,\frac{b-a}{2}\}\)</span>.</p>
+<p>Proponemos <span class="math inline">\(U = (a,b+\frac{\epsilon_m}{2})\)</span> que es abierto. Y <span class="math inline">\(C = [a+\frac{\epsilon_m}{2},b]\)</span>.</p>
+<p>Así</p>
+<p><span class="math display">\[C \subseteq (a,b] \subseteq U\]</span></p>
+<p>Y además</p>
+<p><span class="math display">\[\lambda(U-C) \leq \lambda((a,a + \frac{\epsilon_m}{2})) + \lambda((b,b + \frac{\epsilon_m}{2})) = \frac{\epsilon_m}{2} + \frac{\epsilon_m}{2} \leq \epsilon\]</span></p>
+<p>Por lo tanto <span class="math inline">\((a,b] \in S\)</span>.</p>
+<p>Como <span class="math inline">\(\mathscr{B}(\mathbb{R})\)</span> es la mínima <span class="math inline">\(\sigma\)</span>-álgebra que contiene a los intervalos <span class="math inline">\((a,b]\)</span> entonces <span class="math display">\[\mathscr{B}(\mathbb{R}) \subseteq S\]</span></p>
+<p>Por lo tanto:</p>
+<p><span class="math display">\[\mathscr{B}(\mathbb{R}) = S\]</span></p>
+<p>Es decir,</p>
+<p>Si <span class="math inline">\(A \in \mathscr{B}(\mathbb{R})\)</span> y <span class="math inline">\(\epsilon &gt; 0\)</span> muestre que existe un abierto <span class="math inline">\(U\)</span> y un cerrado <span class="math inline">\(C\)</span> de <span class="math inline">\(\mathbb{R}\)</span>, tales que <span class="math inline">\(C \subset A \subset U\)</span> y <span class="math inline">\(\lambda(U-C) \leq \epsilon\)</span>.</p>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li>Si <span class="math inline">\(A \in \mathscr{A}^{*}\)</span> sigue siendo cierto el resultado??</li>
+</ol>
+<p>Sí, continua siendo cierto.</p>
 
 
 
