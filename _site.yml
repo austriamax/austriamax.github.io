@@ -5,6 +5,8 @@ navbar:
   left:
     - text: "Lista"
       href: index.html
+    - text: "Parcial II"
+      href: Parcial2.html
     - text: "Alumno"
       href: about.html
 output:

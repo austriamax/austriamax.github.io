@@ -1,0 +1,15 @@
+---
+title: "Parcial II"
+subtitle: "Aquí encontraras las preguntas del parcial II"
+---
+
+  **[Pregunta A](www.google.com)**
+  
+  **[Pregunta B](www.google.com)**
+  
+  **[Pregunta C](www.google.com)**
+  
+  **[Pregunta D](www.google.com)**
+  
+  **[Pregunta E](www.google.com)**
+  
