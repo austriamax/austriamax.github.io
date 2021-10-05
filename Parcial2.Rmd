@@ -3,13 +3,14 @@ title: "Parcial II"
 subtitle: "Aquí encontraras las preguntas del parcial II"
 ---
 
-  **[Pregunta A](www.google.com)**
+  **[Pregunta 7.5.](https://austriamax.github.io/austriamax.proba1.github.io/P7_5.html)**
   
-  **[Pregunta B](www.google.com)**
+  **[Pregunta 10.2.](https://austriamax.github.io/austriamax.proba1.github.io/P10_2.html)** 
   
-  **[Pregunta C](www.google.com)**
+  **[Pregunta 11.1.](https://austriamax.github.io/austriamax.proba1.github.io/P11_1.html)**
   
-  **[Pregunta D](www.google.com)**
+  **[Pregunta 11.8.](https://austriamax.github.io/austriamax.proba1.github.io/P11_8.html)** (10.7 del Jacod-Protter).
   
-  **[Pregunta E](www.google.com)**
+  
+  
   
