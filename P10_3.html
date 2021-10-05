@@ -311,16 +311,18 @@ $(document).ready(function () {
 <p>Definamos</p>
 <p><span class="math display">\[\widetilde{\mathscr{F}} = \{A \subset \mathbb{R} | \exists B_1, B_2 \in \mathbb{B}(\mathbb{R}), B_1 \subset A \subset B_2, \lambda(B_2-B_1) = 0\}\]</span></p>
 <p>Y también definamos <span class="math inline">\(\lambda^*(A) = \lambda(B_1) = \lambda(B_2)\)</span>. <span class="math inline">\(\widetilde{\mathscr{F}}\)</span> es la completación de <span class="math inline">\(\mathbb{B}(\mathbb{R})\)</span> respecto a <span class="math inline">\(\lambda^*|_{\mathbb{B}(\mathbb{R})}\)</span>.</p>
-<p>PD. <span class="math inline">\(A\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible.</p>
+<p>PD. <span class="math inline">\(\widetilde{\mathscr{F}} \subseteq \mathscr{M}_{\lambda^*}\)</span>.</p>
+<p>Sea <span class="math inline">\(A \in \widetilde{\mathscr{F}}\)</span>.</p>
 <p>Sean <span class="math inline">\(B_1\)</span> y <span class="math inline">\(B_2\)</span> tales que <span class="math inline">\(B_1 \subset A \subset B_2\)</span> y <span class="math inline">\(\lambda(B_2-B_1) = 0\)</span>. Sea <span class="math inline">\(C \subset \mathbb{R}\)</span> tal que <span class="math inline">\(C \cap A \subset C\cap B_2\)</span> y <span class="math inline">\(C-A \subset C - B_1\)</span> entonces <span class="math inline">\(\lambda^*(C\cap A) + \lambda^*(C-A) \leq \lambda^*(C\cap B_2) + \lambda^*(C-B_1)\)</span>.</p>
 <p>Como <span class="math inline">\(C \cap B_1 \subset C \cap B_2\)</span> y <span class="math inline">\(\lambda^*([C\cap B_2] - [C\cap B_1]) \leq \lambda^*(B_2 - B_1) = 0\)</span>. Entonces <span class="math inline">\(\lambda^*(C\cap B_2) = \lambda^*(C\cap B_1)\)</span>, así <span class="math inline">\(B_1 \in \mathbb{B}(\mathbb{R}) \subset \mathscr{M}_{\lambda^*}\)</span>. Es decir <span class="math inline">\(B_1\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible. Luego</p>
 <p><span class="math display">\[\lambda^*(C\cap A) + \lambda^*(C- A) \leq \lambda^*(C\cap B_1) + \lambda^*(C- B_1) = \lambda^*(C).\]</span></p>
 <p>Además <span class="math display">\[\lambda^*(C) \leq \lambda^*([C \cap A] \cup [C-A]) \leq \lambda^*(C \cap A) + \lambda^*(C-A).\]</span></p>
 <p><span class="math display">\[\therefore \lambda^*(C) = \lambda^*(C \cap A)  + \lambda^*(C-A).\]</span></p>
-<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(A\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible y <span class="math inline">\(\widetilde{\mathscr{F}}^* \subset \mathscr{A}^*\)</span>.</p>
-<p>PD <span class="math inline">\(\mathscr{A}^* \subset \mathscr{M}^*\)</span>.</p>
+<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(A\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible y <span class="math inline">\(\widetilde{\mathscr{F}} \subset \mathscr{A}^*\)</span>.</p>
+<p><span class="math inline">\(\therefore \widetilde{\mathscr{F}} \subseteq \mathscr{M}_{\lambda^*}\)</span></p>
+<p>PD <span class="math inline">\(\mathscr{A}^* \subset \mathscr{M}_{\lambda^*}\)</span>.</p>
 <p>Sea <span class="math inline">\(A \in \mathscr{A}^*\)</span>.</p>
-<p>Sea <span class="math inline">\(J_n = [-n,n^]\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>Sea <span class="math inline">\(J_n = [-n,n]\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
 <p>Sea <span class="math inline">\(A_n = A \cup J_n\)</span> con <span class="math inline">\(\lambda^*(A_n) \leq \infty\)</span>.</p>
 <p>Sea <span class="math inline">\(\{I_t^s\}_{t \in \mathbb{N}} \subset J_n\)</span> una sucesión de intervalos que cubren <span class="math inline">\(A_n\)</span>, nombremoslos <span class="math inline">\(C_s = \cup_{t \in \mathbb{N}} I_t^s\)</span>. Así <span class="math inline">\(A_n \subset C_s\)</span> por lo que</p>
 <p><span class="math display">\[\lambda^*(C_s) \leq \sum_t \lambda^*(I_t^s) =  \sum_t \lambda(I_t^s) \leq \lambda^*(A_n) + \frac{1}{s}\]</span></p>
@@ -328,7 +330,7 @@ $(document).ready(function () {
 <p><span class="math display">\[\lambda^*(A_n) \leq \lambda(C)\]</span> Ya que <span class="math inline">\(A_n \subset C\)</span>. Y además <span class="math inline">\(\lambda(C) \leq \lambda^*(A_n)\)</span> (<span class="math inline">\(C \in \mathbb{B}(\mathbb{R})\)</span>).</p>
 <p><span class="math display">\[\therefore \lambda^*(A_n) = \lambda(C)\]</span></p>
 <p>De igual forma se puede repetir el razonamiento para <span class="math inline">\(J_n - A_n\)</span> para obtener <span class="math inline">\(D \in \mathbb{B}(\mathbb{R})\)</span> tal que <span class="math inline">\(J_n - A_n \subset D\)</span> con lo que tendríamos que <span class="math inline">\(\lambda(D) = \lambda^*(J_n - A_n)\)</span>, <span class="math inline">\(J_n -D \subset A_n \subset C\)</span> y <span class="math inline">\(J_n -D \in \mathbb{B}(\mathbb{R})\)</span>. Luego</p>
-<p><span class="math display">\[\lambda^*(J_n) = \lambda^*(Q_n \cap A_n) + \lambda^*(Q_n - A_n) = \lambda^*(A_n) + \lambda^*(Q_n - A_n)\]</span></p>
+<p><span class="math display">\[\lambda^*(J_n) = \lambda^*(J_n \cap A_n) + \lambda^*(J_n - A_n) = \lambda^*(A_n) + \lambda^*(J_n - A_n)\]</span></p>
 <p>Entonces</p>
 <p><span class="math display">\[\lambda^*(J_n-D) = \lambda(J_n) - \lambda(D) = \lambda^*(J_n) - \lambda^*(J_n-A_n) = \lambda^*(A_n) = \lambda(B).\]</span></p>
 <p>Y como se tratan de medidas finitas se obtiene que <span class="math inline">\(\lambda(C - (J_n-D))=0\)</span>.</p>

@@ -57,7 +57,12 @@ Definamos
 
 Y también definamos $\lambda^*(A) = \lambda(B_1) = \lambda(B_2)$. $\widetilde{\mathscr{F}}$ es la completación de $\mathbb{B}(\mathbb{R})$ respecto a $\lambda^*|_{\mathbb{B}(\mathbb{R})}$.
 
-PD. $A$ es $\lambda^*$-medible.
+
+PD. $\widetilde{\mathscr{F}} \subseteq \mathscr{M}_{\lambda^*}$.
+
+
+Sea $A \in \widetilde{\mathscr{F}}$. 
+
 
 Sean $B_1$ y $B_2$ tales que $B_1 \subset A \subset B_2$ y $\lambda(B_2-B_1) = 0$. Sea $C \subset \mathbb{R}$ tal que $C \cap A \subset C\cap B_2$ y $C-A \subset C - B_1$ entonces $\lambda^*(C\cap A) + \lambda^*(C-A) \leq \lambda^*(C\cap B_2) + \lambda^*(C-B_1)$.
 
@@ -71,15 +76,16 @@ Además
 
 \[\therefore \lambda^*(C) = \lambda^*(C \cap A)  + \lambda^*(C-A).\]
 
-$\therefore$ $A$ es $\lambda^*$-medible y  $\widetilde{\mathscr{F}}^* \subset \mathscr{A}^*$.
+$\therefore$ $A$ es $\lambda^*$-medible y  $\widetilde{\mathscr{F}} \subset \mathscr{A}^*$.
 
+$\therefore \widetilde{\mathscr{F}} \subseteq \mathscr{M}_{\lambda^*}$
 
-PD $\mathscr{A}^* \subset \mathscr{M}^*$.
+PD $\mathscr{A}^* \subset \mathscr{M}_{\lambda^*}$.
 
 
 Sea $A \in \mathscr{A}^*$.
 
-Sea $J_n = [-n,n^]$ con $n \in \mathbb{N}$.
+Sea $J_n = [-n,n]$ con $n \in \mathbb{N}$.
 
 Sea $A_n = A \cup J_n$ con $\lambda^*(A_n) \leq \infty$.
 
@@ -96,7 +102,7 @@ Ya que $A_n \subset C$. Y además $\lambda(C) \leq \lambda^*(A_n)$ ($C \in \math
 
 De igual forma se puede repetir el razonamiento para $J_n - A_n$ para obtener $D \in \mathbb{B}(\mathbb{R})$ tal que $J_n - A_n \subset D$ con lo que tendríamos que $\lambda(D) = \lambda^*(J_n - A_n)$, $J_n -D \subset A_n \subset C$ y  $J_n -D \in \mathbb{B}(\mathbb{R})$. Luego
 
-\[\lambda^*(J_n) = \lambda^*(Q_n \cap A_n) + \lambda^*(Q_n - A_n) = \lambda^*(A_n) + \lambda^*(Q_n - A_n)\]
+\[\lambda^*(J_n) = \lambda^*(J_n \cap A_n) + \lambda^*(J_n - A_n) = \lambda^*(A_n) + \lambda^*(J_n - A_n)\]
 
 Entonces
 
