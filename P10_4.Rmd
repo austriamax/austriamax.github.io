@@ -137,7 +137,7 @@ Así $V^c$ es cerrado y $V^c \subseteq \cup_{\mathbb{N}} A_n$ y además
 
 Veamos que se cumpla la condición sobre la medida $\lambda$:
 
-\[\lambda^*(U-C) = \lambda^*((U-\cup_{n \in \mathbb{N}}A_n)\cup(\cup_{n \in \mathbb{N}}A_n-C)) = \lambda^*(U-\cup_{n \in \mathbb{N}}A_n) + \lambda^*(A-C) \leq \frac{\epsilon}{2}  +\frac{\epsilon}{2} \leq \epsilon.\]
+\[\lambda(U-C) = \lambda((U-\cup_{n \in \mathbb{N}}A_n)\cup(\cup_{n \in \mathbb{N}}A_n-C)) = \lambda(U-\cup_{n \in \mathbb{N}}A_n) + \lambda(A-C) \leq \frac{\epsilon}{2}  +\frac{\epsilon}{2} \leq \epsilon.\]
 
 Por lo tanto 
 \[\cup_{n \in \mathbb{N}}A_n \in S\]
