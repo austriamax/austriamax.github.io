@@ -1,0 +1,30 @@
+---
+title: "Tarea 5. Pregunta 10.4."
+subtitle: "Primera Nota"
+---
+
+PD. Existe $\Gamma \subseteq \cup_{n = 1}^\infty C_n$ tal que 
+
+\[\lambda(\cup_{n = 1}^\infty C_n - \Gamma) \leq \frac{\epsilon}{3}.\]
+
+Demostración por casos:
+
+Caso 1: $\lambda(\cup_{n = 1}^\infty C_n) < \infty$
+
+
+Por la continuidad de la medida existe un $N \in \mathbb{N}$ tal que 
+
+\[\lambda(\cup_{n = 1}^\infty C_n - \cup_{n = 1}^N C_n) \leq \frac{\epsilon}{3}.\]
+
+Así basta con proponer $\Gamma = \cup_{n = 1}^N C_n$. 
+
+Hay que notar que $\Gamma$ es cerrado por ser unión finita de cerrados.
+
+
+Caso 2:  $\lambda(\cup_{n = 1}^\infty C_n) = \infty$
+
+
+En este caso podemos reorganizar a $\cup_{n = 1}^\infty C_n$ como una unión numerable de intervalos finitos $\cup_{n = 1}^\infty C_n = \cup_{n = 1}^\infty (a_n,b_n]$
+Así podemos 
+
+

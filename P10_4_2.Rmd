@@ -1,0 +1,52 @@
+---
+title: "Tarea 5. Pregunta 10.4."
+subtitle: "Segunda Nota"
+---
+
+PD.  Si $A \in \mathscr{A}^{*}$ entonces $\forall \epsilon>0$ existe un abierto U tal que $A\subseteq U$ y $\lambda^*(U-A)<\epsilon$.
+
+
+Demostración:
+
+
+Sea $\epsilon >0$.
+
+--------------------------------------------------------------------------------
+
+Caso 1) $\lambda^*(A)<\infty$.
+
+Sea $\epsilon>0$. Por la definición de $\lambda^*(A)$:
+\[\lambda^*(A) = \inf\{\sum_{i=1}^\infty \lambda(B_n): A \subseteq \cup_{n \in \mathbb{N}} B_n, B_n \in \mathscr{A} \quad \forall n \in \mathbb{N} \}\]
+
+Existe $(B_i)_{i \in \mathbb{N}}$ tal que 
+
+\[\sum_{i=1}^\infty\lambda(B_i) \leq \lambda^*(A) + \frac{\epsilon}{2}\]
+
+Así cada $\lambda(B_i)< \infty$, entonces $B_i$ es la unión de un número finito de intervalos de la forma $(a,b]$ y es posible hallar un conjunto abierto $U_i = U(\epsilon,i)$ tal que 
+
+\[B_i \subseteq U_i \quad \mbox{ y } \lambda^*(U_i) \leq \lambda(B_i) + \frac{\epsilon}{2}\]
+
+(Por ejemplo: los intervalos $(a,b] \in S$, vea **[Pregunta 10.4.](https://austriamax.github.io/austriamax.proba1.github.io/P10_4.html)** )
+
+Sea $U = \cup_{i=2}^\infty U_i$, entonces $A \subseteq U$ con $U$ abierto y además:
+
+\[\lambda^*(U) \leq \sum_{i=1}^\infty \lambda^*(U_i) \leq \lambda(B_i) + \frac{\epsilon}{2} \leq \lambda(A) + \epsilon\]
+
+Por la sustractividad de $\lambda^*$ se sigue que:
+
+\[\lambda^*(U-A) \leq \epsilon\]
+
+--------------------------------------------------------------------------------
+
+Caso 2: $\lambda^*(A) = \infty$
+
+En este caso podemos escribir $A = \cup_{j=1}^\infty C_j$ donde $C_j = (a_j,b_j]$ con:
+
+\[C_j \in \mathscr{A}^{*} \quad \mbox{y} \quad \lambda^*(C_j) < \infty \quad \forall j \in \mathbb{N}.\]
+
+Por el caso anterior podemos encontrar $U_j$ abierto tal que
+\[C_j \subseteq U_j \quad \mbox{y} \quad \lambda^*(U_j-C_j) < \frac{\epsilon}{2^j}.\]
+
+Sea $U = \cup_{j=1}^\infty U_j$, entonces $U$ es abierto, $A\subseteq U$ y por monotonía y $\sigma$-subaditividad de $\lambda$ tenemos
+
+\[\lambda^*(U-A) \leq \sum_{j=1}^\infty \lambda^*(U_j-A) \leq \sum_{j=1}^\infty  \lambda^*(U_j-C_j) < \epsilon\]

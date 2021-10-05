@@ -10,8 +10,27 @@ En la demostración mostraremos que el conjunto de conjuntos $S \subseteq \maths
 
 Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \exists C,U \subseteq \mathbb{R} \mbox{ tal que } C \subseteq A \subseteq U \mbox{ con } C \mbox{ cerrado y } U \mbox{ abierto}\}.\]
 
+  (1.1) PD. $S$ contiene a los intervalos de la forma $(a,b] \subset \mathbb{R}$.
 
-  1.1) PD. $S$ es una $\sigma$-álgebra.
+Sea $(a,b] \subset \mathbb{R}$.
+
+Sea $\epsilon >0$.
+
+Sea $\epsilon_m = min\{\epsilon,\frac{b-a}{2}\}$.
+
+Proponemos $U = (a,b+\frac{\epsilon_m}{2})$ que es abierto. Y $C = [a+\frac{\epsilon_m}{2},b]$.
+
+Así
+
+\[C \subseteq (a,b] \subseteq U\]
+
+Y además
+
+\[\lambda(U-C) \leq \lambda((a,a + \frac{\epsilon_m}{2})) + \lambda((b,b + \frac{\epsilon_m}{2})) = \frac{\epsilon_m}{2} + \frac{\epsilon_m}{2} \leq \epsilon\]
+
+Por lo tanto $(a,b] \in S$.
+
+  (1.2) PD. $S$ es una $\sigma$-álgebra.
 
 
   (a) PD. $\mathbb{R} \in S$.
@@ -44,7 +63,7 @@ Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \
   (b) PD. Si $A \in S$ entonces $A^c \in S$.
   
   
-  Sea $A \in S$ y $epsilon >0$ arbitrario. 
+  Sea $A \in S$ y $\epsilon >0$ arbitrario. 
   
   Entonces existen $U$ abierto y $C$ cerrado tales que $C \subseteq A \subseteq U$ con $\lambda(U-C) \leq \epsilon$. Así
   
@@ -72,7 +91,7 @@ Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \
   
   Sea $(\epsilon_n)_{n \in \mathbb{N}}$ tales que $\epsilon_n = \frac{\epsilon}{3^n}$.
   
-  Así, existen $(U_n)_{n\in \mathbb{N}}$ una familia de abiertos y $(C_n)_{n\in \mathbb{N}}$ tales que
+  Así, existen $(U_n)_{n\in \mathbb{N}}$ una familia de abiertos y $(C_n)_{n\in \mathbb{N}}$ cerrados tales que
   
   \[C_n \subseteq A_n \subseteq U_n \quad \mbox{con} \quad \lambda(U_n-C_n) \leq \frac{\epsilon}{3^n}.\]
   
@@ -80,28 +99,13 @@ Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \
   
   \[\cup_{n \in \mathbb{N}} C_n \subseteq \cup_{n \in \mathbb{N}} A_n \subseteq \cup_{n \in \mathbb{N}} U_n\]
   
-  Donde $\cup_{n \in \mathbb{N}} C_n$ no necesariamente es cerrado pero $\cup_{n \in \mathbb{N}} U_n$ es abierto.
+  Donde $\cup_{n \in \mathbb{N}} C_n$ no necesariamente es cerrado pero $\cup_{n \in \mathbb{N}} U_n$ si es abierto.
 
-Por la continuidad de la medida $\exists N \in \mathbb{N}$ tal que 
-
-\[\lambda(\cup_{n = 1}^\infty C_n - \cup_{n = 1}^N C_n) \leq \frac{\epsilon}{3}.\]
-
-Donde sabemos que $\cup_{n = 1}^N C_n$ es cerrado (por ser union finita de cerrados). Así proponemos
-
-\[C = \cup_{n = 1}^N C_n\]
-
+Así proponemos 
 \[U = \cup_{n=1}^\infty U_n \]
 
-Sabemos que 
 
-\[C \subseteq \cup_{n=1}^\infty A_n \subseteq U\]
-
-Con $C$ es cerrado y $U$ abierto (union arbitraria de abiertos es abierto).
-
-
-Ahora sólo falta ver la condición de la medida. Notemos dos cosas:
-
-  (c.1) $\lambda(U - \cup_{n \in \mathbb{N}}C_n) \leq \frac{\epsilon}{2}$
+ Veamos que $\lambda(U - \cup_{n \in \mathbb{N}}C_n) \leq \frac{\epsilon}{2}$:
 
 \begin{align*}
 \lambda(U - \cup_{n \in \mathbb{N}}C_n) &\leq \lambda(\cup_{n \in \mathbb{N}}(U_n - C_n)) && \mbox{ (pues } U - \cup_{n \in \mathbb{N}}C_n \subseteq \cup_{n \in \mathbb{N}}(U_n - C_n) \mbox{)}.\\\\
@@ -109,55 +113,48 @@ Ahora sólo falta ver la condición de la medida. Notemos dos cosas:
 &\leq \sum_{n = 1}^\infty \frac{\epsilon}{3^n}\\\\
 &= \frac{\epsilon}{2}.
 \end{align*}
-  
-  (c.2) \[U-C = (U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\]
-  
-  Es decir, sólo partimos la $U-C$ en lo que nunca se iba quitar $(U-\cup_{n \in \mathbb{N}}C_n)$ y la parte que en algun momento se iba quitar $[U\cap(\cup_{n \in \mathbb{N}}C_n - C)$.
-  
-  Así
-  
-  \begin{align*}
-\lambda(U - \cup_{n \in \mathbb{N}}C_n) &= \lambda[(U-\cup_{n \in \mathbb{N}}C_n) \cup [U\cap(\cup_{n \in \mathbb{N}}C_n - C)]\\\\
-&\leq \lambda(U-\cup_{n \in \mathbb{N}}C_n) + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
-&= \frac{\epsilon}{2} + \lambda[U\cap(\cup_{n \in \mathbb{N}}C_n - C)] \\\\
-&\leq \frac{\epsilon}{2} + \lambda[(\cup_{n \in \mathbb{N}}C_n - C)] && (\mbox{pues } U\cap(\cup_{n \in \mathbb{N}}C_n - C) \subseteq (\cup_{n \in \mathbb{N}}C_n - C))\\\\
-&\leq \frac{\epsilon}{2} +  \frac{\epsilon}{2}\\\\
-&= \epsilon.
-\end{align*}
+
+Entonces 
+
+(3.1)
+\[\lambda(U - \cup_{n \in \mathbb{N}}A_n) \overset{(\subseteq)}{\leq} \lambda[(U-\cup_{n \in \mathbb{N}}A_n)\cup(\cup_{n \in \mathbb{N}}A_n-\cup_{n \in \mathbb{N}}C_n)] = \lambda(U - \cup_{n \in \mathbb{N}}C_n) \leq \frac{\epsilon}{2}. \]
+
+\[\therefore \lambda(U - A) \leq \frac{\epsilon}{2}.\]
+
+Ahora buscaremos el cerrado, para lo cual usaré el siguiente resultado:
+
+"Para todo $\epsilon >0$ existe un conjunto abierto $U$ tal que $A\subseteq U$ y  $\lambda(U-A)<\epsilon$". Demostrado en mi **[Nota](https://austriamax.github.io/austriamax.proba1.github.io/P10_4_2.html)**, (hay que notar que en este caso $\lambda^* = \lambda$)
+
+Como sabemos $A_1, A_2, \dots \in \mathscr{B}(\mathbb{R})$ entonces $(\cup_{\mathbb{N}} A_n)^c \in \mathscr{B}(\mathbb{R})$ por lo que existe un abierto $V$ tal que 
+
+\[(\cup_{\mathbb{N}} A_n)^c \subseteq V \quad \mbox{y} \quad \lambda(V-(\cup_{\mathbb{N}} A_n)^c)\leq \frac{\epsilon}{2}. \]
+
+Así $V^c$ es cerrado y $V^c \subseteq \cup_{\mathbb{N}} A_n$ y además
+
+\[\lambda(\cup_{\mathbb{N}} A_n- V^c) = \lambda((\cup_{\mathbb{N}} A_n) \cap V) = \lambda(V \cap (\cup_{\mathbb{N}} A_n)) = \lambda(V - (\cup_{\mathbb{N}} A_n)^c) \leq \frac{\epsilon}{2}.\]
+
+(3.2) Así podemos proponer al cerrado $C = V^c$.
+
+Veamos que se cumpla la condición sobre la medida $\lambda$:
+
+\[\lambda^*(U-C) = \lambda^*((U-A)\cup(A-C)) = \lambda^*(U-A) + \lambda^*(A-C) \leq \frac{\epsilon}{2}  +\frac{\epsilon}{2} \leq \epsilon.\]
 
 Por lo tanto 
 \[\cup_{n \in \mathbb{N}}A_n \in S\]
 
 Es decir, $S$ es una $\sigma$-álgebra.
 
-  1.2) PD. $S$ contiene a los intervalos de la forma $(a,b] \subset \mathbb{R}$.
 
-Sea $(a,b] \subset \mathbb{R}$.
+PARA CONCLUIR
 
-Sea $\epsilon >0$.
-
-Sea $\epsilon_m = min\{\epsilon,\frac{b-a}{2}\}$.
-
-Proponemos $U = (a,b+\frac{\epsilon_m}{2})$ que es abierto. Y $C = [a+\frac{\epsilon_m}{2},b]$.
-
-Así
-
-\[C \subseteq (a,b] \subseteq U\]
-
-Y además
-
-\[\lambda(U-C) \leq \lambda((a,a + \frac{\epsilon_m}{2})) + \lambda((b,b + \frac{\epsilon_m}{2})) = \frac{\epsilon_m}{2} + \frac{\epsilon_m}{2} \leq \epsilon\]
-
-Por lo tanto $(a,b] \in S$.
-
-Como $\mathscr{B}(\mathbb{R})$ es la mínima $\sigma$-álgebra que contiene a los intervalos $(a,b]$ entonces 
+Como $\mathscr{B}(\mathbb{R})$ es la mínima $\sigma$-álgebra que contiene a los intervalos $(a,b]$ y $S$ es una $\sigma$-álgebra que los contiene entonces 
 \[\mathscr{B}(\mathbb{R}) \subseteq S\]
 
-Por lo tanto:
+De la definición de $S$ obtenemos la otra contención, es decir:
 
 \[\mathscr{B}(\mathbb{R}) = S\]
 
-Es decir, 
+Por lo que:
 
 Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abierto $U$ y un cerrado $C$ de $\mathbb{R}$, tales que $C \subset A \subset U$ y $\lambda(U-C) \leq \epsilon$.
 
@@ -165,7 +162,29 @@ Si $A \in \mathscr{B}(\mathbb{R})$ y $\epsilon > 0$ muestre que existe un abiert
 2) Si $A \in \mathscr{A}^{*}$ sigue siendo cierto el resultado??
 
 
-Sí, continua siendo cierto.
+Sí, continua siendo cierto. La demostración es analoga.
+
+Primero demostraremos (a):
 
 
+(a) Para todo $\epsilon >0$ existe un conjunto abierto $U$ tal que $A\subseteq U$ y  $\lambda^*(U-A)<\epsilon$.
 
+Demostración: Para no extenderme mucho, la puse en la siguiente liga  **[Nota](https://austriamax.github.io/austriamax.proba1.github.io/P10_4_2.html)**
+
+Sea $\epsilon >0$.
+
+Entonces por (a) existe $u$ abierto tal que
+
+\[A\subseteq U \quad \mbox{y} \quad \lambda^*(U-A)\leq \frac{\epsilon}{2}\]
+
+Ahora queremos encontrar el cerrado.
+
+Como $A \in \mathscr{A}^{*}$ entonces $\mathbb{R} -A \in \mathscr{A}^{*}$. De (a) se sigue que existe un abierto $G$ tal que $\mathbb{R} - A \subseteq G$ y $\lambda^*[(\mathbb{R} -A) - G]<\frac{\epsilon}{2}$. 
+
+Así, proponemos $C = \mathbb{R} - G$ que es cerrado pues $G$ es abierto y contiene a $A$. 
+
+Veamos que se cumpla la condición sobre la medida $\lambda^*$:
+
+\[\lambda^*(U-C) = \lambda^*((U-A)\cup(A-C)) = \lambda^*(U-A) + \lambda^*(A-C) \leq \frac{\epsilon}{2}  +\frac{\epsilon}{2} \leq \epsilon.\]
+
+$\therefore$ la proposición continua siendo cierta.
