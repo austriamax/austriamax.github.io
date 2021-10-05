@@ -6,9 +6,9 @@ title: "Tarea 5. Pregunta 10.4."
 
 Demostración:
 
-En la demostración mostraremos que el conjunto de conjuntos $S \subseteq \mathscr{B}(\mathbb{R})$ que cumplen la propiedad que nos interesa es una $\sigma$-álgebra que contiene a los intervalos $(a,b]$ (y por lo tanto a $\mathscr{B}(\mathbb{R})$).
+En la demostración mostraremos que el conjunto de conjuntos $S \subseteq \mathscr{B}(\mathbb{R})$ que cumplen la propiedad que nos interesa es una $\sigma$-álgebra que contiene a los intervalos $(a,b]$ (y por lo tanto igual a $\mathscr{B}(\mathbb{R})$).
 
-Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \exists C,U \subseteq \mathbb{R} \mbox{ tal que } C \subseteq A \subseteq U \mbox{ con } C \mbox{ cerrado y } U \mbox{ abierto}\}.\]
+Sea \[S = \{A \in \mathscr{B}(\mathbb{R})|\mbox{ } \forall \epsilon>0 \mbox{ } \exists C,U \subseteq \mathbb{R} \mbox{ tal que } C \subseteq A \subseteq U \mbox{ con } C \mbox{ cerrado y } U \mbox{ abierto tales que } \lambda(U-C) \leq \epsilon \}.\]
 
   (1.1) PD. $S$ contiene a los intervalos de la forma $(a,b] \subset \mathbb{R}$.
 
