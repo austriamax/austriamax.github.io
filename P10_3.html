@@ -278,17 +278,72 @@ $(document).ready(function () {
 <table>
 <tbody>
 <tr class="odd">
-<td>1) Dado un conjunto <span class="math inline">\(A \in \mathscr{M}_{\lambda^*}\)</span>, <span class="math inline">\(\exists B \in \mathbb{B}(\mathbb{R})\)</span>, <span class="math inline">\(B \subset A\)</span> tal que <span class="math inline">\(\lambda^*(A-B) = 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<tbody>
-<tr class="odd">
 <td>2) Muestre que la completación de la <span class="math inline">\(\sigma\)</span>-álgebra de Borel respecto a la medida de Lebesque es precisamente <span class="math inline">\(\mathscr{M}_{\lambda^*}\)</span>.</td>
 </tr>
 </tbody>
 </table>
+<p>PD. Unicidad de la completación de un espacio de medida.</p>
+<p>Sea <span class="math inline">\(\mathscr{N}\)</span> la clase de los conjuntos nulos para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\mu^*(A\cup N) = \mu(A)\)</span> (<span class="math inline">\(N \in \mathscr{N}\)</span>).</p>
+<p>Sea <span class="math inline">\(S =\{A \cup N| A \in \mathscr{A} \mbox{ y } N \in \mathscr{N}\}\)</span>.</p>
+<p>Sea <span class="math inline">\(\nu\)</span> una medida completa tal que <span class="math inline">\(\nu|_{\mathscr{A}} = \mu^*|_{\mathscr{A}} = \mu\)</span>.</p>
+<p>Sea <span class="math inline">\(S_0 \in S\)</span>, entonces existen <span class="math inline">\(A_0 \in \mathscr{A}\)</span> y <span class="math inline">\(N_0 \in \mathscr{N}\)</span> tales que <span class="math inline">\(S_0 = A_0 \cup N_0\)</span>. Luego</p>
+<p><span class="math display">\[\begin{align*}
+\nu(S_0) &amp;=  \nu(A_0 \cup N_0)\\\\
+&amp;\leq \nu(A_0) + \nu(N_0)\\\\
+&amp;= \nu(A_0) + 0 &amp;&amp; (N_0 \in \mathscr{N}) \\\\
+&amp;= \nu(A_0)\\\\
+&amp;= \mu^*(A_0) &amp;&amp; (A_0 \in \mathscr{A})\\\\
+&amp;\leq \mu^*(A_0 \cup N_0)\\\\
+&amp;= \mu^*(S_0).
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \nu(S_0) \leq \mu^*(S_0)\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mu^{*}(S_0) &amp;=  \mu^{*}(A_0 \cup N_0)\\\\
+&amp;\leq \mu^*(A_0) + \mu^*(N_0)\\\\
+&amp;= \mu^*(A_0) + 0 &amp;&amp; (N_0 \in \mathscr{N}) \\\\
+&amp;= \nu(A_0)\\\\
+&amp;\leq \nu(A_0 \cup N_0)\\\\
+&amp;= \nu(S_0).
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \mu^*(S_0) \leq \nu(S_0)\]</span></p>
+<p>Así podemos concluir que <span class="math inline">\(\mu^* = \nu\)</span>.</p>
+<p>Utilizarémos el siguiente teorema presente en el libro “Measure and Probability Theory de Altheyra”, pg. 30. <strong><a href="https://austriamax.github.io/austriamax.proba1.github.io/P10_3_Teorema.html">TEOREMA</a></strong></p>
+<p>Definamos</p>
+<p><span class="math display">\[\widetilde{\mathscr{F}} = \{A \subset \mathbb{R} | \exists B_1, B_2 \in \mathbb{B}(\mathbb{R}), B_1 \subset A \subset B_2, \lambda(B_2-B_1) = 0\}\]</span></p>
+<p>Y también definamos <span class="math inline">\(\lambda^*(A) = \lambda(B_1) = \lambda(B_2)\)</span>. <span class="math inline">\(\widetilde{\mathscr{F}}\)</span> es la completación de <span class="math inline">\(\mathbb{B}(\mathbb{R})\)</span> respecto a <span class="math inline">\(\lambda^*|_{\mathbb{B}(\mathbb{R})}\)</span>.</p>
+<p>PD. <span class="math inline">\(A\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible.</p>
+<p>Sean <span class="math inline">\(B_1\)</span> y <span class="math inline">\(B_2\)</span> tales que <span class="math inline">\(B_1 \subset A \subset B_2\)</span> y <span class="math inline">\(\lambda(B_2-B_1) = 0\)</span>. Sea <span class="math inline">\(C \subset \mathbb{R}\)</span> tal que <span class="math inline">\(C \cap A \subset C\cap B_2\)</span> y <span class="math inline">\(C-A \subset C - B_1\)</span> entonces <span class="math inline">\(\lambda^*(C\cap A) + \lambda^*(C-A) \leq \lambda^*(C\cap B_2) + \lambda^*(C-B_1)\)</span>.</p>
+<p>Como <span class="math inline">\(C \cap B_1 \subset C \cap B_2\)</span> y <span class="math inline">\(\lambda^*([C\cap B_2] - [C\cap B_1]) \leq \lambda^*(B_2 - B_1) = 0\)</span>. Entonces <span class="math inline">\(\lambda^*(C\cap B_2) = \lambda^*(C\cap B_1)\)</span>, así <span class="math inline">\(B_1 \in \mathbb{B}(\mathbb{R}) \subset \mathscr{M}_{\lambda^*}\)</span>. Es decir <span class="math inline">\(B_1\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible. Luego</p>
+<p><span class="math display">\[\lambda^*(C\cap A) + \lambda^*(C- A) \leq \lambda^*(C\cap B_1) + \lambda^*(C- B_1) = \lambda^*(C).\]</span></p>
+<p>Además <span class="math display">\[\lambda^*(C) \leq \lambda^*([C \cap A] \cup [C-A]) \leq \lambda^*(C \cap A) + \lambda^*(C-A).\]</span></p>
+<p><span class="math display">\[\therefore \lambda^*(C) = \lambda^*(C \cap A)  + \lambda^*(C-A).\]</span></p>
+<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(A\)</span> es <span class="math inline">\(\lambda^*\)</span>-medible y <span class="math inline">\(\widetilde{\mathscr{F}}^* \subset \mathscr{A}^*\)</span>.</p>
+<p>PD <span class="math inline">\(\mathscr{A}^* \subset \mathscr{M}^*\)</span>.</p>
+<p>Sea <span class="math inline">\(A \in \mathscr{A}^*\)</span>.</p>
+<p>Sea <span class="math inline">\(J_n = [-n,n^]\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>Sea <span class="math inline">\(A_n = A \cup J_n\)</span> con <span class="math inline">\(\lambda^*(A_n) \leq \infty\)</span>.</p>
+<p>Sea <span class="math inline">\(\{I_t^s\}_{t \in \mathbb{N}} \subset J_n\)</span> una sucesión de intervalos que cubren <span class="math inline">\(A_n\)</span>, nombremoslos <span class="math inline">\(C_s = \cup_{t \in \mathbb{N}} I_t^s\)</span>. Así <span class="math inline">\(A_n \subset C_s\)</span> por lo que</p>
+<p><span class="math display">\[\lambda^*(C_s) \leq \sum_t \lambda^*(I_t^s) =  \sum_t \lambda(I_t^s) \leq \lambda^*(A_n) + \frac{1}{s}\]</span></p>
+<p>Nombraremos como <span class="math inline">\(C = \cap_{s}C_s\)</span>. Así</p>
+<p><span class="math display">\[\lambda^*(A_n) \leq \lambda(C)\]</span> Ya que <span class="math inline">\(A_n \subset C\)</span>. Y además <span class="math inline">\(\lambda(C) \leq \lambda^*(A_n)\)</span> (<span class="math inline">\(C \in \mathbb{B}(\mathbb{R})\)</span>).</p>
+<p><span class="math display">\[\therefore \lambda^*(A_n) = \lambda(C)\]</span></p>
+<p>De igual forma se puede repetir el razonamiento para <span class="math inline">\(J_n - A_n\)</span> para obtener <span class="math inline">\(D \in \mathbb{B}(\mathbb{R})\)</span> tal que <span class="math inline">\(J_n - A_n \subset D\)</span> con lo que tendríamos que <span class="math inline">\(\lambda(D) = \lambda^*(J_n - A_n)\)</span>, <span class="math inline">\(J_n -D \subset A_n \subset C\)</span> y <span class="math inline">\(J_n -D \in \mathbb{B}(\mathbb{R})\)</span>. Luego</p>
+<p><span class="math display">\[\lambda^*(J_n) = \lambda^*(Q_n \cap A_n) + \lambda^*(Q_n - A_n) = \lambda^*(A_n) + \lambda^*(Q_n - A_n)\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\lambda^*(J_n-D) = \lambda(J_n) - \lambda(D) = \lambda^*(J_n) - \lambda^*(J_n-A_n) = \lambda^*(A_n) = \lambda(B).\]</span></p>
+<p>Y como se tratan de medidas finitas se obtiene que <span class="math inline">\(\lambda(C - (J_n-D))=0\)</span>.</p>
+<p>Es decir, para <span class="math inline">\(A_n\)</span> podemos proponer <span class="math inline">\(B_1 = J_n -D\)</span> y <span class="math inline">\(B_2 = C\)</span> tales que <span class="math inline">\(B_1 \subset A_n \subset A_2\)</span> y <span class="math inline">\(\lambda(B_2-B_1) = 0\)</span>. Así <span class="math inline">\(\cup_{n=1}^\infty A_n \in \widetilde{\mathscr{F}}\)</span></p>
+<p><span class="math display">\[\therefore \mathscr{A}^* \subseteq \mathscr{M}_{\lambda^*}\]</span></p>
+<table>
+<tbody>
+<tr class="odd">
+<td>1) Dado un conjunto <span class="math inline">\(A \in \mathscr{M}_{\lambda^*}\)</span>, <span class="math inline">\(\exists B \in \mathbb{B}(\mathbb{R})\)</span>, <span class="math inline">\(B \subset A\)</span> tal que <span class="math inline">\(\lambda^*(A-B) = 0\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p>Demostración: Dado el inciso anterior, es inmediato encontrar a <span class="math inline">\(B\)</span>.</p>
+<p>Pues si <span class="math inline">\(A \in \mathscr{A}^*\)</span>, entonces existen <span class="math inline">\(B_1 \subset A \subset B_2\)</span> tales que <span class="math inline">\(\lambda(B_2 - B_1) = 0\)</span>. Y como <span class="math inline">\(A \cap B_1 = B_1\)</span> luego <span class="math inline">\(\lambda^*(A) = \lambda(B_1) + \lambda(A-B_1)\)</span>.</p>
+<p>Entonces <span class="math inline">\(\lambda^*(A-B_1)= 0\)</span>. Asi concluimos que <span class="math inline">\(B_1\)</span> es el conjunto que proponemos como candidato.</p>
 
 
 

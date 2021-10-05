@@ -1,17 +1,121 @@
 ---
 title: "Tarea 5. Pregunta 10.3."
 ---
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 Sean los espacios de medida $(\mathbb{R}, \mathscr{M}_{\lambda^*},\lambda^*)$, donde $\lambda^*$ y  $\mathscr{M}_{\lambda^*}$ son ambas la medida y la $\sigma$-álgebra de Lebesgue y $(\mathbb{R},\mathbb{B}(\mathbb{R}),\lambda)$ el espacio de medida donde $\mathbb{B}(\mathbb{R})$ es la $\sigma$-álgebra de Borel y $\lambda = \lambda^*|_{\mathbb{B}(\mathbb{R})}$.
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 
 Demuestre lo siguiente:
 
--------------------------------------------------------------------------------------------
-1) Dado un conjunto $A \in \mathscr{M}_{\lambda^*}$, $\exists B \in \mathbb{B}(\mathbb{R})$, $B \subset A$ tal que $\lambda^*(A-B) = 0$.
--------------------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 2) Muestre que la completación de la $\sigma$-álgebra de Borel respecto a la medida de Lebesque es precisamente $\mathscr{M}_{\lambda^*}$.
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+PD. Unicidad de la completación de un espacio de medida.
+
+Sea $\mathscr{N}$ la clase de los conjuntos nulos para $\mu$ con $\mu^*(A\cup N) = \mu(A)$ ($N \in \mathscr{N}$).
+
+Sea $S =\{A \cup N| A \in \mathscr{A} \mbox{ y } N \in \mathscr{N}\}$.
+
+Sea $\nu$ una medida completa tal que $\nu|_{\mathscr{A}} = \mu^*|_{\mathscr{A}} = \mu$.
+
+Sea $S_0 \in S$, entonces existen $A_0 \in \mathscr{A}$ y $N_0 \in \mathscr{N}$ tales que $S_0 = A_0 \cup N_0$. Luego
+
+\begin{align*}
+\nu(S_0) &=  \nu(A_0 \cup N_0)\\\\
+&\leq \nu(A_0) + \nu(N_0)\\\\
+&= \nu(A_0) + 0 && (N_0 \in \mathscr{N}) \\\\
+&= \nu(A_0)\\\\
+&= \mu^*(A_0) && (A_0 \in \mathscr{A})\\\\
+&\leq \mu^*(A_0 \cup N_0)\\\\
+&= \mu^*(S_0).
+\end{align*}
+
+\[\therefore \nu(S_0) \leq \mu^*(S_0)\]
+
+\begin{align*}
+\mu^{*}(S_0) &=  \mu^{*}(A_0 \cup N_0)\\\\
+&\leq \mu^*(A_0) + \mu^*(N_0)\\\\
+&= \mu^*(A_0) + 0 && (N_0 \in \mathscr{N}) \\\\
+&= \nu(A_0)\\\\
+&\leq \nu(A_0 \cup N_0)\\\\
+&= \nu(S_0).
+\end{align*}
+
+\[\therefore \mu^*(S_0) \leq \nu(S_0)\]
+
+Así podemos concluir que $\mu^* = \nu$.
+
+
+Utilizarémos el siguiente teorema presente en el libro "Measure and Probability Theory de Altheyra", pg. 30.  **[TEOREMA](https://austriamax.github.io/austriamax.proba1.github.io/P10_3_Teorema.html)**
+
+Definamos
+
+\[\widetilde{\mathscr{F}} = \{A \subset \mathbb{R} | \exists B_1, B_2 \in \mathbb{B}(\mathbb{R}), B_1 \subset A \subset B_2, \lambda(B_2-B_1) = 0\}\]
+
+Y también definamos $\lambda^*(A) = \lambda(B_1) = \lambda(B_2)$. $\widetilde{\mathscr{F}}$ es la completación de $\mathbb{B}(\mathbb{R})$ respecto a $\lambda^*|_{\mathbb{B}(\mathbb{R})}$.
+
+PD. $A$ es $\lambda^*$-medible.
+
+Sean $B_1$ y $B_2$ tales que $B_1 \subset A \subset B_2$ y $\lambda(B_2-B_1) = 0$. Sea $C \subset \mathbb{R}$ tal que $C \cap A \subset C\cap B_2$ y $C-A \subset C - B_1$ entonces $\lambda^*(C\cap A) + \lambda^*(C-A) \leq \lambda^*(C\cap B_2) + \lambda^*(C-B_1)$.
+
+
+Como $C \cap B_1 \subset C \cap B_2$ y $\lambda^*([C\cap B_2] - [C\cap B_1]) \leq \lambda^*(B_2 - B_1) = 0$. Entonces $\lambda^*(C\cap B_2) = \lambda^*(C\cap B_1)$, así $B_1 \in \mathbb{B}(\mathbb{R}) \subset \mathscr{M}_{\lambda^*}$. Es decir $B_1$ es $\lambda^*$-medible. Luego
+
+\[\lambda^*(C\cap A) + \lambda^*(C- A) \leq \lambda^*(C\cap B_1) + \lambda^*(C- B_1) = \lambda^*(C).\]
+
+Además
+\[\lambda^*(C) \leq \lambda^*([C \cap A] \cup [C-A]) \leq \lambda^*(C \cap A) + \lambda^*(C-A).\]
+
+\[\therefore \lambda^*(C) = \lambda^*(C \cap A)  + \lambda^*(C-A).\]
+
+$\therefore$ $A$ es $\lambda^*$-medible y  $\widetilde{\mathscr{F}}^* \subset \mathscr{A}^*$.
+
+
+PD $\mathscr{A}^* \subset \mathscr{M}^*$.
+
+
+Sea $A \in \mathscr{A}^*$.
+
+Sea $J_n = [-n,n^]$ con $n \in \mathbb{N}$.
+
+Sea $A_n = A \cup J_n$ con $\lambda^*(A_n) \leq \infty$.
+
+Sea $\{I_t^s\}_{t \in \mathbb{N}} \subset J_n$ una sucesión de intervalos que cubren $A_n$, nombremoslos $C_s = \cup_{t \in \mathbb{N}} I_t^s$. Así $A_n \subset C_s$ por lo que
+
+\[\lambda^*(C_s) \leq \sum_t \lambda^*(I_t^s) =  \sum_t \lambda(I_t^s) \leq \lambda^*(A_n) + \frac{1}{s}\]
+
+Nombraremos como $C =  \cap_{s}C_s$. Así
+
+\[\lambda^*(A_n) \leq \lambda(C)\]
+Ya que $A_n \subset C$. Y además $\lambda(C) \leq \lambda^*(A_n)$ ($C \in \mathbb{B}(\mathbb{R})$).
+
+\[\therefore \lambda^*(A_n) = \lambda(C)\]
+
+De igual forma se puede repetir el razonamiento para $J_n - A_n$ para obtener $D \in \mathbb{B}(\mathbb{R})$ tal que $J_n - A_n \subset D$ con lo que tendríamos que $\lambda(D) = \lambda^*(J_n - A_n)$, $J_n -D \subset A_n \subset C$ y  $J_n -D \in \mathbb{B}(\mathbb{R})$. Luego
+
+\[\lambda^*(J_n) = \lambda^*(Q_n \cap A_n) + \lambda^*(Q_n - A_n) = \lambda^*(A_n) + \lambda^*(Q_n - A_n)\]
+
+Entonces
+
+\[\lambda^*(J_n-D) = \lambda(J_n) - \lambda(D) = \lambda^*(J_n) - \lambda^*(J_n-A_n) = \lambda^*(A_n) = \lambda(B).\]
+
+Y como se tratan de medidas finitas se obtiene que $\lambda(C - (J_n-D))=0$.
+
+Es decir, para $A_n$ podemos proponer $B_1 = J_n -D$ y $B_2 = C$ tales que $B_1 \subset A_n \subset A_2$ y $\lambda(B_2-B_1) = 0$. Así $\cup_{n=1}^\infty A_n \in \widetilde{\mathscr{F}}$
+
+\[\therefore \mathscr{A}^* \subseteq \mathscr{M}_{\lambda^*}\]
+
+--------------------------------------------------------------------------------
+1) Dado un conjunto $A \in \mathscr{M}_{\lambda^*}$, $\exists B \in \mathbb{B}(\mathbb{R})$, $B \subset A$ tal que $\lambda^*(A-B) = 0$.
+--------------------------------------------------------------------------------
+
+Demostración: Dado el inciso anterior, es inmediato encontrar a $B$.
+
+Pues si $A \in \mathscr{A}^*$, entonces existen $B_1 \subset A \subset B_2$ tales que $\lambda(B_2 - B_1) = 0$. Y como $A \cap B_1 = B_1$ luego $\lambda^*(A) = \lambda(B_1) + \lambda(A-B_1)$.
+
+Entonces $\lambda^*(A-B_1)= 0$. Asi concluimos que $B_1$ es el conjunto que proponemos como candidato.
+
 

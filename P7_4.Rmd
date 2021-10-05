@@ -16,10 +16,10 @@ B_n = \{Y-X>\frac{1}{n}\}
 
 Así podemos contruir dos v.a. que acoten la diferencia de $X-Y$ y $Y-X$ cuando son positivas.
 \[(X-Y)1_{X-Y>0} \geq \frac{1}{n}1_{A_n}\]
-\[(Y-X)1_{X-Y>0} \geq \frac{1}{n}1_{B_n}\]
+\[(Y-X)1_{Y-X>0} \geq \frac{1}{n}1_{B_n}\]
 Tomando esperanzas
 \[\mathbb{E}[(X-Y)1_{X-Y>0}] \geq \frac{1}{n}\mathbb{P}(A_n)\]
-\[\mathbb{E}[(Y-X)1_{X-Y>0}] \geq \frac{1}{n}\mathbb{P}(B_n)\]
+\[\mathbb{E}[(Y-X)1_{Y-X>0}] \geq \frac{1}{n}\mathbb{P}(B_n)\]
 
 Recordando que
 \[\mathbb{E}[(X-Y)1_{X-Y>0}] = \mathbb{E}[X1_{X-Y>0}] - \mathbb{E}[Y1_{X-Y>0}] = 0\]

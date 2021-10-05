@@ -1,0 +1,17 @@
+---
+title: "Tarea 5. Pregunta 10.3."
+subtitle: "Teorema: ''Measure and Probability Theory de Altheyra'', pg. 30."
+---
+
+Teorema. Sea $(\Omega,\mathscr{F}, \mu)$ un espacio de medida y definase
+\[\widetilde{\mathscr{F}} = \{A \subset \Omega | \exists B_1,B_2 \in \mathscr{F}, B_1 \subset A \subset B_2, \mu(B_2 - B_1) = 0\}\]
+
+Si para $A \in \widetilde{\mathscr{F}}$, se establece $\widetilde{\mathscr{\mu}}(A) = \mu(B_1) = \mu(B_2)$. Entonces:
+
+1. $\widetilde{\mathscr{F}}$ es una $\sigma$-álgebra y $\widetilde{\mathscr{F}} \subset \mathscr{F}$.
+
+2. $\widetilde{\mu}$ esta bien definida.
+
+3. $(\Omega, \widetilde{\mathscr{F}}, \widetilde{\mu})$ es un espacio completo y $\mu = \widetilde{\mu}|_{\mathscr{F}}$.
+
+

@@ -11,7 +11,7 @@
 
 
 
-<title>Tarea 4. Pregunta 7.4.</title>
+<title>Tarea 5. Pregunta 10.3.</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -262,31 +262,19 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tarea 4. Pregunta 7.4.</h1>
+<h1 class="title toc-ignore">Tarea 5. Pregunta 10.3.</h1>
+<h3 class="subtitle">Teorema: ‘’Measure and Probability Theory de Altheyra’’, pg. 30.</h3>
 
 </div>
 
 
-<p>#Sea <span class="math inline">\((\Omega,\mathscr{A},\mathbb{P})\)</span> un espacio de probabilidad. Si <span class="math inline">\(X,Y: \Omega \longmapsto \mathbb{R}\)</span> son dos v.a.en <span class="math inline">\(\mathscr{L}_1\)</span> y <span class="math inline">\(\mathbb{E}(X1_A) = \mathbb{E}(Y1_A)\)</span>, para cada <span class="math inline">\(A \in \mathscr{A}\)</span> es cierto que <span class="math inline">\(X(\omega) = Y(\omega)\)</span> salvo en un conjunto de medida cero?</p>
-<p>Demostración:</p>
-<p>Definamos dos sucesiones. <span class="math display">\[\begin{equation}
-A_n = \{X-Y&gt;\frac{1}{n}\}\\\\
-B_n = \{Y-X&gt;\frac{1}{n}\}
-\end{equation}\]</span></p>
-<p>Así podemos contruir dos v.a. que acoten la diferencia de <span class="math inline">\(X-Y\)</span> y <span class="math inline">\(Y-X\)</span> cuando son positivas. <span class="math display">\[(X-Y)1_{X-Y&gt;0} \geq \frac{1}{n}1_{A_n}\]</span> <span class="math display">\[(Y-X)1_{Y-X&gt;0} \geq \frac{1}{n}1_{B_n}\]</span> Tomando esperanzas <span class="math display">\[\mathbb{E}[(X-Y)1_{X-Y&gt;0}] \geq \frac{1}{n}\mathbb{P}(A_n)\]</span> <span class="math display">\[\mathbb{E}[(Y-X)1_{Y-X&gt;0}] \geq \frac{1}{n}\mathbb{P}(B_n)\]</span></p>
-<p>Recordando que <span class="math display">\[\mathbb{E}[(X-Y)1_{X-Y&gt;0}] = \mathbb{E}[X1_{X-Y&gt;0}] - \mathbb{E}[Y1_{X-Y&gt;0}] = 0\]</span> <span class="math display">\[\mathbb{E}[(Y-X)1_{Y-X&gt;0}] = \mathbb{E}[Y1_{Y-X&gt;0}] - \mathbb{E}[X1_{Y-X&gt;0}] = 0\]</span></p>
-<p>Tenemos que</p>
-<p><span class="math display">\[\mathbb{P}(A_n) = 0  \quad \forall n \in \mathbb{N}\]</span> <span class="math display">\[\mathbb{P}(B_n) = 0  \quad \forall n \in \mathbb{N}\]</span></p>
-<p>Pero también</p>
-<p><span class="math display">\[(X-Y&gt;0) = \cup_{n \in \mathbb{N}} A_n\]</span> <span class="math display">\[(Y-X&gt;0) = \cup_{n \in \mathbb{N}} B_n\]</span></p>
-<p>Por lo tanto</p>
-<p><span class="math display">\[\mathbb{P}(X-Y&gt;0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = 0\]</span> <span class="math display">\[\mathbb{P}(X-Y&lt;0) \leq \sum_{n \in \mathbb{N}} \mathbb{P}(B_n) = 0\]</span></p>
-<p>Así <span class="math display">\[\begin{align*}
-\mathbb{P}(X-Y= 0) &amp;= 1 - \mathbb{P}(X-Y \neq 0)\\\\
-&amp;= 1 - [\mathbb{P}(X-Y &gt; 0) + \mathbb{P}(X-Y &lt; 0)]\\
-&amp;= 1
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X \overset{c.s}{=} Y\]</span></p>
+<p>Teorema. Sea <span class="math inline">\((\Omega,\mathscr{F}, \mu)\)</span> un espacio de medida y definase <span class="math display">\[\widetilde{\mathscr{F}} = \{A \subset \Omega | \exists B_1,B_2 \in \mathscr{F}, B_1 \subset A \subset B_2, \mu(B_2 - B_1) = 0\}\]</span></p>
+<p>Si para <span class="math inline">\(A \in \widetilde{\mathscr{F}}\)</span>, se establece <span class="math inline">\(\widetilde{\mathscr{\mu}}(A) = \mu(B_1) = \mu(B_2)\)</span>. Entonces:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\widetilde{\mathscr{F}}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra y <span class="math inline">\(\widetilde{\mathscr{F}} \subset \mathscr{F}\)</span>.</p></li>
+<li><p><span class="math inline">\(\widetilde{\mu}\)</span> esta bien definida.</p></li>
+<li><p><span class="math inline">\((\Omega, \widetilde{\mathscr{F}}, \widetilde{\mu})\)</span> es un espacio completo y <span class="math inline">\(\mu = \widetilde{\mu}|_{\mathscr{F}}\)</span>.</p></li>
+</ol>
 
 
 
