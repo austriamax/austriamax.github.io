@@ -1,0 +1,28 @@
+---
+title: "Tarea 8. Pregunta 14.2."
+---
+
+### Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad y $(X_n)_{n \in \mathbb{N}}$ una sucesion de v.a. definidas de $(\Omega, \mathscr{A}, \mathbb{P})$ y $h:\mathbb{R} \to \mathbb{R}$ una función contínua. Pruebe que:
+
+
+-------------------------------------------------------------------------------
+(A). Si $X_n \overset{c.s.}{\to} X$ entonces  $h(X_n) \overset{c.s.}{\to} h(X)$.
+-------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------
+(B). Si $X_n \overset{\mathbb{P}}{\to} X$ entonces  $h(X_n) \overset{\mathbb{P}}{\to} h(X)$. 
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+(C). Es cierto que si $X_n \overset{L_p}{\to} X$ entonces  $h(X_n) \overset{L_p}{\to} h(X)$. ¿Bajo qué hipótesis es cierta la siguiente afirmación? 
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+(D). ¿Es cierto que si $X_n \overset{\mathscr{L}}{\to} X$ entonces  $h(X_n) \overset{\mathscr{L}}{\to} h(X)$? 
+-------------------------------------------------------------------------------
+
+

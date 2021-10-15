@@ -1,0 +1,6 @@
+---
+title: "Tarea 9. Pregunta 15.5."
+---
+
+### Sea $(X_i)_{i = 1}^\infty$ una sucesión de v.a.i. en $(\Omega, \mathscr{A}, \mathbb{P})$. Pruebe que $\lim \inf_{n \to \infty} X_n$ y $\lim \sup_{n \to \infty} X_n$ son constantes y que $(X_n)_{n \in \mathbb{N}}$ converge o bien diverge.
+

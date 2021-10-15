@@ -1,0 +1,7 @@
+---
+title: "Tarea 9. Pregunta 15.8."
+---
+
+### Si $X_n \overset{\mathbb{P}}{\to} X$ entonces $\phi_{X_n}(u) \to \phi_{X}(u)$ con $u \in \mathbb{R}$ ($\phi_{X_n}$ y $\phi_{X}$ son funciones características de $X$ y $X_n$ respectivamentne).
+
+

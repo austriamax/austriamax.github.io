@@ -1,0 +1,6 @@
+---
+title: "Tarea 9. Pregunta 15.2."
+---
+
+### Sea $X$ una v.a. definida en $(\Omega, \mathscr{A}, \mathbb{P})$ y $q>0$. Si $\mathbb{E}|X|^q < \infty$, entonces $\lim_{x \to \infty} x^q\mathbb{P}(|X|\geq x) = 0$.
+

@@ -1,0 +1,25 @@
+---
+title: "Tarea 8. Pregunta 14.1."
+---
+
+### Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad y $(X_n)_{n \in \mathbb{N}}$ una sucesion de v.a. definidas de $(\Omega, \mathscr{A}, \mathbb{P})$. Pruebe que:
+
+
+-----------------------------------------------------------------------------
+(A). $X_n \overset{c.s.}{\to} X$ si y sólo para todo $\epsilon > 0$ se cumple $\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0$.
+-----------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------
+(B). Si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ converge entonces $X_n \overset{c.s.}{\to} X$.
+-----------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------
+(C). Si para cada $\epsilon > 0$ los eventos $A_n = \{|X_n - X| \geq \epsilon\}$, $n \in \mathbb{N}$ son independientes, es cierto que $X_n \overset{c.s.}{\to} X$ si y sólo si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
+-----------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,6 @@
+---
+title: "Tarea 9. Pregunta 15.7."
+---
+
+### Sean $\{X_n\}_{n = 1}^\infty$ variables aleatorias independientes tales que $\mathbb{P}(X_1 = 1) = \mathbb{P}(X_1 = -1) = \frac{1}{2}$. Si $S_n = \sum_{j = 1}^n X_j$, entonces $\frac{1}{n}S_n \overset{\mathbb{P}}{\to} 0$ y $\frac{1}{n^2}S_{n^2} \to 0$.
+

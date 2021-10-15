@@ -1,0 +1,5 @@
+---
+title: "Tarea 9. Pregunta 15.9."
+---
+
+### Si $X_1, \dots, X_n$ v.a. de Cauchy independientes muestre que \[\frac{1}{n}S_n = \frac{1}{n}\sum_{j = 1}^nX_j\] es también v.a. de Cauchy i.e. tiene densidad \[f(x) = \frac{1}{1+x^2}.\]

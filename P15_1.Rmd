@@ -1,0 +1,7 @@
+---
+title: "Tarea 9. Pregunta 15.1."
+---
+
+### Sea $F$ una función de distribución absolutamente continua (es decir, $F$ tiene  densidad). Pruebe que para todod $\epsilon > 0$ existe $\delta > 0$ tal que para toda colección finita de intervalos $I_i := (a_i,b_i], \quad i = 1, \dots, k$ con $\sum_{i = 1}^k (b_i-a_i) < \delta$, se cumple que $\sum_{i = 1}^k (F(b_i) - F(a_i)) < \epsilon$.
+
+
