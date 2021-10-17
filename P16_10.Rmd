@@ -1,0 +1,22 @@
+---
+title: "Tarea 10. Pregunta 16.10."
+---
+
+### Sean $U_1, U_2, \dots$ variables aletorias independientes Unifores en $[0,1]$ y defina \[S_n^p = \sum_{i = 1}^n 1_{U_i \leq p}.\]
+
+
+-------------------------------------------------------------------------------
+1. Sea $f:[0,1] \to \mathbb{R}$ continua y $M$ una cota para $|f|$ en $[0,1]$. Pruebe que $\mathbb{E}[f(\frac{S_n^p^}{n})]$ es polinomio.
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+2. Dada $\epsilon > 0$, sea $\delta > 0$ tal que si  $x,y \in [0,1]$ y $|y-x| \leq \delta$ entonces $|f(x) - f(y)|\leq \epsilon$. Pruebe que \[|\mathbb{E}[f(\frac{S_n^p}{n}) - f(p)]| \leq \epsilon + \frac{M}{\delta}\mathbb{E}[(\frac{S_n^p}{n} - p)^2]\]
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios $f_1, f_2, \dots $ tal que \[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]
+-------------------------------------------------------------------------------
+
+ 

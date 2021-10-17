@@ -1,0 +1,6 @@
+---
+title: "Tarea 10. Pregunta 16.5."
+---
+
+### Si $X$, $Y$ son v.a. independientes con la misma distribución. Pruebe que $X-Y$ es simétrica.
+

@@ -1,0 +1,6 @@
+---
+title: "Tarea 10. Pregunta 16.4."
+---
+
+### Sea $X$ una v.a.  Pruebe que $X$ es simétrica si y sólo si $\phi_X$ es real (i.e. toma valores en $\mathbb{R}$). Es decir, $X$ es simétrica si y sólo si $\mathbb{P}_X(A) = \mathbb{P}_X(-A)$ con $A \in \mathscr{B}(\mathbb{R})$.
+

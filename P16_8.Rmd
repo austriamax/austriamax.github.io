@@ -1,0 +1,7 @@
+---
+title: "Tarea 10. Pregunta 16.8."
+---
+
+
+### Si $X$ y $Y$ son v.a.'s independientes, $X, Y \sim N(0,1)$. Calcule la densidad de $(X+Y, X-Y)$.
+

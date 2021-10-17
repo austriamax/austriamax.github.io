@@ -1,0 +1,7 @@
+---
+title: "Tarea 10. Pregunta 16.3."
+---
+
+### Si $\mathbb{P}$ y  $\mathbb{Q}$ son dos medidas de probabilidad en $(\Omega, \mathscr{A})$ tal que $\mathbb{P}(A) = 0 \implies \mathbb{Q}(A) = 0$. Pruebe que para todo $\epsilon >0$ existe $\delta > 0$ tal que si $A \in \mathscr{A}$ Y $\mathbb{P}(A) < \delta$ entonces $\mathbb{Q}(A) < \epsilon$.
+
+

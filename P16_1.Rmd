@@ -1,0 +1,33 @@
+---
+title: "Tarea 10. Pregunta 16.1."
+---
+
+### Sea $w \in [0,1)$ y $w = \sum_{n=1}^\infty \frac{d_n(w)}{2^n}$ su desarrollo diádico (se han eliminado las expresiones que tengan colas de 1's, es decir, aquellas tales que existe $n \in \mathbb{N}$ con $d_m(w) = 1$ para toda $m \geq n$). Pruebe que:
+
+
+-------------------------------------------------------------------------------
+(a) \[\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\}) = \frac{1}{2^k} \quad (a_i \mbox{ arbitrarios en } \{0,1\}, \mbox{ fijos}). \]
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+(b) \[\mathbb{P}(\{w: \sum_{i = 1}^n d_i(w) = k\}) = {n \choose k}\frac{1}{2^n}\]
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+(c) Sea $l_n$ la corrida (más larga) de ceros que empiece en $d_n$, es decir,  \[l_n := \left\{
+     \begin{array}{@{}l@{\thinspace}l}
+       k &\mbox{Si } d_n(w) = d_{n+1}(w) = \dots = d_{n+k-1}(w) = 0 \mbox{ y } d_{n+k}(w) = 1\\
+       0 &\mbox{Si } d_n(w) = 1\\
+     \end{array}
+   \right.\] Si $r_n \in \mathbb{N}$, $n = 1, 2, \dots, r_n < r_{n+1}$ y $\sum_{n = 1}^\infty \frac{1}{2^{r_n}}<\infty$. Pruebe que \[\mathbb{P}(\lim \sup_n (l_n \geq r_n)) = 0.\]
+   
+   Es decir \[A_n = \{w: l_n(w) \geq r_n\}, \quad \mathbb{P}(\lim \sup_n A_n) = 0.\]
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+(d) Si $B_{n,m} := \{w: d_n(w) = d_m(w)\}$. Pruebe que $B_{1,2}$, $B_{1,3}$ y $B_{2,3}$ son independientes dos a dos, pero no son independientes.
+-------------------------------------------------------------------------------
+

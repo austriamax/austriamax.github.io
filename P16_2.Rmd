@@ -1,0 +1,7 @@
+---
+title: "Tarea 10. Pregunta 16.2."
+---
+
+### Si $F$ y $D$ son dos funciones de distribución. Pruebe que si $\{$ discontinuidades de $F\} \cap \{$ discontinuidades de $\} = 0$, entonces \[\int_a^b G(x)F(dx) = F(b)G(b) - \int_a^bF(x)G(dx).\] 
+(donde estas integrales deben entenderse como $\int_a^bG(x)F(dx) = \int_a^bF(x)\mathbb{P}_F(dx)$ y $\mathbb{P}_F$ es la medida de probabilidad en $(\mathbb{R}, \mathscr{B}(\mathbb{R}))$ asociada a $F$. Análogamente para $\int_a^bF(x)G(dx)$ y $\mathbb{P}_G$.)
+
