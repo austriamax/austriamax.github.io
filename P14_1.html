@@ -276,6 +276,28 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Definiendo <span class="math inline">\(A_{n,\epsilon} = \{|X_n - X| \geq \epsilon\}\)</span> se puede reescribir la hipótesis <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> como:</p>
+<p><span class="math display">\[
+\begin{align*}
+1 &amp;= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&amp;&amp; \mbox{(Definición)}\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon &gt;0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies |X_n(\omega) - X(\omega)| &lt; \epsilon \})\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon &gt;0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies \omega \in A_{n,\epsilon}^c \}) &amp;&amp; \mbox{(Def. de } A_{n,\epsilon})\\\\
+\end{align*}
+\]</span></p>
+<p>Aquí notamos que <span class="math inline">\((A_{n,\epsilon}^c)_{n \in \mathbb{N}}\)</span> es una sucesión creciente excepto tal vez en un conjunto de medida cero. Por lo que</p>
+<p><span class="math display">\[\mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) = 1, \quad \forall \epsilon&gt;0.\]</span></p>
+<p>PD. <span class="math inline">\(\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+\mathbb{P}(\lim \sup_n A_{n,\epsilon}) &amp;= \mathbb{P}(\cap_{n=1}^\infty \cup_{k=n}^\infty A_{k,\epsilon})\\\\
+&amp;= \mathbb{P}(\cap_{n=1}^\infty A_{n,\epsilon}) &amp;&amp; \mbox{(} (A_{n,\epsilon})_{n \in \mathbb{N}} \mbox{ es decreciente)}\\\\
+&amp;=1 - \mathbb{P}(\cup_{n=1}^\infty A_{n,\epsilon}^c) &amp;&amp;\mbox{(Leyes de D&#39;Morgan)}\\\\ 
+&amp;=1 - \mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) &amp;&amp; \mbox{(} (A_{n,\epsilon}^c)_{n \in \mathbb{N}} \mbox{ es creciente)}\\\\
+&amp;=1 - 1 &amp;&amp; \mbox{(Hipótesis)}\\\\
+&amp;=0.
+\end{align*}
+\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -283,6 +305,19 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>. Sabemos que <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> converge. Entonces</p>
+<p><span class="math display">\[\lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon] = 0\]</span></p>
+<p>Usando la notación del inciso anterior obtenemos:</p>
+<p><span class="math display">\[
+\begin{align*}
+0 &amp;= \lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon]\\\\
+&amp;= \lim_{n\to \infty} \mathbb{P}(A_{n,\epsilon})\\\\
+&amp;= \mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) &amp;&amp; \mbox{(Continuidad de } \mathbb{P})\\\\
+\end{align*}
+\]</span></p>
+<p>Por lo tanto <span class="math inline">\(\mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) = 0\)</span> para cualquier <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
+<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} X\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -290,6 +325,28 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>´Demostración:</p>
+<p>Sean <span class="math inline">\(A_n = \{|X_n - X| \geq \epsilon\}\)</span> eventos independientes para toda <span class="math inline">\(\epsilon &gt;0\)</span> y toda <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>. P.D. Para toda <span class="math inline">\(\epsilon &gt;0\)</span>; <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente.</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span></p>
+<p>Como <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>, sabemos que <span class="math inline">\((A_n)_{n \in \mathbb{N}}\)</span> es decreciente. Luego para <span class="math inline">\(n&lt;m\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathbb{P}(A_n) &amp;= \mathbb{P}(A_n \cap A_m)\\\\
+&amp;= \mathbb{P}(A_n)\mathbb{P}(A_m) &amp;&amp; \mbox{(Independencia)}\\\\
+\implies &amp; \mathbb{P}(A_m)[1-\mathbb{P}(A_n)] = 0.\\\\
+\implies &amp; \mathbb{P}(A_m) = 0 \mbox{ ó } \mathbb{P}(A_n) = 1.
+\end{align*}
+\]</span></p>
+<p>Pero <span class="math inline">\(\mathbb{P}(A_m) \leq \mathbb{P}(A_n)\)</span> por ser <span class="math inline">\((A_n)\)</span> es decreciente. Entonces podemos reducir <span class="math inline">\((\mathbb{P}(A_n))_{n \in \mathbb{N}}\)</span> a uno de los siguientes tres casos:</p>
+<p>caso i: <span class="math inline">\(\mathbb{P}(A_n) = 0 \quad \forall n \in \mathbb{N}\)</span>.</p>
+<p>caso ii: <span class="math inline">\(\exists k \in \mathbb{N}\)</span> tal que si <span class="math inline">\(n \leq k\)</span> entonces <span class="math inline">\(\mathbb{P}(A_n) = 1\)</span> y <span class="math inline">\(\mathbb{P}(A_n) = 0\)</span> en otro caso.</p>
+<p>caso iii: <span class="math inline">\(\mathbb{P}(A_n) = 1 \quad \forall n \in \mathbb{N}\)</span>.</p>
+<p>Es fácil descartar el caso (iii), pues como <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> debemos tener <span class="math inline">\(\mathbb{P}(\lim_{n \to \infty} A_n) = 0\)</span> (lo que contradice el caso iii).</p>
+<p>Así, en todos los casos posibles tenemos un número finito de <span class="math inline">\(A_n\)</span> con probabilidad positiva. Por lo tanto:</p>
+<p><span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente.</p>
+<p>(<span class="math inline">\(\Longleftarrow\)</span>) Supongase que <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente <span class="math inline">\(\forall \epsilon &gt;0\)</span>.</p>
+<p>Demostración: Inciso (B).</p>
 </div>
 
 

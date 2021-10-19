@@ -276,6 +276,14 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Sea <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> una sucesión de v.a.’s tales que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</p>
+<p>Sea <span class="math inline">\(\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}\)</span>. Así <span class="math inline">\(\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)\)</span> y como <span class="math inline">\(h\)</span> es continua: <span class="math display">\[\lim_{n \to \infty}h(X_n(\omega_0)) = h(X(\omega_0))\]</span> Por lo tanto:</p>
+<p><span class="math display">\[ \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\} \subseteq  \{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\}\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[ 1= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}) \leq  \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\})\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[h(X_n) \overset{c.s.}{\to} h(X).\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -283,6 +291,19 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>PD. <span class="math inline">\(\forall \epsilon&gt;0 \quad \lim_{n \to \infty} \mathbb{P}(\{\omega \in \Omega :|h(X_n)(\omega) - h(X)(\omega)|&gt;\epsilon\}) = 0\)</span>.</p>
+<p>PD. <span class="math inline">\(\forall \epsilon &gt;0 \quad \forall \epsilon_2 &gt;0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies \mathbb{P}(|h(X_n) - h(X)|&gt;\epsilon) &lt; \epsilon_2\)</span>.</p>
+<p>Sean <span class="math inline">\(\epsilon, \epsilon_2 &gt;0\)</span>.</p>
+<p>Como <span class="math inline">\(h:\mathbb{R} \to \mathbb{R}\)</span> es continua entonces <span class="math inline">\(\exists \delta &gt;0\)</span> tal que si <span class="math inline">\(|x-y|&lt;\delta \implies |h(x) - h(y)| &lt; \epsilon\)</span>. O por contrapuesta:</p>
+<p><span class="math display">\[|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta  \quad \mbox{(Ec. 1)}\]</span></p>
+<p>Y por hipótesis <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span> entonces <span class="math inline">\(\exists N_\delta \in \mathbb{N}\)</span> tal que si <span class="math inline">\(n&gt;N_{\delta,\epsilon_2} \implies \mathbb{P}(|X_n - X|&gt;\delta) &lt; \epsilon_2\)</span>.</p>
+<p>Así, proponemos <span class="math inline">\(N = N_{\delta,\epsilon_2}\)</span>.</p>
+<p>Si <span class="math inline">\(n&gt; N\)</span> entonces <span class="math inline">\(\mathbb{P}(|X_n-X|&gt;\delta) &lt;\epsilon_2\)</span>. Luego <span class="math inline">\(\mathbb{P}(|h(X_n)-h(X)|&gt;\epsilon) &lt; \epsilon_2\)</span> pues</p>
+<p><span class="math display">\[\{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))|&gt;\epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)|&gt;\epsilon\} \quad \mbox{(Por ec. 1)}\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[
+h(X_n) \overset{\mathbb{P}}{\to} h(X)
+\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -290,6 +311,8 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Respuesta: Suponiendo que <span class="math inline">\(h\)</span> es concava.</p>
+<p>Como <span class="math inline">\(h\)</span> es concava entonces <span class="math inline">\(-h\)</span> es convexa. Entonces la desigualdad de Jensen tenemos que:</p>
 <table>
 <tbody>
 <tr class="odd">

@@ -9,16 +9,65 @@ title: "Tarea 8. Pregunta 14.2."
 (A). Si $X_n \overset{c.s.}{\to} X$ entonces  $h(X_n) \overset{c.s.}{\to} h(X)$.
 -------------------------------------------------------------------------------
 
+Demostración:
+
+Sea $(X_n)_{n \in \mathbb{N}}$ una sucesión de v.a.'s tales que $X_n \overset{c.s.}{\to} X$.
+
+Sea $\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}$. Así $\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)$ y como $h$ es continua:
+\[\lim_{n \to \infty}h(X_n(\omega_0)) = h(X(\omega_0))\]
+Por lo tanto:
+
+\[ \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\} \subseteq  \{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\}\]
+
+Entonces
+
+\[ 1= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}) \leq  \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\})\]
+
+Así
+
+\[h(X_n) \overset{c.s.}{\to} h(X).\]
 
 
 -------------------------------------------------------------------------------
 (B). Si $X_n \overset{\mathbb{P}}{\to} X$ entonces  $h(X_n) \overset{\mathbb{P}}{\to} h(X)$. 
 -------------------------------------------------------------------------------
 
+PD. $\forall \epsilon>0 \quad \lim_{n \to \infty} \mathbb{P}(\{\omega \in \Omega :|h(X_n)(\omega) - h(X)(\omega)|>\epsilon\}) = 0$.
+
+PD. $\forall \epsilon >0 \quad \forall \epsilon_2 >0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies \mathbb{P}(|h(X_n) - h(X)|>\epsilon) < \epsilon_2$.
+
+Sean $\epsilon, \epsilon_2 >0$.
+
+Como $h:\mathbb{R} \to \mathbb{R}$ es continua entonces $\exists \delta >0$ tal que si $|x-y|<\delta \implies |h(x) - h(y)| < \epsilon$. O por contrapuesta:
+
+\[|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta  \quad \mbox{(Ec. 1)}\]
+
+Y por hipótesis $X_n \overset{\mathbb{P}}{\to} X$ entonces $\exists N_\delta \in \mathbb{N}$ tal que si $n>N_{\delta,\epsilon_2} \implies \mathbb{P}(|X_n - X|>\delta) < \epsilon_2$.
+
+Así, proponemos $N = N_{\delta,\epsilon_2}$.
+
+
+Si $n> N$ entonces $\mathbb{P}(|X_n-X|>\delta) <\epsilon_2$. 
+Luego $\mathbb{P}(|h(X_n)-h(X)|>\epsilon) < \epsilon_2$ pues
+
+\[\{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))|>\epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)|>\epsilon\} \quad \mbox{(Por ec. 1)}\]
+
+Por lo tanto 
+
+\[
+h(X_n) \overset{\mathbb{P}}{\to} h(X)
+\]
+
 
 -------------------------------------------------------------------------------
 (C). Es cierto que si $X_n \overset{L_p}{\to} X$ entonces  $h(X_n) \overset{L_p}{\to} h(X)$. ¿Bajo qué hipótesis es cierta la siguiente afirmación? 
 -------------------------------------------------------------------------------
+
+Respuesta: Suponiendo que $h$ es concava.
+
+
+Como $h$ es concava entonces $-h$ es convexa. Entonces la desigualdad de Jensen tenemos que:
+
 
 
 -------------------------------------------------------------------------------

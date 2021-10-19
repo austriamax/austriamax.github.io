@@ -9,17 +9,100 @@ title: "Tarea 8. Pregunta 14.1."
 (A). $X_n \overset{c.s.}{\to} X$ si y sólo para todo $\epsilon > 0$ se cumple $\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0$.
 -----------------------------------------------------------------------------
 
+Demostración:
+
+Definiendo $A_{n,\epsilon} = \{|X_n - X| \geq \epsilon\}$ se puede reescribir la hipótesis $X_n \overset{c.s.}{\to} X$ como:
+
+\[
+\begin{align*}
+1 &= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&& \mbox{(Definición)}\\\\
+&= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon >0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies |X_n(\omega) - X(\omega)| < \epsilon \})\\\\
+&= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon >0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies \omega \in A_{n,\epsilon}^c \}) && \mbox{(Def. de } A_{n,\epsilon})\\\\
+\end{align*}
+\]
+ 
+Aquí notamos que $(A_{n,\epsilon}^c)_{n \in \mathbb{N}}$ es una sucesión creciente excepto tal vez en un conjunto de medida cero. Por lo que 
+
+\[\mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) = 1, \quad \forall \epsilon>0.\]
+
+PD. $\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0$
+
+\[
+\begin{align*}
+\mathbb{P}(\lim \sup_n A_{n,\epsilon}) &= \mathbb{P}(\cap_{n=1}^\infty \cup_{k=n}^\infty A_{k,\epsilon})\\\\
+&= \mathbb{P}(\cap_{n=1}^\infty A_{n,\epsilon}) && \mbox{(} (A_{n,\epsilon})_{n \in \mathbb{N}} \mbox{ es decreciente)}\\\\
+&=1 - \mathbb{P}(\cup_{n=1}^\infty A_{n,\epsilon}^c) &&\mbox{(Leyes de D'Morgan)}\\\\ 
+&=1 - \mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) && \mbox{(} (A_{n,\epsilon}^c)_{n \in \mathbb{N}} \mbox{ es creciente)}\\\\
+&=1 - 1 && \mbox{(Hipótesis)}\\\\
+&=0.
+\end{align*}
+\]
+
 
 -----------------------------------------------------------------------------
 (B). Si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ converge entonces $X_n \overset{c.s.}{\to} X$.
 -----------------------------------------------------------------------------
 
+Demostración:
 
+Sea $\epsilon >0$. Sabemos que $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ converge.
+Entonces 
+
+\[\lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon] = 0\]
+
+Usando la notación del inciso anterior obtenemos:
+
+\[
+\begin{align*}
+0 &= \lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon]\\\\
+&= \lim_{n\to \infty} \mathbb{P}(A_{n,\epsilon})\\\\
+&= \mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) && \mbox{(Continuidad de } \mathbb{P})\\\\
+\end{align*}
+\]
+
+Por lo tanto $\mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) = 0$ para cualquier $\epsilon >0$.
+
+\[\therefore X_n \overset{c.s.}{\to} X\]
 
 -----------------------------------------------------------------------------
 (C). Si para cada $\epsilon > 0$ los eventos $A_n = \{|X_n - X| \geq \epsilon\}$, $n \in \mathbb{N}$ son independientes, es cierto que $X_n \overset{c.s.}{\to} X$ si y sólo si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
 -----------------------------------------------------------------------------
 
+´Demostración:
+
+Sean $A_n = \{|X_n - X| \geq \epsilon\}$ eventos independientes para toda $\epsilon >0$ y toda $n \in \mathbb{N}$.
+
+($\implies$) Supongase que $X_n \overset{c.s.}{\to} X$. P.D. Para toda $\epsilon >0$; $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
+
+Sea $\epsilon >0$
+
+Como $X_n \overset{c.s.}{\to} X$, sabemos que $(A_n)_{n \in \mathbb{N}}$ es decreciente. Luego para $n<m$:
+
+\[
+\begin{align*}
+\mathbb{P}(A_n) &= \mathbb{P}(A_n \cap A_m)\\\\
+&= \mathbb{P}(A_n)\mathbb{P}(A_m) && \mbox{(Independencia)}\\\\
+\implies & \mathbb{P}(A_m)[1-\mathbb{P}(A_n)] = 0.\\\\
+\implies & \mathbb{P}(A_m) = 0 \mbox{ ó } \mathbb{P}(A_n) = 1.
+\end{align*}
+\]
+
+Pero $\mathbb{P}(A_m) \leq \mathbb{P}(A_n)$ por ser $(A_n)$ es decreciente. Entonces podemos reducir $(\mathbb{P}(A_n))_{n \in \mathbb{N}}$ a uno de los siguientes tres casos:
+
+caso i: $\mathbb{P}(A_n) = 0 \quad \forall n \in \mathbb{N}$.
+
+caso ii: $\exists k \in \mathbb{N}$ tal que si $n \leq k$ entonces $\mathbb{P}(A_n) = 1$ y $\mathbb{P}(A_n) = 0$ en otro caso.
+
+caso iii: $\mathbb{P}(A_n) = 1 \quad \forall n \in \mathbb{N}$.
+
+Es fácil descartar el caso (iii), pues como $X_n \overset{c.s.}{\to} X$ debemos tener $\mathbb{P}(\lim_{n \to \infty} A_n) = 0$ (lo que contradice el caso iii).
+
+Así, en todos los casos posibles tenemos un número finito de $A_n$ con probabilidad positiva. Por lo tanto:
+
+$\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
 
 
+($\Longleftarrow$) Supongase que $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente $\forall \epsilon >0$.
+
+Demostración: Inciso (B).
 
