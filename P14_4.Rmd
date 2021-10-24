@@ -2,39 +2,144 @@
 title: "Tarea 8. Pregunta 14.4."
 ---
 
-### Use el ejercicio anterior para dar ejemplos de una sucesión $(X_n)_{n \in \mathbb{N}}$ de v.a.i. $Bernoulli(a_n)$ tal que:
+###  Obs. se trata de elegir $a_n$, $b_n$ y $\beta_n$ adecuadamente. Use el ejercicio anterior para dar ejemplos de una sucesión $(X_n)_{n \in \mathbb{N}}$ de v.a.i. $Bernoulli(a_n)$ tal que:
 
 
 -------------------------------------------------------------------------------
-(A.1) $X_n \overset{c.s.}{\to} X$.
+(A.1) $X_n \overset{c.s.}{\to} 0$.
 -------------------------------------------------------------------------------
+ 
+\[\mbox{Tomemos } a_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]
 
+Entonces 
+\[\sum_nP(X_n>0) = \sum_nP(X_n = 1) = \sum_n\frac{1}{2^n} = 1<\infty\]
 
+\[\therefore X_n \overset{c.s.}{\to} 0\]
 -------------------------------------------------------------------------------
 (A.2) $X_n \overset{\mathbb{P}}{\to} X$.
 -------------------------------------------------------------------------------
 
+En este caso basta con que $a_n \to 0$, tomemos:
+\[a_n = \frac{1}{n} \quad n \in \mathbb{N}\]
+
+Por lo tanto \[\lim_n \mathbb{P}(X_n>0)  =0.\]
+
+\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]
 
 -------------------------------------------------------------------------------
-(A.3) $X_n \overset{L_p}{\to} X$.
+(A.3) $X_n \overset{L_p}{\to} 0$.
 -------------------------------------------------------------------------------
 
+Cualquiera de los dos casos anteriores funciona como ejemplo. Ya que
 
-### Misma pregunta para $X_n  \approx Poisson(b_n)$ y para el caso en que $\mathbb{P}(X_n = n^2) = \beta_n$ y $\mathbb{P}(X_n = 0) = 1 - \beta_n$ con $\beta_n \in (0,1)$ y $a_n \in (0,1)$. Obs. se trata de elegir $a_n$, $b_n$ y $\beta_n$ adecuadamente.
+\[\mathbb{E}[|X_n-0|^p] = \mathbb{E}[X_n] = p\]
 
-
-
--------------------------------------------------------------------------------
-(B.1) $X_n \overset{c.s.}{\to} X$.
--------------------------------------------------------------------------------
+\[\therefore \lim_{n \to \infty} \mathbb{E}[|X_n-0|^p]  = 0 \]
+\[\therefore X_n \overset{L_p}{\to} 0\]
 
 
 -------------------------------------------------------------------------------
-(B.2) $X_n \overset{\mathbb{P}}{\to} X$.
+### Misma pregunta para $X_n  \approx Poisson(b_n)$.
 -------------------------------------------------------------------------------
 
 
+Antes de dar los ejemplos notemos que:
+
+\[\mathbb{P}(X_n = 0) = e^{-\lambda}\frac{\lambda^0}{0!} \implies \mathbb{P}(X_n > 0) = 1-e^{-\lambda}\]
+
 -------------------------------------------------------------------------------
-(B.3) $X_n \overset{L_p}{\to} X$.
+(B.1) $X_n \overset{c.s.}{\to} 0$.
 -------------------------------------------------------------------------------
 
+\[\mbox{Tomemos } b_n = -log(1-\frac{1}{2^n}) \quad n \in \mathbb{N}\]
+
+Entonces 
+\[\begin{align*}
+\sum_n \mathbb{P}(X_n>0) &= 1-e^{-[-log(1-\frac{1}{2^n})]}\\
+&= \sum_n\frac{1}{2^n}\\\\
+&= 1<\infty
+\end{align*}\]
+
+\[\therefore X_n \overset{c.s.}{\to} 0\]
+
+-------------------------------------------------------------------------------
+(B.2) $X_n \overset{\mathbb{P}}{\to} 0$.
+-------------------------------------------------------------------------------
+
+En este caso basta con que $a_n \to 0$, tomemos:
+\[b_n = -log(1-\frac{1}{n}) \quad n \in \mathbb{N}\]
+
+Por lo tanto \[\begin{align*}
+\lim_n \mathbb{P}(X_n>0)  &= \lim_n (1 - e^{-[-log(1-\frac{1}{n})]}) = 0.
+\end{align*}\]
+
+\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]
+
+
+-------------------------------------------------------------------------------
+(B.3) $X_n \overset{L_p}{\to} 0$.
+-------------------------------------------------------------------------------
+
+En este caso propondremos 
+\[_n = \min\{\frac{1}{np {p \choose i}}:i = 0, \dots, p\}\]
+
+Donde $p \choose i$ son los números de Stirling del segundo tipo (no las combinaciones de $p$ en $i$). **[Referencia](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full)** https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full
+
+
+\[\begin{align*}
+\mathbb{E}[|X_n-0|^p] &= \mathbb{E}[X_n^p]\\\\
+&= \sum_{i = 0}^p  b_i^i{p \choose i} &&(\mbox{Por la referencia})\\\\
+&\leq \sum_{i = 0}^p \frac{1}{np}&&(\mbox{Por la elección de }a_n)\\\\
+&\leq \frac{1}{n}
+\end{align*}\]
+
+Por lo tanto 
+
+\[X_n \overset{L_p}{\to} 0\]
+
+
+-------------------------------------------------------------------------------
+### El caso en que $\mathbb{P}(X_n = n^2) = \beta_n$ y $\mathbb{P}(X_n = 0) = 1 - \beta_n$ con $\beta_n \in (0,1)$ y $a_n \in (0,1)$.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+(C.1) $X_n \overset{c.s.}{\to} 0$.
+-------------------------------------------------------------------------------
+
+\[\mbox{Tomemos } c_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]
+
+Entonces 
+\[\sum_nP(X_n>0) = \sum_nP(X_n = n^2) = \sum_n\frac{1}{2^n} = 1<\infty\]
+
+\[\therefore X_n \overset{c.s.}{\to} 0\]
+
+-------------------------------------------------------------------------------
+(C.2) $X_n \overset{\mathbb{P}}{\to} 0$.
+-------------------------------------------------------------------------------
+
+Tomemos:
+\[c_n = \frac{1}{n} \quad n \in \mathbb{N}\]
+
+Por lo tanto \[\begin{align*}
+\lim_n \mathbb{P}(X_n>0)  &= \lim_n \mathbb{P}(X_n = n^2) = \lim_n \frac{1}{n} = 0.
+\end{align*}\]
+
+\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]
+
+
+-------------------------------------------------------------------------------
+(C.3) $X_n \overset{L_p}{\to} 0$.
+-------------------------------------------------------------------------------
+
+Tomemos:
+\[c_n = \frac{1}{n^{2p}2^{n}} \quad n \in \mathbb{N}\]
+
+\[\begin{align*}
+\lim_{n \to \infty}\mathbb{E}[|X_n-0|^p] &= \lim_{n \to \infty} \mathbb{E}[X_n^p]\\\\
+&= \lim_{n \to \infty}\frac{n^{2p}}{n^{2p}2^{n}}\\\\
+&= \lim_{n \to \infty}\frac{1}{2^{n}}\\\\
+&= 0
+\end{align*}\]
+
+Así se concluye que
+\[X_n \overset{L_p}{\to} 0\]

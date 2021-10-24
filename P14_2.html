@@ -278,11 +278,11 @@ $(document).ready(function () {
 </table>
 <p>Demostración:</p>
 <p>Sea <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> una sucesión de v.a.’s tales que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</p>
-<p>Sea <span class="math inline">\(\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}\)</span>. Así <span class="math inline">\(\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)\)</span> y como <span class="math inline">\(h\)</span> es continua: <span class="math display">\[\lim_{n \to \infty}h(X_n(\omega_0)) = h(X(\omega_0))\]</span> Por lo tanto:</p>
+<p>Sea <span class="math inline">\(\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}\)</span>. Entonces <span class="math inline">\(\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)\)</span> y como <span class="math inline">\(h\)</span> es continua: <span class="math display">\[\lim_{n \to \infty}h(X_n(\omega_0)) = h(X(\omega_0))\]</span> Por lo tanto:</p>
 <p><span class="math display">\[ \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\} \subseteq  \{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\}\]</span></p>
 <p>Entonces</p>
 <p><span class="math display">\[ 1= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}) \leq  \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\})\]</span></p>
-<p>Así</p>
+<p>Concluimos que</p>
 <p><span class="math display">\[h(X_n) \overset{c.s.}{\to} h(X).\]</span></p>
 <table>
 <tbody>
@@ -292,14 +292,19 @@ $(document).ready(function () {
 </tbody>
 </table>
 <p>PD. <span class="math inline">\(\forall \epsilon&gt;0 \quad \lim_{n \to \infty} \mathbb{P}(\{\omega \in \Omega :|h(X_n)(\omega) - h(X)(\omega)|&gt;\epsilon\}) = 0\)</span>.</p>
-<p>PD. <span class="math inline">\(\forall \epsilon &gt;0 \quad \forall \epsilon_2 &gt;0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies \mathbb{P}(|h(X_n) - h(X)|&gt;\epsilon) &lt; \epsilon_2\)</span>.</p>
+<p>Sabemos que <span class="math inline">\(h:\mathbb{R} \to \mathbb{R}\)</span> es continua:</p>
+<p><span class="math display">\[\forall \epsilon&gt;0 \quad  \exists \delta &gt;0 \quad \mbox{tal que si} \quad |x-y|&lt;\delta \implies |h(x) - h(y)| &lt; \epsilon\]</span></p>
+<p>O por contrapuesta:</p>
+<p><span class="math display">\[\forall \epsilon&gt;0 \quad  \exists \delta &gt;0 \quad \mbox{tal que si} \quad |h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta\]</span></p>
+<p>En terminos conjuntistas:</p>
+<p><span class="math display">\[\forall \epsilon&gt;0 \quad  \exists \delta &gt;0  \quad \{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))| \geq \epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)| \geq \delta\}\]</span></p>
+<p>Lo que implica que <span class="math display">\[\forall \epsilon&gt;0 \quad  \exists \delta &gt;0  \quad \mathbb{P}[|h(X_n) - h(X)| \geq \epsilon] \leq \mathbb{P}[|X_n - X| \geq \delta]\]</span></p>
+<p>PD. <span class="math inline">\(\forall \epsilon &gt;0 \quad \forall \epsilon_2 &gt;0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies \mathbb{P}(|h(X_n) - h(X)| \geq \epsilon) &lt; \epsilon_2\)</span>.</p>
 <p>Sean <span class="math inline">\(\epsilon, \epsilon_2 &gt;0\)</span>.</p>
-<p>Como <span class="math inline">\(h:\mathbb{R} \to \mathbb{R}\)</span> es continua entonces <span class="math inline">\(\exists \delta &gt;0\)</span> tal que si <span class="math inline">\(|x-y|&lt;\delta \implies |h(x) - h(y)| &lt; \epsilon\)</span>. O por contrapuesta:</p>
-<p><span class="math display">\[|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta  \quad \mbox{(Ec. 1)}\]</span></p>
-<p>Y por hipótesis <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span> entonces <span class="math inline">\(\exists N_\delta \in \mathbb{N}\)</span> tal que si <span class="math inline">\(n&gt;N_{\delta,\epsilon_2} \implies \mathbb{P}(|X_n - X|&gt;\delta) &lt; \epsilon_2\)</span>.</p>
-<p>Así, proponemos <span class="math inline">\(N = N_{\delta,\epsilon_2}\)</span>.</p>
-<p>Si <span class="math inline">\(n&gt; N\)</span> entonces <span class="math inline">\(\mathbb{P}(|X_n-X|&gt;\delta) &lt;\epsilon_2\)</span>. Luego <span class="math inline">\(\mathbb{P}(|h(X_n)-h(X)|&gt;\epsilon) &lt; \epsilon_2\)</span> pues</p>
-<p><span class="math display">\[\{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))|&gt;\epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)|&gt;\epsilon\} \quad \mbox{(Por ec. 1)}\]</span></p>
+<p>Por la continuidad <span class="math inline">\(\exists \delta(\epsilon)&gt;0\)</span> tal que <span class="math inline">\(|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta(\epsilon)\)</span>.</p>
+<p>Y por hipótesis <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span> entonces <span class="math inline">\(\exists N_{\delta(\epsilon),\epsilon_2} \in \mathbb{N}\)</span> tal que si <span class="math inline">\(n&gt;N_{\delta(\epsilon),\epsilon_2} \implies \mathbb{P}[|X_n - X|\geq\delta(\epsilon)] &lt; \epsilon_2\)</span>.</p>
+<p>Así, proponemos <span class="math inline">\(N = N_{\delta(\epsilon),\epsilon_2}\)</span>.</p>
+<p>Y por lo anterior <span class="math inline">\(\mathbb{P}(|h(X_n)-h(X)|\geq \epsilon) \leq \mathbb{P}(|X_n - X| \geq \delta(\epsilon)) &lt; \epsilon_2\)</span> pues</p>
 <p>Por lo tanto</p>
 <p><span class="math display">\[
 h(X_n) \overset{\mathbb{P}}{\to} h(X)
@@ -307,12 +312,25 @@ h(X_n) \overset{\mathbb{P}}{\to} h(X)
 <table>
 <tbody>
 <tr class="odd">
-<td>(C). Es cierto que si <span class="math inline">\(X_n \overset{L_p}{\to} X\)</span> entonces <span class="math inline">\(h(X_n) \overset{L_p}{\to} h(X)\)</span>. ¿Bajo qué hipótesis es cierta la siguiente afirmación?</td>
+<td>(C). ¿Es cierto que si <span class="math inline">\(X_n \overset{L_p}{\to} X\)</span> entonces <span class="math inline">\(h(X_n) \overset{L_p}{\to} h(X)\)</span>?. ¿Bajo qué hipótesis es cierta la siguiente afirmación?</td>
 </tr>
 </tbody>
 </table>
-<p>Respuesta: Suponiendo que <span class="math inline">\(h\)</span> es concava.</p>
-<p>Como <span class="math inline">\(h\)</span> es concava entonces <span class="math inline">\(-h\)</span> es convexa. Entonces la desigualdad de Jensen tenemos que:</p>
+<p>Respuesta:</p>
+<ol style="list-style-type: decimal">
+<li>Es falso.</li>
+</ol>
+<p>Sabemos que si <span class="math inline">\(F_X:\mathbb{R} \to \mathbb{R}\)</span> es una función de distribución invertible entonces <span class="math inline">\(F^{-1}(U)\)</span> distribuye como <span class="math inline">\(X\)</span> si <span class="math inline">\(U \sim Unif(0,1)\)</span>. Ahora tomemos <span class="math inline">\(X \sim Cauchy(0,1)\)</span>.</p>
+<p>Asi <span class="math display">\[F(x) = \frac{1}{\pi}\arctan{(x)} + \frac{1}{2} \implies h(u) = F^{-1}(u) = \tan[\pi(u - \frac{1}{2})] \]</span></p>
+<p>Entonces <span class="math inline">\(F^{-1}(x)\)</span> es una función continua no acotada. <span class="math inline">\(U_n \sim Unif(0,1)\)</span> una sucesión constante donde cada <span class="math inline">\(U_n\)</span> tiene todos sus momentos y es claro que converge en <span class="math inline">\(L_p\)</span>. Mienstras que <span class="math inline">\(F^{-1}(U_n) \sim Cauchy(0,1)\)</span> no tiene ni el primer momento finito.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>¿Bajo qué hipótesis es cierta la siguiente afirmación?</li>
+</ol>
+<p>Respuesta: Continua y acotada.</p>
+<p>Supongase que <span class="math inline">\(X_n \overset{L_p}{\to} X\)</span>.</p>
+<p>Por ser <span class="math inline">\(h\)</span> acotada entonces <span class="math inline">\(h(X_n),h(X) \in L_p\)</span>.</p>
+<p>Luego <span class="math inline">\(X_n \overset{L_p}{\to} X \implies X_n \overset{\mathbb{P}}{\to} X\)</span>.</p>
+<p>Pero como <span class="math inline">\(h\)</span> es contunua y aplicando el teorema de convergencia dominada (en media) <span class="math inline">\(h(X_n) \overset{\mathbb{P}}{\to} h(X)\)</span>.</p>
 <table>
 <tbody>
 <tr class="odd">

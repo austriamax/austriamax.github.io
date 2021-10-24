@@ -269,6 +269,48 @@ $(document).ready(function () {
 
 <div id="sean-x_n_n-1infty-variables-aleatorias-independientes-tales-que-mathbbpx_n-0-mathbbpx_n-1-frac12-quad-n-1-2-dots.-pruebe-que-la-variable-aleatoria-x-sum_n-1infty-fracx_n2n-tiene-distribución-uniforme." class="section level3">
 <h3>Sean <span class="math inline">\(\{X_n\}_{n = 1}^\infty\)</span> variables aleatorias independientes tales que <span class="math inline">\(\mathbb{P}(X_n = 0) = \mathbb{P}(X_n = 1) = \frac{1}{2}, \quad n = 1, 2, \dots\)</span>. Pruebe que la variable aleatoria <span class="math inline">\(X = \sum_{n = 1}^\infty \frac{X_n}{2^n}\)</span> tiene distribución uniforme.</h3>
+<p>Demostración:</p>
+<p>Sea <span class="math inline">\(S_k = \sum_{n = 1}^k \frac{X_n}{2^n}\)</span>. Es fácil ver (por inducción) que <span class="math inline">\(S_k\)</span> toma valores en <span class="math display">\[\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}.\]</span></p>
+<p>Primero vamos a mostrar que la distribución de <span class="math inline">\(S_k\)</span> es una uniforme discreta y después que converge a una v.a. uniforme continua.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(S_k = s) &amp;= \mathbb{P}(X_1 = s_1, X_2 = s_2, \dots, X_k = s_k) &amp;&amp; (\mbox{Donde } s_i \mbox{ es la }i-\mbox{ésima componente de la representación binaria de }s)\\
+&amp;= \mathbb{P}(X_1 = s_1)\mathbb{P}(X_2 = s_2)\dots\mathbb{P}(X_k = s_k) &amp;&amp;(\mbox{Independencia})\\
+&amp;= \frac{1}{2^k} &amp;&amp;(\mbox{Por hipótesis } p = \frac{1}{2})
+\end{align*}
+\]</span></p>
+<p>Como <span class="math inline">\(\mathbb{P}(S_k = s) = \frac{1}{2^k}, \quad \forall s \in \{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}\)</span> podemos concluir que <span class="math display">\[S_k \sim Unif\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}\]</span></p>
+<p>Así la función de distribución de <span class="math inline">\(S_k\)</span> es de la forma:</p>
+<p><span class="math display">\[F_{S_k}(x) = 
+     \begin{cases}
+       0 &amp;\quad\text{para } x&lt;0\\
+       \frac{\lfloor 2^kx + 1 \rfloor}{2^k} &amp;\quad\text{para } 0\leq x \leq \frac{2^k-1}{2^k}\\
+       1 &amp;\quad\text{otro caso.} \\ 
+     \end{cases}\]</span></p>
+<p>Donde <span class="math inline">\(\lfloor * \rfloor\)</span> es la función piso.</p>
+<p>Ahora, la densidad de una <span class="math inline">\(Unif(0,1)\)</span> tiene la forma</p>
+<p><span class="math display">\[F_U(x) = 
+     \begin{cases}
+       0 &amp;\quad\text{para } x\leq0\\
+       x &amp;\quad\text{para } 0&lt; x &lt; 1\\
+       1 &amp;\quad\text{otro caso.} \\ 
+     \end{cases} \]</span></p>
+<p>Tomando <span class="math inline">\(x \in (0,1)\)</span> tenemos que</p>
+<p><span class="math display">\[
+\begin{align*}
+|F_{S_k}(x) - F_U(x)| &amp;= |\frac{\lfloor 2^kx+1 \rfloor}{2^{k}} - x|\\\\
+&amp;= \frac{|\lfloor 2^kx + 1 \rfloor - 2^{k}x|}{2^{k}}\\
+&amp; =  \frac{\lfloor 2^kx + 1 \rfloor - 2^{k}x}{2^{k}}\\
+&amp;\leq  \frac{\lfloor 2^kx\rfloor + \lfloor1 \rfloor - 2^{k}x}{2^{k}}\\
+&amp;=\frac{\lfloor 2^kx\rfloor - 2^{k}x}{2^{k}}  +\frac{1}{2^{k}}\\\\
+&amp;&lt;\frac{1}{2^{k}}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[\therefore |F_{S_k}(x) - F_U(x)| \leq \frac{1}{2^{k}}, \quad \forall x\in \mathbb{R}\]</span></p>
+<p>Es decir, <span class="math inline">\(F_{S_k}\)</span> converge uniformemente a <span class="math inline">\(F_U\)</span>. Entonces se concluye que <span class="math display">\[X \sim Unif(0,1).\]</span></p>
+<div class="figure">
+<img src="discretavscontinua.png" alt="" />
+<p class="caption"><span class="math inline">\(F_n vs F\)</span></p>
+</div>
 </div>
 
 

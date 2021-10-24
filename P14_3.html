@@ -272,10 +272,16 @@ $(document).ready(function () {
 <table>
 <tbody>
 <tr class="odd">
-<td>(1) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span> si y sólo si <span class="math inline">\(\lim_n \mathbb{P}(X_n &gt; 0) = 0\)</span>.</td>
+<td>(1) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span> si y sólo si <span class="math inline">\(\lim_n \mathbb{P}(X_n &gt; 0) = 0\)</span>.</td>
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p><span class="math display">\[\begin{align*}
+(X_n \overset{\mathbb{P}}{\to} 0) &amp;\iff \lim_n \mathbb{P}(\{\omega \in \Omega: |X_n(\omega)-0|&gt;\epsilon\}) = 0 &amp;&amp; (\mbox{Def.} \overset{\mathbb{P}}{\to})\\\\
+&amp;\iff \lim_n \mathbb{P}(\{\omega \in \Omega: X_n(\omega)&gt;\epsilon\}) = 0 &amp;&amp; (\mathbb{N} \mbox{ es el soporte de }X)\\\\
+&amp;\iff \lim_n \mathbb{P}(\{\omega \in \Omega: X_n(\omega)&gt;0\}) = 0 &amp;&amp; (\mbox{SPG } \epsilon&lt;1)
+\end{align*}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -283,6 +289,28 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>De acuerdo con la <strong><a href="https://austriamax.github.io/austriamax.proba1.github.io/P14_1.html">pregunta 14.1.</a></strong></p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> si y sólo para todo <span class="math inline">\(\epsilon &gt; 0\)</span> se cumple <span class="math inline">\(\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\)</span>. Con <span class="math inline">\(A_n(\epsilon) =\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \geq \epsilon \}\)</span>.</li>
+</ol>
+<p>SPG podemos tomar <span class="math inline">\(0&lt;\epsilon&lt;1\)</span> pues para <span class="math inline">\(\epsilon &gt;1\)</span> sólo tomamos una <span class="math inline">\(N\)</span> (indice) más grande.</p>
+<p>Así <span class="math display">\[\begin{align*}
+A_n(\epsilon) &amp;= \{\omega \in \Omega : |X_n(\omega) - 0| \geq \epsilon \}\\\\
+&amp;=\{\omega \in \Omega : X_n(\omega) \geq \epsilon \}\\\\
+&amp;=\{\omega \in \Omega : X_n(\omega) &gt; 0 \}&amp;&amp; (\mathbb{N} \mbox{ es el soporte de }X)\\
+&amp;=A_n(0)
+\end{align*}\]</span></p>
+<p>Es decir</p>
+<p><span class="math display">\[X_n \overset{c.s.}{\to} X \iff \mathbb{P}[\lim \sup_n (X_n&gt;0)] = 0\]</span></p>
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>. PD. <span class="math inline">\(\sum_n \mathbb{P}(X_n &gt; 0)&lt;\infty\)</span>.</p>
+<p>Como pasa que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> entonces <span class="math inline">\(\mathbb{P}[\lim \sup_n (X_n&gt;0)] = 0\)</span>.</p>
+<p>(Recordemos el lema de Borel-Canteli (parte 2): Si <span class="math inline">\(B_1, B_2, \dots\)</span> son independientes y <span class="math inline">\(\sum_n \mathbb{P}(B_n) = \infty\)</span> entonces <span class="math inline">\(\mathbb{P}(\lim \sup_n B_n) = 1\)</span>.).</p>
+<p>Por la contrapuesta de la segunda parte del lema de Borel-Cantelli y tomando encuenta la independencia de <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span>:</p>
+<p><span class="math display">\[\sum_{n=1}^\infty \mathbb{P}(X_n&gt;0) &lt;\infty\]</span></p>
+<p>(<span class="math inline">\(\Longleftarrow\)</span>) Supongase que <span class="math inline">\(\sum_n \mathbb{P}(X_n &gt; 0)\)</span> es convergente.</p>
+<p>(Recordemos el lema de Borel-Cantelli (parte 1): Sea <span class="math inline">\(\{B_n:n\in \mathbb{N}\}\)</span> una sucesión de eventos, y defina <span class="math inline">\(B = \lim \sup_n B_n\)</span> entonces si <span class="math inline">\(\sum_{n=1}^\infty \mathbb{P}(B_n) &lt; \infty \implies P(\lim \sup_n B_n) = 0\)</span>.)</p>
+<p>Por la primera parte del lema de Borel-Cantelli y tomando encuenta la independencia de <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span>: <span class="math display">\[P[\lim \sup_n (X_n&gt;0)] = 0\]</span> Por lo tanto <span class="math display">\[\therefore X_n \overset{c.s.}{\to} X\]</span></p>
 </div>
 
 

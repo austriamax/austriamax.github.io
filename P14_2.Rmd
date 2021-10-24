@@ -13,7 +13,7 @@ Demostración:
 
 Sea $(X_n)_{n \in \mathbb{N}}$ una sucesión de v.a.'s tales que $X_n \overset{c.s.}{\to} X$.
 
-Sea $\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}$. Así $\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)$ y como $h$ es continua:
+Sea $\omega_0 \in \{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}$. Entonces $\lim_{n \to \infty}X_n(\omega_0) = X(\omega_0)$ y como $h$ es continua:
 \[\lim_{n \to \infty}h(X_n(\omega_0)) = h(X(\omega_0))\]
 Por lo tanto:
 
@@ -23,7 +23,7 @@ Entonces
 
 \[ 1= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}X_n(\omega) = X(\omega)\}) \leq  \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty}h(X_n)(\omega) = h(X)(\omega)\})\]
 
-Así
+Concluimos que
 
 \[h(X_n) \overset{c.s.}{\to} h(X).\]
 
@@ -34,23 +34,34 @@ Así
 
 PD. $\forall \epsilon>0 \quad \lim_{n \to \infty} \mathbb{P}(\{\omega \in \Omega :|h(X_n)(\omega) - h(X)(\omega)|>\epsilon\}) = 0$.
 
-PD. $\forall \epsilon >0 \quad \forall \epsilon_2 >0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies \mathbb{P}(|h(X_n) - h(X)|>\epsilon) < \epsilon_2$.
+
+Sabemos que $h:\mathbb{R} \to \mathbb{R}$ es continua:
+
+\[\forall \epsilon>0 \quad  \exists \delta >0 \quad \mbox{tal que si} \quad |x-y|<\delta \implies |h(x) - h(y)| < \epsilon\]
+
+O por contrapuesta:
+
+\[\forall \epsilon>0 \quad  \exists \delta >0 \quad \mbox{tal que si} \quad |h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta\]
+
+En terminos conjuntistas:
+
+\[\forall \epsilon>0 \quad  \exists \delta >0  \quad \{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))| \geq \epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)| \geq \delta\}\]
+
+Lo que implica que 
+\[\forall \epsilon>0 \quad  \exists \delta >0  \quad \mathbb{P}[|h(X_n) - h(X)| \geq \epsilon] \leq \mathbb{P}[|X_n - X| \geq \delta]\]
+
+PD. $\forall \epsilon >0 \quad \forall \epsilon_2 >0 \quad \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies \mathbb{P}(|h(X_n) - h(X)| \geq \epsilon) < \epsilon_2$.
 
 Sean $\epsilon, \epsilon_2 >0$.
 
-Como $h:\mathbb{R} \to \mathbb{R}$ es continua entonces $\exists \delta >0$ tal que si $|x-y|<\delta \implies |h(x) - h(y)| < \epsilon$. O por contrapuesta:
+Por la continuidad $\exists \delta(\epsilon)>0$ tal que $|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta(\epsilon)$.
 
-\[|h(x) - h(y)| \geq \epsilon \implies |x-y|\geq\delta  \quad \mbox{(Ec. 1)}\]
+Y por hipótesis $X_n \overset{\mathbb{P}}{\to} X$ entonces $\exists N_{\delta(\epsilon),\epsilon_2} \in \mathbb{N}$ tal que si $n>N_{\delta(\epsilon),\epsilon_2} \implies \mathbb{P}[|X_n - X|\geq\delta(\epsilon)] < \epsilon_2$.
 
-Y por hipótesis $X_n \overset{\mathbb{P}}{\to} X$ entonces $\exists N_\delta \in \mathbb{N}$ tal que si $n>N_{\delta,\epsilon_2} \implies \mathbb{P}(|X_n - X|>\delta) < \epsilon_2$.
-
-Así, proponemos $N = N_{\delta,\epsilon_2}$.
+Así, proponemos $N = N_{\delta(\epsilon),\epsilon_2}$.
 
 
-Si $n> N$ entonces $\mathbb{P}(|X_n-X|>\delta) <\epsilon_2$. 
-Luego $\mathbb{P}(|h(X_n)-h(X)|>\epsilon) < \epsilon_2$ pues
-
-\[\{\omega \in \Omega :|h(X_n(\omega)) - h(X(\omega))|>\epsilon\} \subseteq \{\omega \in \Omega :|X_n(\omega) - X(\omega)|>\epsilon\} \quad \mbox{(Por ec. 1)}\]
+Y por lo anterior $\mathbb{P}(|h(X_n)-h(X)|\geq \epsilon) \leq \mathbb{P}(|X_n - X| \geq \delta(\epsilon)) < \epsilon_2$ pues
 
 Por lo tanto 
 
@@ -60,18 +71,35 @@ h(X_n) \overset{\mathbb{P}}{\to} h(X)
 
 
 -------------------------------------------------------------------------------
-(C). Es cierto que si $X_n \overset{L_p}{\to} X$ entonces  $h(X_n) \overset{L_p}{\to} h(X)$. ¿Bajo qué hipótesis es cierta la siguiente afirmación? 
+(C). ¿Es cierto que si $X_n \overset{L_p}{\to} X$ entonces  $h(X_n) \overset{L_p}{\to} h(X)$?. ¿Bajo qué hipótesis es cierta la siguiente afirmación? 
 -------------------------------------------------------------------------------
 
-Respuesta: Suponiendo que $h$ es concava.
+Respuesta: 
+
+1) Es falso. 
+
+Sabemos que si $F_X:\mathbb{R} \to \mathbb{R}$ es una función de distribución invertible entonces $F^{-1}(U)$ distribuye como $X$ si $U \sim Unif(0,1)$. Ahora tomemos $X \sim Cauchy(0,1)$.
+
+Asi
+\[F(x) = \frac{1}{\pi}\arctan{(x)} + \frac{1}{2} \implies h(u) = F^{-1}(u) = \tan[\pi(u - \frac{1}{2})] \]
+
+Entonces $F^{-1}(x)$ es una función continua no acotada.
+$U_n \sim Unif(0,1)$ una sucesión constante donde cada $U_n$ tiene todos sus momentos y es claro que converge en $L_p$.
+Mienstras que $F^{-1}(U_n) \sim Cauchy(0,1)$ no tiene ni el primer momento finito.
 
 
-Como $h$ es concava entonces $-h$ es convexa. Entonces la desigualdad de Jensen tenemos que:
+2) ¿Bajo qué hipótesis es cierta la siguiente afirmación?
 
+Respuesta: Continua y acotada.
 
+Supongase que $X_n \overset{L_p}{\to} X$.
+
+Por ser $h$ acotada entonces $h(X_n),h(X) \in L_p$.
+
+Luego $X_n \overset{L_p}{\to} X \implies X_n \overset{\mathbb{P}}{\to} X$.
+
+Pero como $h$ es contunua y aplicando el teorema de convergencia dominada (en media) $h(X_n)  \overset{\mathbb{P}}{\to} h(X)$. 
 
 -------------------------------------------------------------------------------
 (D). ¿Es cierto que si $X_n \overset{\mathscr{L}}{\to} X$ entonces  $h(X_n) \overset{\mathscr{L}}{\to} h(X)$? 
 -------------------------------------------------------------------------------
-
-

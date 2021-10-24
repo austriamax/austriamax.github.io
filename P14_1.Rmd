@@ -2,107 +2,113 @@
 title: "Tarea 8. Pregunta 14.1."
 ---
 
-### Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad y $(X_n)_{n \in \mathbb{N}}$ una sucesion de v.a. definidas de $(\Omega, \mathscr{A}, \mathbb{P})$. Pruebe que:
+### Sea $(\Omega, \mathscr{A}, \mathbb{P})$ un espacio de probabilidad y $(X_n)_{n \in \mathbb{N}}$ una sucesion de v.a. definidas de $(\Omega, \mathscr{A}, \mathbb{P})$. Sea $A_n(\epsilon) =\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \geq \epsilon \}$. Pruebe que:
 
 
 -----------------------------------------------------------------------------
-(A). $X_n \overset{c.s.}{\to} X$ si y sólo para todo $\epsilon > 0$ se cumple $\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0$.
+(A). $X_n \overset{c.s.}{\to} X$ si y sólo para todo $\epsilon > 0$ se cumple $\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0$.
 -----------------------------------------------------------------------------
 
 Demostración:
 
-Definiendo $A_{n,\epsilon} = \{|X_n - X| \geq \epsilon\}$ se puede reescribir la hipótesis $X_n \overset{c.s.}{\to} X$ como:
-
+Reescribamos la hipótesis $X_n \overset{c.s.}{\to} X$:
 \[
 \begin{align*}
-1 &= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&& \mbox{(Definición)}\\\\
-&= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon >0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies |X_n(\omega) - X(\omega)| < \epsilon \})\\\\
-&= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon >0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n>N \implies \omega \in A_{n,\epsilon}^c \}) && \mbox{(Def. de } A_{n,\epsilon})\\\\
+1 &= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&& \mbox{(Definición de c.s.)}\\\\
+&= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n \geq N \implies |X_n(\omega) - X(\omega)| < \frac{1}{m} \})&& \mbox{(Equivalencia de lim)}\\\\
+&= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n \geq N \implies \omega \in A_n^c(\frac{1}{m}) \}) && \mbox{(Def. de } A_{n}(\epsilon))\\\\
+&= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } \omega \in \cap_{n = N}^\infty A_n^c(\frac{1}{m}) \})&& \mbox{(Def. de } \cap_{i = i_0}^\infty)\\\\ 
+&= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ tal que } \omega \in \cup_{N = 1}^\infty \cap_{n = N}^\infty A_n^c(\frac{1}{m}) \})&& \mbox{(Def. de } \cup_{i = i_0}^\infty)\\\\
+&= \mathbb{P}(\{\omega \in \Omega|\forall m \in \mathbb{N} \quad \omega \in \lim \inf_n A_n^c(\frac{1}{m}) \})&& \mbox{(Definición de lim inf)}\\\\
+&= \mathbb{P}(\{\omega \in \Omega|\omega \in \cap_{m =1}^\infty \lim \inf_n A_n^c(\frac{1}{m}) \})&& \mbox{(Def. de } \cup_{i = i_0}^\infty)\\\\
+&= \mathbb{P}(\{\omega \in \Omega|\omega \in [\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})]^c \})&& \mbox{(Leyes de DMorgan)}
 \end{align*}
 \]
  
-Aquí notamos que $(A_{n,\epsilon}^c)_{n \in \mathbb{N}}$ es una sucesión creciente excepto tal vez en un conjunto de medida cero. Por lo que 
+Por lo tanto $X_n \overset{c.s.}{\to} X$ es equivalente a decir que
 
-\[\mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) = 1, \quad \forall \epsilon>0.\]
+\[\mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]
 
-PD. $\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0$
+Ahora demostraremos la implicación.
+
+
+($\implies$) Supongase que $X_n \overset{c.s.}{\to} X$. PD. $\forall \epsilon>0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0$.
+
+Hagamos primero dos observaciones:
+
+(1) Notese que $(A_n(\epsilon))_{\epsilon>0}$ es decreciente (respecto de $\epsilon$). Sea $\epsilon_1 < \epsilon_2$ entonces:
 
 \[
 \begin{align*}
-\mathbb{P}(\lim \sup_n A_{n,\epsilon}) &= \mathbb{P}(\cap_{n=1}^\infty \cup_{k=n}^\infty A_{k,\epsilon})\\\\
-&= \mathbb{P}(\cap_{n=1}^\infty A_{n,\epsilon}) && \mbox{(} (A_{n,\epsilon})_{n \in \mathbb{N}} \mbox{ es decreciente)}\\\\
-&=1 - \mathbb{P}(\cup_{n=1}^\infty A_{n,\epsilon}^c) &&\mbox{(Leyes de D'Morgan)}\\\\ 
-&=1 - \mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) && \mbox{(} (A_{n,\epsilon}^c)_{n \in \mathbb{N}} \mbox{ es creciente)}\\\\
-&=1 - 1 && \mbox{(Hipótesis)}\\\\
-&=0.
+A_n(\epsilon_2) &= \{\omega \in \Omega | |X_n(\omega)-X(\omega)| \geq \epsilon_2 > \epsilon_1\}\\\\
+&\subseteq \{\omega \in \Omega | |X_n(\omega)-X(\omega)| \geq \epsilon_1\}\\\\
+&= A_n(\epsilon_1)\\\\
+&\therefore A_n(\epsilon_2) \subseteq A_n(\epsilon_1)
 \end{align*}
 \]
 
+(2) Sabemos que $\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] \subseteq \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] \overset{hipótesis}{=} 0$.
+\[\therefore  \forall m \in \mathbb{N} \quad \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] = 0\]
+
+Ahora hagamos la demostración. 
+
+Sea $\epsilon >0$.
+
+Así, por $(1)$ y por la propiedad arquimediana
+
+\[\exists m_0 \in \mathbb{N} \quad \mbox{tal que } \mathbb{P}[\lim \sup_n A_n(\epsilon)] \leq \mathbb{P}[\lim \sup_n A_n(\frac{1}{m_0})]\]
+
+
+Y por $(2)$
+
+\[\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\]
+
+\[\therefore \forall \epsilon>0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0.\]
+
+($\Longleftarrow$) Supongase que $\forall \epsilon>0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0$. PD. $X_n \overset{c.s.}{\to} X$.
+
+\[\mbox{PD. } \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\] 
+
+\[
+\mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] \leq \sum_m^\infty  \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] \overset{hipótesis}{=} 0.
+\]
 
 -----------------------------------------------------------------------------
-(B). Si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ converge entonces $X_n \overset{c.s.}{\to} X$.
+(B). Si para cada $\epsilon >0$ la serie $\sum_n \mathbb{P}[A(\epsilon)]$ converge entonces $X_n \overset{c.s.}{\to} X$.
 -----------------------------------------------------------------------------
 
 Demostración:
 
-Sea $\epsilon >0$. Sabemos que $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ converge.
+Recordemos el lema de Borel-Cantelli (parte 1): Sea $\{B_n:n\in \mathbb{N}\}$ una sucesión de eventos, y defina $B = \lim \sup_n B_n$ entonces si $\sum_{n=1}^\infty \mathbb{P}(B_n) < \infty \implies P(B) = 0$.
+
+
+Sabemos que $\sum_n \mathbb{P}[A_n(\epsilon)]$ converge $\forall \epsilon>0$.
 Entonces 
 
-\[\lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon] = 0\]
+\[\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0 \quad \forall \epsilon>0\]
 
-Usando la notación del inciso anterior obtenemos:
-
-\[
-\begin{align*}
-0 &= \lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon]\\\\
-&= \lim_{n\to \infty} \mathbb{P}(A_{n,\epsilon})\\\\
-&= \mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) && \mbox{(Continuidad de } \mathbb{P})\\\\
-\end{align*}
-\]
-
-Por lo tanto $\mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) = 0$ para cualquier $\epsilon >0$.
-
-\[\therefore X_n \overset{c.s.}{\to} X\]
+Luego por (A) concluimos que $X_n \overset{c.s.}{\to} X$.
 
 -----------------------------------------------------------------------------
 (C). Si para cada $\epsilon > 0$ los eventos $A_n = \{|X_n - X| \geq \epsilon\}$, $n \in \mathbb{N}$ son independientes, es cierto que $X_n \overset{c.s.}{\to} X$ si y sólo si la serie $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
 -----------------------------------------------------------------------------
 
-´Demostración:
+Demostración:
 
 Sean $A_n = \{|X_n - X| \geq \epsilon\}$ eventos independientes para toda $\epsilon >0$ y toda $n \in \mathbb{N}$.
 
-($\implies$) Supongase que $X_n \overset{c.s.}{\to} X$. P.D. Para toda $\epsilon >0$; $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
+Recordemos el lema de Borel-Canteli (parte 2): Si $B_1, B_2, \dots$ son independientes y $\sum_n \mathbb{P}(B_n) = \infty$ entonces $\mathbb{P}(\lim \sup_n B_n) = 1$.
 
-Sea $\epsilon >0$
+($\implies$) Supongase que $X_n \overset{c.s.}{\to} X$. P.D.$\forall \epsilon >0 \quad \sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
 
-Como $X_n \overset{c.s.}{\to} X$, sabemos que $(A_n)_{n \in \mathbb{N}}$ es decreciente. Luego para $n<m$:
+Por (A) sabemos que:
+\[\mathbb{P}(\lim \sup_n A_n(\epsilon)) = 0 \quad \forall \epsilon>0\]
 
-\[
-\begin{align*}
-\mathbb{P}(A_n) &= \mathbb{P}(A_n \cap A_m)\\\\
-&= \mathbb{P}(A_n)\mathbb{P}(A_m) && \mbox{(Independencia)}\\\\
-\implies & \mathbb{P}(A_m)[1-\mathbb{P}(A_n)] = 0.\\\\
-\implies & \mathbb{P}(A_m) = 0 \mbox{ ó } \mathbb{P}(A_n) = 1.
-\end{align*}
-\]
+Entonces por la contrapuesta de la segunda parte del lema de Borel-Canterli tenemos que 
 
-Pero $\mathbb{P}(A_m) \leq \mathbb{P}(A_n)$ por ser $(A_n)$ es decreciente. Entonces podemos reducir $(\mathbb{P}(A_n))_{n \in \mathbb{N}}$ a uno de los siguientes tres casos:
+\[\forall \epsilon >0 \quad \sum_n \mathbb{P}[|X_n-X|\geq\epsilon]<\infty\]
 
-caso i: $\mathbb{P}(A_n) = 0 \quad \forall n \in \mathbb{N}$.
-
-caso ii: $\exists k \in \mathbb{N}$ tal que si $n \leq k$ entonces $\mathbb{P}(A_n) = 1$ y $\mathbb{P}(A_n) = 0$ en otro caso.
-
-caso iii: $\mathbb{P}(A_n) = 1 \quad \forall n \in \mathbb{N}$.
-
-Es fácil descartar el caso (iii), pues como $X_n \overset{c.s.}{\to} X$ debemos tener $\mathbb{P}(\lim_{n \to \infty} A_n) = 0$ (lo que contradice el caso iii).
-
-Así, en todos los casos posibles tenemos un número finito de $A_n$ con probabilidad positiva. Por lo tanto:
-
-$\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente.
-
-
-($\Longleftarrow$) Supongase que $\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]$ es convergente $\forall \epsilon >0$.
-
+($\Longleftarrow$)
 Demostración: Inciso (B).
+
 

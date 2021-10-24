@@ -6,14 +6,62 @@ title: "Tarea 8. Pregunta 14.3."
 
 
 -------------------------------------------------------------------------------
-(1) $X_n \overset{\mathbb{P}}{\to} X$ si y sólo si $\lim_n \mathbb{P}(X_n > 0) = 0$.
+(1) $X_n \overset{\mathbb{P}}{\to} 0$ si y sólo si $\lim_n \mathbb{P}(X_n > 0) = 0$.
 -------------------------------------------------------------------------------
 
+Demostración:
 
+\[\begin{align*}
+(X_n \overset{\mathbb{P}}{\to} 0) &\iff \lim_n \mathbb{P}(\{\omega \in \Omega: |X_n(\omega)-0|>\epsilon\}) = 0 && (\mbox{Def.} \overset{\mathbb{P}}{\to})\\\\
+&\iff \lim_n \mathbb{P}(\{\omega \in \Omega: X_n(\omega)>\epsilon\}) = 0 && (\mathbb{N} \mbox{ es el soporte de }X)\\\\
+&\iff \lim_n \mathbb{P}(\{\omega \in \Omega: X_n(\omega)>0\}) = 0 && (\mbox{SPG } \epsilon<1)
+\end{align*}\]
 
 -------------------------------------------------------------------------------
 (2) $X_n \overset{c.s.}{\to} X$ si y sólo si la serie $\sum_n \mathbb{P}(X_n > 0)$ es convergente.
 -------------------------------------------------------------------------------
+
+Demostración:
+
+De acuerdo con la **[pregunta 14.1.](https://austriamax.github.io/austriamax.proba1.github.io/P14_1.html)**
+
+(A) $X_n \overset{c.s.}{\to} X$ si y sólo para todo $\epsilon > 0$ se cumple $\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0$. Con $A_n(\epsilon) =\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \geq \epsilon \}$.
+
+
+SPG podemos tomar $0<\epsilon<1$ pues para $\epsilon >1$ sólo tomamos una $N$ (indice) más grande.
+
+
+Así
+\[\begin{align*}
+A_n(\epsilon) &= \{\omega \in \Omega : |X_n(\omega) - 0| \geq \epsilon \}\\\\
+&=\{\omega \in \Omega : X_n(\omega) \geq \epsilon \}\\\\
+&=\{\omega \in \Omega : X_n(\omega) > 0 \}&& (\mathbb{N} \mbox{ es el soporte de }X)\\
+&=A_n(0)
+\end{align*}\]
+
+Es decir
+
+\[X_n \overset{c.s.}{\to} X \iff \mathbb{P}[\lim \sup_n (X_n>0)] = 0\]
+
+($\implies$) Supongase que $X_n \overset{c.s.}{\to} X$. PD. $\sum_n \mathbb{P}(X_n > 0)<\infty$.
+
+Como pasa que $X_n \overset{c.s.}{\to} X$ entonces $\mathbb{P}[\lim \sup_n (X_n>0)] = 0$.
+
+(Recordemos el lema de Borel-Canteli (parte 2): Si $B_1, B_2, \dots$ son independientes y $\sum_n \mathbb{P}(B_n) = \infty$ entonces $\mathbb{P}(\lim \sup_n B_n) = 1$.).
+
+Por la contrapuesta de la segunda parte del lema de Borel-Cantelli y tomando encuenta la independencia de $(X_n)_{n \in \mathbb{N}}$:
+
+\[\sum_{n=1}^\infty \mathbb{P}(X_n>0) <\infty\]
+
+
+($\Longleftarrow$) Supongase que $\sum_n \mathbb{P}(X_n > 0)$ es convergente.
+
+(Recordemos el lema de Borel-Cantelli (parte 1): Sea $\{B_n:n\in \mathbb{N}\}$ una sucesión de eventos, y defina $B = \lim \sup_n B_n$ entonces si $\sum_{n=1}^\infty \mathbb{P}(B_n) < \infty \implies P(\lim \sup_n B_n) = 0$.)
+
+Por la primera parte del lema de Borel-Cantelli y tomando encuenta la independencia de $(X_n)_{n \in \mathbb{N}}$:
+\[P[\lim \sup_n (X_n>0)] = 0\]
+Por lo tanto
+\[\therefore X_n \overset{c.s.}{\to} X\]
 
 
 

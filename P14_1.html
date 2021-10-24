@@ -267,57 +267,71 @@ $(document).ready(function () {
 </div>
 
 
-<div id="sea-omega-mathscra-mathbbp-un-espacio-de-probabilidad-y-x_n_n-in-mathbbn-una-sucesion-de-v.a.-definidas-de-omega-mathscra-mathbbp.-pruebe-que" class="section level3">
-<h3>Sea <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span> un espacio de probabilidad y <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> una sucesion de v.a. definidas de <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span>. Pruebe que:</h3>
+<div id="sea-omega-mathscra-mathbbp-un-espacio-de-probabilidad-y-x_n_n-in-mathbbn-una-sucesion-de-v.a.-definidas-de-omega-mathscra-mathbbp.-sea-a_nepsilon-omega-in-omega-x_nomega---xomega-geq-epsilon-.-pruebe-que" class="section level3">
+<h3>Sea <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span> un espacio de probabilidad y <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> una sucesion de v.a. definidas de <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span>. Sea <span class="math inline">\(A_n(\epsilon) =\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \geq \epsilon \}\)</span>. Pruebe que:</h3>
 <table>
 <tbody>
 <tr class="odd">
-<td>(A). <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> si y sólo para todo <span class="math inline">\(\epsilon &gt; 0\)</span> se cumple <span class="math inline">\(\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0\)</span>.</td>
+<td>(A). <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> si y sólo para todo <span class="math inline">\(\epsilon &gt; 0\)</span> se cumple <span class="math inline">\(\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\)</span>.</td>
 </tr>
 </tbody>
 </table>
 <p>Demostración:</p>
-<p>Definiendo <span class="math inline">\(A_{n,\epsilon} = \{|X_n - X| \geq \epsilon\}\)</span> se puede reescribir la hipótesis <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> como:</p>
-<p><span class="math display">\[
+<p>Reescribamos la hipótesis <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>: <span class="math display">\[
 \begin{align*}
-1 &amp;= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&amp;&amp; \mbox{(Definición)}\\\\
-&amp;= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon &gt;0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies |X_n(\omega) - X(\omega)| &lt; \epsilon \})\\\\
-&amp;= \mathbb{P}(\{\omega \in \Omega| \forall \epsilon &gt;0 \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n&gt;N \implies \omega \in A_{n,\epsilon}^c \}) &amp;&amp; \mbox{(Def. de } A_{n,\epsilon})\\\\
+1 &amp;= \mathbb{P}(\{\omega \in \Omega| \lim_{n \to \infty} X_n(\omega) = X(\omega)\})&amp;&amp; \mbox{(Definición de c.s.)}\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n \geq N \implies |X_n(\omega) - X(\omega)| &lt; \frac{1}{m} \})&amp;&amp; \mbox{(Equivalencia de lim)}\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } n \geq N \implies \omega \in A_n^c(\frac{1}{m}) \}) &amp;&amp; \mbox{(Def. de } A_{n}(\epsilon))\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ } \exists N \in \mathbb{N} \mbox{ tal que } \omega \in \cap_{n = N}^\infty A_n^c(\frac{1}{m}) \})&amp;&amp; \mbox{(Def. de } \cap_{i = i_0}^\infty)\\\\ 
+&amp;= \mathbb{P}(\{\omega \in \Omega| \forall m \in \mathbb{N} \mbox{ tal que } \omega \in \cup_{N = 1}^\infty \cap_{n = N}^\infty A_n^c(\frac{1}{m}) \})&amp;&amp; \mbox{(Def. de } \cup_{i = i_0}^\infty)\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega|\forall m \in \mathbb{N} \quad \omega \in \lim \inf_n A_n^c(\frac{1}{m}) \})&amp;&amp; \mbox{(Definición de lim inf)}\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega|\omega \in \cap_{m =1}^\infty \lim \inf_n A_n^c(\frac{1}{m}) \})&amp;&amp; \mbox{(Def. de } \cup_{i = i_0}^\infty)\\\\
+&amp;= \mathbb{P}(\{\omega \in \Omega|\omega \in [\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})]^c \})&amp;&amp; \mbox{(Leyes de DMorgan)}
 \end{align*}
 \]</span></p>
-<p>Aquí notamos que <span class="math inline">\((A_{n,\epsilon}^c)_{n \in \mathbb{N}}\)</span> es una sucesión creciente excepto tal vez en un conjunto de medida cero. Por lo que</p>
-<p><span class="math display">\[\mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) = 1, \quad \forall \epsilon&gt;0.\]</span></p>
-<p>PD. <span class="math inline">\(\mathbb{P}[\lim \sup_n |X_n - X| \geq \epsilon] = 0\)</span></p>
+<p>Por lo tanto <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> es equivalente a decir que</p>
+<p><span class="math display">\[\mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]</span></p>
+<p>Ahora demostraremos la implicación.</p>
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>. PD. <span class="math inline">\(\forall \epsilon&gt;0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\)</span>.</p>
+<p>Hagamos primero dos observaciones:</p>
+<ol style="list-style-type: decimal">
+<li>Notese que <span class="math inline">\((A_n(\epsilon))_{\epsilon&gt;0}\)</span> es decreciente (respecto de <span class="math inline">\(\epsilon\)</span>). Sea <span class="math inline">\(\epsilon_1 &lt; \epsilon_2\)</span> entonces:</li>
+</ol>
 <p><span class="math display">\[
 \begin{align*}
-\mathbb{P}(\lim \sup_n A_{n,\epsilon}) &amp;= \mathbb{P}(\cap_{n=1}^\infty \cup_{k=n}^\infty A_{k,\epsilon})\\\\
-&amp;= \mathbb{P}(\cap_{n=1}^\infty A_{n,\epsilon}) &amp;&amp; \mbox{(} (A_{n,\epsilon})_{n \in \mathbb{N}} \mbox{ es decreciente)}\\\\
-&amp;=1 - \mathbb{P}(\cup_{n=1}^\infty A_{n,\epsilon}^c) &amp;&amp;\mbox{(Leyes de D&#39;Morgan)}\\\\ 
-&amp;=1 - \mathbb{P}(\lim_{n \to \infty} A_{n,\epsilon}^c) &amp;&amp; \mbox{(} (A_{n,\epsilon}^c)_{n \in \mathbb{N}} \mbox{ es creciente)}\\\\
-&amp;=1 - 1 &amp;&amp; \mbox{(Hipótesis)}\\\\
-&amp;=0.
+A_n(\epsilon_2) &amp;= \{\omega \in \Omega | |X_n(\omega)-X(\omega)| \geq \epsilon_2 &gt; \epsilon_1\}\\\\
+&amp;\subseteq \{\omega \in \Omega | |X_n(\omega)-X(\omega)| \geq \epsilon_1\}\\\\
+&amp;= A_n(\epsilon_1)\\\\
+&amp;\therefore A_n(\epsilon_2) \subseteq A_n(\epsilon_1)
 \end{align*}
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Sabemos que <span class="math inline">\(\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] \subseteq \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] \overset{hipótesis}{=} 0\)</span>. <span class="math display">\[\therefore  \forall m \in \mathbb{N} \quad \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] = 0\]</span></li>
+</ol>
+<p>Ahora hagamos la demostración.</p>
+<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
+<p>Así, por <span class="math inline">\((1)\)</span> y por la propiedad arquimediana</p>
+<p><span class="math display">\[\exists m_0 \in \mathbb{N} \quad \mbox{tal que } \mathbb{P}[\lim \sup_n A_n(\epsilon)] \leq \mathbb{P}[\lim \sup_n A_n(\frac{1}{m_0})]\]</span></p>
+<p>Y por <span class="math inline">\((2)\)</span></p>
+<p><span class="math display">\[\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\]</span></p>
+<p><span class="math display">\[\therefore \forall \epsilon&gt;0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0.\]</span></p>
+<p>(<span class="math inline">\(\Longleftarrow\)</span>) Supongase que <span class="math inline">\(\forall \epsilon&gt;0 \quad \mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0\)</span>. PD. <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</p>
+<p><span class="math display">\[\mbox{PD. } \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]</span></p>
+<p><span class="math display">\[
+\mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] \leq \sum_m^\infty  \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] \overset{hipótesis}{=} 0.
 \]</span></p>
 <table>
 <tbody>
 <tr class="odd">
-<td>(B). Si la serie <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> converge entonces <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</td>
+<td>(B). Si para cada <span class="math inline">\(\epsilon &gt;0\)</span> la serie <span class="math inline">\(\sum_n \mathbb{P}[A(\epsilon)]\)</span> converge entonces <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</td>
 </tr>
 </tbody>
 </table>
 <p>Demostración:</p>
-<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span>. Sabemos que <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> converge. Entonces</p>
-<p><span class="math display">\[\lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon] = 0\]</span></p>
-<p>Usando la notación del inciso anterior obtenemos:</p>
-<p><span class="math display">\[
-\begin{align*}
-0 &amp;= \lim_{n \to \infty} \mathbb{P}[|X_n-X|\geq\epsilon]\\\\
-&amp;= \lim_{n\to \infty} \mathbb{P}(A_{n,\epsilon})\\\\
-&amp;= \mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) &amp;&amp; \mbox{(Continuidad de } \mathbb{P})\\\\
-\end{align*}
-\]</span></p>
-<p>Por lo tanto <span class="math inline">\(\mathbb{P}(\lim_{n\to \infty} A_{n,\epsilon}) = 0\)</span> para cualquier <span class="math inline">\(\epsilon &gt;0\)</span>.</p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} X\]</span></p>
+<p>Recordemos el lema de Borel-Cantelli (parte 1): Sea <span class="math inline">\(\{B_n:n\in \mathbb{N}\}\)</span> una sucesión de eventos, y defina <span class="math inline">\(B = \lim \sup_n B_n\)</span> entonces si <span class="math inline">\(\sum_{n=1}^\infty \mathbb{P}(B_n) &lt; \infty \implies P(B) = 0\)</span>.</p>
+<p>Sabemos que <span class="math inline">\(\sum_n \mathbb{P}[A_n(\epsilon)]\)</span> converge <span class="math inline">\(\forall \epsilon&gt;0\)</span>. Entonces</p>
+<p><span class="math display">\[\mathbb{P}[\lim \sup_n A_n(\epsilon)] = 0 \quad \forall \epsilon&gt;0\]</span></p>
+<p>Luego por (A) concluimos que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -325,28 +339,14 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<p>´Demostración:</p>
+<p>Demostración:</p>
 <p>Sean <span class="math inline">\(A_n = \{|X_n - X| \geq \epsilon\}\)</span> eventos independientes para toda <span class="math inline">\(\epsilon &gt;0\)</span> y toda <span class="math inline">\(n \in \mathbb{N}\)</span>.</p>
-<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>. P.D. Para toda <span class="math inline">\(\epsilon &gt;0\)</span>; <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente.</p>
-<p>Sea <span class="math inline">\(\epsilon &gt;0\)</span></p>
-<p>Como <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>, sabemos que <span class="math inline">\((A_n)_{n \in \mathbb{N}}\)</span> es decreciente. Luego para <span class="math inline">\(n&lt;m\)</span>:</p>
-<p><span class="math display">\[
-\begin{align*}
-\mathbb{P}(A_n) &amp;= \mathbb{P}(A_n \cap A_m)\\\\
-&amp;= \mathbb{P}(A_n)\mathbb{P}(A_m) &amp;&amp; \mbox{(Independencia)}\\\\
-\implies &amp; \mathbb{P}(A_m)[1-\mathbb{P}(A_n)] = 0.\\\\
-\implies &amp; \mathbb{P}(A_m) = 0 \mbox{ ó } \mathbb{P}(A_n) = 1.
-\end{align*}
-\]</span></p>
-<p>Pero <span class="math inline">\(\mathbb{P}(A_m) \leq \mathbb{P}(A_n)\)</span> por ser <span class="math inline">\((A_n)\)</span> es decreciente. Entonces podemos reducir <span class="math inline">\((\mathbb{P}(A_n))_{n \in \mathbb{N}}\)</span> a uno de los siguientes tres casos:</p>
-<p>caso i: <span class="math inline">\(\mathbb{P}(A_n) = 0 \quad \forall n \in \mathbb{N}\)</span>.</p>
-<p>caso ii: <span class="math inline">\(\exists k \in \mathbb{N}\)</span> tal que si <span class="math inline">\(n \leq k\)</span> entonces <span class="math inline">\(\mathbb{P}(A_n) = 1\)</span> y <span class="math inline">\(\mathbb{P}(A_n) = 0\)</span> en otro caso.</p>
-<p>caso iii: <span class="math inline">\(\mathbb{P}(A_n) = 1 \quad \forall n \in \mathbb{N}\)</span>.</p>
-<p>Es fácil descartar el caso (iii), pues como <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span> debemos tener <span class="math inline">\(\mathbb{P}(\lim_{n \to \infty} A_n) = 0\)</span> (lo que contradice el caso iii).</p>
-<p>Así, en todos los casos posibles tenemos un número finito de <span class="math inline">\(A_n\)</span> con probabilidad positiva. Por lo tanto:</p>
-<p><span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente.</p>
-<p>(<span class="math inline">\(\Longleftarrow\)</span>) Supongase que <span class="math inline">\(\sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente <span class="math inline">\(\forall \epsilon &gt;0\)</span>.</p>
-<p>Demostración: Inciso (B).</p>
+<p>Recordemos el lema de Borel-Canteli (parte 2): Si <span class="math inline">\(B_1, B_2, \dots\)</span> son independientes y <span class="math inline">\(\sum_n \mathbb{P}(B_n) = \infty\)</span> entonces <span class="math inline">\(\mathbb{P}(\lim \sup_n B_n) = 1\)</span>.</p>
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>. P.D.<span class="math inline">\(\forall \epsilon &gt;0 \quad \sum_n \mathbb{P}[|X_n-X|\geq\epsilon]\)</span> es convergente.</p>
+<p>Por (A) sabemos que: <span class="math display">\[\mathbb{P}(\lim \sup_n A_n(\epsilon)) = 0 \quad \forall \epsilon&gt;0\]</span></p>
+<p>Entonces por la contrapuesta de la segunda parte del lema de Borel-Canterli tenemos que</p>
+<p><span class="math display">\[\forall \epsilon &gt;0 \quad \sum_n \mathbb{P}[|X_n-X|\geq\epsilon]&lt;\infty\]</span></p>
+<p>(<span class="math inline">\(\Longleftarrow\)</span>) Demostración: Inciso (B).</p>
 </div>
 
 

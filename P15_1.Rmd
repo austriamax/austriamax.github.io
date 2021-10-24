@@ -5,3 +5,34 @@ title: "Tarea 9. Pregunta 15.1."
 ### Sea $F$ una función de distribución absolutamente continua (es decir, $F$ tiene  densidad). Pruebe que para todod $\epsilon > 0$ existe $\delta > 0$ tal que para toda colección finita de intervalos $I_i := (a_i,b_i], \quad i = 1, \dots, k$ con $\sum_{i = 1}^k (b_i-a_i) < \delta$, se cumple que $\sum_{i = 1}^k (F(b_i) - F(a_i)) < \epsilon$.
 
 
+Demostración:
+
+
+Sea $\epsilon >0$.
+
+Sea $I := [a,b]$ una intervalo.
+
+Como $F$ es continua en cada $x\in \mathbb{R}$ entonces \[\exists \delta_x>0 \quad \mbox{si} \quad |x-y|<\delta_x \implies |f(x)-f(y)|<\frac{1}{2k}\epsilon.\]
+
+Entonces \[\{B(x,\frac{1}{2}\delta_x)\}_{[a,b]}\] es una cubierta abierta que cubre a un compacto $[a,b]$. Por lo que existe una cubierta finita \[\{B(x_1,\frac{1}{2}\delta_{x_1}), B(x_2,\frac{1}{2}\delta_{x_2}), \dots, B(x_m,\frac{1}{2}\delta_{x_m})\}.\]
+
+Tomamos $\delta = \min\{\delta_{x_1},\delta_{x_2}, \dots, \delta_{x_m}\}$.
+
+Si $|x-y| < \delta$ entonces $y \in B(x_j,\delta_{x_j})$ para alguna $j =1, \dots, m$. Entonces
+
+\[|x_s-y| \leq |x_k-x| + |x-y|<\frac{1}{2}\delta_{x_j} + \delta \leq \delta_{x_j} \]
+
+\[\therefore y \in B(x_j,\delta_{x_j})\]
+
+Luego
+
+\[F(x)-F(y) \leq [F(x) - F(x_j)] + [F(x_j) - F(y)] < \frac{1}{2k}\epsilon + \frac{1}{2k}\epsilon = \frac{1}{k}\epsilon\]
+
+Por lo tanto: 
+
+Si $I_i := (a_i,b_i] \quad i = 1, \dots, k$ es una familia de intervalos tales que
+
+\[\sum_{i = 1}^k b_i-a_i < \delta \implies b_i-a_i<\delta\]
+
+Luego 
+\[\sum_{i=1}^k [F(b_i) - F(a_i)] < \sum \frac{1}{k}\epsilon = \epsilon.\]
