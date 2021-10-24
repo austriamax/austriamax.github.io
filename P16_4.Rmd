@@ -4,3 +4,46 @@ title: "Tarea 10. Pregunta 16.4."
 
 ### Sea $X$ una v.a.  Pruebe que $X$ es simétrica si y sólo si $\phi_X$ es real (i.e. toma valores en $\mathbb{R}$). Es decir, $X$ es simétrica si y sólo si $\mathbb{P}_X(A) = \mathbb{P}_X(-A)$ con $A \in \mathscr{B}(\mathbb{R})$.
 
+Demostración:
+
+Primero se motrara que $X$ es simétrica si y sólo si  $F_X(x) = F_{-X}(x)$ para utilizarlo en el calculo de la función característica.
+
+
+PD. $X$ es simétrica si y sólo si $F_X(x) = F_{-X}(x)$.
+
+($\implies$) Supongase que $X$ es simétrica. PD.  $F_X(x) = F_{-X}(x)$.
+
+\[\begin{align*}
+F_X(x) &= \mathbb{P}(X\leq x) &&(\mbox{Def. de }F_X)\\\\
+&= \mathbb{P}(X \in (-\infty,x])\\\\
+&= \mathbb{P}(X \in [-x,\infty)) && ( (-\infty,x] \in \mathscr{B}(\mathbb{R}))\\\\
+&= \mathbb{P}(X\geq -x)\\\\
+&= \mathbb{P}(-X \leq x)\\\\
+&= F_{-X}(x)
+\end{align*}\]
+
+\[\therefore F_X(x) = F_{-X}(x)\]
+
+($\Longleftarrow$) Supongase que $F_X(x) = F_{-X}(x)$. PD. $X$ es simétrica.
+
+Es inmediato del hecho de que $\mathscr{B}(\mathbb{R}) = \sigma[(-\infty,b):b \in \mathbb{R}]$.
+
+Ahora, $X$ y $-X$ tienen la misma distribución si y sólo si tienen la misma función característica, por l que sólo nos queda hacer el calculo de la conjugada de la función característica para concluir. 
+
+Recapitulando
+
+\[\begin{align*}
+X \mbox{ es simétrica} &\iff F_X(x) = F_{-X}(x)\\\\
+&\iff \varphi_{X}(x) = \varphi_{-X}(x)
+\end{align*}\]
+
+PD. $\varphi_{-X}(x) = \overline{\varphi_{X}(x)}$.
+
+\[\begin{align*}
+\varphi_{-X}(x) &= \mathbb{E}[e^{it(-X)}] &&(\mbox{Def. de }\varphi_{X})\\\\
+&=\mathbb{E}[\cos(t(-X)) + i\sin(t(-X))]\\\\
+&=\mathbb{E}[\cos(tX) - i\sin(tX)]&&(\sin \mbox{ es impar})\\\\
+&=\overline{\varphi_{X}(x)}
+\end{align*}\]
+
+\[\therefore X \mbox{ es simétrica } \iff \varphi_{-X}(x) = \overline{\varphi_{X}(x)}.\]

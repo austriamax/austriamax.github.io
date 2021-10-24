@@ -269,6 +269,35 @@ $(document).ready(function () {
 
 <div id="sea-x-una-v.a.-pruebe-que-x-es-simétrica-si-y-sólo-si-phi_x-es-real-i.e.-toma-valores-en-mathbbr.-es-decir-x-es-simétrica-si-y-sólo-si-mathbbp_xa-mathbbp_x-a-con-a-in-mathscrbmathbbr." class="section level3">
 <h3>Sea <span class="math inline">\(X\)</span> una v.a. Pruebe que <span class="math inline">\(X\)</span> es simétrica si y sólo si <span class="math inline">\(\phi_X\)</span> es real (i.e. toma valores en <span class="math inline">\(\mathbb{R}\)</span>). Es decir, <span class="math inline">\(X\)</span> es simétrica si y sólo si <span class="math inline">\(\mathbb{P}_X(A) = \mathbb{P}_X(-A)\)</span> con <span class="math inline">\(A \in \mathscr{B}(\mathbb{R})\)</span>.</h3>
+<p>Demostración:</p>
+<p>Primero se motrara que <span class="math inline">\(X\)</span> es simétrica si y sólo si <span class="math inline">\(F_X(x) = F_{-X}(x)\)</span> para utilizarlo en el calculo de la función característica.</p>
+<p>PD. <span class="math inline">\(X\)</span> es simétrica si y sólo si <span class="math inline">\(F_X(x) = F_{-X}(x)\)</span>.</p>
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(X\)</span> es simétrica. PD. <span class="math inline">\(F_X(x) = F_{-X}(x)\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+F_X(x) &amp;= \mathbb{P}(X\leq x) &amp;&amp;(\mbox{Def. de }F_X)\\\\
+&amp;= \mathbb{P}(X \in (-\infty,x])\\\\
+&amp;= \mathbb{P}(X \in [-x,\infty)) &amp;&amp; ( (-\infty,x] \in \mathscr{B}(\mathbb{R}))\\\\
+&amp;= \mathbb{P}(X\geq -x)\\\\
+&amp;= \mathbb{P}(-X \leq x)\\\\
+&amp;= F_{-X}(x)
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore F_X(x) = F_{-X}(x)\]</span></p>
+<p>(<span class="math inline">\(\Longleftarrow\)</span>) Supongase que <span class="math inline">\(F_X(x) = F_{-X}(x)\)</span>. PD. <span class="math inline">\(X\)</span> es simétrica.</p>
+<p>Es inmediato del hecho de que <span class="math inline">\(\mathscr{B}(\mathbb{R}) = \sigma[(-\infty,b):b \in \mathbb{R}]\)</span>.</p>
+<p>Ahora, <span class="math inline">\(X\)</span> y <span class="math inline">\(-X\)</span> tienen la misma distribución si y sólo si tienen la misma función característica, por l que sólo nos queda hacer el calculo de la conjugada de la función característica para concluir.</p>
+<p>Recapitulando</p>
+<p><span class="math display">\[\begin{align*}
+X \mbox{ es simétrica} &amp;\iff F_X(x) = F_{-X}(x)\\\\
+&amp;\iff \varphi_{X}(x) = \varphi_{-X}(x)
+\end{align*}\]</span></p>
+<p>PD. <span class="math inline">\(\varphi_{-X}(x) = \overline{\varphi_{X}(x)}\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\varphi_{-X}(x) &amp;= \mathbb{E}[e^{it(-X)}] &amp;&amp;(\mbox{Def. de }\varphi_{X})\\\\
+&amp;=\mathbb{E}[\cos(t(-X)) + i\sin(t(-X))]\\\\
+&amp;=\mathbb{E}[\cos(tX) - i\sin(tX)]&amp;&amp;(\sin \mbox{ es impar})\\\\
+&amp;=\overline{\varphi_{X}(x)}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore X \mbox{ es simétrica } \iff \varphi_{-X}(x) = \overline{\varphi_{X}(x)}.\]</span></p>
 </div>
 
 
