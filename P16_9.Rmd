@@ -23,7 +23,7 @@ Haciendo el cambio de variable $Y = -X$ podemos ver que $A = (-1)^kB$, con lo cu
 
 \[\begin{align*}
 \mathbb{E}[X^k] &= [1+(-1)^k]B\\\\
-&= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{{\frac{x^2}{2}}}dx\\\\
+&= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{-\frac{x^2}{2}}dx\\\\
 \end{align*}\]
 
 Pero viendo el cambio de variable

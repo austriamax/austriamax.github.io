@@ -285,7 +285,7 @@ $(document).ready(function () {
 <p>Haciendo el cambio de variable <span class="math inline">\(Y = -X\)</span> podemos ver que <span class="math inline">\(A = (-1)^kB\)</span>, con lo cual</p>
 <p><span class="math display">\[\begin{align*}
 \mathbb{E}[X^k] &amp;= [1+(-1)^k]B\\\\
-&amp;= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{{\frac{x^2}{2}}}dx\\\\
+&amp;= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{-\frac{x^2}{2}}dx\\\\
 \end{align*}\]</span></p>
 <p>Pero viendo el cambio de variable <span class="math display">\[y = \frac{x^2}{2} \to x = \sqrt{2y} \to dz = \frac{dy}{\sqrt{2y}}\]</span></p>
 <p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{y+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
