@@ -4,4 +4,12 @@ title: "Tarea 9. Pregunta 15.8."
 
 ### Si $X_n \overset{\mathbb{P}}{\to} X$ entonces $\phi_{X_n}(u) \to \phi_{X}(u)$ con $u \in \mathbb{R}$ ($\phi_{X_n}$ y $\phi_{X}$ son funciones características de $X$ y $X_n$ respectivamentne).
 
+Demostración:
 
+Mirando la **[Pregunta 14.2.](https://austriamax.github.io/austriamax.proba1.github.io/P14_2.html)** recordamos que si $h:\mathbb{R} \to \mathbb{R}$ es una función continua entonces:
+
+\[X_n \overset{\mathbb{P}}{\to} X \implies h(X_n) \overset{\mathbb{P}}{\to} h(X)\]
+
+Así no nos queda más que observar que \[\phi_{X} = \mathbb{E}[\cos(tX)+i\sin(tX)]\] para notar que es una composición de funciones continuas.
+
+\[\therefore X_n \overset{\mathbb{P}}{\to} X \implies \phi_{X_n}(u) \overset{\mathbb{P}}{\to} \phi_{X}(u).\]

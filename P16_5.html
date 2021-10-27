@@ -269,6 +269,20 @@ $(document).ready(function () {
 
 <div id="si-x-y-son-v.a.-independientes-con-la-misma-distribución.-pruebe-que-x-y-es-simétrica." class="section level3">
 <h3>Si <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> son v.a. independientes con la misma distribución. Pruebe que <span class="math inline">\(X-Y\)</span> es simétrica.</h3>
+<p>Demostración:</p>
+<p><span class="math display">\[\begin{align*}
+\varphi_{X-Y}(t) &amp;= \mathbb{E}[\exp(it(X-Y))]\\\\
+&amp;= \mathbb{E}[\exp(itX)\exp(i(-t)Y)]\\\\
+&amp;= \mathbb{E}[\exp(itX)]\mathbb{E}[\exp(i(-t)Y)] &amp;&amp; (\mbox{Independencia})\\\\
+&amp;= \varphi_{X}(t) \varphi_{Y}(-t)\\\\
+&amp;=\varphi_{Y}(t) \varphi_{X}(-t) &amp;&amp;(\mbox{Identica distribución})\\\\
+&amp;= \mathbb{E}[\exp(itY)\exp(i(-t)X)]\\\\
+&amp;= \mathbb{E}[\exp(it(Y-X))]\\\\
+&amp;=\varphi_{Y-X}(t) 
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \varphi_{X-Y}(t) = \varphi_{Y-X}(t)\]</span></p>
+<p><span class="math display">\[\therefore X-Y \sim -(X-Y)\]</span></p>
+<p><span class="math display">\[\therefore X-Y \mbox{ es simétrica.}\]</span></p>
 </div>
 
 

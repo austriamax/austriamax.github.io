@@ -269,20 +269,70 @@ $(document).ready(function () {
 
 <div id="sea-x-omega-to-mathbbr-con-segundo-momento-finito.-se-define-la-varianza-de-x-como-varx-mathbbex---mathbbex2.-calcule-la-varianza-de" class="section level3">
 <h3>Sea <span class="math inline">\(X: \Omega \to \mathbb{R}\)</span> con segundo momento finito. Se define la varianza de <span class="math inline">\(X\)</span> como <span class="math inline">\(Var(X) := \mathbb{E}[(X - \mathbb{E}(X))^2]\)</span>. Calcule la varianza de:</h3>
+<p>Observación:</p>
+<p><span class="math display">\[\begin{align*}
+Var(X) &amp;:= \mathbb{E}[(X - \mathbb{E}(X))^2]\\\\
+&amp;= \mathbb{E}[X^2 - 2X\mathbb{E}(X) + \mathbb{E}(X)^2]\\\\
+&amp;= \mathbb{E}[X^2] - 2\mathbb{E}[X]^2 + \mathbb{E}[X]^2\\\\
+&amp;= \mathbb{E}[X^2] - \mathbb{E}[X]^2. 
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore Var(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2\]</span></p>
+<p>Así procederemos a calcular las varianzas a través de la fórmula anterior y la función generadora de momentos.</p>
 <table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">1. <span class="math inline">\(X \sim N(0,1)\)</span>.</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left">1. <span class="math inline">\(X \sim N(0,1)\)</span>.</td>
+<td align="left">Por el inciso 2.</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math display">\[Var(X) = 1\]</span></td>
 </tr>
 </tbody>
 </table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">2. <span class="math inline">\(X \sim N(a, \sigma^2)\)</span>.</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="x-sim-na-b2." class="section level2">
+<h2>2. <span class="math inline">\(X \sim N(a, b^2)\)</span>.</h2>
+<p>Solución:</p>
+<p>Primero calcularemos la función generadora de momentos.</p>
+<p>La densidad de una normal tiene la forma <span class="math display">\[f_X(x) = \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{(x-a)^2}{2b^2}]\]</span></p>
+<p>Entonces <span class="math display">\[\begin{align*}
+\mathbb{E}[e^{tX}] &amp;= \int_{-\infty}^\infty e^{tX} \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{(x-a)^2}{2b^2}]\\\\
+&amp;= \frac{e^{ta}}{\sqrt{2\pi b^2}} \int_{-\infty}^\infty \exp[t(x-a) - \frac{1}{2b^2}(x-a)^2]dx
+\end{align*}\]</span></p>
+<p>Ahora vamos hacer unas operaciones sobre el exponente:</p>
+<p><span class="math display">\[\begin{align*}
+t(x-a) - \frac{1}{2b^2}(x-a)^2 &amp;= -\frac{1}{2b^2}[(x-a)^2-2b^2t(x-a)]\\\\
+&amp;= -\frac{1}{2b^2}[x^2 + a^2-2x(a+tb^2) + 2b^2ta]\\\\
+&amp;= -\frac{1}{2b^2}[x^2 - 2x(a +tb^2) + (a + tb^2)^2 - (a+tb^2)^2 + a^2 + 2b^2ta]\\\\
+&amp;= -\frac{1}{2b^2}[(x-(a + tb^2))^2-t^2b^4]\\\\
+&amp;= -\frac{1}{2b^2}[(x-(a + tb^2 ))^2] + \frac{t^2b^2}{2}.
+\end{align*}\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[e^{tX}]  = \exp[ta+\frac{t^2b^2}{2}] \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{1}{2b^2}[x-(a+tb^2)]] 
+\end{align*}\]</span></p>
+<p>Aquí observamos que dentro de la integral se encuentra la densidad de una normal con media <span class="math inline">\(a+tb^2\)</span> y varianza <span class="math inline">\(b^2\)</span>. Por lo que integra 1. Así</p>
+<p><span class="math display">\[\varphi_X(t) = \mathbb{E}[e^{tX}] =  \exp[ta+\frac{t^2b^2}{2}].\]</span></p>
+<p>Calculado la media</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X] &amp;= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&amp;= [\exp[ta+\frac{t^2b^2}{2}](a+tb^2)](0)\\\\
+&amp;= a
+\end{align*}\]</span></p>
+<p>Calculando el segundo momento</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X^2] &amp;= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&amp;= [\exp\{a t + \frac{1}{2}t^2b^2\}(a + tb^2)^2 + \exp\{a t + \frac{1}{2}t^2b^2\}b^2](0)\\\\
+&amp;= a^2 + b^2
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[Var(X) = b^2\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -290,6 +340,31 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Solución:</p>
+<p>Primero calcularemos la función generadora de momentos.</p>
+<p>La densidad de una exponencial tiene la forma <span class="math display">\[f_X(x) = \lambda e^{-\lambda x} \quad (\mbox{para } \lambda&gt;0)\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[e^{tX}] &amp;= \int_0^\infty e^{tx}\lambda e^{-\lambda x}dx\\\\
+&amp;= \lambda \int_0^\infty e^{(t-\lambda)x} dx\\\\
+&amp;= \frac{\lambda}{t - \lambda}[e^{(t-\lambda)x}]_0^\infty\\\\
+&amp;= \frac{\lambda}{\lambda- t} &amp;&amp; (\mbox{para }\lambda&gt;t)
+\end{align*}\]</span></p>
+<p>Calculado la media.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X] &amp;= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&amp;= [\frac{\lambda}{(\lambda-t)^2}](0)\\\\
+&amp;= \frac{1}{\lambda}.
+\end{align*}\]</span></p>
+<p>Calculando el segundo momento</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X^2] &amp;= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&amp;= [\frac{2\lambda}{(\lambda-t)^3}](0)\\\\
+&amp;= \frac{2}{\lambda^2}
+\end{align*}\]</span></p>
+<p>Calculando la varianza:</p>
+<p><span class="math display">\[Var(X) = \mathbb{E}[X^2] - \mathbb{E}^2[X] =\frac{2}{\lambda^2} - (\frac{1}{\lambda})^2 = \frac{1}{\lambda^2}\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[Var(X) = \frac{1}{\lambda^2}.\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -297,6 +372,33 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Solución:</p>
+<p>Solución:</p>
+<p>Primero calcularemos la función generadora de momentos.</p>
+<p>La densidad de una Poisson tiene la forma <span class="math display">\[\mathbb{P}(X = x) = e^{-\lambda} \frac{\lambda^x}{x!} \quad (\mbox{para } x = 0,1, \dots)\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[e^{tX}] &amp;= \sum_{x = 0}^\infty e^{tx} e^{-\lambda}\frac{\lambda^x}{x!}\\\\
+&amp;= e^{-\lambda} \sum_{x = 0}^\infty  \frac{(\lambda e^{t})^x}{x!}\\\\
+&amp;= e^{-\lambda}e^{\lambda e^t} &amp;&amp;(e^t = \sum_{x = 0}^\infty \frac{t^x}{x!})\\\\
+&amp;= e^{\lambda(e^t-1)}.
+\end{align*}\]</span></p>
+<p>Calculado la media.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X] &amp;= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&amp;= \{e^{\lambda(e^t-1)}[\lambda(e^t)]\}(0)\\\\
+&amp;= \lambda.
+\end{align*}\]</span></p>
+<p>Calculando el segundo momento</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X^2] &amp;= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&amp;= \{\lambda e^{[\lambda(e^t-1)+t]}[\lambda(e^t)+1]\}(0)\\\\
+&amp;= \lambda^2 + \lambda.
+\end{align*}\]</span></p>
+<p>Calculando la varianza:</p>
+<p><span class="math display">\[Var(X) = \mathbb{E}[X^2] - \mathbb{E}^2[X] = (\lambda^2 + \lambda) - (\lambda)^2 = \lambda \]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[Var(X) = \lambda.\]</span></p>
 </div>
 
 

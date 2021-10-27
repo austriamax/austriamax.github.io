@@ -4,3 +4,56 @@ title: "Tarea 9. Pregunta 15.7."
 
 ### Sean $\{X_n\}_{n = 1}^\infty$ variables aleatorias independientes tales que $\mathbb{P}(X_1 = 1) = \mathbb{P}(X_1 = -1) = \frac{1}{2}$. Si $S_n = \sum_{j = 1}^n X_j$, entonces $\frac{1}{n}S_n \overset{\mathbb{P}}{\to} 0$ y $\frac{1}{n^2}S_{n^2} \to 0$.
 
+Demostración:
+
+Notemos que la variable $X$ puede ser vista como una variable Bernoulli transformada:
+
+\[X = 2Y-1 \quad \mbox{con} Y \sim Ber(\frac{1}{2})\]
+
+De esta manera
+
+\[\sum_{i = 1}^nX_i = 2 (\sum_{i = 1}^nY_i) - n \quad (\mbox{donde }\sum_{i = 1}^nY_i \sim Bin(n,p = \frac{1}{2}))\]
+
+Ahora calcularemos la esperanza y varianza de $\frac{1}{n}S_n$
+\[\begin{align*}
+\mathbb{E}(\frac{1}{n}S_n) &= \frac{1}{n}\mathbb{E}(S_n)\\\\
+&= \frac{1}{n}\mathbb{E}[2 (\sum_{i = 1}^nY_i) - n]\\\\
+&= \frac{1}{n}[2 \mathbb{E}(\sum_{i = 1}^nY_i) - n]\\\\
+&= \frac{1}{n}[2 (\frac{n}{2}) - n]\\\\
+&= 0
+\end{align*}\]
+
+\[\begin{align*}
+\mathbb{Var}(\frac{1}{n}S_n) &= \frac{1}{n^2}\mathbb{Var}(S_n)\\\\
+&= \frac{1}{n^2}\mathbb{Var}[2 (\sum_{i = 1}^nY_i) - n]\\\\
+&= \frac{4}{n^2}\mathbb{Var}[(\sum_{i = 1}^nY_i)]\\\\
+&=   \frac{4}{n^2}n\frac{1}{2}\frac{1}{2}\\\\
+&= \frac{1}{n}
+\end{align*}\]
+
+Por lo tanto $\mathbb{E}(\frac{1}{n}S_n) = 0 \quad \mathbb{Var}(\frac{1}{n}S_n) = \frac{1}{n}$.
+
+Entonces, por la ley débil de los grandes números (la ley sólo pide media, independencia e idéntica distribución):
+
+\[\frac{1}{n}\sum_{i=1}^n X_i \overset{\mathbb{P}}{\to} 0\]
+
+
+Por lo anterior, tomando la subsuceción de los $n^2$ con $n \in \mathbb{N}$ obtenemos:
+
+\[\mathbb{Var}(\frac{1}{n^2}S_{n^2}) = \mathbb{E}[(\frac{1}{n^2}S_{n^2})^2] = \frac{1}{n^2}\]
+
+
+Lo que implica que
+
+\[\sum_{n=1}^\infty \mathbb{E}(\frac{1}{n^2}S_{n^2}) = \sum_{n=1}^\infty \frac{1}{n^2} < \infty\]
+
+Entonces
+
+\[\mathbb{E}(\sum_{n=1}^\infty \frac{1}{n^2}S_{n^2})<\infty \quad (\mbox{Teorema de convergencia monótona})\]
+
+Luego
+\[\sum_{n=1}^\infty \frac{1}{n^2}S_{n^2} < \infty \quad (\mbox{c.s.})\]
+
+Es decir,
+
+\[\frac{1}{n^2}S_{n^2} \overset{c.s.}{\to} 0.\]

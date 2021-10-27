@@ -2,4 +2,35 @@
 title: "Tarea 9. Pregunta 15.9."
 ---
 
-### Si $X_1, \dots, X_n$ v.a. de Cauchy independientes muestre que \[\frac{1}{n}S_n = \frac{1}{n}\sum_{j = 1}^nX_j\] es también v.a. de Cauchy i.e. tiene densidad \[f(x) = \frac{1}{1+x^2}.\]
+### Si $X_1, \dots, X_n$ v.a. de Cauchy independientes muestre que \[\frac{1}{n}S_n = \frac{1}{n}\sum_{j = 1}^nX_j\] es también v.a. de Cauchy i.e. tiene densidad \[f(x) = \frac{1}{\pi(1+x^2)}.\]
+
+Demostración:
+
+Primero veamos cual es la función característica de tal distribución
+
+\[\begin{align*}
+\varphi_X(t) &= \mathbb{E}[\cos(tX)] + i\mathbb{E}[\sin(tX)]\\\\
+&= \int_{-\infty}^\infty cos(tX)\frac{1}{\pi(1+x^2)}dx + i\int_{-\infty}^\infty \sin(tX)\frac{1}{\pi(1+x^2)}dx\\\\
+&= \int_{-\infty}^\infty cos(tX)\frac{1}{\pi(1+x^2)}dx +0 && (\frac{\sin(tX)}{\pi(1+x^2)} \mbox{ es una función impar})\\\\
+&= \frac{2}{\pi}\int_{0}^\infty cos(tX)\frac{1}{\pi(1+x^2)}dx && (\frac{\cos(tX)}{(1+x^2)} \mbox{ es una función par})\\\\
+&= \frac{2}{\pi}\frac{\pi}{2}e^{-|t|}\\\\
+&= e^{-|t|} && (*).
+\end{align*}\]
+
+(*) La integral se puede obtener mediante la transformada de Laplace, pero me parecio demasiado largo y por eso prefiero **[citarlo.](https://personal.math.ubc.ca/~cbm/aands/toc.htm)**
+
+
+
+
+Ahora
+
+\[\begin{align*}
+\varphi_X(t) &= \mathbb{E}[\exp(it\frac{1}{n}S_n)]\\\\
+&= \mathbb{E}[\prod_{j=1}^n\exp(it\frac{1}{n}X_j)] &&(\mbox{Prop. de expo compleja})\\\\
+&= \prod_{j=1}^n\mathbb{E}[\exp(it\frac{1}{n}X_j)] &&(\mbox{Independencia})\\\\
+&= \mathbb{E}[\exp(it\frac{1}{n}X)]^n &&(\mbox{Identica distribución})\\\\
+&= [\exp(-\frac{1}{n}|t|)]^n\\\\
+&= \exp[-|t|]
+\end{align*}\]
+
+\[\therefore \frac{1}{n}S_n \sim Cauchy(0,1).\]

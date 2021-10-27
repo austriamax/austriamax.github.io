@@ -4,24 +4,175 @@ title: "Tarea 10. Pregunta 16.7."
 
 ### Sea $X: \Omega \to \mathbb{R}$ con segundo momento finito. Se define la varianza de $X$ como $Var(X) := \mathbb{E}[(X - \mathbb{E}(X))^2]$. Calcule la varianza de:
 
+Observación:
+
+\[\begin{align*}
+Var(X) &:= \mathbb{E}[(X - \mathbb{E}(X))^2]\\\\
+&= \mathbb{E}[X^2 - 2X\mathbb{E}(X) + \mathbb{E}(X)^2]\\\\
+&= \mathbb{E}[X^2] - 2\mathbb{E}[X]^2 + \mathbb{E}[X]^2\\\\
+&= \mathbb{E}[X^2] - \mathbb{E}[X]^2. 
+\end{align*}\]
+
+\[\therefore Var(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2\]
+
+Así procederemos a calcular las varianzas a través de la fórmula anterior y la función generadora de momentos.
 
 -------------------------------------------------------------------------------
 1. $X \sim N(0,1)$.
 -------------------------------------------------------------------------------
+Por el inciso 2. 
 
+\[Var(X) = 1\]
 
 -------------------------------------------------------------------------------
-2. $X \sim N(a, \sigma^2)$.
+2. $X \sim N(a, b^2)$.
 -------------------------------------------------------------------------------
 
+Solución:
+
+Primero calcularemos la función generadora de momentos.
+
+La densidad de una normal tiene la forma
+\[f_X(x) = \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{(x-a)^2}{2b^2}]\]
+
+Entonces
+\[\begin{align*}
+\mathbb{E}[e^{tX}] &= \int_{-\infty}^\infty e^{tX} \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{(x-a)^2}{2b^2}]\\\\
+&= \frac{e^{ta}}{\sqrt{2\pi b^2}} \int_{-\infty}^\infty \exp[t(x-a) - \frac{1}{2b^2}(x-a)^2]dx
+\end{align*}\]
+
+Ahora vamos hacer unas operaciones sobre el exponente:
+
+\[\begin{align*}
+t(x-a) - \frac{1}{2b^2}(x-a)^2 &= -\frac{1}{2b^2}[(x-a)^2-2b^2t(x-a)]\\\\
+&= -\frac{1}{2b^2}[x^2 + a^2-2x(a+tb^2) + 2b^2ta]\\\\
+&= -\frac{1}{2b^2}[x^2 - 2x(a +tb^2) + (a + tb^2)^2 - (a+tb^2)^2 + a^2 + 2b^2ta]\\\\
+&= -\frac{1}{2b^2}[(x-(a + tb^2))^2-t^2b^4]\\\\
+&= -\frac{1}{2b^2}[(x-(a + tb^2 ))^2] + \frac{t^2b^2}{2}.
+\end{align*}\]
+
+Por lo tanto 
+
+\[\begin{align*}
+\mathbb{E}[e^{tX}]  = \exp[ta+\frac{t^2b^2}{2}] \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi b^2}}\exp[-\frac{1}{2b^2}[x-(a+tb^2)]] 
+\end{align*}\]
+
+Aquí observamos que dentro de la integral se encuentra la densidad de una normal con media $a+tb^2$ y varianza $b^2$. Por lo que integra 1. Así
+
+\[\varphi_X(t) = \mathbb{E}[e^{tX}] =  \exp[ta+\frac{t^2b^2}{2}].\]
+
+Calculado la media
+
+\[\begin{align*}
+\mathbb{E}[X] &= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&= [\exp[ta+\frac{t^2b^2}{2}](a+tb^2)](0)\\\\
+&= a
+\end{align*}\]
+
+Calculando el segundo momento
+
+\[\begin{align*}
+\mathbb{E}[X^2] &= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&= [\exp\{a t + \frac{1}{2}t^2b^2\}(a + tb^2)^2 + \exp\{a t + \frac{1}{2}t^2b^2\}b^2](0)\\\\
+&= a^2 + b^2
+\end{align*}\]
+
+Por lo tanto
+\[Var(X) = b^2\]
 
 -------------------------------------------------------------------------------
 3. $X \sim exp(\lambda)$.
 -------------------------------------------------------------------------------
 
+Solución:
+
+Primero calcularemos la función generadora de momentos.
+
+La densidad de una exponencial tiene la forma
+\[f_X(x) = \lambda e^{-\lambda x} \quad (\mbox{para } \lambda>0)\]
+
+\[\begin{align*}
+\mathbb{E}[e^{tX}] &= \int_0^\infty e^{tx}\lambda e^{-\lambda x}dx\\\\
+&= \lambda \int_0^\infty e^{(t-\lambda)x} dx\\\\
+&= \frac{\lambda}{t - \lambda}[e^{(t-\lambda)x}]_0^\infty\\\\
+&= \frac{\lambda}{\lambda- t} && (\mbox{para }\lambda>t)
+\end{align*}\]
+
+
+Calculado la media.
+
+
+\[\begin{align*}
+\mathbb{E}[X] &= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&= [\frac{\lambda}{(\lambda-t)^2}](0)\\\\
+&= \frac{1}{\lambda}.
+\end{align*}\]
+
+
+Calculando el segundo momento
+
+\[\begin{align*}
+\mathbb{E}[X^2] &= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&= [\frac{2\lambda}{(\lambda-t)^3}](0)\\\\
+&= \frac{2}{\lambda^2}
+\end{align*}\]
+
+Calculando la varianza:
+
+\[Var(X) = \mathbb{E}[X^2] - \mathbb{E}^2[X] =\frac{2}{\lambda^2} - (\frac{1}{\lambda})^2 = \frac{1}{\lambda^2}\]
+
+Por lo tanto
+
+\[Var(X) = \frac{1}{\lambda^2}.\]
 
 -------------------------------------------------------------------------------
 4. $X \sim Poisson(\lambda)$.
 -------------------------------------------------------------------------------
+
+Solución:
+
+Solución:
+
+Primero calcularemos la función generadora de momentos.
+
+La densidad de una Poisson tiene la forma
+\[\mathbb{P}(X = x) = e^{-\lambda} \frac{\lambda^x}{x!} \quad (\mbox{para } x = 0,1, \dots)\]
+
+
+Así 
+
+\[\begin{align*}
+\mathbb{E}[e^{tX}] &= \sum_{x = 0}^\infty e^{tx} e^{-\lambda}\frac{\lambda^x}{x!}\\\\
+&= e^{-\lambda} \sum_{x = 0}^\infty  \frac{(\lambda e^{t})^x}{x!}\\\\
+&= e^{-\lambda}e^{\lambda e^t} &&(e^t = \sum_{x = 0}^\infty \frac{t^x}{x!})\\\\
+&= e^{\lambda(e^t-1)}.
+\end{align*}\]
+
+
+Calculado la media.
+
+
+\[\begin{align*}
+\mathbb{E}[X] &= \frac{d}{dt}[\varphi_X(t)](0)\\\\
+&= \{e^{\lambda(e^t-1)}[\lambda(e^t)]\}(0)\\\\
+&= \lambda.
+\end{align*}\]
+
+
+Calculando el segundo momento
+
+\[\begin{align*}
+\mathbb{E}[X^2] &= \frac{d^2}{dt^2}[\varphi_X(t)](0)\\\\
+&= \{\lambda e^{[\lambda(e^t-1)+t]}[\lambda(e^t)+1]\}(0)\\\\
+&= \lambda^2 + \lambda.
+\end{align*}\]
+
+Calculando la varianza:
+
+\[Var(X) = \mathbb{E}[X^2] - \mathbb{E}^2[X] = (\lambda^2 + \lambda) - (\lambda)^2 = \lambda \]
+
+Por lo tanto
+
+\[Var(X) = \lambda.\]
 
 

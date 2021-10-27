@@ -52,18 +52,37 @@ Por lo tanto:
 -------------------------------------------------------------------------------
 (C) Pruebe que la distribución de $(X+Y)$ esta dada por $F_X \circledast F_Y$ (convolución).
 -------------------------------------------------------------------------------
-Demostración:
 
-
-
+\[\begin{align*}
+\mathbb{P}(X+Y\leq z) &= \int_\Omega 1_{(-\infty,z]}(X+Y)d\mathbb{P}\\\\
+&= \int_{\mathbb{R}^2} 1_{(-\infty,z]}(x+y)d(\mu \times \nu)(x,y)\\\\
+&= \int_{\mathbb{R}} \int_{\mathbb{R}}1_{(-\infty,z]}(x+y)d\mu(x)d\nu(y) && (\mbox{Independencia})\\\\
+&= \int_{\mathbb{R}} [\int_{\mathbb{R}}1_{(-\infty,z]}(x+y)d\mu(x)]d\nu(y) && (\mbox{Teorema de Tonelli})\\\\
+&= \int_{\mathbb{R}} F_X(z-y)dv(y)\\\\
+&=\int F_X(z-y)dF_Y(y)\\\\
+&=(F_X \circledast F_Y)(z).
+\end{align*}\]
 
 -------------------------------------------------------------------------------
 (D) Si $X \sim U([0,1])$, $Y \sim exp(1)$. Calcule la distribución de $X + Y$.
 -------------------------------------------------------------------------------
+Demostración:
 
+\[\begin{align*}
+f_{X+Y}(u) &= \int_{-\infty}^{\infty} f_{X,Y}(u-v,v)dv\\\\
+ &= \int_{-\infty}^{\infty} f_{X}(u-v)f_{Y}(v)dv && (\mbox{Independencia})\\\\
+ &= \int_{-\infty}^{\infty} 1_{[0,1]}(u-v)f_{Y}(v)dv\\\\
+&= \int_{-\infty}^{\infty} 1_{[0,1]}(u-v)f_{Y}(v)dv\\\\
+&= \int_{u-1}^{u} f_{Y}(v)dv &&(u-v \in [0,1] \implies u-1 \leq v \leq u)\\\\
+&= \int_{u-1}^{u} exp[-v]dv\\\\
+&= [\frac{e^{1-v}}{1-v}]_{u-1}^u\\\\
+&= \frac{1}{u}e^{1-u}1_{[0,\infty)}^{(u)}
+\end{align*}\]
+
+\[\therefore f_{X+Y}(u)  = \frac{1}{u}e^{1-u}1_{[0,\infty)}^{(u)}\]
 
 -------------------------------------------------------------------------------
-(E) Si $X$ tiene densidad $f_X$ y $Y$ es discreta. Muestre que $X + Y$ tiene densidad,
+(E) Si $X$ tiene densidad $f_X$ y $Y$ es discreta. Muestre que $X + Y$ tiene densidad.
 -------------------------------------------------------------------------------
 
 

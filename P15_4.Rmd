@@ -8,15 +8,35 @@ title: "Tarea 9. Pregunta 15.4."
 ----------------------------------------------------------------------------
 (A) $\mathbb{P}(\min (X,Y) \leq 1)$.
 ----------------------------------------------------------------------------
-
+\[\begin{align*}
+\mathbb{P}(\min (X,Y) \leq 1) &= \mathbb{P}(X \leq 1)\mathbb{P}(Y \leq 1)\\\\
+&= \frac{1}{2}\frac{1}{2}\\\\
+&= \frac{1}{4}
+\end{align*}\]
 
 ----------------------------------------------------------------------------
 (B) $\mathbb{P}(X = Y)$.
 ----------------------------------------------------------------------------
 
+\[\begin{align*}
+\mathbb{P}(X = Y) &= \sum_{i = 1}^\infty \mathbb{P}(X = Y = i)\\\\
+&= \sum_{i = 1}^\infty \mathbb{P}(X = i)\mathbb{P}(Y = i)\\\\
+&= \sum_{i = 1}^\infty \frac{1}{2^i}\frac{1}{2^i}\\\\
+&= \sum_{i = 1}^\infty \frac{1}{4^i}\\\\
+&= \frac{1}{3}
+\end{align*}\]
 
 ----------------------------------------------------------------------------
 (C) $\mathbb{P}(X > Y)$.
 ----------------------------------------------------------------------------
+Como $X$ y $Y$ son independientes e identicamente distribuidas, entonces $X-Y$ es simétrica (veasé **[Pregunta 16.5.](https://austriamax.github.io/austriamax.proba1.github.io/P16_5.html)**).
 
+Entonces
+\[\mathbb{P}(X-Y>0) = \mathbb{P}(X-Y<0)\]
+Además
+\[\mathbb{P}(X-Y>0) + \mathbb{P}(X-Y=0) + \mathbb{P}(X-Y<0) = 1\]
+Luego
+\[2\mathbb{P}(X-Y>0) = \frac{2}{3} \]
 
+Por lo tanto
+\[\therefore \mathbb{P}(X-Y>0) = \frac{1}{3}.\]

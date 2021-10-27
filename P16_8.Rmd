@@ -5,3 +5,64 @@ title: "Tarea 10. Pregunta 16.8."
 
 ### Si $X$ y $Y$ son v.a.'s independientes, $X, Y \sim N(0,1)$. Calcule la densidad de $(X+Y, X-Y)$.
 
+Calculo:
+
+Hay varias maneras de proceder, aquí usaremos el teorema de cambio de variable.
+
+Sea $\varphi:\mathbb{R}^2 \to \mathbb{R}^2$ dada por 
+
+\[
+\varphi(X,Y) = 
+\begin{pmatrix}
+Y+Y\\
+X-Y
+\end{pmatrix}
+\]
+
+Sea
+\[U = X+Y\]
+\[V = X-Y\]
+
+Así 
+\[X = \frac{U+V}{2}\]
+\[Y = \frac{U-V}{2}\]
+
+Por lo que $\varphi^{-1}:\mathbb{R}^2 \to \mathbb{R}^2$ dada por 
+
+\[
+\varphi^{-1}(U,V) = 
+\begin{pmatrix}
+\frac{U+V}{2}\\
+\frac{U-V}{2}
+\end{pmatrix}
+\]
+
+El siguiente paso es calcular el Jacoviano
+
+\[J(U,V) = \begin{vmatrix}
+\frac{\delta \varphi_1}{\delta u} & \frac{\delta \varphi_1}{\delta v}\\
+\frac{\delta \varphi_2}{\delta u} & \frac{\delta \varphi_2}{\delta v}
+\end{vmatrix} = 
+\begin{vmatrix}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & -\frac{1}{2}
+\end{vmatrix}
+= -\frac{1}{2}.
+\]
+
+Ahora calculamos la densidad de la transformación:
+
+\[\begin{align*}
+f_{U,V}(u,v) &= f_{X,Y}(\varphi^{-1}(u,v))|J(u,v)| &&(\mbox{Teorema del cambio de var.})\\\\
+&= f_{X}(\varphi_1^{-1}(u,v))f_{Y}(\varphi_2^{-1}(u,v))|\frac{1}{2}| &&(\mbox{Independencia})\\\\
+&= \{\frac{1}{\sqrt{2\pi}}\exp[-\frac{1}{2}(\frac{u+v}{2})^2]\}\{\frac{1}{\sqrt{2\pi}}\exp[-\frac{1}{2}(\frac{u-v}{2})^2]\}|\frac{1}{2}|\\\\
+&= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{u^2+2uv+v^2+u^2-2uv + v^2}{2^2})](\frac{1}{2})\\\\
+&= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{2u^2+2v^2}{2^2})](\frac{1}{2})\\\\
+&= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{u^2+v^2}{2})](\frac{1}{2})\\\\
+&= \frac{1}{\sqrt{2\pi(2)}}*\frac{1}{\sqrt{2\pi(2)}}*\exp[-\frac{1}{2}(\frac{u^2+v^2}{\sqrt{2}^2})]\\\\
+&= \frac{1}{\sqrt{2\pi(2)}}\exp[-\frac{1}{2}(\frac{u^2}{\sqrt{2}^2})]*\frac{1}{\sqrt{2\pi(2)}}\exp[-\frac{1}{2}(\frac{v^2}{\sqrt{2}^2})]\\\\
+&= f_U(u)f_V(v).
+\end{align*}\]
+
+Por lo tanto 
+\[U \bot V \quad U\sim N(0,2), \quad V \sim N(0,2).\]

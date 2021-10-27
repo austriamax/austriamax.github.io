@@ -4,3 +4,21 @@ title: "Tarea 10. Pregunta 16.5."
 
 ### Si $X$, $Y$ son v.a. independientes con la misma distribución. Pruebe que $X-Y$ es simétrica.
 
+Demostración:
+
+\[\begin{align*}
+\varphi_{X-Y}(t) &= \mathbb{E}[\exp(it(X-Y))]\\\\
+&= \mathbb{E}[\exp(itX)\exp(i(-t)Y)]\\\\
+&= \mathbb{E}[\exp(itX)]\mathbb{E}[\exp(i(-t)Y)] && (\mbox{Independencia})\\\\
+&= \varphi_{X}(t) \varphi_{Y}(-t)\\\\
+&=\varphi_{Y}(t) \varphi_{X}(-t) &&(\mbox{Identica distribución})\\\\
+&= \mathbb{E}[\exp(itY)\exp(i(-t)X)]\\\\
+&= \mathbb{E}[\exp(it(Y-X))]\\\\
+&=\varphi_{Y-X}(t) 
+\end{align*}\]
+
+\[\therefore \varphi_{X-Y}(t) = \varphi_{Y-X}(t)\]
+
+\[\therefore X-Y \sim -(X-Y)\]
+
+\[\therefore X-Y \mbox{ es simétrica.}\]

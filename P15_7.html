@@ -269,6 +269,37 @@ $(document).ready(function () {
 
 <div id="sean-x_n_n-1infty-variables-aleatorias-independientes-tales-que-mathbbpx_1-1-mathbbpx_1--1-frac12.-si-s_n-sum_j-1n-x_j-entonces-frac1ns_n-oversetmathbbpto-0-y-frac1n2s_n2-to-0." class="section level3">
 <h3>Sean <span class="math inline">\(\{X_n\}_{n = 1}^\infty\)</span> variables aleatorias independientes tales que <span class="math inline">\(\mathbb{P}(X_1 = 1) = \mathbb{P}(X_1 = -1) = \frac{1}{2}\)</span>. Si <span class="math inline">\(S_n = \sum_{j = 1}^n X_j\)</span>, entonces <span class="math inline">\(\frac{1}{n}S_n \overset{\mathbb{P}}{\to} 0\)</span> y <span class="math inline">\(\frac{1}{n^2}S_{n^2} \to 0\)</span>.</h3>
+<p>Demostración:</p>
+<p>Notemos que la variable <span class="math inline">\(X\)</span> puede ser vista como una variable Bernoulli transformada:</p>
+<p><span class="math display">\[X = 2Y-1 \quad \mbox{con} Y \sim Ber(\frac{1}{2})\]</span></p>
+<p>De esta manera</p>
+<p><span class="math display">\[\sum_{i = 1}^nX_i = 2 (\sum_{i = 1}^nY_i) - n \quad (\mbox{donde }\sum_{i = 1}^nY_i \sim Bin(n,p = \frac{1}{2}))\]</span></p>
+<p>Ahora calcularemos la esperanza y varianza de <span class="math inline">\(\frac{1}{n}S_n\)</span> <span class="math display">\[\begin{align*}
+\mathbb{E}(\frac{1}{n}S_n) &amp;= \frac{1}{n}\mathbb{E}(S_n)\\\\
+&amp;= \frac{1}{n}\mathbb{E}[2 (\sum_{i = 1}^nY_i) - n]\\\\
+&amp;= \frac{1}{n}[2 \mathbb{E}(\sum_{i = 1}^nY_i) - n]\\\\
+&amp;= \frac{1}{n}[2 (\frac{n}{2}) - n]\\\\
+&amp;= 0
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{Var}(\frac{1}{n}S_n) &amp;= \frac{1}{n^2}\mathbb{Var}(S_n)\\\\
+&amp;= \frac{1}{n^2}\mathbb{Var}[2 (\sum_{i = 1}^nY_i) - n]\\\\
+&amp;= \frac{4}{n^2}\mathbb{Var}[(\sum_{i = 1}^nY_i)]\\\\
+&amp;=   \frac{4}{n^2}n\frac{1}{2}\frac{1}{2}\\\\
+&amp;= \frac{1}{n}
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math inline">\(\mathbb{E}(\frac{1}{n}S_n) = 0 \quad \mathbb{Var}(\frac{1}{n}S_n) = \frac{1}{n}\)</span>.</p>
+<p>Entonces, por la ley débil de los grandes números (la ley sólo pide media, independencia e idéntica distribución):</p>
+<p><span class="math display">\[\frac{1}{n}\sum_{i=1}^n X_i \overset{\mathbb{P}}{\to} 0\]</span></p>
+<p>Por lo anterior, tomando la subsuceción de los <span class="math inline">\(n^2\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span> obtenemos:</p>
+<p><span class="math display">\[\mathbb{Var}(\frac{1}{n^2}S_{n^2}) = \mathbb{E}[(\frac{1}{n^2}S_{n^2})^2] = \frac{1}{n^2}\]</span></p>
+<p>Lo que implica que</p>
+<p><span class="math display">\[\sum_{n=1}^\infty \mathbb{E}(\frac{1}{n^2}S_{n^2}) = \sum_{n=1}^\infty \frac{1}{n^2} &lt; \infty\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\mathbb{E}(\sum_{n=1}^\infty \frac{1}{n^2}S_{n^2})&lt;\infty \quad (\mbox{Teorema de convergencia monótona})\]</span></p>
+<p>Luego <span class="math display">\[\sum_{n=1}^\infty \frac{1}{n^2}S_{n^2} &lt; \infty \quad (\mbox{c.s.})\]</span></p>
+<p>Es decir,</p>
+<p><span class="math display">\[\frac{1}{n^2}S_{n^2} \overset{c.s.}{\to} 0.\]</span></p>
 </div>
 
 

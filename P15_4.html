@@ -270,19 +270,34 @@ $(document).ready(function () {
 <div id="si-x-y-y-son-v.a.i.-con-valores-en-mathbbn-tales-que-mathbbpx-i-mathbbpy-i-frac12i-para-i-1-2-dots.-calcule" class="section level3">
 <h3>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son v.a.i. con valores en <span class="math inline">\(\mathbb{N}\)</span> tales que <span class="math inline">\(\mathbb{P}(X = i) = \mathbb{P}(Y = i) = \frac{1}{2^i}\)</span> para <span class="math inline">\(i = 1, 2, \dots\)</span>. Calcule:</h3>
 <table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">(A) <span class="math inline">\(\mathbb{P}(\min (X,Y) \leq 1)\)</span>.</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left">(A) <span class="math inline">\(\mathbb{P}(\min (X,Y) \leq 1)\)</span>.</td>
+<td align="left"><span class="math display">\[\begin{align*}
+\mathbb{P}(\min (X,Y) \leq 1) &amp;= \mathbb{P}(X \leq 1)\mathbb{P}(Y \leq 1)\\\\
+&amp;= \frac{1}{2}\frac{1}{2}\\\\
+&amp;= \frac{1}{4}
+\end{align*}\]</span></td>
 </tr>
 </tbody>
 </table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B) <span class="math inline">\(\mathbb{P}(X = Y)\)</span>.</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="b-mathbbpx-y." class="section level2">
+<h2>(B) <span class="math inline">\(\mathbb{P}(X = Y)\)</span>.</h2>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(X = Y) &amp;= \sum_{i = 1}^\infty \mathbb{P}(X = Y = i)\\\\
+&amp;= \sum_{i = 1}^\infty \mathbb{P}(X = i)\mathbb{P}(Y = i)\\\\
+&amp;= \sum_{i = 1}^\infty \frac{1}{2^i}\frac{1}{2^i}\\\\
+&amp;= \sum_{i = 1}^\infty \frac{1}{4^i}\\\\
+&amp;= \frac{1}{3}
+\end{align*}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -290,6 +305,9 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Como <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes e identicamente distribuidas, entonces <span class="math inline">\(X-Y\)</span> es simétrica (veasé <strong><a href="https://austriamax.github.io/austriamax.proba1.github.io/P16_5.html">Pregunta 16.5.</a></strong>).</p>
+<p>Entonces <span class="math display">\[\mathbb{P}(X-Y&gt;0) = \mathbb{P}(X-Y&lt;0)\]</span> Además <span class="math display">\[\mathbb{P}(X-Y&gt;0) + \mathbb{P}(X-Y=0) + \mathbb{P}(X-Y&lt;0) = 1\]</span> Luego <span class="math display">\[2\mathbb{P}(X-Y&gt;0) = \frac{2}{3} \]</span></p>
+<p>Por lo tanto <span class="math display">\[\therefore \mathbb{P}(X-Y&gt;0) = \frac{1}{3}.\]</span></p>
 </div>
 
 

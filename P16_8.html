@@ -269,6 +269,50 @@ $(document).ready(function () {
 
 <div id="si-x-y-y-son-v.a.s-independientes-x-y-sim-n01.-calcule-la-densidad-de-xy-x-y." class="section level3">
 <h3>Si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son v.a.’s independientes, <span class="math inline">\(X, Y \sim N(0,1)\)</span>. Calcule la densidad de <span class="math inline">\((X+Y, X-Y)\)</span>.</h3>
+<p>Calculo:</p>
+<p>Hay varias maneras de proceder, aquí usaremos el teorema de cambio de variable.</p>
+<p>Sea <span class="math inline">\(\varphi:\mathbb{R}^2 \to \mathbb{R}^2\)</span> dada por</p>
+<p><span class="math display">\[
+\varphi(X,Y) = 
+\begin{pmatrix}
+Y+Y\\
+X-Y
+\end{pmatrix}
+\]</span></p>
+<p>Sea <span class="math display">\[U = X+Y\]</span> <span class="math display">\[V = X-Y\]</span></p>
+<p>Así <span class="math display">\[X = \frac{U+V}{2}\]</span> <span class="math display">\[Y = \frac{U-V}{2}\]</span></p>
+<p>Por lo que <span class="math inline">\(\varphi^{-1}:\mathbb{R}^2 \to \mathbb{R}^2\)</span> dada por</p>
+<p><span class="math display">\[
+\varphi^{-1}(U,V) = 
+\begin{pmatrix}
+\frac{U+V}{2}\\
+\frac{U-V}{2}
+\end{pmatrix}
+\]</span></p>
+<p>El siguiente paso es calcular el Jacoviano</p>
+<p><span class="math display">\[J(U,V) = \begin{vmatrix}
+\frac{\delta \varphi_1}{\delta u} &amp; \frac{\delta \varphi_1}{\delta v}\\
+\frac{\delta \varphi_2}{\delta u} &amp; \frac{\delta \varphi_2}{\delta v}
+\end{vmatrix} = 
+\begin{vmatrix}
+\frac{1}{2} &amp; \frac{1}{2}\\
+\frac{1}{2} &amp; -\frac{1}{2}
+\end{vmatrix}
+= -\frac{1}{2}.
+\]</span></p>
+<p>Ahora calculamos la densidad de la transformación:</p>
+<p><span class="math display">\[\begin{align*}
+f_{U,V}(u,v) &amp;= f_{X,Y}(\varphi^{-1}(u,v))|J(u,v)| &amp;&amp;(\mbox{Teorema del cambio de var.})\\\\
+&amp;= f_{X}(\varphi_1^{-1}(u,v))f_{Y}(\varphi_2^{-1}(u,v))|\frac{1}{2}| &amp;&amp;(\mbox{Independencia})\\\\
+&amp;= \{\frac{1}{\sqrt{2\pi}}\exp[-\frac{1}{2}(\frac{u+v}{2})^2]\}\{\frac{1}{\sqrt{2\pi}}\exp[-\frac{1}{2}(\frac{u-v}{2})^2]\}|\frac{1}{2}|\\\\
+&amp;= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{u^2+2uv+v^2+u^2-2uv + v^2}{2^2})](\frac{1}{2})\\\\
+&amp;= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{2u^2+2v^2}{2^2})](\frac{1}{2})\\\\
+&amp;= \frac{1}{\sqrt{2\pi}}*\frac{1}{\sqrt{2\pi}}*\exp[-\frac{1}{2}(\frac{u^2+v^2}{2})](\frac{1}{2})\\\\
+&amp;= \frac{1}{\sqrt{2\pi(2)}}*\frac{1}{\sqrt{2\pi(2)}}*\exp[-\frac{1}{2}(\frac{u^2+v^2}{\sqrt{2}^2})]\\\\
+&amp;= \frac{1}{\sqrt{2\pi(2)}}\exp[-\frac{1}{2}(\frac{u^2}{\sqrt{2}^2})]*\frac{1}{\sqrt{2\pi(2)}}\exp[-\frac{1}{2}(\frac{v^2}{\sqrt{2}^2})]\\\\
+&amp;= f_U(u)f_V(v).
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[U \bot V \quad U\sim N(0,2), \quad V \sim N(0,2).\]</span></p>
 </div>
 
 
