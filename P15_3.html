@@ -270,12 +270,28 @@ $(document).ready(function () {
 <div id="sean-x-y-dos-variables-aleatorias-independientes." class="section level3">
 <h3>Sean <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> dos variables aleatorias independientes.</h3>
 <table>
+<tbody>
+<tr class="odd">
+<td>(A) Si <span class="math inline">\(X \sim N(a,b^2)\)</span> y <span class="math inline">\(Y \sim N(a,b^2)\)</span>. Calcule <span class="math inline">\(\mathbb{E}[(X + Y)^2]\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p>Solución:</p>
+<p>Sabemos que si <span class="math inline">\(X \sim N(a,b^2)\)</span> y <span class="math inline">\(Y \sim N(a,b^2)\)</span> entonces <span class="math inline">\(X+Y\)</span> distribuye normal. Veamos los parámetros:</p>
+<p><span class="math display">\[\mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y] = a+a = 2a\]</span></p>
+<p><span class="math display">\[\mathbb{Var}[X+Y] \overset{Independencia}{=} \mathbb{Var}[X] + \mathbb{Var}[Y] = b^2+b^2 = 2b^2\]</span></p>
+<p>Entonces <span class="math display">\[Z = X+Y \sim N(2a,2b^2)\]</span></p>
+<p>Recordando <span class="math display">\[\mathbb{Var}[Z] = \mathbb{E}[Z^2] - \mathbb{E}[Z]^2\]</span></p>
+<p>Así <span class="math display">\[ \mathbb{E}[Z^2] = \mathbb{Var}[Z] + \mathbb{E}[Z]^2 = 2b^2 + 4a^2\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\mathbb{E}[(X + Y)^2] = 4a^2+2b^2\]</span></p>
+<table>
 <colgroup>
 <col width="100%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>(A) Si <span class="math inline">\(X \sim N(a,b^2)\)</span> y <span class="math inline">\(Y \sim N(a,b^2)\)</span>. Calcule <span class="math inline">\(\mathbb{E}[(X + Y)^2]\)</span>.</th>
+<th>(B) Si <span class="math inline">\(X, Y \sim U([0,1])\)</span>, ¿cuál es la probabilidad de que el polinomio <span class="math inline">\(f(x) = x^2 - 2Xx + Y\)</span> tenga dos raíces reales diferentes?</th>
 </tr>
 </thead>
 <tbody>
@@ -283,53 +299,31 @@ $(document).ready(function () {
 <td>Solución:</td>
 </tr>
 <tr class="even">
-<td>Sabemos que si <span class="math inline">\(X \sim N(a,b^2)\)</span> y <span class="math inline">\(Y \sim N(a,b^2)\)</span> entonces <span class="math inline">\(X+Y\)</span> distribuye normal. Veamos los parámetros:</td>
+<td>La fórmula gerenal para el polinomio <span class="math inline">\(ax^2 +bx + c\)</span> es <span class="math display">\[x = \frac{-b \mp \sqrt{b^2-4ac}}{2a}.\]</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y] = a+a = 2a\]</span></td>
+<td>Donde <span class="math inline">\(b^2-4ac &gt;0\)</span> garantiza tener dos raíces reales diferentes. En este caso <span class="math inline">\(a =1\)</span>, <span class="math inline">\(b = -2X\)</span> y <span class="math inline">\(c = Y\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\mathbb{Var}[X+Y] \overset{Independencia}{=} \mathbb{Var}[X] + \mathbb{Var}[Y] = b^2+b^2 = 2b^2\]</span></td>
-</tr>
-<tr class="odd">
-<td>Entonces <span class="math display">\[Z = X+Y \sim N(2a,2b^2)\]</span></td>
-</tr>
-<tr class="even">
-<td>Recordando <span class="math display">\[\mathbb{Var}[Z] = \mathbb{E}[Z^2] - \mathbb{E}[Z]^2\]</span></td>
-</tr>
-<tr class="odd">
-<td>Así <span class="math display">\[ \mathbb{E}[Z^2] = \mathbb{Var}[Z] + \mathbb{E}[Z]^2 = 2b^2 + 4a^2\]</span></td>
-</tr>
-<tr class="even">
-<td>Por lo tanto</td>
-</tr>
-<tr class="odd">
-<td><span class="math display">\[\mathbb{E}[(X + Y)^2] = 4a^2+2b^2\]</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="b-si-x-y-sim-u01-cuál-es-la-probabilidad-de-que-el-polinomio-fx-x2---2xx-y-tenga-dos-raíces-reales-diferentes" class="section level2">
-<h2>(B) Si <span class="math inline">\(X, Y \sim U([0,1])\)</span>, ¿cuál es la probabilidad de que el polinomio <span class="math inline">\(f(x) = x^2 - 2Xx + Y\)</span> tenga dos raíces reales diferentes?</h2>
-<p>Solución:</p>
-<p>La fórmula gerenal para el polinomio <span class="math inline">\(ax^2 +bx + c\)</span> es <span class="math display">\[x = \frac{-b \mp \sqrt{b^2-4ac}}{2a}.\]</span></p>
-<p>Donde <span class="math inline">\(b^2-4ac &gt;0\)</span> garantiza tener dos raíces reales diferentes. En este caso <span class="math inline">\(a =1\)</span>, <span class="math inline">\(b = -2X\)</span> y <span class="math inline">\(c = Y\)</span>.</p>
-<p><span class="math display">\[\begin{align*}
+<td><span class="math display">\[\begin{align*}
 \mathbb{P}[4X^2-4(1)Y&gt;0] &amp;= \mathbb{P}[X^2-Y&gt;0]\\\\
 &amp;= \mathbb{P}[X^2&gt;Y]\\\\
 &amp;= \int_0^1x^2dx\\\\
 &amp;= [\frac{x^3}{3}]_0^1\\\\
 &amp;= \frac{1}{3}.
-\end{align*}\]</span></p>
-<p>Por lo tanto:</p>
-<p><span class="math display">\[\mathbb{P}[\mbox{Tener dos raíces}] = \frac{1}{3}\]</span></p>
-<table>
-<tbody>
+\end{align*}\]</span></td>
+</tr>
 <tr class="odd">
-<td>(C) Pruebe que la distribución de <span class="math inline">\((X+Y)\)</span> esta dada por <span class="math inline">\(F_X \circledast F_Y\)</span> (convolución).</td>
+<td>Por lo tanto:</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\mathbb{P}[\mbox{Tener dos raíces}] = \frac{1}{3}\]</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="c-pruebe-que-la-distribución-de-xy-esta-dada-por-f_x-circledast-f_y-convolución." class="section level2">
+<h2>(C) Pruebe que la distribución de <span class="math inline">\((X+Y)\)</span> esta dada por <span class="math inline">\(F_X \circledast F_Y\)</span> (convolución).</h2>
 <p><span class="math display">\[\begin{align*}
 \mathbb{P}(X+Y\leq z) &amp;= \int_\Omega 1_{(-\infty,z]}(X+Y)d\mathbb{P}\\\\
 &amp;= \int_{\mathbb{R}^2} 1_{(-\infty,z]}(x+y)d(\mu \times \nu)(x,y)\\\\

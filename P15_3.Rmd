@@ -8,6 +8,8 @@ title: "Tarea 9. Pregunta 15.3."
 -------------------------------------------------------------------------------
 (A) Si $X \sim N(a,b^2)$ y  $Y \sim N(a,b^2)$. Calcule $\mathbb{E}[(X + Y)^2]$.
 -------------------------------------------------------------------------------
+
+
 Solución:
 
 Sabemos que si $X \sim N(a,b^2)$ y $Y \sim N(a,b^2)$ entonces $X+Y$ distribuye normal. Veamos los parámetros:
@@ -27,6 +29,7 @@ Así
 Por lo tanto
 
 \[\mathbb{E}[(X + Y)^2] = 4a^2+2b^2\]
+
 
 -------------------------------------------------------------------------------
 (B) Si $X, Y \sim U([0,1])$, ¿cuál es la probabilidad de que el polinomio $f(x) = x^2 - 2Xx + Y$ tenga dos raíces reales diferentes?

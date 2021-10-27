@@ -10,8 +10,55 @@ title: "Tarea 10. Pregunta 16.9."
 --------------------------------------------------------------------------------
 
 
+Demostración:
+
+\[\begin{align*}
+\mathbb{E}[X^k] &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^k e^{-\frac{x^2}{2}}dx\\\\
+&= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 x^k e^{-\frac{x^2}{2}}dx + \frac{1}{\sqrt{2\pi}}\int_{0}^\infty x^k e^{-\frac{x^2}{2}}dx\\\\
+&=A +B
+\end{align*}\]
+
+
+Haciendo el cambio de variable $Y = -X$ podemos ver que $A = (-1)^kB$, con lo cual
+
+\[\begin{align*}
+\mathbb{E}[X^k] &= [1+(-1)^k]B\\\\
+&= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{{\frac{x^2}{2}}}dx\\\\
+\end{align*}\]
+
+Pero viendo el cambio de variable
+\[y = \frac{x^2}{2} \to x = \sqrt{2y} \to dz = \frac{dy}{\sqrt{2y}}\]
+
+\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{y+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]
+
+Por lo tanto
+
+\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]
+
+Es claro que cuando $k$ es impar $\mathbb{E}[X^k] = 0$ (por el $(-1)^k$).
+
+\[\therefore \mathbb{E}[X^{2n+1}] = 0.\]
+
+Cuando $k$ es par nos podemos apoyar de la siguiente relación (aún que no es necesario que $k$ sea par para usarla):
+
+\[\Gamma(\frac{1}{2}+n) = \frac{(2n)!}{4^nn!}\sqrt{\pi} = \frac{(2n-1)!!}{2^n}\sqrt{\pi} = {n -\frac{1}{2}\choose n}n!\sqrt{\pi}.\]
+
+Que se encuentra disponible en **[aquí](http://oeis.org/A001147)** ó **[aquí](http://oeis.org/A000079)**
+
+Así 
+\[\begin{align*}
+\mathbb{E}[X^{2n}] &= \frac{[1+(-1)^{2n}]2^{\frac{{2n}}{2}-1}}{\sqrt{\pi}}\frac{(2n)!}{4^nn!}\sqrt{\pi}\\\\
+&= \frac{(2n)!}{2^{n}n!}
+\end{align*}\]
+
+Por lo tanto 
+\[\therefore \mathbb{E}[X^{2n}] = \frac{(2n)!}{2^{n}n!}.\]
+
+
 --------------------------------------------------------------------------------
 (b) Encuentre la transformada de Laplace de $X$, $\mathbb{E}[e^{\lambda X}]$ con $\lambda \in \mathbb{R}$ y su función generadora de momentos $M_X(s) = \mathbb{E}[s^X]$.
 --------------------------------------------------------------------------------
+
+
 
 

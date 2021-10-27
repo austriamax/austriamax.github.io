@@ -276,6 +276,31 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X^k] &amp;= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^k e^{-\frac{x^2}{2}}dx\\\\
+&amp;= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 x^k e^{-\frac{x^2}{2}}dx + \frac{1}{\sqrt{2\pi}}\int_{0}^\infty x^k e^{-\frac{x^2}{2}}dx\\\\
+&amp;=A +B
+\end{align*}\]</span></p>
+<p>Haciendo el cambio de variable <span class="math inline">\(Y = -X\)</span> podemos ver que <span class="math inline">\(A = (-1)^kB\)</span>, con lo cual</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X^k] &amp;= [1+(-1)^k]B\\\\
+&amp;= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{{\frac{x^2}{2}}}dx\\\\
+\end{align*}\]</span></p>
+<p>Pero viendo el cambio de variable <span class="math display">\[y = \frac{x^2}{2} \to x = \sqrt{2y} \to dz = \frac{dy}{\sqrt{2y}}\]</span></p>
+<p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{y+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
+<p>Es claro que cuando <span class="math inline">\(k\)</span> es impar <span class="math inline">\(\mathbb{E}[X^k] = 0\)</span> (por el <span class="math inline">\((-1)^k\)</span>).</p>
+<p><span class="math display">\[\therefore \mathbb{E}[X^{2n+1}] = 0.\]</span></p>
+<p>Cuando <span class="math inline">\(k\)</span> es par nos podemos apoyar de la siguiente relación (aún que no es necesario que <span class="math inline">\(k\)</span> sea par para usarla):</p>
+<p><span class="math display">\[\Gamma(\frac{1}{2}+n) = \frac{(2n)!}{4^nn!}\sqrt{\pi} = \frac{(2n-1)!!}{2^n}\sqrt{\pi} = {n -\frac{1}{2}\choose n}n!\sqrt{\pi}.\]</span></p>
+<p>Que se encuentra disponible en <strong><a href="http://oeis.org/A001147">aquí</a></strong> ó <strong><a href="http://oeis.org/A000079">aquí</a></strong></p>
+<p>Así <span class="math display">\[\begin{align*}
+\mathbb{E}[X^{2n}] &amp;= \frac{[1+(-1)^{2n}]2^{\frac{{2n}}{2}-1}}{\sqrt{\pi}}\frac{(2n)!}{4^nn!}\sqrt{\pi}\\\\
+&amp;= \frac{(2n)!}{2^{n}n!}
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[\therefore \mathbb{E}[X^{2n}] = \frac{(2n)!}{2^{n}n!}.\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
