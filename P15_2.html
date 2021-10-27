@@ -269,6 +269,34 @@ $(document).ready(function () {
 
 <div id="sea-x-una-v.a.-definida-en-omega-mathscra-mathbbp-y-q0.-si-mathbbexq-infty-entonces-lim_x-to-infty-xqmathbbpxgeq-x-0." class="section level3">
 <h3>Sea <span class="math inline">\(X\)</span> una v.a. definida en <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span> y <span class="math inline">\(q&gt;0\)</span>. Si <span class="math inline">\(\mathbb{E}|X|^q &lt; \infty\)</span>, entonces <span class="math inline">\(\lim_{x \to \infty} x^q\mathbb{P}(|X|\geq x) = 0\)</span>.</h3>
+<p>Demostración:</p>
+<p>Sea <span class="math inline">\((a_n)_{n \in \mathbb{N}}\)</span> una sucesión creciente tal que <span class="math inline">\(\lim_{n \to \infty} a_n = \infty\)</span>.</p>
+<p>Sea <span class="math display">\[Y_n= |X|^q 1_{\{|X|&gt;a_n\}}.\]</span></p>
+<p>Definamos <span class="math display">\[A_n(\epsilon) = \{\omega \in \Omega: |Y_n(\omega)-0|\geq\epsilon\}.\]</span></p>
+<p>De acuerdo con el razonamiento escrito en <strong><a href="https://austriamax.github.io/austriamax.proba1.github.io/P14_1.html">Pregunta 14.1.</a></strong> tenemos que:</p>
+<p><span class="math display">\[Y_n \overset{c.s.}{\to} 0 \iff \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]</span></p>
+<p>Calcularemos <span class="math inline">\(\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})]\)</span> para alguna <span class="math inline">\(m \in \mathbb{N}\)</span>:</p>
+<p>Notemos que <span class="math inline">\(\{A_n(\frac{1}{m})\}_{n \in \mathbb{N}}\)</span> es una sucesión decreciente pues (respecto a <span class="math inline">\(n\)</span>):</p>
+<p>Sea $n_1 &lt; n_2 a_{n_1} &lt; a_{n_2} $</p>
+<p><span class="math display">\[\begin{align*}
+n &lt; m &amp;\implies a_{n} &lt; a_{m} &amp;&amp; (a_n\mbox{ es creciente})\\\\
+&amp;\implies \{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\} \supseteq \{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}\\\\
+&amp; \implies 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}} \geq 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}}\\\\
+&amp;\implies \{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}} \geq \epsilon\} \supseteq \{\omega \in \Omega: |X(\omega)|^q1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}} \geq \epsilon\}\\\\
+&amp;\implies A_n(\epsilon) \supseteq A_m(\epsilon).
+\end{align*}\]</span></p>
+<p>Entonces:</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] &amp;= \mathbb{P}[\cap_{n=1}^\infty A_n(\frac{1}{m})]\\\\
+&amp;= \mathbb{P}[\{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;\infty\}}\geq \frac{1}{m}\}] &amp;&amp; (\lim_{n \to \infty} a_n = \infty)\\\\
+&amp;=0.
+\end{align*}\]</span></p>
+<p>Por lo tanto: <span class="math display">\[\therefore Y_n \overset{c.s.}{\to} 0.\]</span></p>
+<p>Por definición <span class="math display">\[Y_n &gt; a_n1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}}\]</span> entonces <span class="math display">\[\mathbb{E}[Y_n] \geq a_n\mathbb{P}[{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}}]\]</span></p>
+<p>Además <span class="math display">\[|Y_n| &lt; |X|^q \quad (\mbox{Con} X\in \mathscr{L}^p)\]</span></p>
+<p>Entonces por el teorema de la convergencia dominada <span class="math inline">\(\lim_{n \to \infty} \mathbb{E}(Y_n) = 0\)</span>.</p>
+<p>Tomando <span class="math inline">\(a_n = n = x\)</span></p>
+<p><span class="math display">\[\therefore \lim_{x \to \infty} x^q\mathbb{P}(|X|\geq x) = 0\]</span></p>
 </div>
 
 

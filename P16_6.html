@@ -267,8 +267,11 @@ $(document).ready(function () {
 </div>
 
 
-<div id="sea-y-sum_i0n-x_i-donde-x_i_i-1infty-son-v.a.s-i.i.d.-y-nomega-to-mathbbn-es-otra-v.a.-independiente-de-x_i_i1infty." class="section level3">
-<h3>Sea <span class="math inline">\(Y = \sum_{i=0}^N X_i\)</span> donde <span class="math inline">\((X_i)_{i = 1}^\infty\)</span> son v.a.’s i.i.d. y <span class="math inline">\(N:\Omega \to \mathbb{N}\)</span> es otra v.a. independiente de <span class="math inline">\((X_i)_{i=1}^\infty\)</span>.</h3>
+<div id="sea-y-sum_i1n-x_i-donde-x_i_i-1infty-son-v.a.s-i.i.d.-y-nomega-to-mathbbn-es-otra-v.a.-independiente-de-x_i_i1infty." class="section level3">
+<h3>Sea <span class="math inline">\(Y = \sum_{i=1}^N X_i\)</span> donde <span class="math inline">\((X_i)_{i = 1}^\infty\)</span> son v.a.’s i.i.d. y <span class="math inline">\(N:\Omega \to \mathbb{N}\)</span> es otra v.a. independiente de <span class="math inline">\((X_i)_{i=1}^\infty\)</span>.</h3>
+<p>Antes de empezar nombraré <span class="math display">\[Y_n = \sum_{i = 1}^nX_i \quad \mbox{con } n \in \mathbb{N.}\]</span></p>
+<p>Observación 1: Como cada elemento de <span class="math inline">\(Y_n\)</span> es independiente de <span class="math inline">\(X\)</span>, entonces <span class="math inline">\(Y_n\)</span> también lo es.</p>
+<p>Observación 2: Como <span class="math inline">\(X_i \in \mathbb{N} \quad \forall i \in \mathbb{N}\)</span> entonces <span class="math inline">\(Y_n = n,n+1,n+2, \dots\)</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -276,6 +279,19 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p><span class="math display">\[\begin{align*}
+\Phi_Y(y) &amp;= \mathbb{P}(Y \leq y)\\\\
+&amp;= \sum_{n=1}^\infty \mathbb{P}(Y \leq y, N = n)&amp;&amp;(\mbox{Eventos disjuntos})\\\\
+&amp;= \sum_{n=1}^\infty \mathbb{P}(Y_n \leq y, N = n)\\\\
+&amp;= \sum_{n=1}^\infty \mathbb{P}(Y_n \leq y)\mathbb{P}(N = n)&amp;&amp;(\mbox{Independencia})\\\\
+\end{align*}\]</span></p>
+<p>Como <span class="math inline">\(N \sim Poisson(\lambda)\)</span>, entonces</p>
+<p><span class="math display">\[\begin{align*}
+\Phi_Y(y) &amp;= \sum_{n=1}^\infty F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!}\\\\
+&amp;=  \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!} &amp;&amp;(\mbox{Soporte de }Y_n)\\\\
+&amp;= e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \Phi_Y(y) = e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -283,6 +299,17 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demonstración:</p>
+<p>[<span class="math display">\[\begin{align*}
+\mathbb{E}[Y] &amp;= \sum_{y=1}^\infty y\mathbb{P}(Y = y)\\\\
+&amp;= \sum_{y=1}^\infty \sum_{n=1}^\infty y\mathbb{P}(Y = y,N = n)\\\\
+&amp;= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y = y,N = n)\\\\
+&amp;= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y_n = y)\mathbb{P}(N = n) &amp;&amp; (\mbox{Independencia de }N \mbox{ de }X_i)\\\\
+&amp;= \sum_{n=1}^\infty \sum_{y=1}^\infty y\mathbb{P}(Y_n = y)\mathbb{P}(N = n)\\\\
+&amp;= \sum_{n=1}^\infty \mathbb{E}(Y_n)\mathbb{P}(N = n)\\\\
+&amp;= \sum_{n=1}^\infty n\mathbb{E}(X)\mathbb{P}(N = n)\\\\
+&amp;= \mathbb{E}(X)\mathbb{E}(N)
+\end{align*}\]</span>]</p>
 </div>
 
 

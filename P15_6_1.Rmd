@@ -1,0 +1,43 @@
+---
+title: "Tarea 9. Pregunta 15.6. Auxiliar"
+---
+
+### Demostrar que $S_k = \sum_{n = 1}^k \frac{X_n}{2^n}$ toma valores en $\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}$.
+
+\[\mathbb{P}(X_n = 0) = \mathbb{P}(X_n = 1) = \frac{1}{2}, \quad n = 1, 2, \dots\]
+
+
+Demostración por inducción sobre $k$:
+
+$(Base).$
+Como $S_1 = X_1$ entonces $S_1$ toma valores en $\{0,\frac{1}{2}\} = \{\frac{0}{2^1},\frac{2^1-1}{2^1}\}.$
+
+$(H.I.)$ Supongase que  $S_k = \sum_{n = 1}^k \frac{X_n}{2^n}$ toma valores en $\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}$. PD. Que el soporte de $S_{k+1}$ es de la misma forma.
+
+\[S_{k+1} = S_k + \frac{X_{k+1}}{2^{k+1}}\]
+
+Caso 1) $X_{k+1} = 0$
+
+
+Sabemos que si $X_{k+1} = 0$ entonces  $S_{k+1}$ toma valores en $\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}$ (por lo que se encuentran en el soporte de $S_{k+1}$).
+
+O equivalentemente
+\[S_{k+1} \in \{\frac{0}{2^{k+1}},\frac{2}{2^{k+1}},\frac{4}{2^{k+1}}, \frac{6}{2^{k+1}}, \dots, \frac{2^{k+1}-2}{2^{k+1}}\}\]
+
+Caso 1) $X_{k+1} = 1$
+
+Por el caso anterior sabemos que $S_{k+1}$ tomaría valores en:
+\[\{\frac{0}{2^{k+1}} + \frac{1}{2^{k+1}}, \frac{2}{2^{k+1}} + \frac{1}{2^{k+1}},\frac{4}{2^{k+1}} + \frac{1}{2^{k+1}}, \frac{6}{2^{k+1}} + \frac{1}{2^{k+1}}, \dots, \frac{2^{k+1}-2}{2^{k+1}} + \frac{1}{2^{k+1}}\}\]
+
+Es decir
+\[S_{k+1} \in \{\frac{1}{2^{k+1}},\frac{3}{2^{k+1}},\frac{5}{2^{k+1}}, \frac{7}{2^{k+1}}, \dots, \frac{2^{k+1}-1}{2^{k+1}}\}\]
+
+
+De ambos casos se concluye que 
+
+\[S_{k+1} \in \{\frac{0}{2^{k+1}},\frac{1}{2^{k+1}},\frac{2}{2^{k+1}}, \frac{3}{2^{k+1}}, \dots, \frac{2^{k+1}-1}{2^{k+1}}\}\]
+
+
+Por lo tanto 
+\[\forall k \in \mathbb{N} \quad S_k \in \{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}\]
+

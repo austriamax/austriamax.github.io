@@ -6,18 +6,54 @@ title: "Tarea 9. Pregunta 15.3."
 
 
 -------------------------------------------------------------------------------
-(A) Si $X \sim N(a,b^2)$ y  $Y \sim N(a,b^2)$. Calcule $\mathbb{E}(X + Y)^2$.
+(A) Si $X \sim N(a,b^2)$ y  $Y \sim N(a,b^2)$. Calcule $\mathbb{E}[(X + Y)^2]$.
 -------------------------------------------------------------------------------
+Solución:
 
+Sabemos que si $X \sim N(a,b^2)$ y $Y \sim N(a,b^2)$ entonces $X+Y$ distribuye normal. Veamos los parámetros:
+
+\[\mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y] = a+a = 2a\]
+
+\[\mathbb{Var}[X+Y] \overset{Independencia}{=} \mathbb{Var}[X] + \mathbb{Var}[Y] = b^2+b^2 = 2b^2\]
+
+Entonces \[Z = X+Y \sim N(2a,2b^2)\]
+
+Recordando
+\[\mathbb{Var}[Z] = \mathbb{E}[Z^2] - \mathbb{E}[Z]^2\]
+
+Así
+\[ \mathbb{E}[Z^2] = \mathbb{Var}[Z] + \mathbb{E}[Z]^2 = 2b^2 + 4a^2\]
+
+Por lo tanto
+
+\[\mathbb{E}[(X + Y)^2] = 4a^2+2b^2\]
 
 -------------------------------------------------------------------------------
-(B) Si $X, Y \sim U([0,1])$, ¿cuál es la probabilidad de que el polinomio $f(x,y) = x^2 - 2xy + y$ tenga dos raíces reales diferentes?
+(B) Si $X, Y \sim U([0,1])$, ¿cuál es la probabilidad de que el polinomio $f(x) = x^2 - 2Xx + Y$ tenga dos raíces reales diferentes?
 -------------------------------------------------------------------------------
+Solución:
 
+La fórmula gerenal para el polinomio $ax^2 +bx + c$ es \[x = \frac{-b \mp \sqrt{b^2-4ac}}{2a}.\]
+
+Donde $b^2-4ac >0$ garantiza tener dos raíces reales diferentes. En este caso $a =1$, $b = -2X$ y $c = Y$.
+
+\[\begin{align*}
+\mathbb{P}[4X^2-4(1)Y>0] &= \mathbb{P}[X^2-Y>0]\\\\
+&= \mathbb{P}[X^2>Y]\\\\
+&= \int_0^1x^2dx\\\\
+&= [\frac{x^3}{3}]_0^1\\\\
+&= \frac{1}{3}.
+\end{align*}\]
+
+Por lo tanto:
+
+\[\mathbb{P}[\mbox{Tener dos raíces}] = \frac{1}{3}\]
 
 -------------------------------------------------------------------------------
 (C) Pruebe que la distribución de $(X+Y)$ esta dada por $F_X \circledast F_Y$ (convolución).
 -------------------------------------------------------------------------------
+Demostración:
+
 
 
 
