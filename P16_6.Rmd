@@ -2,15 +2,48 @@
 title: "Tarea 10. Pregunta 16.6."
 ---
 
-### Sea $Y = \sum_{i=0}^N X_i$ donde $(X_i)_{i = 1}^\infty$ son v.a.'s i.i.d. y $N:\Omega \to \mathbb{N}$ es otra v.a. independiente de $(X_i)_{i=1}^\infty$.
+### Sea $Y = \sum_{i=1}^N X_i$ donde $(X_i)_{i = 1}^\infty$ son v.a.'s i.i.d. y $N:\Omega \to \mathbb{N}$ es otra v.a. independiente de $(X_i)_{i=1}^\infty$.
 
+
+Antes de empezar nombraré \[Y_n = \sum_{i = 1}^nX_i \quad \mbox{con } n \in \mathbb{N.}\]
+
+Observación 1: Como cada elemento de $Y_n$ es independiente de $X$, entonces $Y_n$ también lo es. 
+
+Observación 2: Como $X_i \in \mathbb{N} \quad \forall i  \in \mathbb{N}$ entonces $Y_n = n,n+1,n+2, \dots$
 
 ------------------------------------------------------------------------------
 1. Calcule $\Phi_Y$ si $N \sim Poisson(\lambda)$.
 ------------------------------------------------------------------------------
 
+\[\begin{align*}
+\Phi_Y(y) &= \mathbb{P}(Y \leq y)\\\\
+&= \sum_{n=1}^\infty \mathbb{P}(Y \leq y, N = n)&&(\mbox{Eventos disjuntos})\\\\
+&= \sum_{n=1}^\infty \mathbb{P}(Y_n \leq y, N = n)\\\\
+&= \sum_{n=1}^\infty \mathbb{P}(Y_n \leq y)\mathbb{P}(N = n)&&(\mbox{Independencia})\\\\
+\end{align*}\]
+
+Como $N \sim Poisson(\lambda)$, entonces
+
+\[\begin{align*}
+\Phi_Y(y) &= \sum_{n=1}^\infty F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!}\\\\
+&=  \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!} &&(\mbox{Soporte de }Y_n)\\\\
+&= e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}
+\end{align*}\]
+
+\[\therefore \Phi_Y(y) = e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}\]
 
 ------------------------------------------------------------------------------
 2. Muestre que $\mathbb{E}[Y] = \mathbb{E}[N]\mathbb{E}[X_j]$ si $\mathbb{E}(N) < \infty$ y $\mathbb{E}(X_i) < \infty$.
 ------------------------------------------------------------------------------
+Demonstración:
 
+\[\begin{align*}
+\mathbb{E}[Y] &= \sum_{y=1}^\infty y\mathbb{P}(Y = y)\\\\
+&= \sum_{y=1}^\infty \sum_{n=1}^\infty y\mathbb{P}(Y = y,N = n)\\\\
+&= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y = y,N = n)\\\\
+&= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y_n = y)\mathbb{P}(N = n) && (\mbox{Independencia de }N \mbox{ de }X_i)\\\\
+&= \sum_{n=1}^\infty \sum_{y=1}^\infty y\mathbb{P}(Y_n = y)\mathbb{P}(N = n)\\\\
+&= \sum_{n=1}^\infty \mathbb{E}(Y_n)\mathbb{P}(N = n)\\\\
+&= \sum_{n=1}^\infty n\mathbb{E}(X)\mathbb{P}(N = n)\\\\
+&= \mathbb{E}(X)\mathbb{E}(N)
+\end{align*}]
