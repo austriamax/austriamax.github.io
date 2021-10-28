@@ -312,7 +312,7 @@ $(document).ready(function () {
 \mathbb{E}[Y] &amp;= \sum_{y=1}^\infty y\mathbb{P}(Y = y)\\\\
 &amp;= \sum_{y=1}^\infty \sum_{n=1}^\infty y\mathbb{P}(Y = y,N = n)\\\\
 &amp;= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y = y,N = n)\\\\
-&amp;= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y_n = y)\mathbb{P}(N = n) &amp;&amp; (\mbox{Independencia de }N \mbox{ de }X_i)\\\\
+&amp;= \sum_{y=1}^\infty \sum_{n=1}^y y\mathbb{P}(Y_n = y)\mathbb{P}(N = n) &amp;&amp; (\mbox{Independencia de }N \mbox{ de }Y_n)\\\\
 &amp;= \sum_{n=1}^\infty \sum_{y=1}^\infty y\mathbb{P}(Y_n = y)\mathbb{P}(N = n)\\\\
 &amp;= \sum_{n=1}^\infty \mathbb{E}(Y_n)\mathbb{P}(N = n)\\\\
 &amp;= \sum_{n=1}^\infty n\mathbb{E}(X)\mathbb{P}(N = n)\\\\
