@@ -1,0 +1,49 @@
+---
+title: "Tarea 10. Pregunta de Covarianza."
+---
+
+
+Si $X_1,X_2: \Omega \to \mathbb{R}$ tienen segundo momento finito de defina la covarianza de $(X_1,X_2)$ como \[Cov(X_1,X_2) := \mathbb{E}[(X_1 - \mathbb{E}X_1)(X_2 - \mathbb{E}X_2)]\]
+
+
+###  Pruebe que $(X_1,X_2)$ es integrable.
+
+
+Por la desigualdad de Cauchy-Schwarz tenemos que
+
+\[\mathbb{E}(|XY|) \leq [\mathbb{E}(|X|^2)\mathbb{E}(|Y|^2)]^{\frac{1}{2}}\]
+
+y de la hipótesis de que $X_1,X_2 \in \mathscr{L}_2$ se concluye que
+\[\mathbb{E}(|XY|)  < \infty\]
+
+
+### Muestre que $M$ es una matriz simétrica.
+
+\[\begin{align*}
+M_{i,j} &= Cov(X_i,X_j)\\\\
+&= \mathbb{E}[(X_i-\mathbb{E}X_i)(X_j-\mathbb{E}X_j)]\\\\
+&= \mathbb{E}[(X_j-\mathbb{E}X_j)(X_i-\mathbb{E}X_i)]\\\\
+&= Cov(X_j,X_i)\\\\
+&= M_{j,i} 
+\end{align*}\]
+
+\[\therefore M \mbox{ es simétrica.}\]
+
+### Pruebe que semidefinida positiva.
+
+\[\mbox{PD. } \forall a \in \mathbb{R}^n \quad a^{t}Ma\geq 0\]
+
+Demostración:
+
+Sea $a \in \mathbb{R}^n$.
+
+\[\begin{align*}
+a^tMa &= \mathbb{E}[a^t(X-\mathbb{E}X)(X-\mathbb{E}X)^ta]\\\\
+&= \mathbb{E}[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}]\\\\
+\end{align*}\]
+
+Como \[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}\] es una v.a. no negativa, entonces por la monótonia de la esperanza se sique que 
+\[a^tMa \geq 0\]
+
+\[\therefore M \mbox{ es semidefinida positiva.}\]
+
