@@ -103,6 +103,11 @@ Pero como $h$ es contunua y aplicando el teorema de convergencia dominada (en me
 -------------------------------------------------------------------------------
 (D). ¿Es cierto que si $X_n \overset{\mathscr{L}}{\to} X$ entonces  $h(X_n) \overset{\mathscr{L}}{\to} h(X)$? 
 -------------------------------------------------------------------------------
+En general es falso, pero si $h$ es acotada se cumple.
+\[\begin{align*}
+\lim_{n\to\infty} \mathbb{E}[h(X_n)-h(X)] &= \mathbb{E}[\lim_{n\to\infty}h(X_n)-h(X)] &&(\mbox{TCD})\\\\
+&= \mathbb{E}[h(X)-h(X)] &&(\mbox{Continua por sucesiones})
+\end{align*}\]
 
 
 
