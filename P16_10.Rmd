@@ -43,11 +43,84 @@ Por lo que concluimos que $\mathbb{E}[f(\frac{1}{n}S_n^p)]$ es un polinomio en t
 
 Demostración:
 
-Por las hipótesis 
+Veamos dos cosas antes de empezar una linea de desigualdades:
 
+1) Por la continuidad de $f$ sabemos que si tomamos
+
+\[|\frac{1}{n}S_n^p-p| \leq \delta \implies |f(\frac{1}{n}S_n^p)-f(p)| \leq \epsilon\]
+
+Entonces
+
+\[A=\{\omega \in\Omega: |\frac{1}{n}S_n^p-p| \leq \delta\} \subseteq \{\omega \in \Omega: |f(\frac{1}{n}S_n^p)-f(p)| \leq \epsilon\} = B\]
+
+Por lo que \[1_A(\omega) \leq 1_B(\omega).\]
+
+Y para cualquier v.a. $Z\geq0$ tenemos que $\mathbb{E}[Z1_A] \leq \mathbb{E}[Z1_B]$.
+
+2) Calcularemos la esperanza y varianza de $\frac{S_n^p}{n}-p$ porque lo vamos a necesitar en la desigualdad de Chebyshov.
+
+\[\mathbb{E}[\frac{1}{n}S_n^p-p] = \frac{1}{n}\mathbb{E}[S_n^p]-p= \frac{1}{n}(np)-p = 0\]
+
+Una formula bien conocida es 
+\[\mathbb{Var}(X) = \mathbb{E}(X^2)-\mathbb{E}^2(X)\]
+Y como vimos $\mathbb{E}[\frac{1}{n}S_n^p-p] =0$
+Entonces
+\[\mathbb{Var}[\frac{1}{n}S_n^p-p] = \mathbb{E}[(\frac{1}{n}S_n^p-p)^2]\]
+
+Dicho lo anterior
+\[
+\begin{align*}
+|\mathbb{E}[f(\frac{1}{n}S_n^p)-f(p)]| &\leq \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|] &&(\mbox{Desigualdad de Jensen})\\\\
+&= \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_A] + \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_{A^c}]\\\\
+&\leq \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_{B}] + \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_{A^c}] &&(|f(\frac{1}{n}S_n^p)-f(p)| \mbox{ es una v.a. positiva})\\\\
+&\leq \mathbb{E}[\epsilon] + \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_{A^c}] &&(\mbox{Def. de B y Monotonia de } \mathbb{E})\\\\
+&= \epsilon + \mathbb{E}[|f(\frac{1}{n}S_n^p)-f(p)|1_{A^c}]\\\\
+&= \epsilon + \mathbb{E}[|f(\frac{1}{n}S_n^p)|1_{A^c}] + \mathbb{E}[|f(p)|1_{A^c}] && (\mbox{Desigualdad del triángulo})\\\\
+&\leq \epsilon + \mathbb{E}[M1_{A^c}] + \mathbb{E}[M1_{A^c}] && (\mbox{Hipótesis})\\\\
+&= \epsilon + 2M\mathbb{P}[A^c]\\\\
+&=\epsilon + 2M\mathbb{P}[|\frac{1}{n}S_n^p-p|>\delta] && (\mbox{Def. de A})\\\\
+&\leq \epsilon + 2M\frac{\mathbb{E}[|\frac{1}{n}S_n^p-p|^2]}{\delta^2} &&(\mbox{Desigualdad de Chebyshev})\\\\
+&\leq \epsilon + 2M\frac{\mathbb{E}[|\frac{1}{n}S_n^p-p|^2]}{\delta} &&(\mbox{SPG }\delta<1)\\\\
+= \epsilon + \frac{2M}{\delta}\mathbb{E}[(\frac{1}{n}S_n^p-p)^2]
+\end{align*}\]
+
+Por lo tanto
+\[|\mathbb{E}[f(\frac{1}{n}S_n^p)-f(p)]|  \leq \epsilon + \frac{2M}{\delta}\mathbb{E}[(\frac{1}{n}S_n^p-p)^2]\]
 
 -------------------------------------------------------------------------------
 3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios $f_1, f_2, \dots$ tal que \[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]
 -------------------------------------------------------------------------------
 
+Demostración:
+
+Tomaremos como sucesión candidata a
+\[(\mathbb{E}[f(\frac{1}{n}S_n^p)])_{n \in \mathbb{N}}\]
  
+Nombraremos $f_n(p) = \mathbb{E}[f(\frac{1}{n}S_n^p)]$.
+
+Calcularemos $\mathbb{E}[(\frac{1}{n}S_n^p-p)^2]$ para poder usarlo en una serie de desigualdades:
+
+\[\mathbb{E}[(\frac{1}{n}S_n^p-p)^2] = \mathbb{Var}[\frac{1}{n}S_n^p-p] = \frac{1}{n^2}\mathbb{Var}[S_n^p] = \frac{1}{n^2}[np(1-p)] = \frac{p(1-p)}{n}.\]
+
+Entonces
+\[
+\begin{align*}
+\lim_{n \to \infty}\sup_p |f_n(p) -f(p)| &= \lim_{n \to \infty}\sup_p |\mathbb{E}[f(\frac{1}{n}S_n^p)] - \mathbb{E}[f(p)]| && (\mbox{Def. de }f_n)\\\\
+&=\lim_{n \to \infty}\sup_p|\mathbb{E}[f(\frac{1}{n}S_n^p)-f(p)]|\\\\
+&\leq \lim_{n \to \infty} \sup_p\{ \epsilon + \frac{2M}{\delta}\mathbb{E}[(\frac{1}{n}S_n^p-p)^2]\}&& (\mbox{Inciso anterior})\\\\
+&= \lim_{n \to \infty} \sup_p\{\epsilon + \frac{2M}{\delta}\frac{p(1-p)}{n}\}&& (\mbox{Calculo})\\\\
+&= \lim_{n \to \infty} \max_p\{\epsilon + \frac{2M}{\delta}\frac{p(1-p)}{n}\}&& (\mbox{Se alcanza el sup})\\\\
+&= \lim_{n \to \infty} \epsilon+ \frac{2M}{\delta}\frac{\frac{1}{2}(1-\frac{1}{2})}{n}\\\\
+&= \lim_{n \to \infty}\epsilon+ \frac{M}{\delta}\frac{1}{2n}\\\\
+&= \epsilon\\\\
+\end{align*}\]
+
+
+Como
+\[\lim_{n \to \infty}\sup_p |f_n(p) -f(p)| \leq \epsilon \quad \forall \epsilon>0 \implies \lim_{n \to \infty}\sup_p |f_n(p) -f(p)| = 0.\]
+
+Por lo tanto
+
+\[\exists f_1,f_2, \dots \mbox{ tal que }  \lim_{n \to \infty}\sup_p |f_n(p) -f(p)| = 0.\]
+
+
