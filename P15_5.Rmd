@@ -68,4 +68,4 @@ En principio podríamos pensar que
 
 Pues ambos son eventos de la $\sigma$-álgebra cola. Y no puede pasar que sean iguales ya que son complementarios.
 
-
+\[\therefore \mathbb{P}[X_n \mbox{ converge}] = 1\quad \mbox{ó} \quad \mathbb{P}[X_n \mbox{ diverge}] = 1\]
