@@ -27,15 +27,9 @@ Observación 2: Como $X_i \in \mathbb{N} \quad \forall i  \in \mathbb{N}$ entonc
 &=e^{-\lambda}\exp[\lambda \Phi_X(t)]
 \end{align*}\]
 
-Como $N \sim Poisson(\lambda)$, entonces
 
-\[\begin{align*}
-\Phi_Y(y) &= \sum_{n=1}^\infty F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!}\\\\
-&=  \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!} &&(\mbox{Soporte de }Y_n)\\\\
-&= e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}
-\end{align*}\]
 
-\[\therefore \Phi_Y(y) = e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}\]
+\[\therefore \Phi_Y(y) = e^{-\lambda}\exp[\lambda \Phi_X(t)]\]
 
 ------------------------------------------------------------------------------
 2. Muestre que $\mathbb{E}[Y] = \mathbb{E}[N]\mathbb{E}[X_j]$ si $\mathbb{E}(N) < \infty$ y $\mathbb{E}(X_i) < \infty$.

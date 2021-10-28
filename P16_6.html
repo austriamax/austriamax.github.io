@@ -300,17 +300,7 @@ $(document).ready(function () {
 \end{align*}\]</span></td>
 </tr>
 <tr class="even">
-<td align="left">Como <span class="math inline">\(N \sim Poisson(\lambda)\)</span>, entonces</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math display">\[\begin{align*}
-\Phi_Y(y) &amp;= \sum_{n=1}^\infty F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!}\\\\
-&amp;=  \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)e^{-\lambda}\frac{\lambda^n}{n!} &amp;&amp;(\mbox{Soporte de }Y_n)\\\\
-&amp;= e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}
-\end{align*}\]</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math display">\[\therefore \Phi_Y(y) = e^{-\lambda} \sum_{n=1}^{\lfloor y \rfloor} F_{Y_n}(y)\frac{\lambda^n}{n!}\]</span></td>
+<td align="left"><span class="math display">\[\therefore \Phi_Y(y) = e^{-\lambda}\exp[\lambda \Phi_X(t)]\]</span></td>
 </tr>
 </tbody>
 </table>
