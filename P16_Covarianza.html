@@ -291,11 +291,11 @@ M_{i,j} &amp;= Cov(X_i,X_j)\\\\
 <p>Demostración:</p>
 <p>Sea <span class="math inline">\(a \in \mathbb{R}^n\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
-a^tMa &amp;= \mathbb{E}[a^t(X-\mathbb{E}X)(X-\mathbb{E}X)^ta]\\\\
-&amp;= \mathbb{E}[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}]\\\\
+a^tMa &amp;= \mathbb{E}[a^t(X-\mathbb{E}X)^t(X-\mathbb{E}X)a]\\\\
+&amp;= \mathbb{E}[\{(X-\mathbb{E}X)a\}^t\{(X-\mathbb{E}X)a\}]\\\\
 \end{align*}\]</span></p>
-<p>Como <span class="math display">\[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}\]</span> es una v.a. no negativa, entonces por la monótonia de la esperanza se sique que <span class="math display">\[a^tMa \geq 0\]</span></p>
-<p><span class="math display">\[\therefore M \mbox{ es semidefinida positiva.}\]</span></p>
+<p>Como <span class="math display">\[\{(X-\mathbb{E}X)a\}^t\{(X-\mathbb{E}X)a\}\]</span> es una v.a. no negativa, entonces por la monótonia de la esperanza se sique que <span class="math display">\[a^tMa \geq 0\]</span></p>
+<p><span class="math display">\[\therefore M \mbox{ es semi-definida positiva.}\]</span></p>
 </div>
 
 

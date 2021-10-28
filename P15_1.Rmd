@@ -20,7 +20,7 @@ Tomamos $\delta = \min\{\delta_{x_1},\delta_{x_2}, \dots, \delta_{x_m}\}$.
 
 Si $|x-y| < \delta$ entonces $y \in B(x_j,\delta_{x_j})$ para alguna $j =1, \dots, m$. Entonces
 
-\[|x_s-y| \leq |x_k-x| + |x-y|<\frac{1}{2}\delta_{x_j} + \delta \leq \delta_{x_j} \]
+\[|x_j-y| \leq |x_j-x| + |x-y|<\frac{1}{2}\delta_{x_j} + \delta \leq \delta_{x_j} \]
 
 \[\therefore y \in B(x_j,\delta_{x_j})\]
 

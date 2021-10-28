@@ -280,11 +280,11 @@ $(document).ready(function () {
 <p>Sea $n_1 &lt; n_2 a_{n_1} &lt; a_{n_2} $</p>
 <p><span class="math display">\[\begin{align*}
 n &lt; m &amp;\implies a_{n} &lt; a_{m} &amp;&amp; (a_n\mbox{ es creciente})\\\\
-&amp;\implies \{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\} \supseteq \{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}\\\\
-&amp; \implies 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}} \geq 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}}\\\\
-&amp;\implies \{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}} \geq \epsilon\} \supseteq \{\omega \in \Omega: |X(\omega)|^q1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_m\}} \geq \epsilon\}\\\\
+&amp;\implies \{\omega \in \Omega:|X(\omega)|&gt;a_n\} \supseteq \{\omega \in \Omega:|X(\omega)|&gt;a_m\}\\\\
+&amp; \implies 1_{\{\omega \in \Omega:|X(\omega)|&gt;a_n\}} \geq 1_{\{\omega \in \Omega:|X(\omega)|&gt;a_m\}}\\\\
+&amp;\implies \{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \Omega:|X(\omega)|&gt;a_n\}} \geq \epsilon\} \supseteq \{\omega \in \Omega: |X(\omega)|^q1_{\{\omega \in \Omega:|X(\omega)|&gt;a_m\}} \geq \epsilon\}\\\\
 &amp;\implies A_n(\epsilon) \supseteq A_m(\epsilon).
-\end{align*}\]</span></p>
+\end{align*}\]</span>]</p>
 <p>Entonces:</p>
 <p><span class="math display">\[\begin{align*}
 \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] &amp;= \mathbb{P}[\cap_{n=1}^\infty A_n(\frac{1}{m})]\\\\
@@ -292,7 +292,7 @@ n &lt; m &amp;\implies a_{n} &lt; a_{m} &amp;&amp; (a_n\mbox{ es creciente})\\\\
 &amp;=0.
 \end{align*}\]</span></p>
 <p>Por lo tanto: <span class="math display">\[\therefore Y_n \overset{c.s.}{\to} 0.\]</span></p>
-<p>Por definición <span class="math display">\[Y_n &gt; a_n1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}}\]</span> entonces <span class="math display">\[\mathbb{E}[Y_n] \geq a_n\mathbb{P}[{\{\omega \in \mathbb{N}:|X(\omega)|&gt;a_n\}}]\]</span></p>
+<p>Por definición <span class="math display">\[Y_n &gt; a_n1_{\{\omega \in \Omega:|X(\omega)|&gt;a_n\}}\]</span> entonces <span class="math display">\[\mathbb{E}[Y_n] \geq a_n\mathbb{P}[{\{\omega \in \Omega:|X(\omega)|&gt;a_n\}}]\]</span></p>
 <p>Además <span class="math display">\[|Y_n| &lt; |X|^q \quad (\mbox{Con} X\in \mathscr{L}^p)\]</span></p>
 <p>Entonces por el teorema de la convergencia dominada <span class="math inline">\(\lim_{n \to \infty} \mathbb{E}(Y_n) = 0\)</span>.</p>
 <p>Tomando <span class="math inline">\(a_n = n = x\)</span></p>

@@ -38,12 +38,12 @@ Demostración:
 Sea $a \in \mathbb{R}^n$.
 
 \[\begin{align*}
-a^tMa &= \mathbb{E}[a^t(X-\mathbb{E}X)(X-\mathbb{E}X)^ta]\\\\
-&= \mathbb{E}[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}]\\\\
+a^tMa &= \mathbb{E}[a^t(X-\mathbb{E}X)^t(X-\mathbb{E}X)a]\\\\
+&= \mathbb{E}[\{(X-\mathbb{E}X)a\}^t\{(X-\mathbb{E}X)a\}]\\\\
 \end{align*}\]
 
-Como \[\{a^t(X-\mathbb{E}X)\}\{a^t(X-\mathbb{E}X)^t\}\] es una v.a. no negativa, entonces por la monótonia de la esperanza se sique que 
+Como \[\{(X-\mathbb{E}X)a\}^t\{(X-\mathbb{E}X)a\}\] es una v.a. no negativa, entonces por la monótonia de la esperanza se sique que 
 \[a^tMa \geq 0\]
 
-\[\therefore M \mbox{ es semidefinida positiva.}\]
+\[\therefore M \mbox{ es semi-definida positiva.}\]
 

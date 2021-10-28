@@ -22,11 +22,11 @@ Notemos que $\{A_n(\frac{1}{m})\}_{n \in \mathbb{N}}$ es una sucesión decrecien
 
 Sea $n_1 < n_2 \implies a_{n_1} < a_{n_2} \implies $
 
-\[\begin{align*}
+\begin{align*}
 n < m &\implies a_{n} < a_{m} && (a_n\mbox{ es creciente})\\\\
-&\implies \{\omega \in \mathbb{N}:|X(\omega)|>a_n\} \supseteq \{\omega \in \mathbb{N}:|X(\omega)|>a_m\}\\\\
-& \implies 1_{\{\omega \in \mathbb{N}:|X(\omega)|>a_n\}} \geq 1_{\{\omega \in \mathbb{N}:|X(\omega)|>a_m\}}\\\\
-&\implies \{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|>a_n\}} \geq \epsilon\} \supseteq \{\omega \in \Omega: |X(\omega)|^q1_{\{\omega \in \mathbb{N}:|X(\omega)|>a_m\}} \geq \epsilon\}\\\\
+&\implies \{\omega \in \Omega:|X(\omega)|>a_n\} \supseteq \{\omega \in \Omega:|X(\omega)|>a_m\}\\\\
+& \implies 1_{\{\omega \in \Omega:|X(\omega)|>a_n\}} \geq 1_{\{\omega \in \Omega:|X(\omega)|>a_m\}}\\\\
+&\implies \{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \Omega:|X(\omega)|>a_n\}} \geq \epsilon\} \supseteq \{\omega \in \Omega: |X(\omega)|^q1_{\{\omega \in \Omega:|X(\omega)|>a_m\}} \geq \epsilon\}\\\\
 &\implies A_n(\epsilon) \supseteq A_m(\epsilon).
 \end{align*}\]
 
@@ -42,9 +42,9 @@ Por lo tanto:
 \[\therefore Y_n \overset{c.s.}{\to} 0.\]
 
 Por definición
-\[Y_n > a_n1_{\{\omega \in \mathbb{N}:|X(\omega)|>a_n\}}\]
+\[Y_n > a_n1_{\{\omega \in \Omega:|X(\omega)|>a_n\}}\]
 entonces
-\[\mathbb{E}[Y_n] \geq a_n\mathbb{P}[{\{\omega \in \mathbb{N}:|X(\omega)|>a_n\}}]\]
+\[\mathbb{E}[Y_n] \geq a_n\mathbb{P}[{\{\omega \in \Omega:|X(\omega)|>a_n\}}]\]
 
 Además 
 \[|Y_n| < |X|^q \quad (\mbox{Con} X\in \mathscr{L}^p)\]
