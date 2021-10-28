@@ -29,7 +29,7 @@ Haciendo el cambio de variable $Y = -X$ podemos ver que $A = (-1)^kB$, con lo cu
 Pero viendo el cambio de variable
 \[y = \frac{x^2}{2} \to x = \sqrt{2y} \to dx = \frac{dy}{\sqrt{2y}}\]
 
-\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{y+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]
+\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{k+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]
 
 Por lo tanto
 
@@ -43,7 +43,7 @@ Cuando $k$ es par nos podemos apoyar de la siguiente relación (aún que no es n
 
 \[\Gamma(\frac{1}{2}+n) = \frac{(2n)!}{4^nn!}\sqrt{\pi} = \frac{(2n-1)!!}{2^n}\sqrt{\pi} = {n -\frac{1}{2}\choose n}n!\sqrt{\pi}.\]
 
-Que se encuentra disponible en **[aquí](http://oeis.org/A001147)** ó **[aquí](http://oeis.org/A000079)**
+Que se encuentra disponible en **[aquí](http://oeis.org/A001147)** ó **[aquí.](http://oeis.org/A000079)**
 
 Así 
 \[\begin{align*}
@@ -60,5 +60,30 @@ Por lo tanto
 --------------------------------------------------------------------------------
 
 
+(Transformada de Laplace)
+
+Calculemos la tranformada $F(z)$ con $z \in \mathbb{C}$.
+
+\[\begin{align*}
+F(z) &= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2}{2\sigma^2}]\exp[-zt]dt\\\\
+&= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2}{2\sigma^2}-zt]dt\\\\
+&= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2-2\sigma^2zt}{2\sigma^2}]dt\\\\
+&= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{t^2 -2( \mu-\sigma^2z)t + \mu^2}{2\sigma^2}]dt\\\\
+&= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t-\mu+\sigma^2z)^2 -( \mu+\sigma^2z)^2+ \mu^2}{2\sigma^2}]dt\\\\
+&= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}]\int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t-\mu-\sigma^2z)^2}{2\sigma^2}]dt\\\\
+\end{align*}\]
+
+Proponiendo el cambio de variable
+
+\[Y = \frac{t-\mu-\sigma^2z}{\sigma}\]
+
+Entonces 
+
+\[\begin{align*}
+F(z) &= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}]\int_{\frac{-\mu -\sigma^2z}{\sigma}}^\infty\frac{1}{\sqrt{2\pi}}\exp[-\frac{y^2}{2}]dy
+\\\\
+&= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}][1-\int_{-\infty}^{\frac{-\mu -\sigma^2z}{\sigma}}\frac{1}{\sqrt{2\pi}}\exp[-\frac{y^2}{2}]dy]
+\end{align*}\]
 
 
+\[\therefore F(z) = \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}][1 - \Phi(\frac{-\mu - \sigma^2z}{\sigma})] \quad \forall z \in \mathbb{C}.\]

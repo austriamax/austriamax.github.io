@@ -288,14 +288,14 @@ $(document).ready(function () {
 &amp;= [1 + (-1)^k]\frac{1}{\sqrt{2\pi}}\int_0^\infty x^ke^{-\frac{x^2}{2}}dx\\\\
 \end{align*}\]</span></p>
 <p>Pero viendo el cambio de variable <span class="math display">\[y = \frac{x^2}{2} \to x = \sqrt{2y} \to dx = \frac{dy}{\sqrt{2y}}\]</span></p>
-<p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{y+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
+<p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}}\int_0^\infty y^{\frac{k+1}{2}-1}e^{-y}dy = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
 <p>Por lo tanto</p>
 <p><span class="math display">\[\mathbb{E}[X^k] = \frac{[1+(-1)^k]2^{\frac{k}{2}-1}}{\sqrt{\pi}} \Gamma(\frac{k+1}{2})\]</span></p>
 <p>Es claro que cuando <span class="math inline">\(k\)</span> es impar <span class="math inline">\(\mathbb{E}[X^k] = 0\)</span> (por el <span class="math inline">\((-1)^k\)</span>).</p>
 <p><span class="math display">\[\therefore \mathbb{E}[X^{2n+1}] = 0.\]</span></p>
 <p>Cuando <span class="math inline">\(k\)</span> es par nos podemos apoyar de la siguiente relación (aún que no es necesario que <span class="math inline">\(k\)</span> sea par para usarla):</p>
 <p><span class="math display">\[\Gamma(\frac{1}{2}+n) = \frac{(2n)!}{4^nn!}\sqrt{\pi} = \frac{(2n-1)!!}{2^n}\sqrt{\pi} = {n -\frac{1}{2}\choose n}n!\sqrt{\pi}.\]</span></p>
-<p>Que se encuentra disponible en <strong><a href="http://oeis.org/A001147">aquí</a></strong> ó <strong><a href="http://oeis.org/A000079">aquí</a></strong></p>
+<p>Que se encuentra disponible en <strong><a href="http://oeis.org/A001147">aquí</a></strong> ó <strong><a href="http://oeis.org/A000079">aquí.</a></strong></p>
 <p>Así <span class="math display">\[\begin{align*}
 \mathbb{E}[X^{2n}] &amp;= \frac{[1+(-1)^{2n}]2^{\frac{{2n}}{2}-1}}{\sqrt{\pi}}\frac{(2n)!}{4^nn!}\sqrt{\pi}\\\\
 &amp;= \frac{(2n)!}{2^{n}n!}
@@ -308,6 +308,25 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>(Transformada de Laplace)</p>
+<p>Calculemos la tranformada <span class="math inline">\(F(z)\)</span> con <span class="math inline">\(z \in \mathbb{C}\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+F(z) &amp;= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2}{2\sigma^2}]\exp[-zt]dt\\\\
+&amp;= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2}{2\sigma^2}-zt]dt\\\\
+&amp;= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t - \mu)^2-2\sigma^2zt}{2\sigma^2}]dt\\\\
+&amp;= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{t^2 -2( \mu-\sigma^2z)t + \mu^2}{2\sigma^2}]dt\\\\
+&amp;= \int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t-\mu+\sigma^2z)^2 -( \mu+\sigma^2z)^2+ \mu^2}{2\sigma^2}]dt\\\\
+&amp;= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}]\int_0^\infty\frac{1}{\sqrt{2\pi \sigma^2}}\exp[-\frac{(t-\mu-\sigma^2z)^2}{2\sigma^2}]dt\\\\
+\end{align*}\]</span></p>
+<p>Proponiendo el cambio de variable</p>
+<p><span class="math display">\[Y = \frac{t-\mu-\sigma^2z}{\sigma}\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\begin{align*}
+F(z) &amp;= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}]\int_{\frac{-\mu -\sigma^2z}{\sigma}}^\infty\frac{1}{\sqrt{2\pi}}\exp[-\frac{y^2}{2}]dy
+\\\\
+&amp;= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}][1-\int_{-\infty}^{\frac{-\mu -\sigma^2z}{\sigma}}\frac{1}{\sqrt{2\pi}}\exp[-\frac{y^2}{2}]dy]
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore F(z) = \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}][1 - \Phi(\frac{-\mu - \sigma^2z}{\sigma})] \quad \forall z \in \mathbb{C}.\]</span></p>
 </div>
 
 
