@@ -276,6 +276,17 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Sea (<span class="math inline">\(\Omega = [0,1]\)</span>, <span class="math inline">\(\mathscr{A} = \mathscr{B}([0,1])\)</span>, <span class="math inline">\(\mathbb{P} = \lambda)\)</span> nuestro espacio de probabilidad. Donde <span class="math inline">\(\mathscr{B}([0,1])\)</span> son los borelianos en <span class="math inline">\([0,1]\)</span> y <span class="math inline">\(\lambda\)</span> es la medida de Lebesgue.</p>
+<p><span class="math display">\[\mbox{Sea } A = \{\omega \in \Omega: d_i(\omega) = a_i, i = 1, \dots,k\}\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\sum_{i = 1}^k\frac{a_i}{2^i} \leq \omega &lt; \sum_{i = 1}^k\frac{a_i}{2^i} + \sum_{i = k+1}^\infty \frac{1}{2^i} = \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k}\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\}) &amp;= \lambda[\sum_{i = 1}^k\frac{a_i}{2^i} , \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k})\\\\
+&amp;= \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k} - \sum_{i = 1}^k\frac{a_i}{2^i}\\\\
+&amp;= \frac{1}{2^k}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\})  = \frac{1}{2^k}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -283,6 +294,15 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>En el inciso anterior mostramos que <span class="math display">\[\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., n\}) = \frac{1}{2^n}\]</span></p>
+<p>Para cualquier combinación de <span class="math inline">\(a_i\)</span>’s, pero podemos construir casos particulares donde <span class="math inline">\(\sum_{i = 1}^n d_i(w) = k\)</span>, por ejemplo:</p>
+<p><span class="math display">\[a_1 = 1,a_2 = 1, \dots, a_k = 1, a_{k+1} = 0, \dots,a_n =  0\]</span></p>
+<p>Entonces por combinatoria sabemos que para <span class="math inline">\(n\)</span> fija existen <span class="math inline">\({n \choose k}\)</span> casos particulares. Entonces, por la aditividad finita de la medida de Lebesgue tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}(\{w: \sum_{i = 1}^n d_i(w) = k\}) &amp;= \sum_{\sum_{i = 1}^n d_i(w) = k} \mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\})\\\\
+&amp;= \sum_{\sum_{i = 1}^n d_i(w) = k} \frac{1}{2^n}\\\\
+&amp;= {n \choose k}\frac{1}{2^n}
+\end{align*}\]</span></p>
 <table>
 <colgroup>
 <col width="100%" />
@@ -301,6 +321,10 @@ k &amp;\mbox{Si } d_n(w) = d_{n+1}(w) = \dots = d_{n+k-1}(w) = 0 \mbox{ y } d_{n
 </tr>
 </tbody>
 </table>
+<p>Solución:</p>
+<p><span class="math inline">\(A_n\)</span> es el conjunto de los eventos donde a partir de <span class="math inline">\(n\)</span> ocurrieron <span class="math inline">\(r_n\)</span> ceros o más, entonces:</p>
+<p><span class="math display">\[\mathbb{P}[A_n] = \frac{1}{2^{r_n}} \implies \sum_n\mathbb{P}[A_n] = \sum_n\frac{1}{2^{r_n}}&lt;\infty \]</span></p>
+<p>Entonces por el lema de Borel-Cantelli <span class="math display">\[\mathbb{P}[\lim \sup_n A_n] = 0\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -308,6 +332,23 @@ k &amp;\mbox{Si } d_n(w) = d_{n+1}(w) = \dots = d_{n+k-1}(w) = 0 \mbox{ y } d_{n
 </tr>
 </tbody>
 </table>
+<p>Veamos:</p>
+<p><span class="math display">\[\mathbb{P}[B_{1,2}] = \mathbb{P}[d_1(w) = d_2(w)] = \mathbb{P}[d_1(w) = d_2(w) = 0] + \mathbb{P}[d_1(w) = d_2(w) = 1] = \frac{1}{2^2} + \frac{1}{2^2}  = \frac{1}{2}\]</span></p>
+<p><span class="math display">\[\mathbb{P}[B_{1,2} \cap B_{1,3}] = \mathbb{P}[d_1(w) = d_2(w) = d_3(w)] = \mathbb{P}[d_1(w) = d_2(w) = d_3(w) = 0] + \mathbb{P}[d_1(w) = d_2(w) = d_3(w) = 1] = \frac{1}{2^3} + \frac{1}{2^3}  = \frac{1}{2^2}\]</span></p>
+<p>Como no importo los sub-índices en el calculo podemos escribir <span class="math display">\[\mathbb{P}[B_{1,2}] = \mathbb{P}[B_{1,3}] = \mathbb{P}[B_{2,3}] = \frac{1}{2}\]</span> <span class="math display">\[\mathbb{P}[B_{1,2} \cap B_{1,3}]  = \mathbb{P}[B_{1,2} \cap B_{2,3}] = \mathbb{P}[B_{2,3} \cap B_{1,3}] =  \frac{1}{2^2}\]</span></p>
+<p>Aquí vemos que son independientes dos a dos</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{P}[B_{1,2}]\mathbb{P}[B_{2,3}] &amp;= \mathbb{P}[B_{1,2}]\mathbb{P}[B_{1,3}]\\\\
+&amp;= \mathbb{P}[B_{1,3}]\mathbb{P}[B_{2,3}] \\\\
+&amp;= \mathbb{P}[B_{1,2}\cap B_{2,3}]\\\\
+&amp;= \mathbb{P}[B_{1,2}\cap B_{1,3}]\\\\
+&amp;= \mathbb{P}[B_{1,3}\cap B_{2,3}]\\\\
+&amp;= \frac{1}{2^2}
+\end{align*}\]</span></p>
+<p>Y por último la doble intersección:</p>
+<p><span class="math display">\[\mathbb{P}[B_{1,2} \cap B_{1,3} \cap B_{2,3}] =  \mathbb{P}[B_{1,2} \cap B_{1,3}] = \frac{1}{2}\]</span></p>
+<p>De esta manera damos el constraejemplo de independencia.</p>
+<p><span class="math display">\[\frac{1}{4} = \mathbb{P}[B_{1,2} \cap B_{1,3} \cap B_{2,3}] \neq \mathbb{P}[B_{1,2}] \mathbb{P}[ B_{1,3}] \mathbb{P}[ B_{2,3}] = \frac{1}{2^3}. \]</span></p>
 </div>
 
 

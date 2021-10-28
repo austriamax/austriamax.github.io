@@ -270,6 +270,40 @@ $(document).ready(function () {
 <div id="si-f-y-d-son-dos-funciones-de-distribución.-pruebe-que-si-discontinuidades-de-f-cap-discontinuidades-de-0-entonces-int_ab-gxfdx-fbgb---int_abfxgdx." class="section level3">
 <h3>Si <span class="math inline">\(F\)</span> y <span class="math inline">\(D\)</span> son dos funciones de distribución. Pruebe que si <span class="math inline">\(\{\)</span> discontinuidades de <span class="math inline">\(F\} \cap \{\)</span> discontinuidades de <span class="math inline">\(\} = 0\)</span>, entonces <span class="math display">\[\int_a^b G(x)F(dx) = F(b)G(b) - \int_a^bF(x)G(dx).\]</span></h3>
 <p>(donde estas integrales deben entenderse como <span class="math inline">\(\int_a^bG(x)F(dx) = \int_a^bF(x)\mathbb{P}_F(dx)\)</span> y <span class="math inline">\(\mathbb{P}_F\)</span> es la medida de probabilidad en <span class="math inline">\((\mathbb{R}, \mathscr{B}(\mathbb{R}))\)</span> asociada a <span class="math inline">\(F\)</span>. Análogamente para <span class="math inline">\(\int_a^bF(x)G(dx)\)</span> y <span class="math inline">\(\mathbb{P}_G\)</span>.)</p>
+<p>Demostración:</p>
+<p>Sean <span class="math inline">\(a&lt;b\)</span>, entonces construyamos una partición de <span class="math inline">\((a,b]\times(a,b]\)</span> como: <span class="math display">\[A = \{(x,y): a &lt;y \leq x &lt; b\}\]</span> <span class="math display">\[B = \{(x,y): a &lt;x \leq y &lt; b\}\]</span> <span class="math display">\[C = A\cap B = \{(x,y): a &lt;x = y \leq b\}\]</span></p>
+<p>Por Tonelli-Fubini tenemos que <span class="math display">\[\begin{align*}
+\int_A d\mathbb{P}_F \otimes \mathbb{P}_G &amp;= \int_a^b \mathbb{P}_G((a,x])\mathbb{P}_F(dx)\\\\
+&amp;= \int_a^b[G(x)-G(a)]dF(x)\\\\
+&amp;= \int_a^bG(x)dF(x) - G(a)\int_a^bdF(x)\\\\
+&amp;= \int_a^bG(x)dF(x) - G(a)[F(b)-F(a)]\\\\ 
+\end{align*}\]</span></p>
+<p>Ahora analizaremos <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+\int_B d\mathbb{P}_F \otimes \mathbb{P}_G &amp;= \int_a^b \mathbb{P}_F((a,b])\mathbb{P}_G(dy)\\\\
+&amp;= \int_a^b[F(y)-F(a)]dG(y)\\\\
+&amp;= \int_a^bF(y)dG(y) - F(a)\int_a^b dG(y)\\\\
+&amp;= \int_a^bF(y)dG(y) - F(a) [G(b)-G(a)]\\\\
+\end{align*}\]</span></p>
+<p>Por hipótesis tanto <span class="math inline">\(F\)</span> como <span class="math inline">\(G\)</span> son continuas en <span class="math inline">\(C\)</span>. Así que por Tonelli-Fubini</p>
+<p><span class="math display">\[\int_C d\mathbb{P}_F \otimes \mathbb{P}_G = \int_a^b \mathbb{P}_G(\{x\})\mathbb{P}_F(dx) = 0\]</span></p>
+<p>Haciendo la suma</p>
+<p><span class="math display">\[\begin{align*}
+\int_{(a,b]\times(a,b]} d\mathbb{P}_F \otimes \mathbb{P}_G = \int_a^bG(x)dF(x) - G(a)[F(b)-F(a)] + \int_a^bF(x)dG(x) - F(a)[G(b)-G(a)]
+\end{align*}\]</span></p>
+<p>Además</p>
+<p><span class="math display">\[\begin{align*}
+\int_{(a,b]\times(a,b]} d\mathbb{P}_F \otimes \mathbb{P}_G &amp;= \mathbb{P}_F \otimes \mathbb{P}_G ((a,b]\times(a,b])\\\\
+&amp;= \mathbb{P}_F((a,b])\mathbb{P}_G ((a,b])\\\\
+&amp;= [F(b)-F(a)][G(b)-G(a)]\\\\
+&amp;= F(b)[G(b)-G(a)] - F(a)[G(b) -G(a)]
+\end{align*}\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[\begin{align*}
+\int_a^bG(x)dF(x) - G(a)[F(b)-F(a)] + \int_a^bF(x)dG(x) - F(a)[G(b)-G(a)] =\\\\
+F(b)[G(b)-G(a)] - F(a)[G(b) -G(a)]
+\end{align*}\]</span></p>
+<p>Por lo que al simplificar <span class="math display">\[\int_a^bF(x)dG(x) = F(b)G(b)-F(a)G(a) - \int_a^bG(x)dF(x).\]</span></p>
 </div>
 
 

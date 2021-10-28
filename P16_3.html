@@ -269,6 +269,15 @@ $(document).ready(function () {
 
 <div id="si-mathbbp-y-mathbbq-son-dos-medidas-de-probabilidad-en-omega-mathscra-tal-que-mathbbpa-0-implies-mathbbqa-0.-pruebe-que-para-todo-epsilon-0-existe-delta-0-tal-que-si-a-in-mathscra-y-mathbbpa-delta-entonces-mathbbqa-epsilon." class="section level3">
 <h3>Si <span class="math inline">\(\mathbb{P}\)</span> y <span class="math inline">\(\mathbb{Q}\)</span> son dos medidas de probabilidad en <span class="math inline">\((\Omega, \mathscr{A})\)</span> tal que <span class="math inline">\(\mathbb{P}(A) = 0 \implies \mathbb{Q}(A) = 0\)</span>. Pruebe que para todo <span class="math inline">\(\epsilon &gt;0\)</span> existe <span class="math inline">\(\delta &gt; 0\)</span> tal que si <span class="math inline">\(A \in \mathscr{A}\)</span> Y <span class="math inline">\(\mathbb{P}(A) &lt; \delta\)</span> entonces <span class="math inline">\(\mathbb{Q}(A) &lt; \epsilon\)</span>.</h3>
+<p>Demostración:</p>
+<p>La demostración se hará por contradicción. Supongase que <span class="math display">\[\exists \epsilon&gt;0 \quad \{A_n\}\in \mathscr{A} \mbox{ tal que } \mathbb{P}(A_n) &lt; \frac{1}{n^2} y  \mathbb{Q}(A_n)\geq \epsilon \quad \forall n \in \mathbb{N}\]</span></p>
+<p>Nombremos <span class="math display">\[A = \lim \sup_n A_n\]</span></p>
+<p>Entonces <span class="math display">\[\sum_{n=1}^\infty \mathbb{P}[A_n] \leq \sum_{n=1}^\infty \frac{1}{n^2}&lt; \infty\]</span></p>
+<p>Luego por Borel-Cantelli <span class="math display">\[\mathbb{P}(A) = 0\]</span> Lo que implica que <span class="math display">\[\mathbb{Q}(A) = 0\]</span></p>
+<p>Ahora tomamos una sucesión decreciente <span class="math inline">\(\{\cup_{m\geq n} A_m\}\)</span>. Así</p>
+<p><span class="math display">\[\mathbb{Q}(A) \geq \lim_{n\to \infty}\mathbb{Q}(\cup_{m\geq n} A_m) \leq \lim_{n\to \infty}\mathbb{Q}(A_m) \geq \epsilon\]</span></p>
+<p>Contadicción!</p>
+<p><span class="math display">\[\therefore \quad\forall \epsilon &gt;0 \quad \exists \delta &gt; 0 \quad \mbox{tal que si} \quad A \in \mathscr{A}\quad \mathbb{P}(A) &lt; \delta \implies \mathbb{Q}(A) &lt; \epsilon.\]</span></p>
 </div>
 
 

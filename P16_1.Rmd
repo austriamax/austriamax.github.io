@@ -9,11 +9,43 @@ title: "Tarea 10. Pregunta 16.1."
 (a) \[\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\}) = \frac{1}{2^k} \quad (a_i \mbox{ arbitrarios en } \{0,1\}, \mbox{ fijos}). \]
 -------------------------------------------------------------------------------
 
+Sea ($\Omega = [0,1]$, $\mathscr{A} = \mathscr{B}([0,1])$, $\mathbb{P} = \lambda)$ nuestro espacio de probabilidad.
+Donde $\mathscr{B}([0,1])$ son los borelianos en $[0,1]$ y $\lambda$ es la medida de Lebesgue.
+
+\[\mbox{Sea } A = \{\omega \in \Omega: d_i(\omega) = a_i, i = 1, \dots,k\}\]
+
+Entonces
+
+\[\sum_{i = 1}^k\frac{a_i}{2^i} \leq \omega < \sum_{i = 1}^k\frac{a_i}{2^i} + \sum_{i = k+1}^\infty \frac{1}{2^i} = \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k}\]
+
+Luego
+
+\[\begin{align*}
+\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\}) &= \lambda[\sum_{i = 1}^k\frac{a_i}{2^i} , \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k})\\\\
+&= \sum_{i = 1}^k\frac{a_i}{2^i} + \frac{1}{2^k} - \sum_{i = 1}^k\frac{a_i}{2^i}\\\\
+&= \frac{1}{2^k}
+\end{align*}\]
+
+\[\therefore \mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\})  = \frac{1}{2^k}\]
 
 -------------------------------------------------------------------------------
 (b) \[\mathbb{P}(\{w: \sum_{i = 1}^n d_i(w) = k\}) = {n \choose k}\frac{1}{2^n}\]
 -------------------------------------------------------------------------------
 
+En el inciso anterior mostramos que 
+\[\mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., n\}) = \frac{1}{2^n}\]
+
+Para cualquier combinación de $a_i$'s, pero podemos construir casos particulares donde $\sum_{i = 1}^n d_i(w) = k$, por ejemplo:
+
+\[a_1 = 1,a_2 = 1, \dots, a_k = 1, a_{k+1} = 0, \dots,a_n =  0\]
+
+Entonces por combinatoria sabemos que para $n$ fija existen ${n \choose k}$ casos particulares. Entonces, por la aditividad finita de la medida de Lebesgue tenemos
+
+\[\begin{align*}
+\mathbb{P}(\{w: \sum_{i = 1}^n d_i(w) = k\}) &= \sum_{\sum_{i = 1}^n d_i(w) = k} \mathbb{P}(\{w: d_i(w) = a_i, i = 1, 3, ..., k\})\\\\
+&= \sum_{\sum_{i = 1}^n d_i(w) = k} \frac{1}{2^n}\\\\
+&= {n \choose k}\frac{1}{2^n}
+\end{align*}\]
 
 -------------------------------------------------------------------------------
 (c) Sea $l_n$ la corrida (más larga) de ceros que empiece en $d_n$, es decir,  \[l_n := \left\{
@@ -26,8 +58,45 @@ title: "Tarea 10. Pregunta 16.1."
    Es decir \[A_n = \{w: l_n(w) \geq r_n\}, \quad \mathbb{P}(\lim \sup_n A_n) = 0.\]
 -------------------------------------------------------------------------------
 
+Solución:
+
+$A_n$ es el conjunto de los eventos donde a partir de $n$ ocurrieron $r_n$ ceros o más, entonces:
+
+\[\mathbb{P}[A_n] = \frac{1}{2^{r_n}} \implies \sum_n\mathbb{P}[A_n] = \sum_n\frac{1}{2^{r_n}}<\infty \]
+
+Entonces por el lema de Borel-Cantelli
+\[\mathbb{P}[\lim \sup_n A_n] = 0\]
+
 
 -------------------------------------------------------------------------------
 (d) Si $B_{n,m} := \{w: d_n(w) = d_m(w)\}$. Pruebe que $B_{1,2}$, $B_{1,3}$ y $B_{2,3}$ son independientes dos a dos, pero no son independientes.
 -------------------------------------------------------------------------------
 
+Veamos:
+
+\[\mathbb{P}[B_{1,2}] = \mathbb{P}[d_1(w) = d_2(w)] = \mathbb{P}[d_1(w) = d_2(w) = 0] + \mathbb{P}[d_1(w) = d_2(w) = 1] = \frac{1}{2^2} + \frac{1}{2^2}  = \frac{1}{2}\]
+
+\[\mathbb{P}[B_{1,2} \cap B_{1,3}] = \mathbb{P}[d_1(w) = d_2(w) = d_3(w)] = \mathbb{P}[d_1(w) = d_2(w) = d_3(w) = 0] + \mathbb{P}[d_1(w) = d_2(w) = d_3(w) = 1] = \frac{1}{2^3} + \frac{1}{2^3}  = \frac{1}{2^2}\]
+
+Como no importo los sub-índices en el calculo podemos escribir
+\[\mathbb{P}[B_{1,2}] = \mathbb{P}[B_{1,3}] = \mathbb{P}[B_{2,3}] = \frac{1}{2}\]
+\[\mathbb{P}[B_{1,2} \cap B_{1,3}]  = \mathbb{P}[B_{1,2} \cap B_{2,3}] = \mathbb{P}[B_{2,3} \cap B_{1,3}] =  \frac{1}{2^2}\]
+
+Aquí vemos que son independientes dos a dos
+
+\[\begin{align*}
+\mathbb{P}[B_{1,2}]\mathbb{P}[B_{2,3}] &= \mathbb{P}[B_{1,2}]\mathbb{P}[B_{1,3}]\\\\
+&= \mathbb{P}[B_{1,3}]\mathbb{P}[B_{2,3}] \\\\
+&= \mathbb{P}[B_{1,2}\cap B_{2,3}]\\\\
+&= \mathbb{P}[B_{1,2}\cap B_{1,3}]\\\\
+&= \mathbb{P}[B_{1,3}\cap B_{2,3}]\\\\
+&= \frac{1}{2^2}
+\end{align*}\]
+
+Y por último la doble intersección:
+
+\[\mathbb{P}[B_{1,2} \cap B_{1,3} \cap B_{2,3}] =  \mathbb{P}[B_{1,2} \cap B_{1,3}] = \frac{1}{2}\]
+
+De esta manera damos el constraejemplo de independencia.
+
+\[\frac{1}{4} = \mathbb{P}[B_{1,2} \cap B_{1,3} \cap B_{2,3}] \neq \mathbb{P}[B_{1,2}] \mathbb{P}[ B_{1,3}] \mathbb{P}[ B_{2,3}] = \frac{1}{2^3}. \]

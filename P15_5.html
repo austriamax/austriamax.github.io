@@ -269,7 +269,29 @@ $(document).ready(function () {
 
 <div id="sea-x_i_i-1infty-una-sucesión-de-v.a.i.-en-omega-mathscra-mathbbp.-pruebe-que-lim-inf_n-to-infty-x_n-y-lim-sup_n-to-infty-x_n-son-constantes-y-que-x_n_n-in-mathbbn-converge-o-bien-diverge." class="section level3">
 <h3>Sea <span class="math inline">\((X_i)_{i = 1}^\infty\)</span> una sucesión de v.a.i. en <span class="math inline">\((\Omega, \mathscr{A}, \mathbb{P})\)</span>. Pruebe que <span class="math inline">\(\lim \inf_{n \to \infty} X_n\)</span> y <span class="math inline">\(\lim \sup_{n \to \infty} X_n\)</span> son constantes y que <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> converge o bien diverge.</h3>
+<p>PD. <span class="math inline">\(\lim \inf_{n \to \infty} X_n\)</span> es constante.</p>
 <p>Demostración:</p>
+<p>Sea <span class="math display">\[\mathscr{F_n} = \sigma(X_{n+1},X_{n+2}, \dots)\]</span></p>
+<p>De la definición podemos notar que <span class="math inline">\(X_i\)</span> es medible en <span class="math inline">\(\mathscr{F_n}\)</span> para <span class="math inline">\(i = n,n+1, \dots\)</span> lo que nos permite afirmar que <span class="math inline">\(\inf_{m\geq n} X_m\)</span> es <span class="math inline">\(\mathscr{F_n}\)</span>-medible.</p>
+<p>Ahora <span class="math display">\[\lim \inf_n X_n = \sup_{n\geq1} \inf_{m\geq n} X_m\]</span></p>
+<p>Y definiendo <span class="math display">\[\mathscr{J} = \cap_{n \in \mathbb{N}}\mathscr{F_n}\]</span></p>
+<p>Obtenemos que <span class="math inline">\(\mathscr{J}\)</span> es la mínima <span class="math inline">\(\sigma\)</span>-’algebra en la cual <span class="math inline">\(\inf_{m\geq n} X_m\)</span> es medible y por lo tanto <span class="math inline">\(\sup_{n\geq1} \inf_{m\geq n}\)</span> también lo es.</p>
+<p>Sabemos que <span class="math display">\[\{\omega \in \Omega: \lim \inf_n X_n \leq x\} \in \mathscr{J} \quad \forall x \in \mathbb{R}\cup{\infty}\]</span> por ser <span class="math inline">\(\sigma\)</span>-álgebra cola.</p>
+<p>Entonces por la ley cero-uno tnemos que: <span class="math display">\[\mathbb{P}[\lim \inf_n X_n \leq x] \in \{0,1\}\]</span></p>
+<p>Sea <span class="math display">\[s = \sup_{x \in \mathbb{R}} \{x \in \mathbb{R}: \mathbb{P}[\lim \inf_n X_n \leq x] = 0\}\]</span> Para mas comodidad nombremos <span class="math inline">\(I = \lim \inf_n X_n\)</span> PD. <span class="math inline">\(F_{I}(s) = 1\)</span></p>
+<p>Demostremoslo por contradicción, supongase que <span class="math display">\[F_{I}(s) = 0.\]</span></p>
+<p>Entonces <span class="math display">\[\forall \epsilon&gt;0 \quad \exists x_0 \quad \mbox{tal que} \quad x_0&gt;s-\epsilon \quad \mbox{y} \mathbb{P}(X\leq x_0) = 0.\]</span></p>
+<p>Luego <span class="math display">\[x_0+\epsilon&gt;s \implies  F_{I}(x_0+\epsilon) \geq F_{I}(s) \implies F_{I}(x_0 + \epsilon)\geq0.\]</span></p>
+<p>Y como <span class="math inline">\(s\)</span> es el número más grande tal que <span class="math inline">\(F_{I}(s) = 0\)</span> entonces <span class="math display">\[F_{I}(x_0 + \epsilon) = 1\]</span></p>
+<p>Pero tomando el limite por la derecha vemos que <span class="math display">\[\lim_{\epsilon\to 0^{+}}F_{I}(x_0+\epsilon) = 1 \neq 0 = F_{I}(x_0)\]</span> Contradicción!</p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\mathbb{P}[\lim \inf_n X_n = s] = F_{I}(s) - \lim_{n\to \infty}F_{I}(s-\frac{1}{n}) = 1-0 = 1\]</span></p>
+<p><span class="math display">\[\therefore \lim \inf_n X_n \overset{\mathbb{P}}{=} s\]</span></p>
+<p>Analogamente <span class="math inline">\(\lim \sup_{n \to \infty} X_n\)</span> es constante.</p>
+<p>Pues <span class="math display">\[\{\omega \in \Omega: \lim \sup_n X_n \leq x\} = \cap_{n=1}^\infty \cup_{m\leq n} \{\omega\in \Omega: X_m(\omega) \leq x\}\]</span> es un elemento de la <span class="math inline">\(\sigma\)</span>-álgebra cola.</p>
+<p>PD. <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> converge o bien diverge.</p>
+<p>En principio podríamos pensar que <span class="math display">\[\mathbb{P}[X_n \mbox{ converge}], \mathbb{P}[X_n \mbox{ diverge}] \in \{0,1\}\]</span></p>
+<p>Pues ambos son eventos de la <span class="math inline">\(\sigma\)</span>-álgebra cola. Y no puede pasar que sean iguales ya que son complementarios.</p>
 </div>
 
 

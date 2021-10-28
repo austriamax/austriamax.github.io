@@ -4,6 +4,68 @@ title: "Tarea 9. Pregunta 15.5."
 
 ### Sea $(X_i)_{i = 1}^\infty$ una sucesión de v.a.i. en $(\Omega, \mathscr{A}, \mathbb{P})$. Pruebe que $\lim \inf_{n \to \infty} X_n$ y $\lim \sup_{n \to \infty} X_n$ son constantes y que $(X_n)_{n \in \mathbb{N}}$ converge o bien diverge.
 
+
+PD.  $\lim \inf_{n \to \infty} X_n$ es constante.
+
+
 Demostración:
+
+
+Sea
+\[\mathscr{F_n} = \sigma(X_{n+1},X_{n+2}, \dots)\]
+
+De la definición podemos notar que $X_i$ es medible en $\mathscr{F_n}$ para $i = n,n+1, \dots$ lo que nos permite afirmar que $\inf_{m\geq n} X_m$ es $\mathscr{F_n}$-medible.
+
+Ahora \[\lim \inf_n X_n = \sup_{n\geq1} \inf_{m\geq n} X_m\]
+
+Y definiendo 
+\[\mathscr{J} = \cap_{n \in \mathbb{N}}\mathscr{F_n}\]
+
+Obtenemos que  $\mathscr{J}$ es la mínima $\sigma$-'algebra en la cual $\inf_{m\geq n} X_m$ es medible y por lo tanto $\sup_{n\geq1} \inf_{m\geq n}$ también lo es.
+
+
+Sabemos que \[\{\omega \in \Omega: \lim \inf_n X_n \leq x\} \in \mathscr{J} \quad \forall x \in \mathbb{R}\cup{\infty}\] por ser $\sigma$-álgebra cola.
+
+Entonces por la ley cero-uno tnemos que:
+\[\mathbb{P}[\lim \inf_n X_n \leq x] \in \{0,1\}\]
+
+Sea 
+\[s = \sup_{x \in \mathbb{R}} \{x \in \mathbb{R}: \mathbb{P}[\lim \inf_n X_n \leq x] = 0\}\]
+Para mas comodidad nombremos $I = \lim \inf_n X_n$
+PD. $F_{I}(s) = 1$
+
+Demostremoslo por contradicción, supongase que \[F_{I}(s) = 0.\]
+
+Entonces 
+\[\forall \epsilon>0 \quad \exists x_0 \quad \mbox{tal que} \quad x_0>s-\epsilon \quad \mbox{y} \mathbb{P}(X\leq x_0) = 0.\]
+
+Luego
+\[x_0+\epsilon>s \implies  F_{I}(x_0+\epsilon) \geq F_{I}(s) \implies F_{I}(x_0 + \epsilon)\geq0.\]
+
+Y como $s$ es el número más grande tal que $F_{I}(s) = 0$ entonces
+\[F_{I}(x_0 + \epsilon) = 1\]
+
+Pero tomando el limite por la derecha vemos que
+\[\lim_{\epsilon\to 0^{+}}F_{I}(x_0+\epsilon) = 1 \neq 0 = F_{I}(x_0)\]
+Contradicción!
+
+Por lo tanto
+
+\[\mathbb{P}[\lim \inf_n X_n = s] = F_{I}(s) - \lim_{n\to \infty}F_{I}(s-\frac{1}{n}) = 1-0 = 1\]
+
+\[\therefore \lim \inf_n X_n \overset{\mathbb{P}}{=} s\]
+
+
+Analogamente $\lim \sup_{n \to \infty} X_n$ es constante.
+
+Pues \[\{\omega \in \Omega: \lim \sup_n X_n \leq x\} = \cap_{n=1}^\infty \cup_{m\leq n} \{\omega\in \Omega: X_m(\omega) \leq x\}\] 
+es un elemento de la $\sigma$-álgebra cola.
+
+PD. $(X_n)_{n \in \mathbb{N}}$ converge o bien diverge.
+
+En principio podríamos pensar que 
+\[\mathbb{P}[X_n \mbox{ converge}], \mathbb{P}[X_n \mbox{ diverge}] \in \{0,1\}\]
+
+Pues ambos son eventos de la $\sigma$-álgebra cola. Y no puede pasar que sean iguales ya que son complementarios.
 
 

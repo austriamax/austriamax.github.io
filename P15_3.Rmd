@@ -88,4 +88,9 @@ f_{X+Y}(u) &= \int_{-\infty}^{\infty} f_{X,Y}(u-v,v)dv\\\\
 (E) Si $X$ tiene densidad $f_X$ y $Y$ es discreta. Muestre que $X + Y$ tiene densidad.
 -------------------------------------------------------------------------------
 
+La parte más difícil la vimos en clase
 
+  "Sean $X$ y $Y$ variables aleatorias independientes de las cuales $X$ tiene densidad, entonces $X+Y$ tiene densidad $f_{X+Y}$y esta dada por $f_{X+Y}(z) = \int f_x(z-y)N_y(dy)$."
+  
+Entonces sólo nos falta decir que estando en el caso donde $Y$ es discreta, la función $f_{X+Y}$ es:
+\[f_{X+Y}(z) = \sum_y f_x(z-y)N_y(dy).\]

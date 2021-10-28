@@ -5,3 +5,57 @@ title: "Tarea 10. Pregunta 16.2."
 ### Si $F$ y $D$ son dos funciones de distribución. Pruebe que si $\{$ discontinuidades de $F\} \cap \{$ discontinuidades de $\} = 0$, entonces \[\int_a^b G(x)F(dx) = F(b)G(b) - \int_a^bF(x)G(dx).\] 
 (donde estas integrales deben entenderse como $\int_a^bG(x)F(dx) = \int_a^bF(x)\mathbb{P}_F(dx)$ y $\mathbb{P}_F$ es la medida de probabilidad en $(\mathbb{R}, \mathscr{B}(\mathbb{R}))$ asociada a $F$. Análogamente para $\int_a^bF(x)G(dx)$ y $\mathbb{P}_G$.)
 
+
+Demostración:
+
+Sean $a<b$, entonces construyamos una partición de $(a,b]\times(a,b]$ como:
+\[A = \{(x,y): a <y \leq x < b\}\]
+\[B = \{(x,y): a <x \leq y < b\}\]
+\[C = A\cap B = \{(x,y): a <x = y \leq b\}\]
+
+Por Tonelli-Fubini tenemos que
+\[\begin{align*}
+\int_A d\mathbb{P}_F \otimes \mathbb{P}_G &= \int_a^b \mathbb{P}_G((a,x])\mathbb{P}_F(dx)\\\\
+&= \int_a^b[G(x)-G(a)]dF(x)\\\\
+&= \int_a^bG(x)dF(x) - G(a)\int_a^bdF(x)\\\\
+&= \int_a^bG(x)dF(x) - G(a)[F(b)-F(a)]\\\\ 
+\end{align*}\]
+
+Ahora analizaremos $B$:
+
+\[\begin{align*}
+\int_B d\mathbb{P}_F \otimes \mathbb{P}_G &= \int_a^b \mathbb{P}_F((a,b])\mathbb{P}_G(dy)\\\\
+&= \int_a^b[F(y)-F(a)]dG(y)\\\\
+&= \int_a^bF(y)dG(y) - F(a)\int_a^b dG(y)\\\\
+&= \int_a^bF(y)dG(y) - F(a) [G(b)-G(a)]\\\\
+\end{align*}\]
+
+Por hipótesis tanto $F$ como $G$ son continuas en $C$. Así que por Tonelli-Fubini
+
+\[\int_C d\mathbb{P}_F \otimes \mathbb{P}_G = \int_a^b \mathbb{P}_G(\{x\})\mathbb{P}_F(dx) = 0\]
+
+Haciendo la suma
+
+\[\begin{align*}
+\int_{(a,b]\times(a,b]} d\mathbb{P}_F \otimes \mathbb{P}_G = \int_a^bG(x)dF(x) - G(a)[F(b)-F(a)] + \int_a^bF(x)dG(x) - F(a)[G(b)-G(a)]
+\end{align*}\]
+
+Además
+
+\[\begin{align*}
+\int_{(a,b]\times(a,b]} d\mathbb{P}_F \otimes \mathbb{P}_G &= \mathbb{P}_F \otimes \mathbb{P}_G ((a,b]\times(a,b])\\\\
+&= \mathbb{P}_F((a,b])\mathbb{P}_G ((a,b])\\\\
+&= [F(b)-F(a)][G(b)-G(a)]\\\\
+&= F(b)[G(b)-G(a)] - F(a)[G(b) -G(a)]
+\end{align*}\]
+
+Entonces
+
+
+\[\begin{align*}
+\int_a^bG(x)dF(x) - G(a)[F(b)-F(a)] + \int_a^bF(x)dG(x) - F(a)[G(b)-G(a)] =\\\\
+F(b)[G(b)-G(a)] - F(a)[G(b) -G(a)]
+\end{align*}\]
+
+Por lo que al simplificar
+\[\int_a^bF(x)dG(x) = F(b)G(b)-F(a)G(a) - \int_a^bG(x)dF(x).\]
