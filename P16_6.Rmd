@@ -7,7 +7,7 @@ title: "Tarea 10. Pregunta 16.6."
 
 Antes de empezar nombraré \[Y_n = \sum_{i = 1}^nX_i \quad \mbox{con } n \in \mathbb{N.}\]
 
-Observación 1: Como cada elemento de $Y_n$ es independiente de $X_m$ ($m> n$), entonces $Y_n$ también lo es. 
+Observación 1: Como cada elemento de $Y_n$ es independiente de $X_m$ ($m> n$) y de $N$, entonces $Y_n$ también lo es. 
 
 Observación 2: Como $X_i \in \mathbb{N} \quad \forall i  \in \mathbb{N}$ entonces $Y_n = n,n+1,n+2, \dots$
 
