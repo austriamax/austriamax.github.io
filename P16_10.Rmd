@@ -9,15 +9,45 @@ title: "Tarea 10. Pregunta 16.10."
 1. Sea $f:[0,1] \to \mathbb{R}$ continua y $M$ una cota para $|f|$ en $[0,1]$. Pruebe que $\mathbb{E}[f(\frac{S_n^p}{n})]$ es polinomio.
 -------------------------------------------------------------------------------
 
+Demostración:
+
+Primero debemos observar que $1_{U_i \leq p} \sim Ber(p)$.
+\[\mathbb{P}(1_{U_i \leq p}  = 1) = \mathbb{P}(U_i\leq p) = F_U(p) = p\]
+
+Así \[S_n^p \sim Bin(n,p)\]
+
+Entoces el soporte de $\frac{1}{n}S_n^p$ es de la forma:
+
+\[\{\frac{0}{n}, \frac{1}{n}, \dots, \frac{n}{n}\}\]
+
+Como $f$ es continua, entonces es medible, por lo que tiene sentido calcular la esperanza de $\frac{1}{n}S_n^p$ transformada por $f$. Veamos que:
+
+\[|f|<M \implies |f(\frac{i}{n})|<M \quad \forall i = 1,\dots, n\]
+
+Así
+\[\begin{align*}
+\mathbb{E}[f(\frac{1}{n}S_n^p)] &= \sum_{i=0}^pf(\frac{i}{n})\mathbb{P}(S_n^p = i)\\\\
+&=\sum_{i=0}^pf(\frac{i}{n}){n \choose i}p^i(1-p)^{n-i} && (S_n^p \sim Bin(n,p))\\\\
+\end{align*}\]
+
+Por lo que concluimos que $\mathbb{E}[f(\frac{1}{n}S_n^p)]$ es un polinomio en terminos de $p$.
+
+\[\begin{align*}
+\mathbb{E}[f(\frac{1}{n}S_n^p)] &=\sum_{i=0}^pf(\frac{i}{n}){n \choose i}p^i(1-p)^{n-i}
+\end{align*}\]
 
 -------------------------------------------------------------------------------
 2. Dada $\epsilon > 0$, sea $\delta > 0$ tal que si  $x,y \in [0,1]$ y $|y-x| \leq \delta$ entonces $|f(x) - f(y)|\leq \epsilon$. Pruebe que
 \[|\mathbb{E}[f(\frac{S_n^p}{n}) - f(p)]| \leq \epsilon + \frac{M}{\delta}\mathbb{E}[(\frac{S_n^p}{n} - p)^2]\]
 -------------------------------------------------------------------------------
 
+Demostración:
+
+Por las hipótesis 
+
 
 -------------------------------------------------------------------------------
-3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios $f_1, f_2, \dots $ tal que \[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]
+3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios $f_1, f_2, \dots$ tal que \[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]
 -------------------------------------------------------------------------------
 
  

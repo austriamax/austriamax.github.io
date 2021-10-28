@@ -276,6 +276,21 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Primero debemos observar que <span class="math inline">\(1_{U_i \leq p} \sim Ber(p)\)</span>. <span class="math display">\[\mathbb{P}(1_{U_i \leq p}  = 1) = \mathbb{P}(U_i\leq p) = F_U(p) = p\]</span></p>
+<p>Así <span class="math display">\[S_n^p \sim Bin(n,p)\]</span></p>
+<p>Entoces el soporte de <span class="math inline">\(\frac{1}{n}S_n^p\)</span> es de la forma:</p>
+<p><span class="math display">\[\{\frac{0}{n}, \frac{1}{n}, \dots, \frac{n}{n}\}\]</span></p>
+<p>Como <span class="math inline">\(f\)</span> es continua, entonces es medible, por lo que tiene sentido calcular la esperanza de <span class="math inline">\(\frac{1}{n}S_n^p\)</span> transformada por <span class="math inline">\(f\)</span>. Veamos que:</p>
+<p><span class="math display">\[|f|&lt;M \implies |f(\frac{i}{n})|&lt;M \quad \forall i = 1,\dots, n\]</span></p>
+<p>Así <span class="math display">\[\begin{align*}
+\mathbb{E}[f(\frac{1}{n}S_n^p)] &amp;= \sum_{i=0}^pf(\frac{i}{n})\mathbb{P}(S_n^p = i)\\\\
+&amp;=\sum_{i=0}^pf(\frac{i}{n}){n \choose i}p^i(1-p)^{n-i} &amp;&amp; (S_n^p \sim Bin(n,p))\\\\
+\end{align*}\]</span></p>
+<p>Por lo que concluimos que <span class="math inline">\(\mathbb{E}[f(\frac{1}{n}S_n^p)]\)</span> es un polinomio en terminos de <span class="math inline">\(p\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[f(\frac{1}{n}S_n^p)] &amp;=\sum_{i=0}^pf(\frac{i}{n}){n \choose i}p^i(1-p)^{n-i}
+\end{align*}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -286,10 +301,12 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Por las hipótesis</p>
 <table>
 <tbody>
 <tr class="odd">
-<td>3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios $f_1, f_2, $ tal que <span class="math display">\[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]</span></td>
+<td>3. Al ultilizar el inciso anterior, demuestre el teorema de aproximación polinomial de Weierstrass: existe una sucesión de polinomios <span class="math inline">\(f_1, f_2, \dots\)</span> tal que <span class="math display">\[\lim_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| = 0.\]</span></td>
 </tr>
 </tbody>
 </table>
