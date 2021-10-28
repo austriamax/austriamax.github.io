@@ -20,7 +20,7 @@ Calcularemos $\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})]$ para alguna $m \in \math
 
 Notemos que $\{A_n(\frac{1}{m})\}_{n \in \mathbb{N}}$ es una sucesión decreciente pues (respecto a $n$):
 
-Sea $n_1 < n_2 \implies a_{n_1} < a_{n_2} \implies $
+Sea $n_1 < n_2 \implies a_{n_1} < a_{n_2} \implies$
 \[
 \begin{align*}
 n < m &\implies a_{n} < a_{m} && (a_n\mbox{ es creciente})\\\\
@@ -34,7 +34,7 @@ Entonces:
 
 \[\begin{align*}
 \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] &= \mathbb{P}[\cap_{n=1}^\infty A_n(\frac{1}{m})]\\\\
-&= \mathbb{P}[\{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|>\infty\}}\geq \frac{1}{m}\}] && (\lim_{n \to \infty} a_n = \infty)\\\\
+&= \mathbb{P}[\{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \Omega:|X(\omega)|>\infty\}}\geq \frac{1}{m}\}] && (\lim_{n \to \infty} a_n = \infty)\\\\
 &=0.
 \end{align*}\]
 

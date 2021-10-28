@@ -277,7 +277,7 @@ $(document).ready(function () {
 <p><span class="math display">\[Y_n \overset{c.s.}{\to} 0 \iff \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]</span></p>
 <p>Calcularemos <span class="math inline">\(\mathbb{P}[\lim \sup_n A_n(\frac{1}{m})]\)</span> para alguna <span class="math inline">\(m \in \mathbb{N}\)</span>:</p>
 <p>Notemos que <span class="math inline">\(\{A_n(\frac{1}{m})\}_{n \in \mathbb{N}}\)</span> es una sucesión decreciente pues (respecto a <span class="math inline">\(n\)</span>):</p>
-<p>Sea $n_1 &lt; n_2 a_{n_1} &lt; a_{n_2} $ <span class="math display">\[
+<p>Sea <span class="math inline">\(n_1 &lt; n_2 \implies a_{n_1} &lt; a_{n_2} \implies\)</span> <span class="math display">\[
 \begin{align*}
 n &lt; m &amp;\implies a_{n} &lt; a_{m} &amp;&amp; (a_n\mbox{ es creciente})\\\\
 &amp;\implies \{\omega \in \Omega:|X(\omega)|&gt;a_n\} \supseteq \{\omega \in \Omega:|X(\omega)|&gt;a_m\}\\\\
@@ -288,7 +288,7 @@ n &lt; m &amp;\implies a_{n} &lt; a_{m} &amp;&amp; (a_n\mbox{ es creciente})\\\\
 <p>Entonces:</p>
 <p><span class="math display">\[\begin{align*}
 \mathbb{P}[\lim \sup_n A_n(\frac{1}{m})] &amp;= \mathbb{P}[\cap_{n=1}^\infty A_n(\frac{1}{m})]\\\\
-&amp;= \mathbb{P}[\{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \mathbb{N}:|X(\omega)|&gt;\infty\}}\geq \frac{1}{m}\}] &amp;&amp; (\lim_{n \to \infty} a_n = \infty)\\\\
+&amp;= \mathbb{P}[\{\omega \in \Omega : |X(\omega)|^q 1_{\{\omega \in \Omega:|X(\omega)|&gt;\infty\}}\geq \frac{1}{m}\}] &amp;&amp; (\lim_{n \to \infty} a_n = \infty)\\\\
 &amp;=0.
 \end{align*}\]</span></p>
 <p>Por lo tanto: <span class="math display">\[\therefore Y_n \overset{c.s.}{\to} 0.\]</span></p>
