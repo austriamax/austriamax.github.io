@@ -6,7 +6,7 @@ title: "Tarea 9. Pregunta 15.6."
 
 Demostración:
 
-Sea $S_k = \sum_{n = 1}^k \frac{X_n}{2^n}$. Es fácil ver **[(por inducción)](https://austriamax.github.io/austriamax.proba1.github.io/P15_6_1.html)** que $S_k$ toma valores en \[\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}.\]
+Sea $S_k = \sum_{n = 1}^k \frac{X_n}{2^n}$. Es fácil ver **[(por inducción)](https://austriamax.github.io/austriamax.probaP.github.io/P15_6_1.html)** que $S_k$ toma valores en \[\{\frac{0}{2^k},\frac{1}{2^k},\frac{2}{2^k}, \frac{3}{2^k}, \dots, \frac{2^k-1}{2^k}\}.\]
 
 
 Primero vamos a mostrar que la distribución de $S_k$ es una uniforme discreta y después que converge a una v.a. uniforme continua.

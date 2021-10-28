@@ -90,7 +90,7 @@ F(z) &= \exp[-\frac{(\mu+\sigma^2z)^2- \mu^2}{2\sigma^2}]\int_{\frac{-\mu -\sigm
 
 (Función Generadora de Momentos)
 
-Calcule la función generadora de momentos de una normal en la **[Pregunta 16.7.](https://austriamax.github.io/austriamax.proba1.github.io/P16_7.html)** (inciso 2). Por lo que sabemos que es
+Calcule la función generadora de momentos de una normal en la **[Pregunta 16.7.](https://austriamax.github.io/austriamax.probaP.github.io/P16_7.html)** (inciso 2). Por lo que sabemos que es
 
 \[M(t) = \mathbb{E}[e^{tX}] = \exp(\mu t+\frac{\sigma^2t^2}{2}).\]
 

@@ -49,7 +49,7 @@ Sea $S_0 \in S$, entonces existen $A_0 \in \mathscr{A}$ y $N_0 \in \mathscr{N}$ 
 Así podemos concluir que $\mu^* = \nu$.
 
 
-Utilizarémos el siguiente teorema presente en el libro "Measure and Probability Theory de Altheyra", pg. 30.  **[TEOREMA](https://austriamax.github.io/austriamax.proba1.github.io/P10_3_Teorema.html)**
+Utilizarémos el siguiente teorema presente en el libro "Measure and Probability Theory de Altheyra", pg. 30.  **[TEOREMA](https://austriamax.github.io/austriamax.probaP.github.io/P10_3_Teorema.html)**
 
 Definamos
 

@@ -123,7 +123,7 @@ Entonces
 
 Ahora buscaremos el cerrado, para lo cual usaré el siguiente resultado:
 
-"Para todo $\epsilon >0$ existe un conjunto abierto $U$ tal que $A\subseteq U$ y  $\lambda(U-A)<\epsilon$". Demostrado en mi **[Nota](https://austriamax.github.io/austriamax.proba1.github.io/P10_4_2.html)**, (hay que notar que en este caso $\lambda^* = \lambda$)
+"Para todo $\epsilon >0$ existe un conjunto abierto $U$ tal que $A\subseteq U$ y  $\lambda(U-A)<\epsilon$". Demostrado en mi **[Nota](https://austriamax.github.io/austriamax.probaP.github.io/P10_4_2.html)**, (hay que notar que en este caso $\lambda^* = \lambda$)
 
 Como sabemos $A_1, A_2, \dots \in \mathscr{B}(\mathbb{R})$ entonces $(\cup_{\mathbb{N}} A_n)^c \in \mathscr{B}(\mathbb{R})$ por lo que existe un abierto $V$ tal que 
 
@@ -169,7 +169,7 @@ Primero demostraremos (a):
 
 (a) Para todo $\epsilon >0$ existe un conjunto abierto $U$ tal que $A\subseteq U$ y  $\lambda^*(U-A)<\epsilon$.
 
-Demostración: Para no extenderme mucho, la puse en la siguiente liga  **[Nota](https://austriamax.github.io/austriamax.proba1.github.io/P10_4_2.html)**
+Demostración: Para no extenderme mucho, la puse en la siguiente liga  **[Nota](https://austriamax.github.io/austriamax.probaP.github.io/P10_4_2.html)**
 
 Sea $\epsilon >0$.
 

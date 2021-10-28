@@ -29,7 +29,7 @@ title: "Tarea 9. Pregunta 15.4."
 ----------------------------------------------------------------------------
 (C) $\mathbb{P}(X > Y)$.
 ----------------------------------------------------------------------------
-Como $X$ y $Y$ son independientes e identicamente distribuidas, entonces $X-Y$ es simétrica (veasé **[Pregunta 16.5.](https://austriamax.github.io/austriamax.proba1.github.io/P16_5.html)**).
+Como $X$ y $Y$ son independientes e identicamente distribuidas, entonces $X-Y$ es simétrica (veasé **[Pregunta 16.5.](https://austriamax.github.io/austriamax.probaP.github.io/P16_5.html)**).
 
 Entonces
 \[\mathbb{P}(X-Y>0) = \mathbb{P}(X-Y<0)\]

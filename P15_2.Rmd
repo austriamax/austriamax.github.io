@@ -12,7 +12,7 @@ Sea \[Y_n= |X|^q 1_{\{|X|>a_n\}}.\]
 
 Definamos \[A_n(\epsilon) = \{\omega \in \Omega: |Y_n(\omega)-0|\geq\epsilon\}.\]
 
-De acuerdo con el razonamiento escrito en **[Pregunta 14.1.](https://austriamax.github.io/austriamax.proba1.github.io/P14_1.html)** tenemos que:
+De acuerdo con el razonamiento escrito en **[Pregunta 14.1.](https://austriamax.github.io/austriamax.probaP.github.io/P14_1.html)** tenemos que:
 
 \[Y_n \overset{c.s.}{\to} 0 \iff \mathbb{P}[\cup_{m =1}^\infty \lim \sup_n A_n(\frac{1}{m})] = 0.\]
 

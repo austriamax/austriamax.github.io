@@ -103,3 +103,6 @@ Pero como $h$ es contunua y aplicando el teorema de convergencia dominada (en me
 -------------------------------------------------------------------------------
 (D). ¿Es cierto que si $X_n \overset{\mathscr{L}}{\to} X$ entonces  $h(X_n) \overset{\mathscr{L}}{\to} h(X)$? 
 -------------------------------------------------------------------------------
+
+
+
