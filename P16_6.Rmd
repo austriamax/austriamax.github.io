@@ -21,9 +21,9 @@ Observación 2: Como $X_i \in \mathbb{N} \quad \forall i  \in \mathbb{N}$ entonc
 &= \mathbb{E}[\sum_{n=0}^\infty 1_{N=n}\exp(it\sum_{i=1}^N X_i)]\\\\
 &=\sum_{n=0}^\infty \mathbb{E}[1_{N=n}]\mathbb{E}[\exp(it\sum_{i=1}^n X_i)]\\\\
 &=\sum_{n=0}^\infty \mathbb{P}[N=n]\prod_{i=1}^N\mathbb{E}[\exp(it\sum_{i=1}^n X_i)]\\\\
-&\sum_{n=0}^\infty \mathbb{P}[N=n] [\Phi_X(t)]^n\\\\
-&\sum_{n=0}^\infty e^{-\lambda}\frac{\lambda^n}{n!}[\Phi_X(t)]^n\\\\
-&\sum_{n=0}^\infty \frac{e^{-\lambda}}{n!}[\lambda \Phi_X(t)]^n\\\\
+&=\sum_{n=0}^\infty \mathbb{P}[N=n] [\Phi_X(t)]^n\\\\
+&=\sum_{n=0}^\infty e^{-\lambda}\frac{\lambda^n}{n!}[\Phi_X(t)]^n\\\\
+&=\sum_{n=0}^\infty \frac{e^{-\lambda}}{n!}[\lambda \Phi_X(t)]^n\\\\
 &=e^{-\lambda}\exp[\lambda \Phi_X(t)]
 \end{align*}\]
 
