@@ -1,0 +1,6 @@
+---
+title: "Tarea 13. Pregunta 17.2."
+---
+
+### Si $X,Y \in \mathscr{L}^{1}(\Omega,\mathscr{F}, \mathbb{P})$ y sabemos que $\mathbb{E}[X|Y] \overset{c.s.}{=} Y$ y que $\mathbb{E}[Y|X] \overset{c.s.}{=} X$ pruebe que $X \overset{c.s.}{=} Y$.
+

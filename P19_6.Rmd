@@ -1,0 +1,20 @@
+---
+title: "Tarea 15. Pregunta 19.6."
+---
+
+### $(\Omega^{'},\mathscr{F}^{'})$ be another measurable space and Y a measurable function $Y:(\Omega, \mathscr{F}) \to (\Omega^{'}, \mathscr{F}^{'})$. If $\mbox{Im } Y = \{y_1, y_2, \dots, y_n\} \subset \Omega^{'}$ with $\mathbb{P}(Y = y_i) > 0$, $i = 1, 2, \dots, n$ then we have a measurable partition of $\Omega$ given by $\{B_i = (Y = y_i): i =1, 2, \dots, n\}$: If $\mathscr{A} = \sigma(Y)$ find $\mathbb{E}[X|\sigma(Y)]$ and $\mathbb{E}[X|Y = y_i]$, $i = 1, 2, \dots, n$.
+
+---
+Demostración:
+
+\[
+\begin{align*}
+&\int_{B_i} \mathbb{E}[X|Y] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
+\implies&\int_{B_i} \mathbb{E}[X|Y=y_i] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
+\implies& \mathbb{E}[X|Y=y_i]\mathbb{P}(Y=y_i) = \int_{B_i} X d\mathbb{P}\\\\
+&\therefore \mathbb{E}[X|Y=y_i] = \frac{1}{\mathbb{P}(Y=y_i)}\int_{B_i} X d\mathbb{P} &&(\forall\omega\in B_i) 
+\end{align*}\]
+
+Así 
+\[\int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i} = \int_AXd\mathbb{P} \quad (\forall A \in \mathscr{A})\]
+\[\therefore \mathbb{E}[X|Y] = \sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\]

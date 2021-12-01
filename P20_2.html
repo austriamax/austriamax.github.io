@@ -11,7 +11,7 @@
 
 
 
-<title>Tarea 8. Pregunta 14.4.</title>
+<title>Tarea 16. Pregunta 20.2.</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -265,137 +265,53 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tarea 8. Pregunta 14.4.</h1>
+<h1 class="title toc-ignore">Tarea 16. Pregunta 20.2.</h1>
 
 </div>
 
 
-<div id="obs.-se-trata-de-elegir-a_n-b_n-y-beta_n-adecuadamente.-use-el-ejercicio-anterior-para-dar-ejemplos-de-una-sucesión-x_n_n-in-mathbbn-de-v.a.i.-bernoullia_n-tal-que" class="section level3">
-<h3>Obs. se trata de elegir <span class="math inline">\(a_n\)</span>, <span class="math inline">\(b_n\)</span> y <span class="math inline">\(\beta_n\)</span> adecuadamente. Use el ejercicio anterior para dar ejemplos de una sucesión <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> de v.a.i. <span class="math inline">\(Bernoulli(a_n)\)</span> tal que:</h3>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(A.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } a_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = 1) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
-</div>
-<div id="therefore-x_n-oversetc.s.to-0" class="section level2">
-<h2><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></h2>
-</div>
-<div id="a.2-x_n-oversetmathbbpto-x." class="section level2">
-<h2>(A.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span>.</h2>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[a_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\lim_n \mathbb{P}(X_n&gt;0)  =0.\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(A.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Cualquiera de los dos casos anteriores funciona como ejemplo. Ya que</p>
-<p><span class="math display">\[\mathbb{E}[|X_n-0|^p] = \mathbb{E}[X_n] = p\]</span></p>
-<p><span class="math display">\[\therefore \lim_{n \to \infty} \mathbb{E}[|X_n-0|^p]  = 0 \]</span> <span class="math display">\[\therefore X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">### Misma pregunta para <span class="math inline">\(X_n \approx Poisson(b_n)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Antes de dar los ejemplos notemos que:</p>
-<p><span class="math display">\[\mathbb{P}(X_n = 0) = e^{-\lambda}\frac{\lambda^0}{0!} \implies \mathbb{P}(X_n &gt; 0) = 1-e^{-\lambda}\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } b_n = -log(1-\frac{1}{2^n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\begin{align*}
-\sum_n \mathbb{P}(X_n&gt;0) &amp;= \sum_n 1-e^{-[-\log(1-\frac{1}{2^n})]}\\
-&amp;= \sum_n\frac{1}{2^n}\\\\
-&amp;= 1&lt;\infty
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[b_n = -log(1-\frac{1}{n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n (1 - e^{-[-log(1-\frac{1}{n})]}) = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso propondremos <span class="math display">\[_n = \min\{\frac{1}{np {p \choose i}}:i = 0, \dots, p\}\]</span></p>
-<p>Donde <span class="math inline">\(p \choose i\)</span> son los números de Stirling del segundo tipo (no las combinaciones de <span class="math inline">\(p\)</span> en <span class="math inline">\(i\)</span>). <strong><a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full">Referencia</a></strong> <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full" class="uri">https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full</a></p>
+<div id="sean-mu_n-mu-medidas-de-probabilidad-en-mathbbrmathscrbmathbbr-y-f_nf-sus-funciones-de-distribución-correspondientes-n-1-2-dots.-sea-mathscrc_f-x-in-mathbbr-f-mbox-es-continua-en-x..-pruebe-que-mu_n-oversetmathscrlto-mu-iff-lim_n-to-infty-f_nx-fx." class="section level3">
+<h3>Sean <span class="math inline">\(\mu_n, \mu\)</span> medidas de probabilidad en <span class="math inline">\((\mathbb{R},\mathscr{B}(\mathbb{R}))\)</span>, y <span class="math inline">\(F_n,F\)</span> sus funciones de distribución correspondientes, <span class="math inline">\(n = 1, 2, \dots\)</span>. Sea <span class="math inline">\(\mathscr{C}_F = \{x \in \mathbb{R}: F \mbox{ es continua en }x.\}\)</span>. Pruebe que <span class="math display">\[\mu_n \overset{\mathscr{L}}{\to} \mu \iff \lim_{n \to \infty} F_n(x) = F(x).\]</span></h3>
+<p>Demostración:</p>
+<hr />
+<p>(<span class="math inline">\(\implies\)</span>) Supongase que <span class="math inline">\(\mu_n \overset{\mathscr{L}}{\to} \mu\)</span> PD. <span class="math inline">\(\lim_{n \to \infty} F_n(x) = F(x)\)</span>.</p>
+<p>Sea <span class="math inline">\(\mathscr{C}_F = \{x\in \mathbb{R}: \mu(x) = 0\}\quad (\mbox{una definición equivalente})\)</span></p>
+<p>Sea <span class="math inline">\(x \in \mathscr{C}_F\)</span>.</p>
+<p>Así <span class="math inline">\((-\infty,x]\)</span> es <span class="math inline">\(\mu-\)</span>contunuo (<span class="math inline">\(\mu(\mbox{Cl }A - \mbox{ Int }A) = 0\)</span>).</p>
+<p>Y por el teorema de Portmanteau tenemos que:</p>
 <p><span class="math display">\[\begin{align*}
-\mathbb{E}[|X_n-0|^p] &amp;= \mathbb{E}[X_n^p]\\\\
-&amp;= \sum_{i = 0}^p  b_i^i{p \choose i} &amp;&amp;(\mbox{Por la referencia})\\\\
-&amp;\leq \sum_{i = 0}^p \frac{1}{np}&amp;&amp;(\mbox{Por la elección de }a_n)\\\\
-&amp;\leq \frac{1}{n}
+\lim_{n \to \infty} F_n(x) &amp;= \lim_{n \to \infty} \mu_n((-\infty,x])\\
+&amp;=  \mu((-\infty,x])\\
+&amp;= F(x)\\\\
+\therefore \mu_n \overset{\mathscr{L}}{\to} \mu \implies &amp;\lim_{n \to \infty} F_n(x) = F(x) \quad \forall x \in \mathscr{C}_F.
 \end{align*}\]</span></p>
-<p>Por lo tanto</p>
-<p><span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td>### El caso en que <span class="math inline">\(\mathbb{P}(X_n = n^2) = \beta_n\)</span> y <span class="math inline">\(\mathbb{P}(X_n = 0) = 1 - \beta_n\)</span> con <span class="math inline">\(\beta_n \in (0,1)\)</span> y <span class="math inline">\(a_n \in (0,1)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } c_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = n^2) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n \mathbb{P}(X_n = n^2) = \lim_n \frac{1}{n} = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n^{2p}2^{n}} \quad n \in \mathbb{N}\]</span></p>
+<hr />
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Supongase que <span class="math inline">\(\lim_{n \to \infty} F_n(x) = F(x)\)</span>. PD. <span class="math inline">\(\mu_n \overset{\mathscr{L}}{\to} \mu\)</span>.</p>
+<p>Sabemos que <span class="math inline">\(\mathscr{C}_F^c\)</span> es a lo más numerable. Sea <span class="math inline">\(\mathbb{I}\)</span> como a continuación: <span class="math display">\[\mathbb{I} = \{(a,b): a&lt;b, \quad a,b \in \mathscr{C}\}\]</span></p>
+<p>Es fácil ver que:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\mathbb{I}\)</span> es un <span class="math inline">\(\pi-\)</span>sistema.</p></li>
+<li><p>Cada conjunto abierto <span class="math inline">\(I\in \mathbb{I}\)</span> puede verse como una union numerable de elementos de <span class="math inline">\(\mathbb{I}\)</span>.</p></li>
+</ol>
+<p>Para <span class="math inline">\(I_1,I_2 \in \mathbb{I}\)</span> tenemos que <span class="math inline">\(I_1 \cap I_2 \in \mathbb{I}\)</span>. Entonces:</p>
 <p><span class="math display">\[\begin{align*}
-\lim_{n \to \infty}\mathbb{E}[|X_n-0|^p] &amp;= \lim_{n \to \infty} \mathbb{E}[X_n^p]\\\\
-&amp;= \lim_{n \to \infty}\frac{n^{2p}}{n^{2p}2^{n}}\\\\
-&amp;= \lim_{n \to \infty}\frac{1}{2^{n}}\\\\
-&amp;= 0
+\mu(I_1\cup I_2) &amp;= \mu(I_1) + \mu(I_2) - \mu(I_1 \cap I_2)\\
+&amp;= \lim_{n \to \infty} \mu_n(I_1) + \lim_{n \to \infty} \mu_n(I_2) - \lim_{n \to \infty} \mu_n(I_1 \cap I_2)\\
+&amp;= \lim_{n\to \infty} [\mu_n(I_1) + \mu_n(I_2) - \mu_n(I_1 \cap I_2)]\\
+&amp;=\lim_{n \to \infty} \mu_n(I_1 \cup I_2).
 \end{align*}\]</span></p>
-<p>Así se concluye que <span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
+<p>Por lo tanto podemos asumir (sin perdida de generalidad) que <span class="math inline">\(\mathbb{I}\)</span> es cerrado bajo uniones finitas.</p>
+<p>Para un conjunto abierto <span class="math inline">\(G\)</span> que se pueda ver como la unión de una familia numerable.</p>
+<p><span class="math display">\[G = \cup_{k \in \mathbb{N}} I_k \quad I_k \in \mathbb{I}\]</span></p>
+<p>Por la continuidad de la medida</p>
+<p><span class="math display">\[\forall \epsilon&gt;0 \quad k \in \mathbb{N} \quad \mbox{tal que} \quad \mu(G) \leq \mu(\cup_{k=1}^K I_k) +  \epsilon\]</span></p>
+<p>Como <span class="math inline">\(\cup_{k=1}^K I_k \in \mathbb{I}\)</span>, así tenemos</p>
+<p><span class="math display">\[\mu(G) - \epsilon \leq \mu(\cup_{k=1}^K I_k) = \lim_{n \to \infty} \mu_n(\cup_{k=1}^K I_k) \leq \lim \inf \mu_n(G).\]</span></p>
+<p><span class="math display">\[\therefore \mu(G) \leq \lim \inf_n \mu_n(G).\]</span> <span class="math display">\[\therefore \mu_n  \overset{\mathscr{L}}{\to} \mu\]</span></p>
+<p>Lo que es suficiente para mostrar que <span class="math inline">\(\mu_n(I) \to \mu(I) \quad \forall a,b \in \mathbb{I}\)</span>. Ya que <span class="math inline">\(\mu((a,b)) = F(b-) - F(a)\)</span> es suficiente para mostrar <span class="math display">\[F_n(x-) \to F(x) \quad \forall x\in \mathscr{C}_F\]</span></p>
+<p>Como <span class="math inline">\(F_n(x-) \leq F_n(x)\)</span> tenemos que <span class="math display">\[\lim \sup_n F_n(-x) \leq \lim F_n(x) = F(x)\]</span>. Para probar la otra desigualdad tomamos <span class="math inline">\(\epsilon &gt;0\)</span> y por la continuidad de <span class="math inline">\(F\)</span> en <span class="math inline">\(x\)</span>, encontramos <span class="math inline">\(\delta&gt;0\)</span> tal que <span class="math inline">\(x- \delta \in \mathscr{C}\)</span> y <span class="math inline">\(F(x-\delta) &lt; F(x) - 2\delta\)</span>, para <span class="math inline">\(n \geq n_0\)</span>.</p>
+<p><span class="math display">\[\therefore \lim \inf_n F_n(x-) \leq F(x) - 2\epsilon.\]</span></p>
+<p><span class="math display">\[\therefore \lim_{n \to \infty} F_n(x) = F(x) \implies \mu_n \overset{\mathscr{L}}{\to} \mu.\]</span></p>
 </div>
 
 

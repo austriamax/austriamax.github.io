@@ -1,0 +1,19 @@
+---
+title: "Tarea 16. Pregunta 20.6."
+---
+
+### Sea $X,Y$ dos v.a. independientes ambas con densidada $N(\mu, \sigma^2)$. 
+
+
+-----------------------------------------------
+
+(A) Calcule $\mathbb{E}[(X+Y)^2]$.
+
+-----------------------------------------------
+
+(B) Calcule $\mathbb{E}[(X+Y)^2|X]$.
+
+-----------------------------------------------
+
+(C) Calcule $\mathbb{E}[\exp(X+Y)|X]$.
+

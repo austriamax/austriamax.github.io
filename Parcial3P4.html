@@ -11,7 +11,7 @@
 
 
 
-<title>Tarea 8. Pregunta 14.4.</title>
+<title>Parcial 3. Pregunta 4.</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -265,137 +265,70 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tarea 8. Pregunta 14.4.</h1>
+<h1 class="title toc-ignore">Parcial 3. Pregunta 4.</h1>
 
 </div>
 
 
-<div id="obs.-se-trata-de-elegir-a_n-b_n-y-beta_n-adecuadamente.-use-el-ejercicio-anterior-para-dar-ejemplos-de-una-sucesión-x_n_n-in-mathbbn-de-v.a.i.-bernoullia_n-tal-que" class="section level3">
-<h3>Obs. se trata de elegir <span class="math inline">\(a_n\)</span>, <span class="math inline">\(b_n\)</span> y <span class="math inline">\(\beta_n\)</span> adecuadamente. Use el ejercicio anterior para dar ejemplos de una sucesión <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> de v.a.i. <span class="math inline">\(Bernoulli(a_n)\)</span> tal que:</h3>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(A.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } a_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = 1) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
+<div id="austria-max" class="section level3">
+<h3>Austria Max</h3>
 </div>
-<div id="therefore-x_n-oversetc.s.to-0" class="section level2">
-<h2><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></h2>
-</div>
-<div id="a.2-x_n-oversetmathbbpto-x." class="section level2">
-<h2>(A.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span>.</h2>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[a_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\lim_n \mathbb{P}(X_n&gt;0)  =0.\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(A.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Cualquiera de los dos casos anteriores funciona como ejemplo. Ya que</p>
-<p><span class="math display">\[\mathbb{E}[|X_n-0|^p] = \mathbb{E}[X_n] = p\]</span></p>
-<p><span class="math display">\[\therefore \lim_{n \to \infty} \mathbb{E}[|X_n-0|^p]  = 0 \]</span> <span class="math display">\[\therefore X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">### Misma pregunta para <span class="math inline">\(X_n \approx Poisson(b_n)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Antes de dar los ejemplos notemos que:</p>
-<p><span class="math display">\[\mathbb{P}(X_n = 0) = e^{-\lambda}\frac{\lambda^0}{0!} \implies \mathbb{P}(X_n &gt; 0) = 1-e^{-\lambda}\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } b_n = -log(1-\frac{1}{2^n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\begin{align*}
-\sum_n \mathbb{P}(X_n&gt;0) &amp;= \sum_n 1-e^{-[-\log(1-\frac{1}{2^n})]}\\
-&amp;= \sum_n\frac{1}{2^n}\\\\
-&amp;= 1&lt;\infty
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[b_n = -log(1-\frac{1}{n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n (1 - e^{-[-log(1-\frac{1}{n})]}) = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso propondremos <span class="math display">\[_n = \min\{\frac{1}{np {p \choose i}}:i = 0, \dots, p\}\]</span></p>
-<p>Donde <span class="math inline">\(p \choose i\)</span> son los números de Stirling del segundo tipo (no las combinaciones de <span class="math inline">\(p\)</span> en <span class="math inline">\(i\)</span>). <strong><a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full">Referencia</a></strong> <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full" class="uri">https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full</a></p>
+<div id="si-sum_n-mathbbvarx_n-infty-entonces-x_n-oversetc.s.to-x." class="section level3">
+<h3>Si <span class="math inline">\(\sum_{n} \mathbb{Var}(X_n) &lt; \infty\)</span> entonces <span class="math inline">\(X_n \overset{c.s.}{\to} X\)</span>.</h3>
+<p>Demostración:</p>
+<p>Antes de ver la demostración voy a decir que el enunciado es cierto si <span class="math inline">\(\mathbb{E}[X_n]\)</span> es constante, en otro caso voy a dar un constrajemplo.</p>
+<p>Caso 1: <span class="math inline">\(\mathbb{E}[X_n]\)</span> es constante.</p>
+<p>Sabemos que</p>
 <p><span class="math display">\[\begin{align*}
-\mathbb{E}[|X_n-0|^p] &amp;= \mathbb{E}[X_n^p]\\\\
-&amp;= \sum_{i = 0}^p  b_i^i{p \choose i} &amp;&amp;(\mbox{Por la referencia})\\\\
-&amp;\leq \sum_{i = 0}^p \frac{1}{np}&amp;&amp;(\mbox{Por la elección de }a_n)\\\\
-&amp;\leq \frac{1}{n}
+\sum_{n} \mathbb{Var}(X_n) &lt; \infty &amp;\implies \mathbb{Var}(X_n)&lt;\infty \quad \forall n\in \mathbb{N}\\\\
+&amp;\implies \mathbb{E}(X_n)&lt;\infty \quad \forall n\in \mathbb{N}
 \end{align*}\]</span></p>
-<p>Por lo tanto</p>
-<p><span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td>### El caso en que <span class="math inline">\(\mathbb{P}(X_n = n^2) = \beta_n\)</span> y <span class="math inline">\(\mathbb{P}(X_n = 0) = 1 - \beta_n\)</span> con <span class="math inline">\(\beta_n \in (0,1)\)</span> y <span class="math inline">\(a_n \in (0,1)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } c_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = n^2) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n \mathbb{P}(X_n = n^2) = \lim_n \frac{1}{n} = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n^{2p}2^{n}} \quad n \in \mathbb{N}\]</span></p>
+<p>Construyendo <span class="math display">\[Y_n = X_n - \mathbb{E}(X_n) \quad \mbox{para }n\geq N_0\]</span> Obtenemos:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math display">\[\begin{align*}
+\mathbb{E}(Y_n) &amp;= \mathbb{E}[X_n - \mathbb{E}(X_n)]\\\\ 
+&amp;= \mathbb{E}(X_n) - \mathbb{E}(X_n)\\\\
+&amp;= 0\\\\
+&amp;\therefore \mathbb{E}(Y_n) = 0.
+\end{align*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{align*}
+\mathbb{Var}(Y_n) &amp;= \mathbb{Var}[X_n - \mathbb{E}(X_n)]\\\\ 
+&amp;= \mathbb{Var}(X_n)\\\\
+\end{align*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{align*}
+\mathbb{Var}(Y_n) &amp;= \mathbb{E}(Y_n^2) - \mathbb{E}(Y_n)^2\\\\ 
+&amp;= \mathbb{E}(Y_n^2)\\\\
+&amp;\therefore \sum_n\mathbb{E}(Y_n^2) &lt; \infty.
+\end{align*}\]</span></p></li>
+</ol>
+<p>Así, tenemos una variable aletaria no negativa <span class="math inline">\(Y_n^2\)</span> cuya serie de medias converge <span class="math inline">\(\sum_n \mathbb{E}(Y_n^2) &lt; \infty\)</span>. Por lo que sabemos que:</p>
+<p><span class="math display">\[Y_n^2 \overset{c.s.}{\to} 0\]</span></p>
+<p>De lo que se desprende que:</p>
 <p><span class="math display">\[\begin{align*}
-\lim_{n \to \infty}\mathbb{E}[|X_n-0|^p] &amp;= \lim_{n \to \infty} \mathbb{E}[X_n^p]\\\\
-&amp;= \lim_{n \to \infty}\frac{n^{2p}}{n^{2p}2^{n}}\\\\
-&amp;= \lim_{n \to \infty}\frac{1}{2^{n}}\\\\
-&amp;= 0
+Y_n^2 \overset{c.s.}{\to} 0 &amp;\implies Y_n \overset{c.s.}{\to} 0\\\\
+&amp;\implies X_n \overset{c.s.}{\to} \mathbb{E}[X_n]\\\\
+&amp;\therefore X_n \overset{c.s.}{\to} c \quad \mbox{con} \quad c = \mathbb{E}(X_n).
 \end{align*}\]</span></p>
-<p>Así se concluye que <span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
+<p>Caso 2: <span class="math inline">\(\mathbb{E}[X_n]\)</span> divergente.</p>
+<p>En este caso daremos un constrajemplo.</p>
+<p><span class="math display">\[   
+X_n = 
+     \begin{cases}
+       A_n \sim Unif(-\frac{1}{2^n},\frac{1}{2^n}) &amp;\quad\text{si }n \text{ es par}\\
+       1 + A_n &amp;\quad\text{en otro caso.} \\ 
+     \end{cases}
+\]</span></p>
+<p>Entonces (1) <span class="math display">\[\begin{align*}
+\sum_n\mathbb{Var}(X_n) &amp;= \sum_n \frac{[(\mathbb{E}[X_n]+\frac{1}{2^n}) - (\mathbb{E}[X_n]-\frac{1}{2^n})]^2}{12}\\\\
+&amp;= \sum_n \frac{(\frac{1}{2^{n-1}})^2}{12}&lt;\infty.
+\end{align*}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math display">\[X_n \overset{c.s.}{\to}  
+  \begin{cases}
+      0  &amp;\quad\text{si }n \text{ es par}\\
+     1 &amp;\quad\text{en otro caso.} \\ 
+\end{cases}\]</span></li>
+</ol>
 </div>
 
 

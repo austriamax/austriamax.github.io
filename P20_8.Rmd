@@ -1,0 +1,21 @@
+---
+title: "Tarea 16. Pregunta 20.8."
+---
+
+### Sean $X,Y \in \mathscr{L}^2(\Omega, \mathscr{A}, \mathbb{P})$, $\mathscr{g}$ es una sub-$\sigma$-álgebra de $\mathscr{A}$.
+
+
+-----------------------------------------------------------
+
+(A) Si $\mathbb{E}(Y|\mathscr{g}) = X$ y $\mathbb{E}(X^2) = \mathbb{E}(Y^2)$ entonces $X \overset{\mathscr{c.s.}}{=} Y$.
+
+-----------------------------------------------------------
+
+(B) Si $\mathscr{H}$ es sub-$\sigma$-álgebra de $\mathscr{g}$ entonces:
+
+\[\mathbb{E}([X-\mathbb{E}(X|\mathscr{g})]^2) + \mathbb{E}([\mathbb{E}(X|\mathscr{g})-\mathbb{E}(X|\mathscr{H})]^2) = \mathbb{E}([X - \mathbb{E}(X|\mathscr{H})]^2)\]
+
+Esto implica \[||X - \mathbb{E}(X|\mathscr{g})||_2 \leq ||X - \mathbb{E}(X|\mathscr{H})||_2\] i.e. mientras mas grande es el sub-espacio $(\mathscr{L}^2(\Omega, \mathscr{g}, \mathbb{P}) \supset \mathscr{L}^2(\Omega, \mathscr{H}, \mathbb{P}))$ más cerca está $\mathbb{E}(X|\cdot)$ de $X$ en $\mathscr{L}^2(\Omega, \mathscr{A}, \mathbb{P})$.
+
+
+

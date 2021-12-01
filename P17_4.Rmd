@@ -1,0 +1,6 @@
+---
+title: "Tarea 13. Pregunta 17.4."
+---
+
+### Mismo espacio de probabilidad que en 17.3. Si $X(\omega) = \omega, \quad \omega \in [0,1]$ y $\mathscr{F}_n = \sigma(Y_n)$. Calcule $\mathbb{E}[X|Y_n]$ para $n = 1, 2, 3, 4$. \[Y_n = \Sigma_{i = 1}^{2^n} a_i 1_{[\frac{i-1}{2^n},\frac{i}{2^n}]}\]. Encuentre alguna relación.
+

@@ -1,0 +1,5 @@
+---
+title: "Tarea 15. Pregunta 19.2."
+---
+
+### An important concept from the basic courses is for discrete random vectors $(X,Y)$ with values in a discrete space $S$ having a joint mass function $f:S^2 \to [0,1]$. Then the definition of the conditional probability of $(X = x)$ given $(Y = y)$ is defined as $\mathbb{P}(X = x|   Y = y) = \frac{\mathbb{P}(X = x, Y = y)}{\mathbb{P}(Y = y)} = \frac{f_{X,Y}(x,y)}{f_Y(y)}$ where $f_Y$ is the marginal of $Y$. How can you relate this concept to our definition of $\mathbb{P}(X =x |Y) = \mathbb{E}[1_{(X=x)}|Y]$ and $\mathbb{P}(X = x | Y = y) = \mathbb{E}[1_{(X=x)}|Y = y].$

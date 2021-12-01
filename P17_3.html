@@ -11,7 +11,7 @@
 
 
 
-<title>Tarea 8. Pregunta 14.4.</title>
+<title>Tarea 13. Pregunta 17.3.</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -265,137 +265,40 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tarea 8. Pregunta 14.4.</h1>
+<h1 class="title toc-ignore">Tarea 13. Pregunta 17.3.</h1>
 
 </div>
 
 
-<div id="obs.-se-trata-de-elegir-a_n-b_n-y-beta_n-adecuadamente.-use-el-ejercicio-anterior-para-dar-ejemplos-de-una-sucesión-x_n_n-in-mathbbn-de-v.a.i.-bernoullia_n-tal-que" class="section level3">
-<h3>Obs. se trata de elegir <span class="math inline">\(a_n\)</span>, <span class="math inline">\(b_n\)</span> y <span class="math inline">\(\beta_n\)</span> adecuadamente. Use el ejercicio anterior para dar ejemplos de una sucesión <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> de v.a.i. <span class="math inline">\(Bernoulli(a_n)\)</span> tal que:</h3>
+<div id="sea-01mathscrb01-lambda-con-lambda-la-medida-de-lebesgue-un-espacio-de-probabilidad-y-h-mathbbr-to--11-dada-por-ht-begincases-1-quadtextsi-t---lfloor-trfloor-in-0frac12.--1-quadtextsi-t---lfloor-trfloor-in-frac121.-endcases-para-n-geq-1-se-define-r_nx-h2n-1x-quad-xin01-con-r_n1-1." class="section level3">
+<h3>Sea <span class="math inline">\(([0,1],\mathscr{B}([0,1]), \lambda)\)</span> con <span class="math inline">\(\lambda =\)</span> la medida de Lebesgue un espacio de probabilidad y <span class="math inline">\(H: \mathbb{R} \to \{-1,1\}\)</span> dada por <span class="math display">\[   
+H(t) = 
+     \begin{cases}
+       1 &amp;\quad\text{Si } t - \lfloor t\rfloor \in [0,\frac{1}{2}).\\
+       -1 &amp;\quad\text{Si } t - \lfloor t\rfloor  \in [\frac{1}{2},1).\\ 
+     \end{cases}
+\]</span> Para <span class="math inline">\(n \geq 1\)</span> se define <span class="math inline">\(R_n(x) = H(2^{n-1}x) \quad x\in[0,1]\)</span>, con <span class="math inline">\(R_n(1) = 1\)</span>.</h3>
 <table>
 <tbody>
 <tr class="odd">
-<td align="left">(A.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } a_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = 1) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
-</div>
-<div id="therefore-x_n-oversetc.s.to-0" class="section level2">
-<h2><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></h2>
-</div>
-<div id="a.2-x_n-oversetmathbbpto-x." class="section level2">
-<h2>(A.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} X\)</span>.</h2>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[a_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\lim_n \mathbb{P}(X_n&gt;0)  =0.\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(A.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Cualquiera de los dos casos anteriores funciona como ejemplo. Ya que</p>
-<p><span class="math display">\[\mathbb{E}[|X_n-0|^p] = \mathbb{E}[X_n] = p\]</span></p>
-<p><span class="math display">\[\therefore \lim_{n \to \infty} \mathbb{E}[|X_n-0|^p]  = 0 \]</span> <span class="math display">\[\therefore X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">### Misma pregunta para <span class="math inline">\(X_n \approx Poisson(b_n)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Antes de dar los ejemplos notemos que:</p>
-<p><span class="math display">\[\mathbb{P}(X_n = 0) = e^{-\lambda}\frac{\lambda^0}{0!} \implies \mathbb{P}(X_n &gt; 0) = 1-e^{-\lambda}\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[\mbox{Tomemos } b_n = -log(1-\frac{1}{2^n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\begin{align*}
-\sum_n \mathbb{P}(X_n&gt;0) &amp;= \sum_n 1-e^{-[-\log(1-\frac{1}{2^n})]}\\
-&amp;= \sum_n\frac{1}{2^n}\\\\
-&amp;= 1&lt;\infty
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso basta con que <span class="math inline">\(a_n \to 0\)</span>, tomemos: <span class="math display">\[b_n = -log(1-\frac{1}{n}) \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n (1 - e^{-[-log(1-\frac{1}{n})]}) = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(B.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>En este caso propondremos <span class="math display">\[_n = \min\{\frac{1}{np {p \choose i}}:i = 0, \dots, p\}\]</span></p>
-<p>Donde <span class="math inline">\(p \choose i\)</span> son los números de Stirling del segundo tipo (no las combinaciones de <span class="math inline">\(p\)</span> en <span class="math inline">\(i\)</span>). <strong><a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full">Referencia</a></strong> <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full" class="uri">https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-8/issue-2/Moment-Recurrence-Relations-for-Binomial-Poisson-and-Hypergeometric-Frequency-Distributions/10.1214/aoms/1177732430.full</a></p>
-<p><span class="math display">\[\begin{align*}
-\mathbb{E}[|X_n-0|^p] &amp;= \mathbb{E}[X_n^p]\\\\
-&amp;= \sum_{i = 0}^p  b_i^i{p \choose i} &amp;&amp;(\mbox{Por la referencia})\\\\
-&amp;\leq \sum_{i = 0}^p \frac{1}{np}&amp;&amp;(\mbox{Por la elección de }a_n)\\\\
-&amp;\leq \frac{1}{n}
-\end{align*}\]</span></p>
-<p>Por lo tanto</p>
-<p><span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td>### El caso en que <span class="math inline">\(\mathbb{P}(X_n = n^2) = \beta_n\)</span> y <span class="math inline">\(\mathbb{P}(X_n = 0) = 1 - \beta_n\)</span> con <span class="math inline">\(\beta_n \in (0,1)\)</span> y <span class="math inline">\(a_n \in (0,1)\)</span>.</td>
+<td align="left">(1) Pruebe que <span class="math inline">\(R_n\)</span> es v.a. y calculé su media y su varianza.</td>
 </tr>
 </tbody>
 </table>
 <table>
 <tbody>
 <tr class="odd">
-<td align="left">(C.1) <span class="math inline">\(X_n \overset{c.s.}{\to} 0\)</span>.</td>
+<td>(2) Si <span class="math inline">\(Y_n = \sigma(R_1,\dots,R_n)\)</span>, pruebe que <span class="math inline">\(\mathbb{E}[R_{n+1}1_A] = 0\)</span> si <span class="math inline">\(A \in \mathscr{F}_n\)</span>.</td>
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[\mbox{Tomemos } c_n = \frac{1}{2^n} \quad n \in \mathbb{N}\]</span></p>
-<p>Entonces <span class="math display">\[\sum_nP(X_n&gt;0) = \sum_nP(X_n = n^2) = \sum_n\frac{1}{2^n} = 1&lt;\infty\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{c.s.}{\to} 0\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
-<td align="left">(C.2) <span class="math inline">\(X_n \overset{\mathbb{P}}{\to} 0\)</span>.</td>
+<td>(3) Encuentre una versión de <span class="math inline">\(\mathbb{E}[\mathscr{R}_{n+1}|\mathscr{F}_n]\)</span>.</td>
 </tr>
 </tbody>
 </table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n} \quad n \in \mathbb{N}\]</span></p>
-<p>Por lo tanto <span class="math display">\[\begin{align*}
-\lim_n \mathbb{P}(X_n&gt;0)  &amp;= \lim_n \mathbb{P}(X_n = n^2) = \lim_n \frac{1}{n} = 0.
-\end{align*}\]</span></p>
-<p><span class="math display">\[\therefore X_n \overset{\mathbb{P}}{\to} 0\]</span></p>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">(C.3) <span class="math inline">\(X_n \overset{L_p}{\to} 0\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<p>Tomemos: <span class="math display">\[c_n = \frac{1}{n^{2p}2^{n}} \quad n \in \mathbb{N}\]</span></p>
-<p><span class="math display">\[\begin{align*}
-\lim_{n \to \infty}\mathbb{E}[|X_n-0|^p] &amp;= \lim_{n \to \infty} \mathbb{E}[X_n^p]\\\\
-&amp;= \lim_{n \to \infty}\frac{n^{2p}}{n^{2p}2^{n}}\\\\
-&amp;= \lim_{n \to \infty}\frac{1}{2^{n}}\\\\
-&amp;= 0
-\end{align*}\]</span></p>
-<p>Así se concluye que <span class="math display">\[X_n \overset{L_p}{\to} 0\]</span></p>
 </div>
 
 

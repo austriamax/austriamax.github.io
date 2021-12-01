@@ -1,0 +1,8 @@
+---
+title: "Tarea 15. Pregunta 19.1."
+---
+
+### Let $B \in \mathscr{F}$ be such that $\mathbb{P}(B) > 0$. Define $Q^B: \mathscr{F} \to [0,1]$ as $Q^B(A) := \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}, \quad A \in \mathscr{F}$.
+
+Show that $Q^B$ is a probability measure in $\mathscr{F}$ usually denoted by $\mathbb{P}(\cdot|B)$ and it is called the conditional probability given $B \in \mathscr{F}$ (this is the elementary form of conditional expectation studied in the basic probability courses).
+

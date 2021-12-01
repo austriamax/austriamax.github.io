@@ -1,0 +1,22 @@
+---
+title: "Tarea 16. Pregunta 20.5."
+---
+
+### Sea $\{\xi_n\}_{n \in \mathbb{N}}$ una sucesión de v.a. independientes y con la misma distribución $\xi_n \in \mathscr{L}^{2}(\Omega, \mathscr{A}, \mathbb{P})$ y $\mu = \mathbb{E}(\xi_n)$, $\sigma^2 = var(\xi_n)$; $S_n = \sum_{i=1}^n \xi_i$.
+
+
+-----------------------------------------------------------
+
+(A) El TCL nos dice que $\frac{S_n-n\mu}{\sigma\sqrt{n}} \overset{\mathscr{L}}{\to} N(0,1)$. Pruebe que $(\frac{S_n}{\sigma\sqrt{n}})_{n \in \mathbb{N}}$ no converge en probabilidad (ni $c.s.$ ni en $\mathscr{L}_1$).
+
+
+-----------------------------------------------------------
+
+(B) Sea $\mathscr{A}_n = \sigma(\xi_1,\xi_2, \dots, \xi_n)$. Calcule $\mathbb{E}(S_{n+m}|\mathscr{A}_n),$ $m = 1, 2, \dots$ y $n = 1, 2, \dots$. En este caso $\mathscr{A}_n \subset \mathscr{A}_{n+1} \subset \mathscr{A}$, $n = 1, 2, \dots$.
+
+
+-----------------------------------------------------------
+
+(C) Hacer la parte (B), si se supone además que $\xi_n \sim Bernoulli(p)$, $p \in (0,1)$.
+
+

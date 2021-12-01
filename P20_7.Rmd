@@ -1,0 +1,9 @@
+---
+title: "Tarea 16. Pregunta 20.7."
+---
+
+### Si $X$ es una v.a. tal que $X > 0$ y $\mathbb{E}(|X|) < \infty$. Pruebe \[(a) \mathbb{E}(X) = \int_0^\infty \mathbb{P}(X \geq x)dx \quad (b) \int_{(x>a) Xd\mathbb{P}  = a \mathbb{P}(X>a) + \int_a^\infty \mathbb{P}(X \geq x)dx }\] donde $dx$ es la medida de Lebesgue en $(\mathbb{R}, \mathscr{B}(\mathbb{R}))$.
+
+
+Demostración:
+

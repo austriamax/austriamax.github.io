@@ -1,0 +1,77 @@
+---
+title: "Tarea 16. Pregunta 20.2."
+---
+
+### Sean $\mu_n, \mu$ medidas de probabilidad en $(\mathbb{R},\mathscr{B}(\mathbb{R}))$, y $F_n,F$ sus funciones de distribución correspondientes, $n = 1, 2, \dots$. Sea $\mathscr{C}_F = \{x \in \mathbb{R}: F \mbox{ es continua en }x.\}$. Pruebe que \[\mu_n \overset{\mathscr{L}}{\to} \mu \iff \lim_{n \to \infty} F_n(x) = F(x).\]
+
+Demostración:
+
+---
+
+($\implies$) Supongase que $\mu_n \overset{\mathscr{L}}{\to} \mu$ PD. $\lim_{n \to \infty} F_n(x) = F(x)$.
+
+Sea $\mathscr{C}_F = \{x\in \mathbb{R}: \mu(x) = 0\}\quad (\mbox{una definición equivalente})$
+
+Sea $x \in \mathscr{C}_F$.
+
+Así $(-\infty,x]$ es $\mu-$contunuo ($\mu(\mbox{Cl }A - \mbox{ Int }A) = 0$).
+
+
+Y por el teorema de Portmanteau tenemos que:
+
+\[\begin{align*}
+\lim_{n \to \infty} F_n(x) &= \lim_{n \to \infty} \mu_n((-\infty,x])\\
+&=  \mu((-\infty,x])\\
+&= F(x)\\\\
+\therefore \mu_n \overset{\mathscr{L}}{\to} \mu \implies &\lim_{n \to \infty} F_n(x) = F(x) \quad \forall x \in \mathscr{C}_F.
+\end{align*}\]
+
+---
+
+($\Leftarrow$) Supongase que $\lim_{n \to \infty} F_n(x) = F(x)$. PD. $\mu_n \overset{\mathscr{L}}{\to} \mu$.
+
+Sabemos que $\mathscr{C}_F^c$ es a lo más numerable. Sea $\mathbb{I}$ como a continuación:
+\[\mathbb{I} = \{(a,b): a<b, \quad a,b \in \mathscr{C}\}\]
+
+Es fácil ver que:
+
+
+1. $\mathbb{I}$ es un $\pi-$sistema.
+
+2. Cada conjunto abierto $I\in \mathbb{I}$ puede verse como una union numerable de elementos de $\mathbb{I}$.
+
+Para $I_1,I_2 \in \mathbb{I}$ tenemos que $I_1 \cap I_2 \in \mathbb{I}$. Entonces:
+
+\[\begin{align*}
+\mu(I_1\cup I_2) &= \mu(I_1) + \mu(I_2) - \mu(I_1 \cap I_2)\\
+&= \lim_{n \to \infty} \mu_n(I_1) + \lim_{n \to \infty} \mu_n(I_2) - \lim_{n \to \infty} \mu_n(I_1 \cap I_2)\\
+&= \lim_{n\to \infty} [\mu_n(I_1) + \mu_n(I_2) - \mu_n(I_1 \cap I_2)]\\
+&=\lim_{n \to \infty} \mu_n(I_1 \cup I_2).
+\end{align*}\]
+
+Por lo tanto podemos asumir (sin perdida de generalidad) que $\mathbb{I}$ es cerrado bajo uniones finitas.
+
+
+Para un conjunto abierto $G$ que se pueda ver como la unión de una familia numerable.
+
+\[G = \cup_{k \in \mathbb{N}} I_k \quad I_k \in \mathbb{I}\]
+
+Por la continuidad de la medida
+
+\[\forall \epsilon>0 \quad k \in \mathbb{N} \quad \mbox{tal que} \quad \mu(G) \leq \mu(\cup_{k=1}^K I_k) +  \epsilon\]
+
+Como $\cup_{k=1}^K I_k \in \mathbb{I}$, así tenemos 
+
+\[\mu(G) - \epsilon \leq \mu(\cup_{k=1}^K I_k) = \lim_{n \to \infty} \mu_n(\cup_{k=1}^K I_k) \leq \lim \inf \mu_n(G).\]
+
+\[\therefore \mu(G) \leq \lim \inf_n \mu_n(G).\]
+\[\therefore \mu_n  \overset{\mathscr{L}}{\to} \mu\]
+
+Lo que es suficiente para mostrar que $\mu_n(I) \to \mu(I) \quad \forall a,b \in \mathbb{I}$. Ya que $\mu((a,b)) = F(b-) - F(a)$ es suficiente para mostrar \[F_n(x-) \to F(x) \quad \forall x\in \mathscr{C}_F\]
+
+Como $F_n(x-) \leq F_n(x)$ tenemos que \[\lim \sup_n F_n(-x) \leq \lim F_n(x) = F(x)\]. Para probar la otra desigualdad tomamos $\epsilon >0$ y por la continuidad de $F$ en $x$, encontramos $\delta>0$ tal que $x- \delta \in \mathscr{C}$ y $F(x-\delta) < F(x) - 2\delta$, para $n \geq n_0$.
+
+\[\therefore \lim \inf_n F_n(x-) \leq F(x) - 2\epsilon.\]
+
+\[\therefore \lim_{n \to \infty} F_n(x) = F(x) \implies \mu_n \overset{\mathscr{L}}{\to} \mu.\]
+

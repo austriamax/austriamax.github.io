@@ -55,7 +55,7 @@ Antes de dar los ejemplos notemos que:
 
 Entonces 
 \[\begin{align*}
-\sum_n \mathbb{P}(X_n>0) &= \sum_n 1-e^{-[-log(1-\frac{1}{2^n})]}\\
+\sum_n \mathbb{P}(X_n>0) &= \sum_n 1-e^{-[-\log(1-\frac{1}{2^n})]}\\
 &= \sum_n\frac{1}{2^n}\\\\
 &= 1<\infty
 \end{align*}\]

@@ -1,0 +1,9 @@
+---
+title: "Tarea 16. Pregunta 20.3."
+---
+
+### Si $X,Y: \Omega \to \mathbb{R}$ son dos v.a. con densidad conjunta $f(x,y)$ y si $f_y$ es la densidad marginal de $Y$, dada $g:\mathbb{R} \to \mathbb{R}$ tal que $g(X) \in \mathscr{L}^1(\Omega, \mathscr{A}, \mathbb{P})$ entonces: \[\mathbb{E}[g(X)|Y = y] = \int_{\mathbb{R}}g(x)h(x|y)dx \quad \mbox{con} \quad h(x|y) = \frac{f(x,y)}{f_y(y)}.\]
+
+
+Demostración:
+

@@ -1,0 +1,9 @@
+---
+title: "Tarea 16. Pregunta 20.4."
+---
+
+### Si $X$ es una v.a. con densidad exponencial y $Y = \min\{X,t\}$ con $t \in \mathbb{R}^{+}$, encuentre $\mathbb{E}[X|Y]$.
+
+
+Demostración:
+

@@ -1,0 +1,87 @@
+---
+title: "Parcial 3. Pregunta 3."
+---
+### Austria Max
+### Si $\lim_{n \to \infty} \mathbb{Var}(X_n) = 0$ entonces $X_n \overset{\mathbb{P}}{\to} X$.
+
+Demostración:
+
+
+Antes de ver la demostración voy a decir que el enunciado es cierto si $\mathbb{E}[X_n]$ es constante, en otro caso voy a dar un constrajemplo.
+
+
+Caso 1: $\mathbb{E}[X_n]$ es constante.
+
+
+Sabemos que 
+
+\[\begin{align*}
+\lim_{n \to \infty} \mathbb{Var}(X_n) = 0 &\implies (\exists N_0 \in \mathbb{N} \quad \mbox{tal que si} \quad n\geq N_0 \implies \mathbb{Var}(X_n)<\infty)\\\\
+&\implies (\exists N_0 \in \mathbb{N} \quad \mbox{tal que si} \quad n\geq N_0 \implies \mathbb{E}(X_n)<\infty)
+\end{align*}\]
+
+Construyendo
+\[Y_n = X_n - \mathbb{E}(X_n) \quad \mbox{para }n\geq N_0\]
+Obtenemos:
+
+(1)
+\[\begin{align*}
+\mathbb{E}(Y_n) &= \mathbb{E}[X_n - \mathbb{E}(X_n)]\\\\ 
+&= \mathbb{E}(X_n) - \mathbb{E}(X_n)\\\\
+&= 0\\\\
+&\therefore \mathbb{E}(Y_n) = 0.
+\end{align*}\]
+
+(2)
+\[\begin{align*}
+\mathbb{Var}(Y_n) &= \mathbb{Var}[X_n - \mathbb{E}(X_n)]\\\\ 
+&= \mathbb{Var}(X_n)\\\\
+&\therefore \lim_{n \to \infty} \mathbb{Var}(Y_n) = 0.
+\end{align*}\]
+
+(3)
+\[\begin{align*}
+\mathbb{Var}(Y_n) &= \mathbb{E}(Y_n^2) - \mathbb{E}(Y_n)^2\\\\ 
+&= \mathbb{E}(Y_n^2)\\\\
+&\therefore \lim_{n \to \infty} \mathbb{E}(Y_n^2) = 0.
+\end{align*}\]
+
+Así, tenemos una variable aletaria no negativa $Y_n^2$ cuya media converge a cero $\lim_{n \to \infty} \mathbb{E}(Y_n^2) = 0$. Por lo que sabemos que:
+
+\[Y_n^2 \overset{\mathbb{P}}{\to} 0\]
+
+De lo que se desprende que:
+
+\[\begin{align*}
+\lim_{n \to \infty} \mathbb{P}[|Y_n^2-0|\geq\epsilon] = 1 &\implies \lim_{n \to \infty} \mathbb{P}[|X_n - \mathbb{E}(X_n)|^2\geq\epsilon] = 1\\\\
+&\implies \lim_{n \to \infty} \mathbb{P}[|X_n - \mathbb{E}(X_n)|\geq \sqrt{\epsilon}] = 1\\\\
+&\implies \lim_{n \to \infty} \mathbb{P}[|X_n - \mathbb{E}(X_n)|\geq \epsilon^*] = 1\\\\
+&\therefore X_n \overset{\mathbb{P}}{\to} c \quad \mbox{con} \quad c = \mathbb{E}(X_n).
+\end{align*}\]
+
+Caso 2:  $\mathbb{E}[X_n]$ divergente.
+
+En este caso daremos un constrajemplo.
+
+\[   
+X_n = 
+     \begin{cases}
+       A_n \sim Unif(-\frac{1}{n},\frac{1}{n}) &\quad\text{si }n \text{ es par}\\
+       1 + A_n &\quad\text{en otro caso.} \\ 
+     \end{cases}
+\]
+
+Entonces 
+(1)
+\[\begin{align*}
+\lim_{n \to \infty} \mathbb{Var}(X_n) &= \lim_{n \to \infty} \frac{[(\mathbb{E}[X_n]+\frac{1}{n}) - (\mathbb{E}[X_n]-\frac{1}{n})]^2}{12}\\\\
+&= \lim_{n \to \infty} \frac{(\frac{2}{n})^2}{12}\\\\
+&= 0.
+\end{align*}\]
+
+(2)
+\[X_n \overset{\mathbb{P}}{\to}  
+     \begin{cases}
+         0  &\quad\text{si }n \text{ es par}\\
+        1 &\quad\text{en otro caso.} \\ 
+\end{cases}\]

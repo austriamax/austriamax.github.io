@@ -1,0 +1,5 @@
+---
+title: "Tarea 15. Pregunta 19.3."
+---
+
+### If $X \in L_1(\Omega,\mathscr{F}, \mathbb{P})$ then $X \in L_1(\Omega,\mathscr{F}, \mathbb{Q}^B)$ and the conditional expectation of $X$ given $B$ is defined as $\mathbb{E}[X|B] := \int_{\Omega}Xd\mathbb{Q}^B = \frac{1}{\mathbb{P}(B)} \int_B X d\mathbb{P} = \frac{\mathbb{E}[1_BX]}{\mathbb{P}(B)}$. Observe that here $\mathbb{E}[X|B]$ this is just a number, not a random variable.

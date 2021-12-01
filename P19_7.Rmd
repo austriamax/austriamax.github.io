@@ -1,0 +1,12 @@
+---
+title: "Tarea 15. Pregunta 19.7."
+---
+
+### Another important concept from the basic courses is the following: the random vector $(X,Y)$ has a joint density function $f: \mathbb{R}^2 \to [0,1]$. Then the definition of the condition density of $X$ given $Y$ is defined as $h(x|y) := \frac{f(x,y)}{f_Y(y)}$ where $f_Y$ is the marginal of $Y$ and it is supposed that $f_Y(y)>0$, $y \in \mathbb{R}$.     
+The following definition is given 
+\[\mathbb{E}[X|Y=y] = \int_{\mathbb{R}}xh(|y)dx = \frac{1}{f_Y(y)}\int_{\mathbb{R}} x f(x,y)dx.\]
+and also
+\[\mathbb{E}[v(X)|Y=y ] = \int_{\mathbb{R}}v(x)h(x|y)dx = \frac{1}{f_Y(y)}\int_{\mathbb{R}}v(x)f(x,y)dx.\]
+for any continuous and bounded $v:\mathbb{R} \to \mathbb{R}$.
+
+Prove that this coincides with the evaluated conditional expectation $\mathbb{E}[v(X)|Y = y]$ given in the notes. 

@@ -1,0 +1,26 @@
+---
+title: "Tarea 13. Pregunta 17.3."
+---
+
+### Sea $([0,1],\mathscr{B}([0,1]), \lambda)$ con $\lambda =$ la medida de Lebesgue un espacio de probabilidad y $H: \mathbb{R} \to \{-1,1\}$ dada por \[   
+H(t) = 
+     \begin{cases}
+       1 &\quad\text{Si } t - \lfloor t\rfloor \in [0,\frac{1}{2}).\\
+       -1 &\quad\text{Si } t - \lfloor t\rfloor  \in [\frac{1}{2},1).\\ 
+     \end{cases}
+\] Para $n \geq 1$ se define $R_n(x) = H(2^{n-1}x) \quad x\in[0,1]$, con $R_n(1) = 1$.
+
+---------------------------------------------------------------
+(1) Pruebe que $R_n$ es v.a. y calculé su media y su varianza.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+(2) Si $Y_n = \sigma(R_1,\dots,R_n)$, pruebe que $\mathbb{E}[R_{n+1}1_A] = 0$ si $A \in \mathscr{F}_n$.
+---------------------------------------------------------------
+
+
+---------------------------------------------------------------
+(3) Encuentre una versión de $\mathbb{E}[\mathscr{R}_{n+1}|\mathscr{F}_n]$.
+---------------------------------------------------------------
+

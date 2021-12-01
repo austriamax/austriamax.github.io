@@ -1,0 +1,6 @@
+---
+title: "Tarea 13. Pregunta 17.1."
+---
+
+### Construya tres v.a. $U$, $V$ y $W$ tales que $\mathbb{E}[\mathbb{E}(U|V)|W] \neq \mathbb{E}[\mathbb{E}(U|W)|V]$.
+
