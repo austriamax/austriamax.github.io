@@ -273,6 +273,33 @@ $(document).ready(function () {
 <div id="let-b-in-mathscrf-be-such-that-mathbbpb-0.-define-qb-mathscrf-to-01-as-qba-fracmathbbpa-cap-bmathbbpb-quad-a-in-mathscrf." class="section level3">
 <h3>Let <span class="math inline">\(B \in \mathscr{F}\)</span> be such that <span class="math inline">\(\mathbb{P}(B) &gt; 0\)</span>. Define <span class="math inline">\(Q^B: \mathscr{F} \to [0,1]\)</span> as <span class="math inline">\(Q^B(A) := \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}, \quad A \in \mathscr{F}\)</span>.</h3>
 <p>Show that <span class="math inline">\(Q^B\)</span> is a probability measure in <span class="math inline">\(\mathscr{F}\)</span> usually denoted by <span class="math inline">\(\mathbb{P}(\cdot|B)\)</span> and it is called the conditional probability given <span class="math inline">\(B \in \mathscr{F}\)</span> (this is the elementary form of conditional expectation studied in the basic probability courses).</p>
+<p>Demostración:</p>
+<p>Sea <span class="math inline">\(\mathbb{Q}^B: \mathscr{A} \to [0,1]\)</span> definida como en el inciso.</p>
+<p>PD. <span class="math inline">\(\mathbb{Q}^B\)</span> es una medida de probabilidad.</p>
+<ol style="list-style-type: decimal">
+<li>PD.<span class="math inline">\(\mathbb{Q}^B(A) \geq 0\)</span>.</li>
+</ol>
+<p>Sea <span class="math inline">\(A \in \mathscr{A}\)</span>.</p>
+<p><span class="math display">\[\mathbb{Q}^B(A) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)} \geq 0 \implies \mathbb{Q}^B(A) \geq 0.\]</span></p>
+<p><span class="math display">\[\therefore \forall  A \in \mathscr{A} \quad \mathbb{Q}^B(A) \geq 0.\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mathbb{Q}^B(\Omega) = 1\)</span>.</li>
+</ol>
+<p><span class="math display">\[\mathbb{Q}^B(\Omega) = \frac{\mathbb{P}(\Omega \cap B)}{\mathbb{P}(B)} = \frac{\mathbb{P}(B)}{\mathbb{P}(B)} = 1.\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{Q}^B(\Omega) = 1\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>PD. <span class="math inline">\(\mathbb{Q}^B(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mathbb{Q}^B(A_n) \quad \mbox{Si} \quad A_i \cap A_j = \emptyset \quad i \neq j.\)</span></li>
+</ol>
+<p>Sea <span class="math inline">\(\{A_n\}_{n \in \mathbb{N}}\)</span> una familia de eventos disjuntos a pares.</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{Q}^B(\cup_{n \in \mathbb{N}} A_n) &amp;= \frac{\mathbb{P}[(\cup_{n \in \mathbb{N}} A_n) \cap B]}{\mathbb{P}(B)} &amp;&amp; (\mbox{Def.} \mathbb{Q}^B)\\\\
+&amp;= \frac{\mathbb{P}[\cup_{n \in \mathbb{N}} (A_n \cap B)]}{\mathbb{P}(B)} &amp;&amp;(\mbox{Prop. } \cap)\\\\
+&amp;= \frac{\sum_{n \in \mathbb{N}}\mathbb{P}(A_n\cap B)}{\mathbb{P}(B)} &amp;&amp; ((A_i\cap B) \cap (A_j \cap B) = \emptyset \quad i \neq j)\\\\
+&amp;= \sum_{n \in \mathbb{N}} \frac{\mathbb{P}(A_n\cap B)}{\mathbb{P}(B)}\\\\
+&amp;= \sum_{n \in \mathbb{N}} \mathbb{Q}^B(A_n).
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[\mathbb{Q}^B(\cup_{n \in \mathbb{N}} A_n) = \sum_{n \in \mathbb{N}} \mathbb{Q}^B(A_n).\]</span></p>
+<p>Por lo que se concluye que <span class="math inline">\(\mathbb{Q}^B\)</span> es una medida de probabilidad.</p>
 </div>
 
 

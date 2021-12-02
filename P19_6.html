@@ -274,14 +274,21 @@ $(document).ready(function () {
 <h3><span class="math inline">\((\Omega^{&#39;},\mathscr{F}^{&#39;})\)</span> be another measurable space and Y a measurable function <span class="math inline">\(Y:(\Omega, \mathscr{F}) \to (\Omega^{&#39;}, \mathscr{F}^{&#39;})\)</span>. If <span class="math inline">\(\mbox{Im } Y = \{y_1, y_2, \dots, y_n\} \subset \Omega^{&#39;}\)</span> with <span class="math inline">\(\mathbb{P}(Y = y_i) &gt; 0\)</span>, <span class="math inline">\(i = 1, 2, \dots, n\)</span> then we have a measurable partition of <span class="math inline">\(\Omega\)</span> given by <span class="math inline">\(\{B_i = (Y = y_i): i =1, 2, \dots, n\}\)</span>: If <span class="math inline">\(\mathscr{A} = \sigma(Y)\)</span> find <span class="math inline">\(\mathbb{E}[X|\sigma(Y)]\)</span> and <span class="math inline">\(\mathbb{E}[X|Y = y_i]\)</span>, <span class="math inline">\(i = 1, 2, \dots, n\)</span>.</h3>
 <hr />
 <p>Demostración:</p>
-<p><span class="math display">\[
-\begin{align*}
-&amp;\int_{B_i} \mathbb{E}[X|Y] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
-\implies&amp;\int_{B_i} \mathbb{E}[X|Y=y_i] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
-\implies&amp; \mathbb{E}[X|Y=y_i]\mathbb{P}(Y=y_i) = \int_{B_i} X d\mathbb{P}\\\\
-&amp;\therefore \mathbb{E}[X|Y=y_i] = \frac{1}{\mathbb{P}(Y=y_i)}\int_{B_i} X d\mathbb{P} &amp;&amp;(\forall\omega\in B_i) 
-\end{align*}\]</span></p>
-<p>Así <span class="math display">\[\int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i} = \int_AXd\mathbb{P} \quad (\forall A \in \mathscr{A})\]</span> <span class="math display">\[\therefore \mathbb{E}[X|Y] = \sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\]</span></p>
+<p>Por la pregunta 19.3 sabemos que</p>
+<p><span class="math display">\[\mathbb{E}[X|A] = \frac{1}{\mathbb{P}(A)}\int_{A} X d\mathbb{P} \quad \forall A \in \mathscr{A}\]</span></p>
+<p>En particular <span class="math inline">\(A = (Y = y_i)\)</span></p>
+<p><span class="math display">\[\mathbb{E}[X|Y=y_i] = \frac{1}{\mathbb{P}(Y=y_i)}\int_{(Y=y_i)} X d\mathbb{P}\]</span></p>
+<p>Ahora proponemos a la v.a. <span class="math inline">\(\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\)</span> como expresión candidata para <span class="math inline">\(\mathbb{E}[X|Y]\)</span>.</p>
+<p><span class="math display">\[\mbox{PD.} \quad \int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} = \int_AXd\mathbb{P} \quad (\forall A \in \mathscr{A})\]</span></p>
+<p>Tomemos un evento <span class="math inline">\(A \in \mathscr{A}\)</span>.</p>
+<p><span class="math display">\[\begin{split}
+\int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} &amp;= \sum_{i=1}^n\int_A\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P}\\\\
+&amp;= \sum_{i=1}^n\int_{A\cap B_i}\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} \quad (\mbox{Def. } B_i)\\\\
+&amp;= \sum_{i=1}^n\int_{A\cap B_i}\mathbb{E}[X|Y=y_i]d\mathbb{P}\quad (\mbox{Simplificación})\\\\
+&amp;= \sum_{i=1}^n\int_{A\cap B_i}Xd\mathbb{P} \quad (\mbox{Def.})\\\\
+&amp;= \int_{A}Xd\mathbb{P} \quad (B_i \mbox{ son una partición})
+\end{split}\]</span></p>
+<p>Por lo tanto <span class="math display">\[\mathbb{E}[X|Y] \overset{c.s.}{=} \sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\]</span></p>
 </div>
 
 

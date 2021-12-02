@@ -272,6 +272,18 @@ $(document).ready(function () {
 
 <div id="si-xy-in-mathscrl1omegamathscrf-mathbbp-y-sabemos-que-mathbbexy-oversetc.s.-y-y-que-mathbbeyx-oversetc.s.-x-pruebe-que-x-oversetc.s.-y." class="section level3">
 <h3>Si <span class="math inline">\(X,Y \in \mathscr{L}^{1}(\Omega,\mathscr{F}, \mathbb{P})\)</span> y sabemos que <span class="math inline">\(\mathbb{E}[X|Y] \overset{c.s.}{=} Y\)</span> y que <span class="math inline">\(\mathbb{E}[Y|X] \overset{c.s.}{=} X\)</span> pruebe que <span class="math inline">\(X \overset{c.s.}{=} Y\)</span>.</h3>
+<p>Demostración:</p>
+<p>De la definición de esperanza condicional <span class="math display">\[\int_AXd\mathbb{P}=\int_A \mathbb{E}(X|Y)d\mathbb{P} \quad \forall A\in\mathcal{A}\]</span> Podemos tomar <span class="math inline">\(A=(Y\leq a) \quad a \in \mathbb{R}\)</span>, entonces <span class="math display">\[
+\begin{split}
+\int_{(Y\leq a)}(X-Y)d\mathbb{P}&amp;=\int_{(Y\leq a)}XdP-\int_{(Y\leq a)}Yd\mathbb{P}\\
+&amp;=\int_A E(X|Y)d\mathbb{P}-\int_{(Y\leq a)}Yd\mathbb{P}\\
+&amp;=\int_A (E(X|Y)-Y)d\mathbb{P}=0
+\end{split}
+\]</span> Debido a que <span class="math inline">\(\mathbb{E}(X|Y)\overset{c.s.}{=} Y\)</span>. Podemos descomponer el conjunto <span class="math inline">\((Y\leq a)=(X&gt;a,Y\leq a)\cup(X\leq a, Y\leq a)=(Y\leq a&lt;X)\cup (X\leq a, Y\leq a)\)</span> por lo que <span class="math display">\[\int_{(Y\leq a)}(X-Y)d\mathbb{P}=\int_{(Y\leq a&lt;X)}(X-Y)d\mathbb{P}+\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}=0\]</span></p>
+<p>Ahora, el término <span class="math inline">\(\int_{(Y\leq a&lt;X)}(X-Y)d\mathbb{P}\geq 0\)</span>, así que <span class="math display">\[\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}\leq 0\]</span> Por otro lado (analogamente), se puede probar que <span class="math display">\[\int_{(X\leq a, Y\leq a)}(Y-X)d\mathbb{P}\leq 0\]</span> Entonces <span class="math display">\[\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}=0\]</span> por lo que también <span class="math display">\[\int_{(Y\leq a&lt;X)}(X-Y)d\mathbb{P}=0.\]</span></p>
+<p>Y como se trata de una esperanza de la v.a. no negativa <span class="math inline">\((X-Y)\mathbb{1}_{(Y\leq a&lt;X)}\)</span>, por lo tanto <span class="math inline">\((X-Y)\mathbb{1}_{(Y\leq a&lt;X)}\overset{c.s.}{=}0\)</span>.</p>
+<p>Pero lo anterior se cumple solo cuando <span class="math inline">\(P(Y\leq a&lt;X)=0\)</span>. Pero por otro lado <span class="math inline">\((Y&lt;X)=\bigcup_a(Y\leq a&lt;X)\)</span> lo cuál significa que <span class="math inline">\(P(Y&lt;X)=0\)</span>. De manera análoga se puede probar que <span class="math inline">\(P(X&lt;Y)=0\)</span>.</p>
+<p>De donde se concluye que <span class="math display">\[P(X=Y)=0\]</span></p>
 </div>
 
 

@@ -3,3 +3,66 @@ title: "Tarea 15. Pregunta 19.3."
 ---
 
 ### If $X \in L_1(\Omega,\mathscr{F}, \mathbb{P})$ then $X \in L_1(\Omega,\mathscr{F}, \mathbb{Q}^B)$ and the conditional expectation of $X$ given $B$ is defined as $\mathbb{E}[X|B] := \int_{\Omega}Xd\mathbb{Q}^B = \frac{1}{\mathbb{P}(B)} \int_B X d\mathbb{P} = \frac{\mathbb{E}[1_BX]}{\mathbb{P}(B)}$. Observe that here $\mathbb{E}[X|B]$ this is just a number, not a random variable.
+
+Demostración por casos:
+
+CASO: ($X = 1_A \quad A\in \mathscr{F}$)
+
+\[\begin{align*}
+\mathbb{E}[X|B] &= \int_{\Omega} Xd\mathbb{Q}^B\\\\
+&= \int 1_A d\mathbb{Q}^B\\\\
+&= \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_B 1_A d\mathbb{P}.
+\end{align*}\]
+
+CASO: ($X = \sum_{i=1}^N \alpha_i 1_{A_i} \quad \mbox{con} \quad \alpha_i\in\mathbb{R}, \quad A_i \in \mathscr{F}, \quad i = 1, \dots, n.$)
+
+\[\begin{align*}
+\mathbb{E}[X|B] &= \int_\Omega X d\mathbb{Q}^B\\\\
+&= \int\sum_{i=1}^N\alpha_i1_{A_i}d \mathbb{Q}^B\\\\
+&= \sum_{i=1}^N \alpha_i \mathbb{Q}^B(A_i \cap B)\\\\
+&= \sum_{i=1}^N \alpha_i \frac{\mathbb{P}(A_i\cap B)}{\mathbb{P}(B)}\\\\
+&= \frac{1}{\mathbb{P}(B)}[\sum_{i=1}^N \alpha_i \mathbb{P}(A_i \cap B)]\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_B X d\mathbb{P}
+\end{align*}\]
+
+CASO: ($X$ es una v.a tal que $X \geq0$ y existe una sucesión creciente $(X_n)_{n \in \mathbb{N}}$ con $X(\omega) = \lim_{n \to \infty} X_n(\omega) \quad \forall \omega \in \Omega$)
+
+\[\begin{align*}
+\mathbb{E}[X|B] &= \int_\Omega Xd\mathbb{Q}\\\\
+&= \int \lim_{n \to \infty} X_n d \mathbb{Q}^B\\\\
+&= \lim_{n \to \infty} \int X_n d \mathbb{Q}^B\\\\
+&= \lim_{n \to \infty} [\frac{1}{\mathbb{P}(B)} \int_B X_n d\mathbb{Q}^B] && (\mbox{Caso anterior})\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_B \lim_{n\to \infty}X_n d\mathbb{Q}^B\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_B X d\mathbb{Q}^B\\\\
+\end{align*}\]
+
+CASO: ($X$ es una v.a tal que $X = X^+-X^-$)
+
+\[\begin{align*}
+\mathbb{E}[X|B] &= \int_\Omega Xd \mathbb{Q}^B\\\\
+&= \int X^+ - X^- d \mathbb{Q}^B\\\\
+&= \int X^+d \mathbb{Q}^B - \int X^- d \mathbb{Q}^B\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_BX^+d\mathbb{P} - \frac{1}{\mathbb{P}(B)}\int_BX^-d\mathbb{P} \quad  (\mbox{Caso anterior})\\\\
+&= \frac{1}{\mathbb{P}(B)}[\int_BX^+d\mathbb{P}-\int_BX^-d\mathbb{P}]\\\\
+&=\frac{1}{\mathbb{P}(B)} \int_B Xd \mathbb{P}
+\end{align*}\]
+
+
+De todos los casos se concluye que \[\mathbb{E}[X|B] = \int_\Omega X d\mathbb{Q} = \frac{1}{\mathbb{P}(B)}\int_BXd\mathbb{P}.\]
+
+PD. $X \in L_1(\Omega, \mathscr{F}, \mathbb{Q}^B)$.
+
+Por hipótesis \[\mathbb{E}(|X|) = \int_\Omega |X|d\mathbb{P} < \infty.\]
+
+Así
+\[\begin{align*}
+\mathbb{E}(|X||B) &= \int_\Omega |X|d\mathbb{Q}^B\\\\
+&= \frac{1}{\mathbb{P}(B)}\int_B |X|d\mathbb{P}\\\\
+&\leq \frac{1}{\mathbb{P}(B)}\int_\Omega |X|d\mathbb{P}\\\\
+&< \infty
+\end{align*}\]
+
+Por lo tanto 
+\[X \in L_1(\Omega, \mathscr{F}, \mathbb{Q}^B).\]
+

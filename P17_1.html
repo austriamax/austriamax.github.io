@@ -272,6 +272,108 @@ $(document).ready(function () {
 
 <div id="construya-tres-v.a.-u-v-y-w-tales-que-mathbbemathbbeuvw-neq-mathbbemathbbeuwv." class="section level3">
 <h3>Construya tres v.a. <span class="math inline">\(U\)</span>, <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> tales que <span class="math inline">\(\mathbb{E}[\mathbb{E}(U|V)|W] \neq \mathbb{E}[\mathbb{E}(U|W)|V]\)</span>.</h3>
+<p>Sea <span class="math inline">\(([0,1],\mathscr{B}([0,1]), \lambda)\)</span> un espacio de probabilidad con <span class="math inline">\(\lambda\)</span> la medida de Lebesgue.</p>
+<p>Se definen las v.a. <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> y <span class="math inline">\(Z\)</span> como:</p>
+<p><span class="math display">\[\begin{align*}
+U(\omega) &amp;= \omega\\\\
+V(\omega) &amp;= 1_{[0,\frac{3}{4}]}(\omega) + v1_{(\frac{3}{4},1]}(\omega)\\\\
+W(\omega) &amp;= w1_{[0,\frac{1}{4}]}(\omega) + 1_{[\frac{3}{4},1]}(\omega)   
+\end{align*}\]</span></p>
+<p>Por lo que sus <span class="math inline">\(\sigma-\)</span>álgebras generadas son:</p>
+<p><span class="math display">\[\begin{align*}
+\sigma(V) &amp;= \{\emptyset, [0, \frac{3}{4}, (\frac{3}{4},1],[0,1]\}.\\
+\sigma(W) &amp;= \{\emptyset, [0,\frac{1}{4}], (\frac{1}{4},1], [0,1]\}.
+\end{align*}
+\]</span></p>
+<p>Por la medibilidad de <span class="math inline">\(\mathbb{E}[U|V]\)</span> y por el hecho de que <span class="math inline">\(V\)</span> solo tenga dos elementos en su soporte, tenemos que:</p>
+<p><span class="math display">\[\mathbb{E}[U|V] = a_01_{V=0} + a_11_{V=1} \quad \mbox{con }a_1,a_2 \in \mathbb{R}\]</span></p>
+<p>Además se debe cumplir que <span class="math inline">\(\forall A \in \sigma(V)\)</span> <span class="math display">\[\int_A Vd\lambda = \int_A \mathbb{E}[U|V]d\lambda\]</span> Y la <span class="math inline">\(\sigma-\)</span>aditividad de <span class="math inline">\(\lambda\)</span> es suficiente que se cumpla para <span class="math inline">\(\{v=0\} = (\frac{3}{4},1]\)</span> y <span class="math inline">\(\{v=1\} = [0,\frac{3}{4}]\)</span>. Ahora calcularemos <span class="math inline">\(a_0\)</span> y <span class="math inline">\(a_1\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+\int_{A_i}Ud\lambda &amp;= \int_{A_i} \mathbb{E}[U|V]d\lambda\\
+&amp;= \int 1_{A_i}[a_01_{A_0} + a_11_{A_1}]d\lambda\\
+&amp;= \int a_i 1_{A_i}d\lambda\\
+&amp;=a_i \lambda(A_i).\\\\
+\therefore a_i &amp;= \frac{1}{\lambda(A_i)}\int_{A_i}Ud\lambda 
+\end{align*}
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+\begin{align*}
+a_0 &amp;= \frac{1}{\lambda(\{V = 0\})}\int_{\{V = 0\}} Ud\lambda\\\\
+&amp;= \frac{1}{\lambda((\frac{3}{4},1])}\int_{\frac{3}{4}}^1 \omega d\omega\\\\
+&amp;=\frac{1}{\frac{1}{4}}[\frac{\omega^2}{2}]_{\frac{3}{4}}^1\\\\
+&amp;= 4(\frac{1}{2} - \frac{9}{32} )\\\\
+&amp;= \frac{7}{8}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+a_1 &amp;= \frac{1}{\lambda(\{V = 1\})}\int_{\{V = 1\}} Ud\lambda\\\\
+&amp;= \frac{1}{\lambda((0,\frac{3}{4}])}\int_{0}^{\frac{3}{4}} \omega d\omega\\\\
+&amp;=\frac{4}{3}[\frac{\omega^2}{2}]_{0}^{\frac{3}{4}}\\\\
+&amp;= \frac{4}{3}(\frac{9}{32} )\\\\
+&amp;= \frac{3}{8}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{E}[U|V] = \frac{3}{8} 1_{[0,\frac{3}{4}]} + \frac{7}{8}1_{(\frac{3}{4},1]}\]</span></p>
+<p>Dado que <span class="math inline">\(\mathbb{E}[\mathbb{E}[U|V]|W]\)</span> es <span class="math inline">\(\sigma\)</span>-medible tenemos que <span class="math display">\[\mathbb{E}[\mathbb{E}[U|V]|W] = b_01_{W=0} + b_11_{W = 1} \quad \mbox{para} \quad b_1,b_2\in \mathbb{R}\]</span> con <span class="math inline">\(\{W = 0\} = [0, \frac{1}{4}]\)</span> y <span class="math inline">\(\{W = 1\} = (\frac{1}{4},1]\)</span>. Al igual que antes se debe cumplir que <span class="math display">\[\int_{(W = i)} \mathbb{E}(U|V)d\lambda = \int_{(W = i)} \mathbb{E}[\mathbb{E}(U|V)|W]d\lambda \quad \mbox{para} \quad i=0,1.\]</span> Entonces, por lo ya visto <span class="math display">\[
+\begin{align*}
+b_0 &amp;= \frac{1}{\lambda(W = 0)} [\int_{(W = 0)} \mathbb{E}(U|V)d\lambda]\\\\
+&amp;= \frac{1}{\lambda([0,\frac{1}{4}])}[\int_0^{\frac{1}{4}}(\frac{3}{8}1_{[0,\frac{3}{4}]}(\omega) + \frac{7}{8}1_{(\frac{3}{4},1]}(\omega))d\omega]\\\\
+&amp;= \frac{1}{\frac{1}{4}}[\int_{\mathbb{R}}\frac{3}{8} 1_{[0,\frac{1}{4}]}(\omega)d\omega]\\\\
+&amp;=4(\frac{3}{8})\lambda([0,\frac{1}{4}])\\\\
+&amp;=\frac{3}{8}.
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+b_0 &amp;= \frac{1}{\lambda(W = 1)} [\int_{(W = 1)} \mathbb{E}(U|V)d\lambda]\\\\
+&amp;= \frac{1}{\lambda((\frac{1}{4},1])}[\int_{\frac{1}{4}}^1(\frac{3}{8}1_{[0,\frac{3}{4}]}(\omega) + \frac{7}{8}1_{(\frac{3}{4},1]}(\omega))d\omega]\\\\
+&amp;= \frac{1}{\frac{3}{4}}[\int_{\mathbb{R}}\frac{3}{8} 1_{(\frac{1}{4},\frac{3}{4}]}(\omega)d\omega + \frac{7}{8}\int_\mathbb{R} 1_{[\frac{3}{4},1]}(\omega)d\omega]\\\\
+&amp;= \frac{4}{3}[\frac{3}{8}(\frac{1}{2})+ \frac{7}{8}(\frac{1}{4})]\\\\
+&amp;= \frac{13}{24}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{E}[\mathbb{E}[U|V]|W] = \frac{3}{8}1_{[0,\frac{1}{4}]} + \frac{13}{24}1_{(\frac{1}{4},1]}.\]</span></p>
+<p>Ahora repetimos los calculos para <span class="math inline">\(\mathbb{E}[U|W]\)</span>.</p>
+<p><span class="math display">\[\mathbb{E}[U|W] = d_01_{(W=0)} + d_11_{(W = 1)}\]</span></p>
+<p>Calculando <span class="math inline">\(d_0\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+d_0 &amp;= \frac{1}{\lambda(W = 0)} \int_{\{W = 0\}}Ud\lambda\\\\
+&amp;= \frac{1}{\lambda([0,\frac{1}{4}])}\int_0^{\frac{1}{4}}\omega d\omega\\\\
+&amp;= 4 [\frac{\omega^2}{2}]_0^{\frac{1}{4}}\\\\
+&amp;= \frac{1}{8}.
+\end{align*}\]</span></p>
+<p>Calculando <span class="math inline">\(d_1\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+d_1 &amp;= \frac{1}{\lambda(W = 1)} \int_{\{W = 1\}}Ud\lambda\\\\
+&amp;= \frac{1}{\lambda((\frac{1}{4}, 1])}\int_{\frac{1}{4}}^1\omega d\omega\\\\
+&amp;= \frac{4}{3} [\frac{\omega^2}{2}]_{\frac{1}{4}}^1\\\\
+&amp;= \frac{4}{3}(\frac{1}{2} - \frac{1}{32})\\\\
+&amp;= \frac{15}{24}.
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{E}[U|W] = \frac{1}{8}1_{[0,\frac{1}{4}]} + \frac{15}{24}1_{[\frac{1}{4},1]}\]</span></p>
+<p>Ahora vamos a encontrar las constantes de <span class="math display">\[\mathbb{E}[\mathbb{E}[U|W]|V] = c_01_{(V=0)} + c_11_{(V=1)}\]</span></p>
+<p>Calculando <span class="math inline">\(c_0\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+c_0 &amp;= \frac{1}{\lambda(V=0)}\int_{(V= 0)}\mathbb{E}[U|W]d\lambda\\\\
+&amp;= \frac{1}{\lambda((\frac{3}{4},1])}\int 1_{(\frac{3}{4},1]}[\frac{1}{8}1_{[0,\frac{1}{4}]}(\omega) + \frac{15}{24}1_{(\frac{1}{4},1]}(\omega)]d\omega\\\\
+&amp;= 4[\frac{15}{24}\int 1_{(\frac{3}{4},1]}(\omega)d\omega]\\\\
+&amp;= \frac{15}{6}\lambda((\frac{3}{4},1])\\\\
+&amp;=\frac{15}{24}.
+\end{align*}\]</span></p>
+<p>Calculando <span class="math inline">\(c_1\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+c_1 &amp;= \frac{1}{\lambda(V=1)} \int_{(V=1)} \mathbb{E}[U|V]d\lambda\\\\
+&amp;= \frac{1}{\lambda([0,\frac{3}{4}])}\int 1_{[0,\frac{3}{4}]}[\frac{1}{8}1_{[0,\frac{1}{4}]}(\omega) + \frac{15}{24}1_{(\frac{1}{4},1]}(\omega)]d\omega\\\\
+&amp;= \frac{4}{3}[\frac{1}{8}\int 1_{[0,\frac{1}{4}]}(\omega)d\omega  + \int 1_{(\frac{1}{4},\frac{3}{4}]}(\omega)d\omega]\\\\
+&amp;= \frac{4}{3}\{\frac{1}{8}\lambda([0,\frac{1}{4}])+\frac{15}{24}\lambda((\frac{1}{4},\frac{3}{4}])\}\\\\
+&amp;=\frac{1}{24} + \frac{5}{12}\\\\
+&amp;= \frac{11}{24}
+\end{align*}\]</span></p>
+<p><span class="math display">\[\therefore \mathbb{E}[\mathbb{E}[U|W]|V] = \frac{15}{24}1_{(\frac{3}{4},1]} + \frac{11}{24}1_{[0,\frac{3}{4}]}\]</span></p>
+<p>Por lo tanto:</p>
+<p><span class="math display">\[\mathbb{E}[\mathbb{E}[U|W]|V] \neq \mathbb{E}[\mathbb{E}[U|W]|V].\]</span></p>
 </div>
 
 

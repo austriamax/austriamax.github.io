@@ -276,20 +276,76 @@ $(document).ready(function () {
 <colgroup>
 <col width="98%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th align="left">(1) <span class="math inline">\(\mathbb{E}[X|X_i] \quad i = 1,2,3.\)</span></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td align="left">(2) <span class="math inline">\(\mathbb{E}[X_i|X] \quad i = 1,2,3.\)</span></td>
+<td align="left">(1) <span class="math inline">\(\mathbb{E}[X|X_i] \quad i = 1,2,3.\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Respuesta corta: <span class="math display">\[\begin{split}
+\mathbb{E}[X|X_1] &amp;\overset{c.s.}{=} 0\\\\
+\mathbb{E}[X|X_2] &amp;\overset{c.s.}{=} X\\\\
+\mathbb{E}[X|X_3] &amp;\overset{c.s.}{=} 0\\\\
+\end{split}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">(1.1) <span class="math inline">\(\mathbb{E}[X|X_1]\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="left">Sabemos que <span class="math inline">\(\sigma(X_1) = \{A \subseteq \Omega: X_1^{-1}(B) = A, B \in \mathscr{B}\}\)</span>. Ahora <span class="math inline">\(0&lt;a&lt;b&lt;1\)</span> entonces <span class="math display">\[X_1^{-1}([a,b]) = [-b,-a] \cup [a,b].\]</span> Es decir, <span class="math inline">\(\sigma(X_1)\)</span> es generada por la unión de intervalos simertricos (uno respecto del otro). Por lo que si <span class="math inline">\(D \in \sigma(X_1)\)</span> entonces:</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math display">\[\int_D \mathbb{E}[X|X_1]d\mathbb{P} = \int_D X d \mathbb{P} = \int_{-b}^{-a}\omega d\mathbb{P} + \int_{a}^{b}\omega d\mathbb{P} = 0\]</span></td>
+</tr>
+<tr class="even">
+<td align="left">Por lo tanto <span class="math display">\[\int_D \mathbb{E}[X|X_1] d \mathbb{P} = 0 \quad \forall D \in \sigma(X_1)\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Como <span class="math inline">\(\int_D \mathbb{E}[X|X_1] d \mathbb{P} = 0\)</span> para todos los elementos de la <span class="math inline">\(\sigma-\)</span>álgebra entonces<span class="math display">\[\mathbb{E}[X|X_1] \overset{c.s.}{=} 0.\]</span></td>
+</tr>
+<tr class="even">
+<td align="left">(1.2) <span class="math inline">\(\mathbb{E}[X|X_2]\)</span>.</td>
+</tr>
+<tr class="odd">
+<td align="left">Ya que <span class="math inline">\(X_2 = 2\omega^3\)</span> es una biyección de <span class="math inline">\(X = \omega\)</span> entonces <span class="math inline">\(\sigma(X) = \sigma(X_2)\)</span>, solo observe que: <span class="math display">\[X_2^{-1}([a,b]) = [(\frac{a}{2})^{\frac{1}{3}},(\frac{b}{2})^{\frac{1}{3}}] = X^{-1}[(\frac{a}{2})^{\frac{1}{3}},(\frac{b}{2})^{\frac{1}{3}}]\]</span></td>
+</tr>
+<tr class="even">
+<td align="left">Así que <span class="math inline">\(X\)</span> es <span class="math inline">\(X_2\)</span>-medible. Por lo que <span class="math display">\[\mathbb{E}[X|X_2] =X\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">(1.3) <span class="math inline">\(\mathbb{E}[X|X_3]\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="left">EL argumento es muy similar a los anteriores, observese que <span class="math display">\[X_3^{-1}([a,b]) = [-\sqrt{b},-\sqrt{a}] \cup [\sqrt{a},\sqrt{b}]\]</span> Sea <span class="math inline">\(D \in \sigma(X_3)\)</span> entonces <span class="math display">\[\int_D \mathbb{E}[X|X_3]d\mathbb{P} = \int_DXd\mathbb{P} = \int_{-\sqrt{b}}^{- \sqrt{a}}Xd\mathbb{P} + \int_{\sqrt{a}}^{\sqrt{b}}Xd\mathbb{P} = 0 \quad (\mbox{Simetría})\]</span> Por lo tanto, <span class="math display">\[\mathbb{E}[X|X_3]  \overset{c.s.}{=} 0\]</span></td>
 </tr>
 </tbody>
 </table>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb{E}[X_i|X] \quad i = 1,2,3.\)</span></li>
+</ol>
+<p>Respuesta:</p>
+<p>Como <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span> y <span class="math inline">\(X_3\)</span> son transformaciones medibles de <span class="math inline">\(X\)</span> es claro que <span class="math display">\[\sigma(X_1),\sigma(X_2), \sigma(X_3) \subseteq \sigma(X)\]</span> Por lo que:</p>
+<p><span class="math display">\[\begin{split}
+\mathbb{E}[X_1|X] &amp;\overset{c.s.}{=} X_1\\\\
+\mathbb{E}[X_2|X] &amp;\overset{c.s.}{=} X_2\\\\
+\mathbb{E}[X_3|X] &amp;\overset{c.s.}{=} X_3\\\\
+\end{split}\]</span></p>
+<hr />
 <ol start="3" style="list-style-type: decimal">
 <li><span class="math inline">\(\mathbb{P}(X&gt;0|X_1) \quad i = 1,2,3.\)</span></li>
 </ol>
+<p>Sabemos que <span class="math display">\[\mathbb{P}(X&gt;0|X_1) = \mathbb{E}(X&gt;0|X_1)\]</span></p>
+<p>Entonces el problema consiste en proponer una <span class="math inline">\(f(X_1) = \mathbb{E}(X&gt;0|X_1)\)</span> tal que <span class="math inline">\(\int_D f(X_1)d\mathbb{P} = \int_D 1_{X&gt;0}d\mathbb{P} \quad \forall D \in \sigma(X_1)\)</span>.</p>
+<p>Ahora calcularemos <span class="math inline">\(\int_D 1_{X&gt;0} d\mathbb{P}\)</span> con <span class="math inline">\(\mathbb{P} = \frac{\lambda}{2}\)</span>.</p>
+<p><span class="math display">\[\begin{split}
+\int_D 1_{X&gt;0}d\mathbb{P}  &amp;= \int_D 1_{(\omega&gt;0)}d\mathbb{P}\\\\
+&amp;= \int_D 1_{(\omega&gt;0)}\frac{d\lambda}{2}\\\\
+&amp;= \frac{1}{2}\frac{\lambda(D)}{2} \quad (\mbox{Solo tomamos la parte positiva})\\\\
+&amp;= \frac{1}{4}\lambda(D).
+\end{split}\]</span></p>
+<p>Por lo que se nos ocurre proponer <span class="math display">\[f(X_1) = \frac{1}{2}.\]</span></p>
+<p><span class="math display">\[\int_D \frac{1}{2}d\mathbb{P} = \int_D \frac{1}{2} \frac{d\lambda}{2} = \frac{1}{4}\int_Dd\lambda = \frac{1}{4}\lambda(D)\]</span></p>
+<p>Así, como <span class="math inline">\(D\)</span> fue arbitrario <span class="math display">\[f(X_1) \overset{c.s.}{=} \frac{1}{2}\]</span></p>
+<p>Es decir <span class="math display">\[\mathbb{P}(X&gt;0|X_1) \overset{c.s.}{=} \frac{1}{2}\]</span></p>
 </div>
 
 

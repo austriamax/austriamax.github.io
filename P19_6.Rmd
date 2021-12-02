@@ -7,14 +7,27 @@ title: "Tarea 15. Pregunta 19.6."
 ---
 Demostración:
 
-\[
-\begin{align*}
-&\int_{B_i} \mathbb{E}[X|Y] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
-\implies&\int_{B_i} \mathbb{E}[X|Y=y_i] d\mathbb{P} = \int_{B_i} X d\mathbb{P}\\\\
-\implies& \mathbb{E}[X|Y=y_i]\mathbb{P}(Y=y_i) = \int_{B_i} X d\mathbb{P}\\\\
-&\therefore \mathbb{E}[X|Y=y_i] = \frac{1}{\mathbb{P}(Y=y_i)}\int_{B_i} X d\mathbb{P} &&(\forall\omega\in B_i) 
-\end{align*}\]
+Por la pregunta 19.3 sabemos que 
 
-Así 
-\[\int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i} = \int_AXd\mathbb{P} \quad (\forall A \in \mathscr{A})\]
-\[\therefore \mathbb{E}[X|Y] = \sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\]
+\[\mathbb{E}[X|A] = \frac{1}{\mathbb{P}(A)}\int_{A} X d\mathbb{P} \quad \forall A \in \mathscr{A}\]
+
+En particular $A = (Y = y_i)$
+
+\[\mathbb{E}[X|Y=y_i] = \frac{1}{\mathbb{P}(Y=y_i)}\int_{(Y=y_i)} X d\mathbb{P}\]
+
+Ahora proponemos a la v.a. $\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}$ como expresión candidata para $\mathbb{E}[X|Y]$.
+
+\[\mbox{PD.} \quad \int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} = \int_AXd\mathbb{P} \quad (\forall A \in \mathscr{A})\]
+
+Tomemos un evento $A \in \mathscr{A}$.
+
+\[\begin{split}
+\int_A\sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} &= \sum_{i=1}^n\int_A\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P}\\\\
+&= \sum_{i=1}^n\int_{A\cap B_i}\mathbb{E}[X|Y=y_i]1_{Y=y_i}d\mathbb{P} \quad (\mbox{Def. } B_i)\\\\
+&= \sum_{i=1}^n\int_{A\cap B_i}\mathbb{E}[X|Y=y_i]d\mathbb{P}\quad (\mbox{Simplificación})\\\\
+&= \sum_{i=1}^n\int_{A\cap B_i}Xd\mathbb{P} \quad (\mbox{Def.})\\\\
+&= \int_{A}Xd\mathbb{P} \quad (B_i \mbox{ son una partición})
+\end{split}\]
+
+Por lo tanto
+\[\mathbb{E}[X|Y] \overset{c.s.}{=} \sum_{i=1}^n\mathbb{E}[X|Y=y_i]1_{Y=y_i}\]

@@ -272,6 +272,51 @@ $(document).ready(function () {
 
 <div id="if-x-in-l_1omegamathscrf-mathbbp-then-x-in-l_1omegamathscrf-mathbbqb-and-the-conditional-expectation-of-x-given-b-is-defined-as-mathbbexb-int_omegaxdmathbbqb-frac1mathbbpb-int_b-x-dmathbbp-fracmathbbe1_bxmathbbpb.-observe-that-here-mathbbexb-this-is-just-a-number-not-a-random-variable." class="section level3">
 <h3>If <span class="math inline">\(X \in L_1(\Omega,\mathscr{F}, \mathbb{P})\)</span> then <span class="math inline">\(X \in L_1(\Omega,\mathscr{F}, \mathbb{Q}^B)\)</span> and the conditional expectation of <span class="math inline">\(X\)</span> given <span class="math inline">\(B\)</span> is defined as <span class="math inline">\(\mathbb{E}[X|B] := \int_{\Omega}Xd\mathbb{Q}^B = \frac{1}{\mathbb{P}(B)} \int_B X d\mathbb{P} = \frac{\mathbb{E}[1_BX]}{\mathbb{P}(B)}\)</span>. Observe that here <span class="math inline">\(\mathbb{E}[X|B]\)</span> this is just a number, not a random variable.</h3>
+<p>Demostración por casos:</p>
+<p>CASO: (<span class="math inline">\(X = 1_A \quad A\in \mathscr{F}\)</span>)</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X|B] &amp;= \int_{\Omega} Xd\mathbb{Q}^B\\\\
+&amp;= \int 1_A d\mathbb{Q}^B\\\\
+&amp;= \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_B 1_A d\mathbb{P}.
+\end{align*}\]</span></p>
+<p>CASO: (<span class="math inline">\(X = \sum_{i=1}^N \alpha_i 1_{A_i} \quad \mbox{con} \quad \alpha_i\in\mathbb{R}, \quad A_i \in \mathscr{F}, \quad i = 1, \dots, n.\)</span>)</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X|B] &amp;= \int_\Omega X d\mathbb{Q}^B\\\\
+&amp;= \int\sum_{i=1}^N\alpha_i1_{A_i}d \mathbb{Q}^B\\\\
+&amp;= \sum_{i=1}^N \alpha_i \mathbb{Q}^B(A_i \cap B)\\\\
+&amp;= \sum_{i=1}^N \alpha_i \frac{\mathbb{P}(A_i\cap B)}{\mathbb{P}(B)}\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}[\sum_{i=1}^N \alpha_i \mathbb{P}(A_i \cap B)]\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_B X d\mathbb{P}
+\end{align*}\]</span></p>
+<p>CASO: (<span class="math inline">\(X\)</span> es una v.a tal que <span class="math inline">\(X \geq0\)</span> y existe una sucesión creciente <span class="math inline">\((X_n)_{n \in \mathbb{N}}\)</span> con <span class="math inline">\(X(\omega) = \lim_{n \to \infty} X_n(\omega) \quad \forall \omega \in \Omega\)</span>)</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X|B] &amp;= \int_\Omega Xd\mathbb{Q}\\\\
+&amp;= \int \lim_{n \to \infty} X_n d \mathbb{Q}^B\\\\
+&amp;= \lim_{n \to \infty} \int X_n d \mathbb{Q}^B\\\\
+&amp;= \lim_{n \to \infty} [\frac{1}{\mathbb{P}(B)} \int_B X_n d\mathbb{Q}^B] &amp;&amp; (\mbox{Caso anterior})\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_B \lim_{n\to \infty}X_n d\mathbb{Q}^B\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_B X d\mathbb{Q}^B\\\\
+\end{align*}\]</span></p>
+<p>CASO: (<span class="math inline">\(X\)</span> es una v.a tal que <span class="math inline">\(X = X^+-X^-\)</span>)</p>
+<p><span class="math display">\[\begin{align*}
+\mathbb{E}[X|B] &amp;= \int_\Omega Xd \mathbb{Q}^B\\\\
+&amp;= \int X^+ - X^- d \mathbb{Q}^B\\\\
+&amp;= \int X^+d \mathbb{Q}^B - \int X^- d \mathbb{Q}^B\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_BX^+d\mathbb{P} - \frac{1}{\mathbb{P}(B)}\int_BX^-d\mathbb{P} \quad  (\mbox{Caso anterior})\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}[\int_BX^+d\mathbb{P}-\int_BX^-d\mathbb{P}]\\\\
+&amp;=\frac{1}{\mathbb{P}(B)} \int_B Xd \mathbb{P}
+\end{align*}\]</span></p>
+<p>De todos los casos se concluye que <span class="math display">\[\mathbb{E}[X|B] = \int_\Omega X d\mathbb{Q} = \frac{1}{\mathbb{P}(B)}\int_BXd\mathbb{P}.\]</span></p>
+<p>PD. <span class="math inline">\(X \in L_1(\Omega, \mathscr{F}, \mathbb{Q}^B)\)</span>.</p>
+<p>Por hipótesis <span class="math display">\[\mathbb{E}(|X|) = \int_\Omega |X|d\mathbb{P} &lt; \infty.\]</span></p>
+<p>Así <span class="math display">\[\begin{align*}
+\mathbb{E}(|X||B) &amp;= \int_\Omega |X|d\mathbb{Q}^B\\\\
+&amp;= \frac{1}{\mathbb{P}(B)}\int_B |X|d\mathbb{P}\\\\
+&amp;\leq \frac{1}{\mathbb{P}(B)}\int_\Omega |X|d\mathbb{P}\\\\
+&amp;&lt; \infty
+\end{align*}\]</span></p>
+<p>Por lo tanto <span class="math display">\[X \in L_1(\Omega, \mathscr{F}, \mathbb{Q}^B).\]</span></p>
 </div>
 
 

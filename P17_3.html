@@ -278,20 +278,24 @@ H(t) =
        -1 &amp;\quad\text{Si } t - \lfloor t\rfloor  \in [\frac{1}{2},1).\\ 
      \end{cases}
 \]</span> Para <span class="math inline">\(n \geq 1\)</span> se define <span class="math inline">\(R_n(x) = H(2^{n-1}x) \quad x\in[0,1]\)</span>, con <span class="math inline">\(R_n(1) = 1\)</span>.</h3>
-<table>
+<table style="width:89%;">
+<colgroup>
+<col width="88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">(1) Pruebe que <span class="math inline">\(H\)</span> es boreliana en <span class="math inline">\(\mathbb{R}\)</span>.</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left">(1) Pruebe que <span class="math inline">\(R_n\)</span> es v.a. y calculé su media y su varianza.</td>
+<td align="left">Demostración: Sabemos que dos espacios topológicos <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> y una función <span class="math inline">\(f:X \to Y\)</span> es Boreliana (o Borel-medible) si se cumple que para todo abierto <span class="math inline">\(O \subseteq Y\)</span> el conjunto <span class="math inline">\(f^{-1}(O)\)</span> es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto <span class="math inline">\((Y, \{\emptyset, \{-1\}\}\)</span>)</td>
 </tr>
 </tbody>
 </table>
-<table>
-<tbody>
-<tr class="odd">
-<td>(2) Si <span class="math inline">\(Y_n = \sigma(R_1,\dots,R_n)\)</span>, pruebe que <span class="math inline">\(\mathbb{E}[R_{n+1}1_A] = 0\)</span> si <span class="math inline">\(A \in \mathscr{F}_n\)</span>.</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="si-y_n-sigmar_1dotsr_n-pruebe-que-mathbber_n11_a-0-si-a-in-mathscrf_n." class="section level2">
+<h2>(2) Si <span class="math inline">\(Y_n = \sigma(R_1,\dots,R_n)\)</span>, pruebe que <span class="math inline">\(\mathbb{E}[R_{n+1}1_A] = 0\)</span> si <span class="math inline">\(A \in \mathscr{F}_n\)</span>.</h2>
 <table>
 <tbody>
 <tr class="odd">

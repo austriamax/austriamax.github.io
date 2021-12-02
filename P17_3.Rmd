@@ -11,9 +11,10 @@ H(t) =
 \] Para $n \geq 1$ se define $R_n(x) = H(2^{n-1}x) \quad x\in[0,1]$, con $R_n(1) = 1$.
 
 ---------------------------------------------------------------
-(1) Pruebe que $R_n$ es v.a. y calculé su media y su varianza.
+(1) Pruebe que $H$ es boreliana en $\mathbb{R}$.
 ---------------------------------------------------------------
-
+Demostración:
+Sabemos que dos espacios topológicos $X$ y $Y$ y una función $f:X \to Y$ es Boreliana (o Borel-medible) si se cumple que para todo abierto $O \subseteq Y$ el conjunto $f^{-1}(O)$ es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto $(Y, \{\emptyset, \{-1\}\}$)
 
 ---------------------------------------------------------------
 (2) Si $Y_n = \sigma(R_1,\dots,R_n)$, pruebe que $\mathbb{E}[R_{n+1}1_A] = 0$ si $A \in \mathscr{F}_n$.

@@ -4,3 +4,34 @@ title: "Tarea 13. Pregunta 17.2."
 
 ### Si $X,Y \in \mathscr{L}^{1}(\Omega,\mathscr{F}, \mathbb{P})$ y sabemos que $\mathbb{E}[X|Y] \overset{c.s.}{=} Y$ y que $\mathbb{E}[Y|X] \overset{c.s.}{=} X$ pruebe que $X \overset{c.s.}{=} Y$.
 
+Demostración:
+
+De la  definición de esperanza condicional
+\[\int_AXd\mathbb{P}=\int_A \mathbb{E}(X|Y)d\mathbb{P} \quad \forall A\in\mathcal{A}\]
+Podemos tomar $A=(Y\leq a) \quad a \in \mathbb{R}$, entonces
+\[
+\begin{split}
+\int_{(Y\leq a)}(X-Y)d\mathbb{P}&=\int_{(Y\leq a)}XdP-\int_{(Y\leq a)}Yd\mathbb{P}\\
+&=\int_A E(X|Y)d\mathbb{P}-\int_{(Y\leq a)}Yd\mathbb{P}\\
+&=\int_A (E(X|Y)-Y)d\mathbb{P}=0
+\end{split}
+\]
+Debido a que $\mathbb{E}(X|Y)\overset{c.s.}{=} Y$. Podemos descomponer el conjunto $(Y\leq a)=(X>a,Y\leq a)\cup(X\leq a, Y\leq a)=(Y\leq a<X)\cup (X\leq a, Y\leq a)$ por lo que
+\[\int_{(Y\leq a)}(X-Y)d\mathbb{P}=\int_{(Y\leq a<X)}(X-Y)d\mathbb{P}+\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}=0\]
+
+Ahora, el término $\int_{(Y\leq a<X)}(X-Y)d\mathbb{P}\geq 0$, así que
+\[\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}\leq 0\]
+Por otro lado (analogamente), se puede probar que 
+\[\int_{(X\leq a, Y\leq a)}(Y-X)d\mathbb{P}\leq 0\]
+Entonces 
+\[\int_{(X\leq a, Y\leq a)}(X-Y)d\mathbb{P}=0\]
+por lo que también
+\[\int_{(Y\leq a<X)}(X-Y)d\mathbb{P}=0.\]
+
+Y como se trata de una esperanza de la v.a. no negativa $(X-Y)\mathbb{1}_{(Y\leq a<X)}$, por lo tanto 
+$(X-Y)\mathbb{1}_{(Y\leq a<X)}\overset{c.s.}{=}0$.
+
+Pero lo anterior se cumple solo cuando $P(Y\leq a<X)=0$. Pero por otro lado $(Y<X)=\bigcup_a(Y\leq a<X)$ lo cuál significa que $P(Y<X)=0$. De manera análoga se puede probar que $P(X<Y)=0$. 
+
+De donde se concluye que
+\[P(X=Y)=0\]

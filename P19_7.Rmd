@@ -10,3 +10,54 @@ and also
 for any continuous and bounded $v:\mathbb{R} \to \mathbb{R}$.
 
 Prove that this coincides with the evaluated conditional expectation $\mathbb{E}[v(X)|Y = y]$ given in the notes. 
+
+
+Demostración: 
+
+Sea $\varphi$ una función definida a continuación:
+\[\begin{split}
+\varphi(y)&: \mathbb{R} \to \mathbb{R}\\\\
+\varphi(y) &= \int_\mathbb{R} xf(x,y)dx
+\end{split}\]
+Sabemos que $f(x,y)$ y $xf(x,y)$ son funciones medibles e integrables por lo que el Teorema de Fubini y Tonelli implica que tanto $G(y) = \int_\mathbb{R}xf(x,y)dx$ como $f(y) =  \int_\mathbb{R} f(X,Y)dx$ son funciones $\sigma(Y)$-medibles.
+
+
+De lo anterior se desprende que \[\frac{1}{f(y)}\int_\mathbb{R} xf(x,y)dx = \int_\mathbb{R}xh(x,y)dx \quad \mbox{ es } \sigma(Y)-\mbox{medible}.\]
+
+\[\mbox{PD. } \mathbb{E}(X|Y) = \varphi(Y).\]
+
+Como ya demostramos que $\varphi(Y)$ es $\sigma(Y)-$medible, sólo nos falta mostrar que \[\int_A\varphi(y)d\lambda = \int_AXd\lambda \quad \forall A \in \sigma(Y)-\mbox{medible.}\]
+
+Tomemos $A\in \sigma(Y)$ y $B \in \mathscr{B}(\mathbb{R})$ tales que $A = \{Y \in B\} = Y^{-1}(B)$.
+
+Por el teorema del cambio de variable tenemos:
+
+\[\begin{split}
+\int_A \varphi(Y)d\lambda &= \int_B\varphi(Y)d\mathbb{P}^Y(dy)\\\\
+&= \int_B \varphi(y)f_y(y)dy\\\\
+&= \int_B (\int_\mathbb{R} x h(x|y)dx)f_y(y)dy\\\\
+&= \int_B (\int_\mathbb{R} x \frac{f(x,y)}{f_y(y)}dx)f_y(y)dy\\\\
+&= \int_B (\int_\mathbb{R} x f(x,y)dx)dy\\\\
+&= \int_A X d\lambda \quad (\mbox{Teorema del Cambio de Var.})
+\end{split}\]
+
+En resumen \[\int_A \varphi(Y)d\lambda = \int_A Xd\lambda \quad \forall A \in \mathscr{B}(\mathbb{R}).\]
+
+Por lo tanto
+\[\varphi(Y) = \mathbb{E}(X|Y) \implies \mathbb{E}[X|Y=y] = \int_\mathbb{R}xh(x|y)dx\]
+
+De manera análoga si $v:\mathbb{R} \to \mathbb{R}$ es una función continua y acotada definimos \[\varphi(y) = \int_\mathbb{R}v(x)h(x|y)dx\]
+Así como $v$ es acotada y continua entonces sabemos que $v(x)h(x|y)$ es integrable (sobre $\mathbb{R}^2$) y luego por el teorema de Fubini-Tonelli tenemos que \[\varphi(Y) \quad \mbox{es} \quad \sigma(Y)-\mbox{medible}\]
+
+De nuevo tomemos $A \in \sigma(Y)$ y $B \in \mathscr{B}(\mathbb{R})$ tales que $A = \{y \in B\}$. Luego por el Teorema del Cambio de Variable:
+
+\[\begin{split}
+\int_A \varphi(Y)d\lambda &= \int_B\varphi(y)d\mathbb{P}^y(dy)\\\\
+&= \int_B \varphi(y)f_y(y)dy\\\\
+&= \int_B (\int_\mathbb{R} v(x)h(x|y)dx)f_y(y)dy\\\\
+&= \int_B(\int_\mathbb{R} v(x)f(x,y)dx)dy\\\\
+&= \int_A v(X)d\lambda \quad (\mbox{Por el TCV})
+\end{split}\]
+
+Por lo tanto se puede concluir que 
+\[\varphi(Y) = \mathbb{E}[v(X)|Y] \implies \mathbb{E}[v(X)|Y=y] = \varphi(y) = \int_\mathbb{R}v(x)h(x|y)dx.\]

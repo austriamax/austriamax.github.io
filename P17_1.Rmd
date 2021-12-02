@@ -4,3 +4,141 @@ title: "Tarea 13. Pregunta 17.1."
 
 ### Construya tres v.a. $U$, $V$ y $W$ tales que $\mathbb{E}[\mathbb{E}(U|V)|W] \neq \mathbb{E}[\mathbb{E}(U|W)|V]$.
 
+Sea $([0,1],\mathscr{B}([0,1]), \lambda)$ un espacio de probabilidad con $\lambda$ la medida de Lebesgue. 
+
+Se definen las v.a. $X$, $Y$ y $Z$ como:
+
+\[\begin{align*}
+U(\omega) &= \omega\\\\
+V(\omega) &= 1_{[0,\frac{3}{4}]}(\omega) + v1_{(\frac{3}{4},1]}(\omega)\\\\
+W(\omega) &= w1_{[0,\frac{1}{4}]}(\omega) + 1_{[\frac{3}{4},1]}(\omega)   
+\end{align*}\]
+
+Por lo que sus $\sigma-$álgebras generadas son:
+
+\[\begin{align*}
+\sigma(V) &= \{\emptyset, [0, \frac{3}{4}, (\frac{3}{4},1],[0,1]\}.\\
+\sigma(W) &= \{\emptyset, [0,\frac{1}{4}], (\frac{1}{4},1], [0,1]\}.
+\end{align*}
+\]
+
+Por la medibilidad de $\mathbb{E}[U|V]$ y por el hecho de que $V$ solo tenga dos elementos en su soporte, tenemos que:
+
+\[\mathbb{E}[U|V] = a_01_{V=0} + a_11_{V=1} \quad \mbox{con }a_1,a_2 \in \mathbb{R}\]
+
+Además se debe cumplir que $\forall A \in \sigma(V)$
+\[\int_A Vd\lambda = \int_A \mathbb{E}[U|V]d\lambda\]
+Y la $\sigma-$aditividad de $\lambda$ es suficiente que se cumpla para $\{v=0\} = (\frac{3}{4},1]$ y $\{v=1\} = [0,\frac{3}{4}]$. Ahora calcularemos $a_0$ y $a_1$:
+
+
+\[\begin{align*}
+\int_{A_i}Ud\lambda &= \int_{A_i} \mathbb{E}[U|V]d\lambda\\
+&= \int 1_{A_i}[a_01_{A_0} + a_11_{A_1}]d\lambda\\
+&= \int a_i 1_{A_i}d\lambda\\
+&=a_i \lambda(A_i).\\\\
+\therefore a_i &= \frac{1}{\lambda(A_i)}\int_{A_i}Ud\lambda 
+\end{align*}
+\]
+
+Entonces
+
+\[
+\begin{align*}
+a_0 &= \frac{1}{\lambda(\{V = 0\})}\int_{\{V = 0\}} Ud\lambda\\\\
+&= \frac{1}{\lambda((\frac{3}{4},1])}\int_{\frac{3}{4}}^1 \omega d\omega\\\\
+&=\frac{1}{\frac{1}{4}}[\frac{\omega^2}{2}]_{\frac{3}{4}}^1\\\\
+&= 4(\frac{1}{2} - \frac{9}{32} )\\\\
+&= \frac{7}{8}
+\end{align*}
+\]
+
+\[
+\begin{align*}
+a_1 &= \frac{1}{\lambda(\{V = 1\})}\int_{\{V = 1\}} Ud\lambda\\\\
+&= \frac{1}{\lambda((0,\frac{3}{4}])}\int_{0}^{\frac{3}{4}} \omega d\omega\\\\
+&=\frac{4}{3}[\frac{\omega^2}{2}]_{0}^{\frac{3}{4}}\\\\
+&= \frac{4}{3}(\frac{9}{32} )\\\\
+&= \frac{3}{8}
+\end{align*}
+\]
+
+\[\therefore \mathbb{E}[U|V] = \frac{3}{8} 1_{[0,\frac{3}{4}]} + \frac{7}{8}1_{(\frac{3}{4},1]}\]
+
+Dado que $\mathbb{E}[\mathbb{E}[U|V]|W]$ es $\sigma$-medible tenemos que \[\mathbb{E}[\mathbb{E}[U|V]|W] = b_01_{W=0} + b_11_{W = 1} \quad \mbox{para} \quad b_1,b_2\in \mathbb{R}\] con $\{W = 0\} = [0, \frac{1}{4}]$ y $\{W = 1\} = (\frac{1}{4},1]$. Al igual que antes se debe cumplir que \[\int_{(W = i)} \mathbb{E}(U|V)d\lambda = \int_{(W = i)} \mathbb{E}[\mathbb{E}(U|V)|W]d\lambda \quad \mbox{para} \quad i=0,1.\]
+Entonces, por lo ya visto
+\[
+\begin{align*}
+b_0 &= \frac{1}{\lambda(W = 0)} [\int_{(W = 0)} \mathbb{E}(U|V)d\lambda]\\\\
+&= \frac{1}{\lambda([0,\frac{1}{4}])}[\int_0^{\frac{1}{4}}(\frac{3}{8}1_{[0,\frac{3}{4}]}(\omega) + \frac{7}{8}1_{(\frac{3}{4},1]}(\omega))d\omega]\\\\
+&= \frac{1}{\frac{1}{4}}[\int_{\mathbb{R}}\frac{3}{8} 1_{[0,\frac{1}{4}]}(\omega)d\omega]\\\\
+&=4(\frac{3}{8})\lambda([0,\frac{1}{4}])\\\\
+&=\frac{3}{8}.
+\end{align*}
+\]
+
+\[
+\begin{align*}
+b_0 &= \frac{1}{\lambda(W = 1)} [\int_{(W = 1)} \mathbb{E}(U|V)d\lambda]\\\\
+&= \frac{1}{\lambda((\frac{1}{4},1])}[\int_{\frac{1}{4}}^1(\frac{3}{8}1_{[0,\frac{3}{4}]}(\omega) + \frac{7}{8}1_{(\frac{3}{4},1]}(\omega))d\omega]\\\\
+&= \frac{1}{\frac{3}{4}}[\int_{\mathbb{R}}\frac{3}{8} 1_{(\frac{1}{4},\frac{3}{4}]}(\omega)d\omega + \frac{7}{8}\int_\mathbb{R} 1_{[\frac{3}{4},1]}(\omega)d\omega]\\\\
+&= \frac{4}{3}[\frac{3}{8}(\frac{1}{2})+ \frac{7}{8}(\frac{1}{4})]\\\\
+&= \frac{13}{24}
+\end{align*}
+\]
+
+\[\therefore \mathbb{E}[\mathbb{E}[U|V]|W] = \frac{3}{8}1_{[0,\frac{1}{4}]} + \frac{13}{24}1_{(\frac{1}{4},1]}.\]
+
+Ahora repetimos los calculos para $\mathbb{E}[U|W]$.
+
+\[\mathbb{E}[U|W] = d_01_{(W=0)} + d_11_{(W = 1)}\]
+
+Calculando $d_0$:
+
+\[\begin{align*}
+d_0 &= \frac{1}{\lambda(W = 0)} \int_{\{W = 0\}}Ud\lambda\\\\
+&= \frac{1}{\lambda([0,\frac{1}{4}])}\int_0^{\frac{1}{4}}\omega d\omega\\\\
+&= 4 [\frac{\omega^2}{2}]_0^{\frac{1}{4}}\\\\
+&= \frac{1}{8}.
+\end{align*}\]
+
+Calculando $d_1$:
+
+\[\begin{align*}
+d_1 &= \frac{1}{\lambda(W = 1)} \int_{\{W = 1\}}Ud\lambda\\\\
+&= \frac{1}{\lambda((\frac{1}{4}, 1])}\int_{\frac{1}{4}}^1\omega d\omega\\\\
+&= \frac{4}{3} [\frac{\omega^2}{2}]_{\frac{1}{4}}^1\\\\
+&= \frac{4}{3}(\frac{1}{2} - \frac{1}{32})\\\\
+&= \frac{15}{24}.
+\end{align*}\]
+
+\[\therefore \mathbb{E}[U|W] = \frac{1}{8}1_{[0,\frac{1}{4}]} + \frac{15}{24}1_{[\frac{1}{4},1]}\]
+
+Ahora vamos a encontrar las constantes de \[\mathbb{E}[\mathbb{E}[U|W]|V] = c_01_{(V=0)} + c_11_{(V=1)}\]
+
+Calculando $c_0$:
+
+\[\begin{align*}
+c_0 &= \frac{1}{\lambda(V=0)}\int_{(V= 0)}\mathbb{E}[U|W]d\lambda\\\\
+&= \frac{1}{\lambda((\frac{3}{4},1])}\int 1_{(\frac{3}{4},1]}[\frac{1}{8}1_{[0,\frac{1}{4}]}(\omega) + \frac{15}{24}1_{(\frac{1}{4},1]}(\omega)]d\omega\\\\
+&= 4[\frac{15}{24}\int 1_{(\frac{3}{4},1]}(\omega)d\omega]\\\\
+&= \frac{15}{6}\lambda((\frac{3}{4},1])\\\\
+&=\frac{15}{24}.
+\end{align*}\]
+
+Calculando $c_1$:
+
+\[\begin{align*}
+c_1 &= \frac{1}{\lambda(V=1)} \int_{(V=1)} \mathbb{E}[U|V]d\lambda\\\\
+&= \frac{1}{\lambda([0,\frac{3}{4}])}\int 1_{[0,\frac{3}{4}]}[\frac{1}{8}1_{[0,\frac{1}{4}]}(\omega) + \frac{15}{24}1_{(\frac{1}{4},1]}(\omega)]d\omega\\\\
+&= \frac{4}{3}[\frac{1}{8}\int 1_{[0,\frac{1}{4}]}(\omega)d\omega  + \int 1_{(\frac{1}{4},\frac{3}{4}]}(\omega)d\omega]\\\\
+&= \frac{4}{3}\{\frac{1}{8}\lambda([0,\frac{1}{4}])+\frac{15}{24}\lambda((\frac{1}{4},\frac{3}{4}])\}\\\\
+&=\frac{1}{24} + \frac{5}{12}\\\\
+&= \frac{11}{24}
+\end{align*}\]
+
+\[\therefore \mathbb{E}[\mathbb{E}[U|W]|V] = \frac{15}{24}1_{(\frac{3}{4},1]} + \frac{11}{24}1_{[0,\frac{3}{4}]}\]
+
+Por lo tanto:
+
+\[\mathbb{E}[\mathbb{E}[U|W]|V] \neq \mathbb{E}[\mathbb{E}[U|W]|V].\]
+
