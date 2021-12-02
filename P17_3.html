@@ -292,13 +292,83 @@ H(t) =
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Demostración: Sabemos que dos espacios topológicos <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> y una función <span class="math inline">\(f:X \to Y\)</span> es Boreliana (o Borel-medible) si se cumple que para todo abierto <span class="math inline">\(O \subseteq Y\)</span> el conjunto <span class="math inline">\(f^{-1}(O)\)</span> es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto <span class="math inline">\((Y, \{\emptyset, \{-1\}\}\)</span>)</td>
+<td align="left">Demostración: Sabemos que dos espacios topológicos <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> y una función <span class="math inline">\(f:X \to Y\)</span> es Boreliana (o Borel-medible) si se cumple que para todo abierto <span class="math inline">\(O \subseteq Y\)</span> el conjunto <span class="math inline">\(f^{-1}(O)\)</span> es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto <span class="math inline">\((Y, \{\emptyset, \{-1\},\{1\},Y\}\)</span>), tenemos que todos los subconjuntos de <span class="math inline">\(Y\)</span> son abiertos. Entonces</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math display">\[\begin{split}
+H(\emptyset) &amp;=\emptyset\\\\
+H(\{-1,1\}) &amp;= \mathbb{R}\\\\
+H(\{1\}) &amp; =\{x\in\mathbb{R}: 0\leq x-\lfloor x\rfloor&lt;1/2\}\\
+&amp;=\bigcup_{x\in\mathbb{Z}}[x,x+1/2)\\\\
+H(\{-1\}) &amp;= \bigcup_{x\in\mathbb{Z}}[x-1/2,x).
+\end{split}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Como se puede ver, <span class="math inline">\(H\)</span> es boreliana en <span class="math inline">\(\mathbb{R}\)</span>.</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="si-y_n-sigmar_1dotsr_n-pruebe-que-mathbber_n11_a-0-si-a-in-mathscrf_n." class="section level2">
 <h2>(2) Si <span class="math inline">\(Y_n = \sigma(R_1,\dots,R_n)\)</span>, pruebe que <span class="math inline">\(\mathbb{E}[R_{n+1}1_A] = 0\)</span> si <span class="math inline">\(A \in \mathscr{F}_n\)</span>.</h2>
+<p>Demostración:</p>
+<p>Para toda <span class="math inline">\(n\)</span> y <span class="math inline">\(x\in[0,1]\)</span>, <span class="math inline">\(R_n\)</span> tiene su soporte en <span class="math inline">\(Y=\{-1,1\}\)</span>. Y <span class="math inline">\(2^{n-1}\)</span> es un factor que escala el conjunto <span class="math inline">\([0,1]\)</span> en <span class="math inline">\([0,2^{n-1}]\)</span>. Si consideramos la siguiente partición del intervalo</p>
+<p><span class="math display">\[
+\begin{split}
+[0,1]&amp;=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1]\\
+&amp;=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1)\cup\{1\}
+\end{split}
+\]</span></p>
+<p>Es fácil ver que <span class="math inline">\(R_n(x)=1\)</span> cuando <span class="math inline">\(x\)</span> pertenece a cualquiera de los conjuntos que se encuentran en una posición impar de la unión, entonces la unión es <span class="math inline">\(H(\{1\})\)</span> (que es un conjunto boreliano).</p>
+<p>Además <span class="math inline">\(R_n(x)=-1\)</span> cuando <span class="math inline">\(x\)</span> este en cualquiera de los conjuntos con indice par en la unión, y su unión es un boreliano. Entonces <span class="math inline">\(R_n\)</span> es función boreliana en <span class="math inline">\([0,1]\)</span>.</p>
+<p>Ahora busquemos la esperanza y la varianza de <span class="math inline">\(R_n\)</span>.</p>
+<p>Veamos que ocurre para <span class="math inline">\(n=1\)</span>. <span class="math display">\[
+\begin{split}
+\mathbb{P}(R_1=1)&amp;=\mathbb{P}(\{\omega\in[0,1]:R_1(\omega)=1\})\\\\
+&amp;=\lambda(\{\omega\in[0,1]:H(\omega)=1\})\\\\
+&amp;=\lambda\left(\left[0,\frac{1}{2}\right)\right)\\\\
+&amp;=\frac{1}{2}
+\end{split}
+\]</span></p>
+<p>Entonces por complemento <span class="math display">\[\mathbb{P}(R_1=-1)=\frac{1}{2}\]</span></p>
+<p>Luego <span class="math display">\[\begin{split}
+\mathbb{E}(R_1)&amp;=1\mathbb{P}(R_1=1)+(-1)\mathbb{P}(R_1=-1)\\\\
+&amp;=1\frac{1}{2}+(-1)\frac{1}{2}\\\\
+&amp;=\frac{1}{2}-\frac{1}{2}=0
+\end{split}\]</span></p>
+<p>Y también tenemos que</p>
+<p><span class="math display">\[\begin{split}
+\mathbb{Var}(R_1)&amp;=\mathbb{E}(R_1^2)\\\\
+&amp;=1^2\mathbb{P}(R_1=1)+(-1)^2\mathbb{P}(R_1=-1)\\\\
+&amp;=\frac{1}{2}+\frac{1}{2}\\\\
+&amp;=1
+\end{split}\]</span></p>
+<p>Para una <span class="math inline">\(n \in \mathbb{N}\)</span> tenemos <span class="math display">\[
+\begin{split}
+\mathbb{P}(R_n=1)&amp;=\lambda(\{\omega\in[0,1]:R_n(\omega)=1\})\\\\
+&amp;=\lambda(\{\omega\in[0,1]:H(\omega2^{n-1})=1\})
+\end{split}
+\]</span></p>
+<p>Ahora vamos hacer una partición del intervalo <span class="math inline">\([0,1]\)</span> en <span class="math inline">\(2^n\)</span> subintervalos de longitud <span class="math inline">\(\frac{1}{2^n}\)</span>:</p>
+<p><span class="math display">\[[0,1]=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1]\]</span></p>
+<p>Si <span class="math inline">\(\omega\)</span> esta en un conjunto con indice par ( <span class="math inline">\([0,\frac{1}{2^n}), [\frac{2}{2^n},\frac{3}{2^n})\dots [\frac{2^n-2}{2^n},\frac{2^n-1}{2^n})\)</span>), entonces <span class="math display">\[0&lt;2^{n-1}\omega-\lfloor2^{n-1}\omega\rfloor&lt;\frac{1}{2}\]</span> y si los subintervalos inpares, <span class="math display">\[\frac{1}{2}&lt;2^{n-1}\omega-\lfloor2^{n-1}\omega\rfloor&lt;1\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+\begin{split}
+\lambda(\{\omega\in[0,1]:H(\omega2^{n-1})=1\})&amp;= \lambda([0,\frac{1}{2^n}))+\lambda([\frac{2}{2^n},\frac{3}{2^n}))+...+\lambda([\frac{2^n-2}{2^n},\frac{2^n-1}{2^n})\\\\
+&amp;=\frac{2^n}{2}\frac{1}{2^n}\\\\
+&amp;=\frac{1}{2}
+\end{split}
+\]</span></p>
+<p>Entonces <span class="math display">\[\begin{split}
+\mathbb{P}(R_n=1)&amp;=\frac{1}{2}\\\\
+\mathbb{P}(R_n=-1)&amp;=1-\mathbb{P}(R_n=1)\\
+&amp;=\frac{1}{2}
+\end{split}\]</span></p>
+<p>Análogamente al caso <span class="math inline">\(n=1\)</span>, obtenemos <span class="math display">\[\begin{split}
+\mathbb{E}(R_n)&amp;=0\\\\
+Var(R_n)&amp;=1
+\end{split}\]</span></p>
 <table>
 <tbody>
 <tr class="odd">
@@ -306,6 +376,71 @@ H(t) =
 </tr>
 </tbody>
 </table>
+<p>Demostración:</p>
+<p>Notese que <span class="math inline">\(R_1\)</span> se puede ver como <span class="math inline">\(R_1=1_{[0,1/2)}-1_{[1/2,1)}\)</span>.</p>
+<p>Entonces <span class="math inline">\(\mathcal{F}_1=\sigma(R_1)=\{\emptyset,[0,1/2),[1/2,1),[0,1)\}\)</span>.</p>
+<p>Luego</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}(R_2|\mathcal{F}1)&amp;=\mathbb{E}(R_2|[0,1/2))1_{[0,1/2)}+\mathbb{E}(R_2|[1/2,1))1_{[1/2,1)}\\\\
+&amp;=\frac{1}{\lambda[0,1/2)}\int_0^{1/2}R_2d\mathbb{P}1_{[0,1/2)}+\frac{1}{\lambda[1/2,1)}\int{1/2}^{1}R_2d\mathbb{P}1_{[1/2,1)}\\\\
+&amp;=2\int_0^{1/2}R_2d\mathbb{P}1_{[0,1/2)}+2\int{1/2}^{1}R_2d\mathbb{P}1_{[1/2,1)}\\\\
+&amp;=2\left[\int_0^{1/4}R_2d\mathbb{P}+\int_{1/4}^{1/2}R_2d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}R_2d\mathbb{P}+\int{1/4}^{1/2}R_2d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&amp;=2\left[\int_0^{1/4}(1)d\mathbb{P}+\int_{1/4}^{1/2}(-1)d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}(1)d\mathbb{P}+\int{1/4}^{1/2}(-1)d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&amp;=2\left[\int_0^{1/4}d\mathbb{P}-\int_{1/4}^{1/2}d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}d\mathbb{P}-\int{1/4}^{1/2}d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&amp;=2\left[\lambda[0,1/4)-\lambda[1/4,1/2)\right]1_{[0,1/2)}+2\left[\lambda[1/2,3/4)-\lambda[3/4,1)\right]1_{[1/2,1)}\\\\
+&amp;=2\left[1/4-1/4\right]1_{[0,1/2)}+2\left[1/4-1/4\right]1_{[1/2,1)}\\\\
+&amp;=2[0]+2[0]\\\\
+&amp;=0
+\end{split}
+\]</span></p>
+<p>Ahora, sabemos que <span class="math inline">\(\mathcal{F}_2=\sigma(R_2,R_1)=\sigma\left(\sigma(R_1)\cup\sigma(R_2)\right)\)</span>.Y que la v.a. <span class="math inline">\(R_2\)</span> se puede ver como <span class="math inline">\(1_{[0,1/4)}-1_{[1/4,1/2)}+1_{[1/2,3/4)}-1_{[3/4,1)}\)</span>. De lo que se sigue que <span class="math inline">\(\sigma(R_2)=\sigma([0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1))\)</span> dada por</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{split}
+\sigma(R_2)=&amp;\{\emptyset,[0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1),[0,1/2),[0,1/4)\cup[1/2,3/4),\\
+&amp;[0,1/4)\cup[3/4,1),[1/4,3/4),[1/4,1/2)\cup[3/4,1),[1/2,1), [0,3/4),\\
+&amp;[0,1/2)\cup[3/4,1),[0,1/4)\cup[1/2,1),[1/4,1),[0,1)\}
+\end{split}
+\end{equation*}\]</span></p>
+<p>NOtamos que <span class="math inline">\(\sigma(R_1)\subset\sigma(R_2)\)</span>, entonces <span class="math inline">\(\sigma(R_1)\cup\sigma(R_2)=\sigma(R_2)\)</span>, y <span class="math inline">\(\mathcal{F}_2=\sigma\left(\sigma(R_2)\right)=\sigma(R_2)\)</span>.</p>
+<p>Por ser <span class="math inline">\(\mathcal{F}_2\)</span> generada por la partición <span class="math inline">\([0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1)\)</span> de <span class="math inline">\([0,1)\)</span>, se tiene que</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}(R_3|\mathcal{F}2)&amp;=\mathbb{E}(R_3|[0,\frac{1}{4}))1_{\left[0,\frac{1}{4}\right)}+\mathbb{E}(R_3|[\frac{1}{4},\frac{1}{2}))1_{[\frac{1}{4},\frac{1}{2})}+\mathbb{E}(R_3|[\frac{1}{2},\frac{3}{4}))1_{[\frac{1}{2},\frac{3}{4})}+\mathbb{E}(R_3|[\frac{3}{4},1))1_{[\frac{3}{4},1)}
+\end{split}
+\]</span></p>
+<p>Del primer término de esta suma</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}(R_3|[0,\frac{1}{4}))1_{\left[0,\frac{1}{4}\right)}&amp;=\frac{1}{\lambda[0,1/4)}\int_0^{1/4}R_3d\mathbb{P}1_{\left[0,\frac{1}{4}\right)}\\\\
+&amp;=4\left[\int_0^{1/8}R_3d\mathbb{P}+\int_{1/8}^{1/4}R_3d\mathbb{P}\right]1_{\left[0,\frac{1}{4}\right)}\\\\
+&amp;=4\left[\int_0^{1/8}d\mathbb{P}-\int_{1/8}^{1/4}d\mathbb{P}\right]1_{\left[0,\frac{1}{4}\right)}\\\\
+&amp;=4(\lambda[0,1/8)-\lambda[1/8,1/4))1_{\left[0,\frac{1}{4}\right)}\\\\
+&amp;=4(1/8-1/8)1_{\left[0,\frac{1}{4}\right)}\\\\
+&amp;=0
+\end{split}
+\]</span></p>
+<p>Tomando esperanza obtenemos <span class="math display">\[E(R_3|\mathcal{F}_2)=0\]</span></p>
+<p>Si se aplica iterativamente este procedimiento llegamos a</p>
+<p><span class="math display">\[\mathcal{F}_n=\sigma(R_n)=\sigma\left([0,\frac{1}{2^n}),[\frac{1}{2^n},\frac{2}{2^n}),...,[\frac{2^n-2}{2^n},\frac{2^n-1}{2^n}),[\frac{2^n-1}{2^n},1)\right)\]</span></p>
+<p>Entonces <span class="math display">\[
+\begin{split}
+\mathbb{E}(R_{n+1}|\mathcal{F}n)=\sum{i=1}^{2^n}\mathbb{E}(R_{n+1}|[\frac{i-1}{2^n},\frac{i}{2^n}))1_{[\frac{i-1}{2^n},\frac{i}{2^n})}
+\end{split}
+\]</span></p>
+<p>Al tomar uno de estos sumandos, se tiene que</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}(R_{n+1}|[\frac{i-1}{2^n},\frac{i}{2^n}))1_{[\frac{i-1}{2^n},\frac{i}{2^n})}&amp;=\frac{1}{\lambda[\frac{i-1}{2^n},\frac{i}{2^n})}\int{\frac{i-1}{2^n}}^{\frac{i}{2^n}}R_{n+1}d\mathbb{P}\\\\
+&amp;=2^n\left[\int_{\frac{i-1}{2^n}}^{\frac{2i-1}{2^{n+1}}}R_{n+1}d\mathbb{P}+\int_{\frac{2i-1}{2^{n+1}}}^{\frac{i}{2^n}}R_{n+1}d\mathbb{P}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&amp;=2^n\left[\int_{\frac{i-1}{2^n}}^{\frac{2i-1}{2^{n+1}}}d\mathbb{P}-\int_{\frac{2i-1}{2^{n+1}}}^{\frac{i}{2^n}}d\mathbb{P}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&amp;=2^n\left[\lambda[\frac{i-1}{2^n},\frac{2i-1}{2^{n+1}})-\lambda[\frac{2i-1}{2^{n+1}},\frac{i}{2^n})\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&amp;=2^n\left[\frac{1}{2^{n+1}}-\frac{1}{2^{n+1}}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&amp;=0
+\end{split}
+\]</span></p>
+<p>Y como <span class="math inline">\(R_{n+1}(\omega)=1\)</span> para <span class="math inline">\(i=1,...,2^n\)</span> si <span class="math inline">\(\omega\in [\frac{i-1}{2^n},\frac{2i-1}{2^{n+1}})\)</span> y <span class="math inline">\(R_{n+1}(\omega)=-1\)</span> si <span class="math inline">\(\omega\in[\frac{2i-1}{2^{n+1}},\frac{i}{2^n})\)</span>.</p>
+<p>Por lo tanto tenemos la igualdad casi segura <span class="math display">\[E(R_{n+1}|\mathcal{F}_n)(\omega)=0,\hspace{.5cm}\forall\omega\in[0,1)\]</span></p>
 </div>
 
 

@@ -14,16 +14,203 @@ H(t) =
 (1) Pruebe que $H$ es boreliana en $\mathbb{R}$.
 ---------------------------------------------------------------
 Demostración:
-Sabemos que dos espacios topológicos $X$ y $Y$ y una función $f:X \to Y$ es Boreliana (o Borel-medible) si se cumple que para todo abierto $O \subseteq Y$ el conjunto $f^{-1}(O)$ es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto $(Y, \{\emptyset, \{-1\}\}$)
+Sabemos que dos espacios topológicos $X$ y $Y$ y una función $f:X \to Y$ es Boreliana (o Borel-medible) si se cumple que para todo abierto $O \subseteq Y$ el conjunto $f^{-1}(O)$ es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto $(Y, \{\emptyset, \{-1\},\{1\},Y\}$), tenemos que todos los subconjuntos de $Y$ son abiertos. Entonces
 
+\[\begin{split}
+H(\emptyset) &=\emptyset\\\\
+H(\{-1,1\}) &= \mathbb{R}\\\\
+H(\{1\}) & =\{x\in\mathbb{R}: 0\leq x-\lfloor x\rfloor<1/2\}\\
+&=\bigcup_{x\in\mathbb{Z}}[x,x+1/2)\\\\
+H(\{-1\}) &= \bigcup_{x\in\mathbb{Z}}[x-1/2,x).
+\end{split}\]
 
+Como se puede ver, $H$ es boreliana en $\mathbb{R}$.
 
 ---------------------------------------------------------------
 (2) Si $Y_n = \sigma(R_1,\dots,R_n)$, pruebe que $\mathbb{E}[R_{n+1}1_A] = 0$ si $A \in \mathscr{F}_n$.
 ---------------------------------------------------------------
+
+Demostración:
+
+Para toda $n$ y $x\in[0,1]$,  $R_n$ tiene su soporte en $Y=\{-1,1\}$. Y $2^{n-1}$ es un factor que escala el conjunto $[0,1]$ en $[0,2^{n-1}]$. Si consideramos la siguiente partición del intervalo 
+
+\[
+\begin{split}
+[0,1]&=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1]\\
+&=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1)\cup\{1\}
+\end{split}
+\]
+
+Es fácil ver que $R_n(x)=1$ cuando $x$ pertenece a cualquiera de los conjuntos que se encuentran en una posición impar de la unión, entonces la unión es $H(\{1\})$ (que es un conjunto boreliano).
+
+Además $R_n(x)=-1$ cuando $x$ este en cualquiera de los conjuntos con indice par en la unión, y su unión es un boreliano. Entonces $R_n$ es función boreliana en $[0,1]$.
+
+
+Ahora busquemos la esperanza y la varianza de $R_n$. 
+
+Veamos que ocurre para $n=1$. 
+\[
+\begin{split}
+\mathbb{P}(R_1=1)&=\mathbb{P}(\{\omega\in[0,1]:R_1(\omega)=1\})\\\\
+&=\lambda(\{\omega\in[0,1]:H(\omega)=1\})\\\\
+&=\lambda\left(\left[0,\frac{1}{2}\right)\right)\\\\
+&=\frac{1}{2}
+\end{split}
+\]
+
+Entonces por complemento 
+\[\mathbb{P}(R_1=-1)=\frac{1}{2}\]
+
+Luego
+\[\begin{split}
+\mathbb{E}(R_1)&=1\mathbb{P}(R_1=1)+(-1)\mathbb{P}(R_1=-1)\\\\
+&=1\frac{1}{2}+(-1)\frac{1}{2}\\\\
+&=\frac{1}{2}-\frac{1}{2}=0
+\end{split}\]
+
+Y también tenemos que
+
+\[\begin{split}
+\mathbb{Var}(R_1)&=\mathbb{E}(R_1^2)\\\\
+&=1^2\mathbb{P}(R_1=1)+(-1)^2\mathbb{P}(R_1=-1)\\\\
+&=\frac{1}{2}+\frac{1}{2}\\\\
+&=1
+\end{split}\]
+
+
+Para una $n \in \mathbb{N}$ tenemos 
+\[
+\begin{split}
+\mathbb{P}(R_n=1)&=\lambda(\{\omega\in[0,1]:R_n(\omega)=1\})\\\\
+&=\lambda(\{\omega\in[0,1]:H(\omega2^{n-1})=1\})
+\end{split}
+\]
+
+Ahora vamos hacer una partición del intervalo $[0,1]$ en $2^n$ subintervalos de longitud $\frac{1}{2^n}$:
+
+\[[0,1]=[0,\frac{1}{2^n})\cup[\frac{1}{2^n},\frac{2}{2^n})\cup[\frac{2}{2^n},\frac{3}{2^n})\cup...\cup[\frac{2^n-1}{2^n},1]\]
+
+Si $\omega$ esta en un conjunto con indice par ( $[0,\frac{1}{2^n}), [\frac{2}{2^n},\frac{3}{2^n})\dots [\frac{2^n-2}{2^n},\frac{2^n-1}{2^n})$), entonces 
+\[0<2^{n-1}\omega-\lfloor2^{n-1}\omega\rfloor<\frac{1}{2}\] y si los subintervalos inpares, 
+\[\frac{1}{2}<2^{n-1}\omega-\lfloor2^{n-1}\omega\rfloor<1\]
+
+Entonces
+
+\[
+\begin{split}
+\lambda(\{\omega\in[0,1]:H(\omega2^{n-1})=1\})&= \lambda([0,\frac{1}{2^n}))+\lambda([\frac{2}{2^n},\frac{3}{2^n}))+...+\lambda([\frac{2^n-2}{2^n},\frac{2^n-1}{2^n})\\\\
+&=\frac{2^n}{2}\frac{1}{2^n}\\\\
+&=\frac{1}{2}
+\end{split}
+\]
+
+Entonces 
+\[\begin{split}
+\mathbb{P}(R_n=1)&=\frac{1}{2}\\\\
+\mathbb{P}(R_n=-1)&=1-\mathbb{P}(R_n=1)\\
+&=\frac{1}{2}
+\end{split}\]
+
+Análogamente al caso $n=1$, obtenemos
+\[\begin{split}
+\mathbb{E}(R_n)&=0\\\\
+Var(R_n)&=1
+\end{split}\]
 
 
 ---------------------------------------------------------------
 (3) Encuentre una versión de $\mathbb{E}[\mathscr{R}_{n+1}|\mathscr{F}_n]$.
 ---------------------------------------------------------------
 
+Demostración:
+
+
+Notese que $R_1$ se puede ver como $R_1=1_{[0,1/2)}-1_{[1/2,1)}$.
+
+Entonces $\mathcal{F}_1=\sigma(R_1)=\{\emptyset,[0,1/2),[1/2,1),[0,1)\}$.
+
+Luego
+
+\[
+\begin{split}
+\mathbb{E}(R_2|\mathcal{F}1)&=\mathbb{E}(R_2|[0,1/2))1_{[0,1/2)}+\mathbb{E}(R_2|[1/2,1))1_{[1/2,1)}\\\\
+&=\frac{1}{\lambda[0,1/2)}\int_0^{1/2}R_2d\mathbb{P}1_{[0,1/2)}+\frac{1}{\lambda[1/2,1)}\int{1/2}^{1}R_2d\mathbb{P}1_{[1/2,1)}\\\\
+&=2\int_0^{1/2}R_2d\mathbb{P}1_{[0,1/2)}+2\int{1/2}^{1}R_2d\mathbb{P}1_{[1/2,1)}\\\\
+&=2\left[\int_0^{1/4}R_2d\mathbb{P}+\int_{1/4}^{1/2}R_2d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}R_2d\mathbb{P}+\int{1/4}^{1/2}R_2d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&=2\left[\int_0^{1/4}(1)d\mathbb{P}+\int_{1/4}^{1/2}(-1)d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}(1)d\mathbb{P}+\int{1/4}^{1/2}(-1)d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&=2\left[\int_0^{1/4}d\mathbb{P}-\int_{1/4}^{1/2}d\mathbb{P}\right]1_{[0,1/2)}+2\left[\int_0^{1/4}d\mathbb{P}-\int{1/4}^{1/2}d\mathbb{P}\right]1_{[1/2,1)}\\\\
+&=2\left[\lambda[0,1/4)-\lambda[1/4,1/2)\right]1_{[0,1/2)}+2\left[\lambda[1/2,3/4)-\lambda[3/4,1)\right]1_{[1/2,1)}\\\\
+&=2\left[1/4-1/4\right]1_{[0,1/2)}+2\left[1/4-1/4\right]1_{[1/2,1)}\\\\
+&=2[0]+2[0]\\\\
+&=0
+\end{split}
+\]
+
+Ahora, sabemos que $\mathcal{F}_2=\sigma(R_2,R_1)=\sigma\left(\sigma(R_1)\cup\sigma(R_2)\right)$.Y que la v.a. $R_2$ se puede ver como 
+$1_{[0,1/4)}-1_{[1/4,1/2)}+1_{[1/2,3/4)}-1_{[3/4,1)}$.
+De lo que se sigue que $\sigma(R_2)=\sigma([0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1))$ dada por
+
+\begin{equation*}
+\begin{split}
+\sigma(R_2)=&\{\emptyset,[0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1),[0,1/2),[0,1/4)\cup[1/2,3/4),\\
+&[0,1/4)\cup[3/4,1),[1/4,3/4),[1/4,1/2)\cup[3/4,1),[1/2,1), [0,3/4),\\
+&[0,1/2)\cup[3/4,1),[0,1/4)\cup[1/2,1),[1/4,1),[0,1)\}
+\end{split}
+\end{equation*}
+
+NOtamos que $\sigma(R_1)\subset\sigma(R_2)$, entonces $\sigma(R_1)\cup\sigma(R_2)=\sigma(R_2)$, y
+$\mathcal{F}_2=\sigma\left(\sigma(R_2)\right)=\sigma(R_2)$.
+
+Por ser $\mathcal{F}_2$ generada por la partición $[0,1/4),[1/4,1/2),[1/2,3/4),[3/4,1)$ de $[0,1)$, se tiene que
+
+\[
+\begin{split}
+\mathbb{E}(R_3|\mathcal{F}2)&=\mathbb{E}(R_3|[0,\frac{1}{4}))1_{\left[0,\frac{1}{4}\right)}+\mathbb{E}(R_3|[\frac{1}{4},\frac{1}{2}))1_{[\frac{1}{4},\frac{1}{2})}+\mathbb{E}(R_3|[\frac{1}{2},\frac{3}{4}))1_{[\frac{1}{2},\frac{3}{4})}+\mathbb{E}(R_3|[\frac{3}{4},1))1_{[\frac{3}{4},1)}
+\end{split}
+\]
+
+Del primer término de esta suma
+
+\[
+\begin{split}
+\mathbb{E}(R_3|[0,\frac{1}{4}))1_{\left[0,\frac{1}{4}\right)}&=\frac{1}{\lambda[0,1/4)}\int_0^{1/4}R_3d\mathbb{P}1_{\left[0,\frac{1}{4}\right)}\\\\
+&=4\left[\int_0^{1/8}R_3d\mathbb{P}+\int_{1/8}^{1/4}R_3d\mathbb{P}\right]1_{\left[0,\frac{1}{4}\right)}\\\\
+&=4\left[\int_0^{1/8}d\mathbb{P}-\int_{1/8}^{1/4}d\mathbb{P}\right]1_{\left[0,\frac{1}{4}\right)}\\\\
+&=4(\lambda[0,1/8)-\lambda[1/8,1/4))1_{\left[0,\frac{1}{4}\right)}\\\\
+&=4(1/8-1/8)1_{\left[0,\frac{1}{4}\right)}\\\\
+&=0
+\end{split}
+\]
+
+
+Tomando esperanza obtenemos
+\[E(R_3|\mathcal{F}_2)=0\]
+
+Si se aplica iterativamente este procedimiento llegamos a
+
+\[\mathcal{F}_n=\sigma(R_n)=\sigma\left([0,\frac{1}{2^n}),[\frac{1}{2^n},\frac{2}{2^n}),...,[\frac{2^n-2}{2^n},\frac{2^n-1}{2^n}),[\frac{2^n-1}{2^n},1)\right)\]
+
+Entonces
+\[
+\begin{split}
+\mathbb{E}(R_{n+1}|\mathcal{F}n)=\sum{i=1}^{2^n}\mathbb{E}(R_{n+1}|[\frac{i-1}{2^n},\frac{i}{2^n}))1_{[\frac{i-1}{2^n},\frac{i}{2^n})}
+\end{split}
+\]
+
+Al tomar uno de estos sumandos, se tiene que
+
+\[
+\begin{split}
+\mathbb{E}(R_{n+1}|[\frac{i-1}{2^n},\frac{i}{2^n}))1_{[\frac{i-1}{2^n},\frac{i}{2^n})}&=\frac{1}{\lambda[\frac{i-1}{2^n},\frac{i}{2^n})}\int{\frac{i-1}{2^n}}^{\frac{i}{2^n}}R_{n+1}d\mathbb{P}\\\\
+&=2^n\left[\int_{\frac{i-1}{2^n}}^{\frac{2i-1}{2^{n+1}}}R_{n+1}d\mathbb{P}+\int_{\frac{2i-1}{2^{n+1}}}^{\frac{i}{2^n}}R_{n+1}d\mathbb{P}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&=2^n\left[\int_{\frac{i-1}{2^n}}^{\frac{2i-1}{2^{n+1}}}d\mathbb{P}-\int_{\frac{2i-1}{2^{n+1}}}^{\frac{i}{2^n}}d\mathbb{P}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&=2^n\left[\lambda[\frac{i-1}{2^n},\frac{2i-1}{2^{n+1}})-\lambda[\frac{2i-1}{2^{n+1}},\frac{i}{2^n})\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&=2^n\left[\frac{1}{2^{n+1}}-\frac{1}{2^{n+1}}\right]1_{[\frac{i-1}{2^n},\frac{i}{2^n})}\\\\
+&=0
+\end{split}
+\]
+
+Y como $R_{n+1}(\omega)=1$ para $i=1,...,2^n$ si $\omega\in [\frac{i-1}{2^n},\frac{2i-1}{2^{n+1}})$ y $R_{n+1}(\omega)=-1$ si $\omega\in[\frac{2i-1}{2^{n+1}},\frac{i}{2^n})$. 
+
+Por lo tanto tenemos la igualdad casi segura
+\[E(R_{n+1}|\mathcal{F}_n)(\omega)=0,\hspace{.5cm}\forall\omega\in[0,1)\]
