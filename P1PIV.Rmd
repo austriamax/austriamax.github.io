@@ -2,4 +2,4 @@
 title: "Pregunta 1, Parcial IV"
 ---
 
-### Construya tres v.a. $U$, $V$ y $W$ tales que $\mathbb{E}[\mathbb{E}(U|V)|W] \neq \mathbb{E}[\mathbb{E}(U|W)|V]$. $\mathbb{E}[X|Y] \overset{c.s.}{=} Y$
+### Sea $(\Omega, \mathscr{F},\mathbb{P})$ un espacio de probabilidad, $f:\mathbb{R}^2 \to \mathbb{R}$ una funcioón boreliana y acotada y $X,Y: \Omega \to \mathbb{R}$
