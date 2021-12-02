@@ -10,13 +10,49 @@ title: "Tarea 16. Pregunta 20.5."
 (A) El TCL nos dice que $\frac{S_n-n\mu}{\sigma\sqrt{n}} \overset{\mathscr{L}}{\to} N(0,1)$. Pruebe que $(\frac{S_n}{\sigma\sqrt{n}})_{n \in \mathbb{N}}$ no converge en probabilidad (ni $c.s.$ ni en $\mathscr{L}_1$).
 
 
+Demostración:
+
+SPG. $\mu=0$. 
+
+Supongase que  $\frac{S_n}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow} X$. Por el TLC $\frac{S_n}{\sigma\sqrt{n}}$ converge a $N(0,1)$. Pero sabemos que convergencia en probabilidad implica convergencia en distribución, entonces $X\sim N(0,1)$, de esto se sigue que $\frac{S_n}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}X$. Análogamente $\frac{S_{2n}}{\sigma\sqrt{2n}}\overset{\mathbb{P}}{\rightarrow}X$, entonces $\frac{S_{2n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}\sqrt{2}X$.
+
+Luego
+\[\frac{S_{2n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}\sqrt{2}N(0,1)\]
+donde
+\[\frac{S_{2n}}{\sigma\sqrt{n}}-\frac{S_{n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}(\sqrt{2}-1)N(0,1)\]
+Ademas
+\[\frac{S_{2n}-S_n}{\sigma\sqrt{n}}=\frac{\sum_{i=n+1}^{2n}\xi_i}{\sigma\sqrt{n}}\]
+y por el TLC 
+\[\frac{S_{2n}-S_n}{\sigma\sqrt{n}}=\frac{\sum_{i=n+1}^{2n}\xi_i}{\sigma\sqrt{n}} \overset{\mathscr{L}}{\to}  N(0,1) \]
+lo que es una contradicción pues converge a $(\sqrt{2}-1)N(0,1)$.
+
+Por lo tanto
+
+\[\frac{S_n}{\sigma\sqrt{n}}\text{ no converge en probabilidad}\]
+Y por tanto tampoco en $L^1$, ni casi seguramente.
+
 -----------------------------------------------------------
 
 (B) Sea $\mathscr{A}_n = \sigma(\xi_1,\xi_2, \dots, \xi_n)$. Calcule $\mathbb{E}(S_{n+m}|\mathscr{A}_n),$ $m = 1, 2, \dots$ y $n = 1, 2, \dots$. En este caso $\mathscr{A}_n \subset \mathscr{A}_{n+1} \subset \mathscr{A}$, $n = 1, 2, \dots$.
 
 
+Notese que
+\[S_{n+m}=\sum_{i=1}^{n+m}\xi_i=\sum_{i=1}^{n}\xi_i+\sum_{i=n+1}^{n+m}\xi_i\]
+con $\xi_i$, $\mathcal{A}_n$-medible por definición  $i=1,..,n$.
+
+Luego
+\[\mathbb{E}(S_{n+m}|\mathcal{A}n)=\mathbb{E}(\sum{i=1}^{n}\xi_i+\sum_{i=n+1}^{n+m}\xi_i|\mathcal{A}n)=\sum{i=1}^{n}\xi_i+\mathbb{E}(\sum_{i=n+1}^{n+m}\xi_i|\mathcal{A}_n)\]
+
+Y por la independencia de las $\xi_i$ $i=n+1,...,m$
+\[\mathbb{E}(\xi_i|\mathcal{A}_n)=\mathbb{E}(X_i)=\mu\]
+Entonces
+\[\mathbb{E}(S_{n+m}|\mathcal{A}n)=\sum{i=1}^n+(m-n)\mu\]
+
 -----------------------------------------------------------
 
 (C) Hacer la parte (B), si se supone además que $\xi_n \sim Bernoulli(p)$, $p \in (0,1)$.
 
+
+Agregando el supuesto $E(\xi_i)=p$, se tiene que
+\[\mathbb{E}(S_{n+m}|\mathcal{A}_n)=\sum_i^n+(m-n)p\]
 

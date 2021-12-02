@@ -279,14 +279,24 @@ $(document).ready(function () {
 <ol style="list-style-type: upper-alpha">
 <li>El TCL nos dice que <span class="math inline">\(\frac{S_n-n\mu}{\sigma\sqrt{n}} \overset{\mathscr{L}}{\to} N(0,1)\)</span>. Pruebe que <span class="math inline">\((\frac{S_n}{\sigma\sqrt{n}})_{n \in \mathbb{N}}\)</span> no converge en probabilidad (ni <span class="math inline">\(c.s.\)</span> ni en <span class="math inline">\(\mathscr{L}_1\)</span>).</li>
 </ol>
+<p>Demostración:</p>
+<p>SPG. <span class="math inline">\(\mu=0\)</span>.</p>
+<p>Supongase que <span class="math inline">\(\frac{S_n}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow} X\)</span>. Por el TLC <span class="math inline">\(\frac{S_n}{\sigma\sqrt{n}}\)</span> converge a <span class="math inline">\(N(0,1)\)</span>. Pero sabemos que convergencia en probabilidad implica convergencia en distribución, entonces <span class="math inline">\(X\sim N(0,1)\)</span>, de esto se sigue que <span class="math inline">\(\frac{S_n}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}X\)</span>. Análogamente <span class="math inline">\(\frac{S_{2n}}{\sigma\sqrt{2n}}\overset{\mathbb{P}}{\rightarrow}X\)</span>, entonces <span class="math inline">\(\frac{S_{2n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}\sqrt{2}X\)</span>.</p>
+<p>Luego <span class="math display">\[\frac{S_{2n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}\sqrt{2}N(0,1)\]</span> donde <span class="math display">\[\frac{S_{2n}}{\sigma\sqrt{n}}-\frac{S_{n}}{\sigma\sqrt{n}}\overset{\mathbb{P}}{\rightarrow}(\sqrt{2}-1)N(0,1)\]</span> Ademas <span class="math display">\[\frac{S_{2n}-S_n}{\sigma\sqrt{n}}=\frac{\sum_{i=n+1}^{2n}\xi_i}{\sigma\sqrt{n}}\]</span> y por el TLC <span class="math display">\[\frac{S_{2n}-S_n}{\sigma\sqrt{n}}=\frac{\sum_{i=n+1}^{2n}\xi_i}{\sigma\sqrt{n}} \overset{\mathscr{L}}{\to}  N(0,1) \]</span> lo que es una contradicción pues converge a <span class="math inline">\((\sqrt{2}-1)N(0,1)\)</span>.</p>
+<p>Por lo tanto</p>
+<p><span class="math display">\[\frac{S_n}{\sigma\sqrt{n}}\text{ no converge en probabilidad}\]</span> Y por tanto tampoco en <span class="math inline">\(L^1\)</span>, ni casi seguramente.</p>
 <hr />
 <ol start="2" style="list-style-type: upper-alpha">
 <li>Sea <span class="math inline">\(\mathscr{A}_n = \sigma(\xi_1,\xi_2, \dots, \xi_n)\)</span>. Calcule <span class="math inline">\(\mathbb{E}(S_{n+m}|\mathscr{A}_n),\)</span> <span class="math inline">\(m = 1, 2, \dots\)</span> y <span class="math inline">\(n = 1, 2, \dots\)</span>. En este caso <span class="math inline">\(\mathscr{A}_n \subset \mathscr{A}_{n+1} \subset \mathscr{A}\)</span>, <span class="math inline">\(n = 1, 2, \dots\)</span>.</li>
 </ol>
+<p>Notese que <span class="math display">\[S_{n+m}=\sum_{i=1}^{n+m}\xi_i=\sum_{i=1}^{n}\xi_i+\sum_{i=n+1}^{n+m}\xi_i\]</span> con <span class="math inline">\(\xi_i\)</span>, <span class="math inline">\(\mathcal{A}_n\)</span>-medible por definición <span class="math inline">\(i=1,..,n\)</span>.</p>
+<p>Luego <span class="math display">\[\mathbb{E}(S_{n+m}|\mathcal{A}n)=\mathbb{E}(\sum{i=1}^{n}\xi_i+\sum_{i=n+1}^{n+m}\xi_i|\mathcal{A}n)=\sum{i=1}^{n}\xi_i+\mathbb{E}(\sum_{i=n+1}^{n+m}\xi_i|\mathcal{A}_n)\]</span></p>
+<p>Y por la independencia de las <span class="math inline">\(\xi_i\)</span> <span class="math inline">\(i=n+1,...,m\)</span> <span class="math display">\[\mathbb{E}(\xi_i|\mathcal{A}_n)=\mathbb{E}(X_i)=\mu\]</span> Entonces <span class="math display">\[\mathbb{E}(S_{n+m}|\mathcal{A}n)=\sum{i=1}^n+(m-n)\mu\]</span></p>
 <hr />
 <ol start="3" style="list-style-type: upper-alpha">
 <li>Hacer la parte (B), si se supone además que <span class="math inline">\(\xi_n \sim Bernoulli(p)\)</span>, <span class="math inline">\(p \in (0,1)\)</span>.</li>
 </ol>
+<p>Agregando el supuesto <span class="math inline">\(E(\xi_i)=p\)</span>, se tiene que <span class="math display">\[\mathbb{E}(S_{n+m}|\mathcal{A}_n)=\sum_i^n+(m-n)p\]</span></p>
 </div>
 
 

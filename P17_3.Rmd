@@ -16,6 +16,8 @@ H(t) =
 Demostración:
 Sabemos que dos espacios topológicos $X$ y $Y$ y una función $f:X \to Y$ es Boreliana (o Borel-medible) si se cumple que para todo abierto $O \subseteq Y$ el conjunto $f^{-1}(O)$ es boreliano. Aplicando esto a nuestro problema en particular (donde tenemos un espacio discreto $(Y, \{\emptyset, \{-1\}\}$)
 
+
+
 ---------------------------------------------------------------
 (2) Si $Y_n = \sigma(R_1,\dots,R_n)$, pruebe que $\mathbb{E}[R_{n+1}1_A] = 0$ si $A \in \mathscr{F}_n$.
 ---------------------------------------------------------------
