@@ -278,19 +278,47 @@ $(document).ready(function () {
 
 <div id="sea-omega-01-mathscra-mathscrb01-mathbbp-la-medida-de-lebesgue-en-01-a_i-fraci-1nfracin-i-1-2-dots-n.-mathscra_n-sigmaa_ii1-dots-n." class="section level3">
 <h3>Sea <span class="math inline">\(\Omega = [0,1]\)</span>, <span class="math inline">\(\mathscr{A} = \mathscr{B}([0,1])\)</span>, <span class="math inline">\(\mathbb{P} =\)</span> la medida de Lebesgue en <span class="math inline">\([0,1]\)</span>, <span class="math inline">\(A_i = (\frac{i-1}{n},\frac{i}{n}]\)</span> <span class="math inline">\(i = 1, 2, \dots, n\)</span>. <span class="math inline">\(\mathscr{A}_n = \sigma(A_i:i=1, \dots, n)\)</span>.</h3>
-<table style="width:6%;">
-<colgroup>
-<col width="5%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>(A) Si <span class="math inline">\(g(w) = w^2 + w + 1\)</span> con <span class="math inline">\(g:\mathbb{R} \to \mathbb{R}\)</span>. Pruebe que <span class="math inline">\(g \in \mathscr{L}^{1}(\Omega,\mathscr{A}, \mathbb{P})\)</span> y calcule <span class="math inline">\(\mathbb{E}(g|\mathscr{A}_n)\)</span>.</td>
-</tr>
-</tbody>
-</table>
-<ol start="2" style="list-style-type: upper-alpha">
-<li>Sean <span class="math inline">\(f_n:\Omega \to \Omega\)</span> funciones tales que <span class="math inline">\(f_n(w) = \sum_{i=1}^n i1_{A_i}(w)\)</span>. Calcule <span class="math inline">\(\mathbb{E}[f_n|\mathscr{A}_n]\)</span>, <span class="math inline">\(\mathbb{E}[f_n|\mathscr{A}_{2n}]\)</span> y <span class="math inline">\(\mathbb{E}[f_{2n}|\mathscr{A}_n]\)</span>.</li>
+<hr />
+<ol style="list-style-type: upper-alpha">
+<li>Si <span class="math inline">\(g(w) = w^2 + w + 1\)</span> con <span class="math inline">\(g:\mathbb{R} \to \mathbb{R}\)</span>. Pruebe que <span class="math inline">\(g \in \mathscr{L}^{1}(\Omega,\mathscr{A}, \mathbb{P})\)</span> y calcule <span class="math inline">\(\mathbb{E}(g|\mathscr{A}_n)\)</span>.</li>
 </ol>
+<p>Solución:</p>
+<p>Como la función <span class="math inline">\(g\)</span> es medible por ser función continua, y como es no negativa <span class="math inline">\(g(w)\geq 0\)</span> para todo <span class="math inline">\(w\in\Omega\)</span>. Entonces</p>
+<p><span class="math display">\[
+\begin{split}
+\int_{[0,1]}|g|d\mathbb{P}&amp;=\int_{[0,1]}gd\mathbb{P}\\
+&amp;=\int_{[0,1]}(w^2+w+1)d\mathbb{P}\\
+&amp;=\int_{0}^1(w^2+w+1)d\mathbb{P}=\int_{0}^1w^2d\mathbb{P}+\int_{0}^1wd\mathbb{P}+\int_{0}^1d\mathbb{P}\\
+&amp;=\frac{1}{3}+\frac{1}{2}+1=\frac{11}{6}&lt;\infty
+\end{split}´
+\]</span></p>
+<p>Lo muestra que <span class="math inline">\(g\in L^1(\Omega,\mathcal{A},P).\)</span></p>
+<p>Luego, tenemos que para <span class="math inline">\(A_i\in\mathcal{A}_n\)</span> se cumple que</p>
+<p><span class="math display">\[
+\begin{split}
+\int_{A_i}gd\mathbb{P} &amp;=\int_{\frac{i-1}{n}}^{\frac{i}{n}}(w^2+w+1)dw\\
+&amp;=\int_{\frac{i-1}{n}}^{\frac{i}{n}}w^2dw+\int_{\frac{i-1}{n}}^{\frac{i}{n}}wdw+\int_{\frac{i-1}{n}}^{\frac{i}{n}}dw\\
+&amp;=\frac{1}{3}(\frac{i^3}{n^3}-\frac{(i-1)^3}{n^3})+\frac{1}{2}(\frac{i^2}{n^2}-\frac{(i-1)^2}{n^2})+(\frac{i}{n}-\frac{i-1}{n})\\
+&amp;=\frac{3i^2-3i+1}{3n^3}+\frac{2i-1}{2n^2}+\frac{1}{n}
+\end{split}
+\]</span></p>
+<p>Veamos que <span class="math display">\[P(A_i)=\lambda[\frac{i-1}{n},\frac{i}{n})=1/n\]</span></p>
+<p>De lo que se sigue que <span class="math display">\[
+\begin{split}
+a_i&amp;=\frac{1}{\mathbb{P}(A_i)}\int_{A_i}gd\mathbb{P}\\
+&amp;=n[\frac{3i^2-3i+1}{3n^3}+\frac{2i-1}{2n^2}+\frac{1}{n}]\\
+&amp;=\frac{3i^2-3i+1}{3n^2}+\frac{2i-1}{2n}+1
+\end{split}
+\]</span></p>
+<p>Por el ejercicio 19.5, como <span class="math inline">\(A_i,...,A_n\)</span> forman una partición de <span class="math inline">\([0,1]\)</span> se tiene que <span class="math display">\[E(g|\mathcal{A}n)=\sum{i=1}^na_i\mathbb{1}_{A_i}\]</span></p>
+<hr />
+<ol start="2" style="list-style-type: upper-alpha">
+<li>Sean <span class="math inline">\(f_n:\Omega\rightarrow\mathbb{R}\)</span> funciones tales que <span class="math inline">\(f_n(w) = \sum_{i=1}^n i1_{A_i}(w)\)</span>. Calcule <span class="math inline">\(\mathbb{E}[f_n|\mathscr{A}_n]\)</span>, <span class="math inline">\(\mathbb{E}[f_n|\mathscr{A}_{2n}]\)</span> y <span class="math inline">\(\mathbb{E}[f_{2n}|\mathscr{A}_n]\)</span>.</li>
+</ol>
+<p>Solución:</p>
+<p>Sabemos que <span class="math inline">\(f_n=\sum_{i=1}^n i\mathbb{1}_{A_i}\)</span> con <span class="math inline">\(A_i\in\mathcal{A}_n\)</span> es medible en <span class="math inline">\(\mathcal{A}_n\)</span> y además tiene que <span class="math display">\[\mathbb{E}(f_n|\mathcal{A}_n)=f_n\]</span></p>
+<p>Hay que tomar los conjuntos <span class="math inline">\(B_i=(\frac{i-1}{2n},\frac{i}{2n}]\)</span>, por lo que <span class="math inline">\(\mathcal{A}{2n}=\sigma(B_1,...,B{2n})\)</span>. Entonces <span class="math display">\[\int_{B_j}f_nd\mathbb{P}=\sum_i^n\int_{B_j}\mathbb{1}_{A_i}d\mathbb{P}=\sum_i^ni\mathbb{P}(A_i\cap B_j)\]</span></p>
+<p>Vease que <span class="math display">\[B_{2k}=(\frac{2k-1}{2n},\frac{2k}{2n}]=(\frac{2k-1}{2n},\frac{k}{n}]\subseteq A_k\]</span> y también <span class="math display">\[B_{2k-1}=(\frac{2k-1-1}{2n},\frac{2k-1}{2n}]=(\frac{k-1}{n},\frac{2k-1}{2n}]\subseteq A_k\]</span> Por lo tanto existe <span class="math inline">\(K_j\in\{1,..,n\}\)</span> tal que <span class="math inline">\(B_j\subset A_{k_j}\)</span> y <span class="math inline">\(A_{k_j}\cap A_i=\emptyset\)</span> para <span class="math inline">\(i\neq K_j\)</span>. Por lo tanto, <span class="math inline">\(B_j\cap A_i=\emptyset\)</span> si <span class="math inline">\(i\neq k_j\)</span></p>
 </div>
 
 

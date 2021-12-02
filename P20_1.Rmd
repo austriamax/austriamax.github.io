@@ -6,12 +6,70 @@ title: "Tarea 16. Pregunta 20.1."
 
 
 ---
+
 (A) Si $g(w) = w^2 + w + 1$ con $g:\mathbb{R} \to \mathbb{R}$. Pruebe que $g \in \mathscr{L}^{1}(\Omega,\mathscr{A}, \mathbb{P})$ y calcule $\mathbb{E}(g|\mathscr{A}_n)$.
 
 
+Solución:
+
+
+Como la función $g$ es medible por ser función continua, y como es no negativa $g(w)\geq 0$ para todo $w\in\Omega$. Entonces
+
+\[
+\begin{split}
+\int_{[0,1]}|g|d\mathbb{P}&=\int_{[0,1]}gd\mathbb{P}\\
+&=\int_{[0,1]}(w^2+w+1)d\mathbb{P}\\
+&=\int_{0}^1(w^2+w+1)d\mathbb{P}=\int_{0}^1w^2d\mathbb{P}+\int_{0}^1wd\mathbb{P}+\int_{0}^1d\mathbb{P}\\
+&=\frac{1}{3}+\frac{1}{2}+1=\frac{11}{6}<\infty
+\end{split}´
+\]
+
+Lo muestra que $g\in L^1(\Omega,\mathcal{A},P).$
+
+
+Luego, tenemos que para $A_i\in\mathcal{A}_n$ se cumple que
+
+\[
+\begin{split}
+\int_{A_i}gd\mathbb{P} &=\int_{\frac{i-1}{n}}^{\frac{i}{n}}(w^2+w+1)dw\\
+&=\int_{\frac{i-1}{n}}^{\frac{i}{n}}w^2dw+\int_{\frac{i-1}{n}}^{\frac{i}{n}}wdw+\int_{\frac{i-1}{n}}^{\frac{i}{n}}dw\\
+&=\frac{1}{3}(\frac{i^3}{n^3}-\frac{(i-1)^3}{n^3})+\frac{1}{2}(\frac{i^2}{n^2}-\frac{(i-1)^2}{n^2})+(\frac{i}{n}-\frac{i-1}{n})\\
+&=\frac{3i^2-3i+1}{3n^3}+\frac{2i-1}{2n^2}+\frac{1}{n}
+\end{split}
+\]
+
+Veamos que
+\[P(A_i)=\lambda[\frac{i-1}{n},\frac{i}{n})=1/n\]
+
+De lo que se sigue que
+\[
+\begin{split}
+a_i&=\frac{1}{\mathbb{P}(A_i)}\int_{A_i}gd\mathbb{P}\\
+&=n[\frac{3i^2-3i+1}{3n^3}+\frac{2i-1}{2n^2}+\frac{1}{n}]\\
+&=\frac{3i^2-3i+1}{3n^2}+\frac{2i-1}{2n}+1
+\end{split}
+\]
+
+Por el ejercicio 19.5, como $A_i,...,A_n$ forman una partición de $[0,1]$ se tiene que
+\[E(g|\mathcal{A}n)=\sum{i=1}^na_i\mathbb{1}_{A_i}\]
 
 ---
-(B) Sean $f_n:\Omega \to \Omega$ funciones tales que $f_n(w) = \sum_{i=1}^n i1_{A_i}(w)$. Calcule $\mathbb{E}[f_n|\mathscr{A}_n]$, $\mathbb{E}[f_n|\mathscr{A}_{2n}]$ y 
+
+(B) Sean $f_n:\Omega\rightarrow\mathbb{R}$ funciones tales que $f_n(w) = \sum_{i=1}^n i1_{A_i}(w)$. Calcule $\mathbb{E}[f_n|\mathscr{A}_n]$, $\mathbb{E}[f_n|\mathscr{A}_{2n}]$ y 
 $\mathbb{E}[f_{2n}|\mathscr{A}_n]$.
 
+Solución:
+
+
+Sabemos que  $f_n=\sum_{i=1}^n i\mathbb{1}_{A_i}$ con $A_i\in\mathcal{A}_n$ es medible en $\mathcal{A}_n$ y además tiene que
+\[\mathbb{E}(f_n|\mathcal{A}_n)=f_n\]
+
+Hay que tomar los conjuntos $B_i=(\frac{i-1}{2n},\frac{i}{2n}]$, por lo que $\mathcal{A}{2n}=\sigma(B_1,...,B{2n})$. Entonces
+\[\int_{B_j}f_nd\mathbb{P}=\sum_i^n\int_{B_j}\mathbb{1}_{A_i}d\mathbb{P}=\sum_i^ni\mathbb{P}(A_i\cap B_j)\]
+
+Vease que
+\[B_{2k}=(\frac{2k-1}{2n},\frac{2k}{2n}]=(\frac{2k-1}{2n},\frac{k}{n}]\subseteq A_k\]
+y también 
+\[B_{2k-1}=(\frac{2k-1-1}{2n},\frac{2k-1}{2n}]=(\frac{k-1}{n},\frac{2k-1}{2n}]\subseteq A_k\]
+Por lo tanto existe $K_j\in\{1,..,n\}$ tal que $B_j\subset A_{k_j}$ y $A_{k_j}\cap A_i=\emptyset$ para $i\neq K_j$. Por lo tanto, $B_j\cap A_i=\emptyset$ si $i\neq k_j$
 

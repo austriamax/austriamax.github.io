@@ -9,6 +9,26 @@ title: "Tarea 16. Pregunta 20.8."
 
 (A) Si $\mathbb{E}(Y|\mathscr{g}) = X$ y $\mathbb{E}(X^2) = \mathbb{E}(Y^2)$ entonces $X \overset{\mathscr{c.s.}}{=} Y$.
 
+Demostración:
+
+Para hacer la demostración veremos que $E[(X-Y)^2]=0$:
+
+\[
+\begin{split}
+\mathbb{E}[(X-Y)^2]&=\mathbb{E}[X^2-2XY+Y^2]\\
+&=\mathbb{E}(X^2)-2\mathbb{E}(XY)+\mathbb{E}(Y^2)\\
+&=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})+\mathbb{E}(Y^2)\\
+&=2\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})
+\end{split}
+\]
+
+Por hipótesis sabemos que $\mathbb{E}(Y|\mathcal{G})=X$, por lo que $X$ es $\mathcal{G}$-medible y además \[\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})=\mathbb{E}(X\mathbb{E}(Y)|\mathcal{G})=\mathbb{E}(X*X)=\mathbb{E}(X^2)\]
+Entonces
+\[\mathbb{E}[(X-Y)^2]=2\mathbb{E}(X^2)-2\mathbb{E}(X^2)=0\]
+Por lo que $\mathbb{E}[(X-Y)^2]=0$  al ser no negativa, entonces $(X-Y)^2\overset{cs}{=}0$ y $X-Y=0$ casi seguramente.
+
+
+
 -----------------------------------------------------------
 
 (B) Si $\mathscr{H}$ es sub-$\sigma$-álgebra de $\mathscr{g}$ entonces:
@@ -17,5 +37,33 @@ title: "Tarea 16. Pregunta 20.8."
 
 Esto implica \[||X - \mathbb{E}(X|\mathscr{g})||_2 \leq ||X - \mathbb{E}(X|\mathscr{H})||_2\] i.e. mientras mas grande es el sub-espacio $(\mathscr{L}^2(\Omega, \mathscr{g}, \mathbb{P}) \supset \mathscr{L}^2(\Omega, \mathscr{H}, \mathbb{P}))$ más cerca está $\mathbb{E}(X|\cdot)$ de $X$ en $\mathscr{L}^2(\Omega, \mathscr{A}, \mathbb{P})$.
 
+Demostración:
 
+
+Tenemos que
+\[
+\begin{split}
+\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]&=\mathbb{E}(X^2-2X\mathbb{E}(X|\mathcal{G})+\mathbb{E}(X|\mathcal{G})^2)\\
+&=\mathbb{E}(X^2)-2\mathbb{E}(X\mathbb{E}(X|\mathcal{G}))+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(X\mathbb{E}(X|\mathcal{G}))|G)+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(X|\mathcal{G})\mathbb{E}(X|\mathcal{G}))+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&=\mathbb{E}(X^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+\end{split}
+\]
+
+De igual forma se tiene que
+\[\mathbb{E}[(\mathbb{E}(X|\mathcal{G}-\mathbb{E}(X|\mathcal{H}))^2]=\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{H})^2)\]
+y también
+\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]=\mathbb{E}(X^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{H})^2)\]
+
+De lo que se desprende que
+\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]+\mathbb{E}[(\mathbb{E}(X|\mathcal{G}-\mathbb{E}(X|\mathcal{H}))^2]=\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]\]
+
+Por lo que
+\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]\leq \mathbb{E}[(X-\mathbb{E}(X|\mathcal{H}))^2]\]
+o bien
+\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]^{1/2}\leq \mathbb{E}[(X-\mathbb{E}(X|\mathcal{H}))^2]^{1/2}\]
+
+Por lo tanto 
+\[||X-\mathbb{E}(X|\mathcal{G})||_2\leq ||X-\mathbb{E}(X|\mathcal{H})||_2\]
 

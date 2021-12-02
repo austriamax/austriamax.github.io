@@ -282,12 +282,37 @@ $(document).ready(function () {
 <ol style="list-style-type: upper-alpha">
 <li>Si <span class="math inline">\(\mathbb{E}(Y|\mathscr{g}) = X\)</span> y <span class="math inline">\(\mathbb{E}(X^2) = \mathbb{E}(Y^2)\)</span> entonces <span class="math inline">\(X \overset{\mathscr{c.s.}}{=} Y\)</span>.</li>
 </ol>
+<p>Demostración:</p>
+<p>Para hacer la demostración veremos que <span class="math inline">\(E[(X-Y)^2]=0\)</span>:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbb{E}[(X-Y)^2]&amp;=\mathbb{E}[X^2-2XY+Y^2]\\
+&amp;=\mathbb{E}(X^2)-2\mathbb{E}(XY)+\mathbb{E}(Y^2)\\
+&amp;=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})+\mathbb{E}(Y^2)\\
+&amp;=2\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})
+\end{split}
+\]</span></p>
+<p>Por hipótesis sabemos que <span class="math inline">\(\mathbb{E}(Y|\mathcal{G})=X\)</span>, por lo que <span class="math inline">\(X\)</span> es <span class="math inline">\(\mathcal{G}\)</span>-medible y además <span class="math display">\[\mathbb{E}(\mathbb{E}(XY)|\mathcal{G})=\mathbb{E}(X\mathbb{E}(Y)|\mathcal{G})=\mathbb{E}(X*X)=\mathbb{E}(X^2)\]</span> Entonces <span class="math display">\[\mathbb{E}[(X-Y)^2]=2\mathbb{E}(X^2)-2\mathbb{E}(X^2)=0\]</span> Por lo que <span class="math inline">\(\mathbb{E}[(X-Y)^2]=0\)</span> al ser no negativa, entonces <span class="math inline">\((X-Y)^2\overset{cs}{=}0\)</span> y <span class="math inline">\(X-Y=0\)</span> casi seguramente.</p>
 <hr />
 <ol start="2" style="list-style-type: upper-alpha">
 <li>Si <span class="math inline">\(\mathscr{H}\)</span> es sub-<span class="math inline">\(\sigma\)</span>-álgebra de <span class="math inline">\(\mathscr{g}\)</span> entonces:</li>
 </ol>
 <p><span class="math display">\[\mathbb{E}([X-\mathbb{E}(X|\mathscr{g})]^2) + \mathbb{E}([\mathbb{E}(X|\mathscr{g})-\mathbb{E}(X|\mathscr{H})]^2) = \mathbb{E}([X - \mathbb{E}(X|\mathscr{H})]^2)\]</span></p>
 <p>Esto implica <span class="math display">\[||X - \mathbb{E}(X|\mathscr{g})||_2 \leq ||X - \mathbb{E}(X|\mathscr{H})||_2\]</span> i.e. mientras mas grande es el sub-espacio <span class="math inline">\((\mathscr{L}^2(\Omega, \mathscr{g}, \mathbb{P}) \supset \mathscr{L}^2(\Omega, \mathscr{H}, \mathbb{P}))\)</span> más cerca está <span class="math inline">\(\mathbb{E}(X|\cdot)\)</span> de <span class="math inline">\(X\)</span> en <span class="math inline">\(\mathscr{L}^2(\Omega, \mathscr{A}, \mathbb{P})\)</span>.</p>
+<p>Demostración:</p>
+<p>Tenemos que <span class="math display">\[
+\begin{split}
+\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]&amp;=\mathbb{E}(X^2-2X\mathbb{E}(X|\mathcal{G})+\mathbb{E}(X|\mathcal{G})^2)\\
+&amp;=\mathbb{E}(X^2)-2\mathbb{E}(X\mathbb{E}(X|\mathcal{G}))+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&amp;=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(X\mathbb{E}(X|\mathcal{G}))|G)+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&amp;=\mathbb{E}(X^2)-2\mathbb{E}(\mathbb{E}(X|\mathcal{G})\mathbb{E}(X|\mathcal{G}))+\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+&amp;=\mathbb{E}(X^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)\\
+\end{split}
+\]</span></p>
+<p>De igual forma se tiene que <span class="math display">\[\mathbb{E}[(\mathbb{E}(X|\mathcal{G}-\mathbb{E}(X|\mathcal{H}))^2]=\mathbb{E}(\mathbb{E}(X|\mathcal{G})^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{H})^2)\]</span> y también <span class="math display">\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]=\mathbb{E}(X^2)-\mathbb{E}(\mathbb{E}(X|\mathcal{H})^2)\]</span></p>
+<p>De lo que se desprende que <span class="math display">\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]+\mathbb{E}[(\mathbb{E}(X|\mathcal{G}-\mathbb{E}(X|\mathcal{H}))^2]=\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]\]</span></p>
+<p>Por lo que <span class="math display">\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]\leq \mathbb{E}[(X-\mathbb{E}(X|\mathcal{H}))^2]\]</span> o bien <span class="math display">\[\mathbb{E}[(X-\mathbb{E}(X|\mathcal{G}))^2]^{1/2}\leq \mathbb{E}[(X-\mathbb{E}(X|\mathcal{H}))^2]^{1/2}\]</span></p>
+<p>Por lo tanto <span class="math display">\[||X-\mathbb{E}(X|\mathcal{G})||_2\leq ||X-\mathbb{E}(X|\mathcal{H})||_2\]</span></p>
 </div>
 
 

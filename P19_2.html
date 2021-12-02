@@ -278,6 +278,19 @@ $(document).ready(function () {
 
 <div id="an-important-concept-from-the-basic-courses-is-for-discrete-random-vectors-xy-with-values-in-a-discrete-space-s-having-a-joint-mass-function-fs2-to-01.-then-the-definition-of-the-conditional-probability-of-x-x-given-y-y-is-defined-as-mathbbpx-x-y-y-fracmathbbpx-x-y-ymathbbpy-y-fracf_xyxyf_yy-where-f_y-is-the-marginal-of-y.-how-can-you-relate-this-concept-to-our-definition-of-mathbbpx-x-y-mathbbe1_xxy-and-mathbbpx-x-y-y-mathbbe1_xxy-y." class="section level3">
 <h3>An important concept from the basic courses is for discrete random vectors <span class="math inline">\((X,Y)\)</span> with values in a discrete space <span class="math inline">\(S\)</span> having a joint mass function <span class="math inline">\(f:S^2 \to [0,1]\)</span>. Then the definition of the conditional probability of <span class="math inline">\((X = x)\)</span> given <span class="math inline">\((Y = y)\)</span> is defined as <span class="math inline">\(\mathbb{P}(X = x| Y = y) = \frac{\mathbb{P}(X = x, Y = y)}{\mathbb{P}(Y = y)} = \frac{f_{X,Y}(x,y)}{f_Y(y)}\)</span> where <span class="math inline">\(f_Y\)</span> is the marginal of <span class="math inline">\(Y\)</span>. How can you relate this concept to our definition of <span class="math inline">\(\mathbb{P}(X =x |Y) = \mathbb{E}[1_{(X=x)}|Y]\)</span> and <span class="math inline">\(\mathbb{P}(X = x | Y = y) = \mathbb{E}[1_{(X=x)}|Y = y].\)</span></h3>
+<p>Solución:</p>
+<p>Como sabemos, <span class="math inline">\(\mathbb{E}[1_{X=x}|Y]\)</span> es <span class="math inline">\(\sigma(Y)-\)</span>medible, por lo que debe existir una función <span class="math inline">\(g\)</span> tal que <span class="math display">\[g(Y) = \mathbb{E}[1_{X=x}|Y] \quad \forall \omega \in \Omega.\]</span></p>
+<p>Pero como <span class="math inline">\(Y\)</span> es una v.a. discreta la podemos escribir como <span class="math display">\[g(Y) = \sum_{n\in \mathbb{N}}g(y_i)1_{(Y=y_i)} \quad \mbox{con} \quad g(y_i) = \mathbb{E}[1_{(X=x)}|Y=y_i]\]</span></p>
+<p>Por lo tanto <span class="math display">\[\mathbb{E}[1_{X=x}|Y]  \overset{c.s.}{=}  \sum_{n\in \mathbb{N}}\mathbb{E}[1_{(X=x)}|Y=y_i]1_{(Y=y_i)} \]</span></p>
+<p>Y como se muestra en el ejercicio 19.6 <span class="math display">\[\mathbb{E}[1_{X = x}|A] = \frac{1}{\mathbb{P}(A)}\int_A 1_{X = x} d\mathbb{P}\]</span></p>
+<p>Tomando <span class="math inline">\(A = \{Y = y_i\}\)</span> obtenemos que <span class="math display">\[\begin{split}
+\mathbb{E}[1_{X = x}|Y = y_i] &amp;= \frac{1}{\mathbb{P}(Y = y_i)}\int_{(Y = y_i)} 1_{X = x} d\mathbb{P}\\\\
+&amp;= \frac{1}{\mathbb{P}(Y = y_i)}\int_\mathbb{R} 1_{(X = x)}1_{(Y = y_i)} d\mathbb{P}\\\\
+&amp;= \frac{1}{\mathbb{P}(Y= y_i)}\mathbb{P}(X= x,Y=y_i) \quad \forall \mathbb{P}(Y = y_i)&gt;0
+\end{split}\]</span></p>
+<p>De esta manera se siguen los dos proximos resultados:</p>
+<p><span class="math display">\[\mbox{(1)} \quad \mathbb{E}[1_{X = x}|Y = y_i] = \frac{\mathbb{P}(X= x,Y=y_i) }{\mathbb{P}(Y= y_i)}\]</span></p>
+<p><span class="math display">\[\mbox{(2)} \quad \mathbb{E}[1_{X=x}|Y]  \overset{c.s.}{=}  \sum_{n\in \mathbb{N}} \frac{\mathbb{P}(X= x,Y=y_i)}{\mathbb{P}(Y= y_i)} 1_{(Y=y_i)} \]</span></p>
 </div>
 
 

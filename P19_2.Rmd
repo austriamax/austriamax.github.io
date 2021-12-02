@@ -4,4 +4,28 @@ title: "Tarea 15. Pregunta 19.2."
 
 ### An important concept from the basic courses is for discrete random vectors $(X,Y)$ with values in a discrete space $S$ having a joint mass function $f:S^2 \to [0,1]$. Then the definition of the conditional probability of $(X = x)$ given $(Y = y)$ is defined as $\mathbb{P}(X = x|   Y = y) = \frac{\mathbb{P}(X = x, Y = y)}{\mathbb{P}(Y = y)} = \frac{f_{X,Y}(x,y)}{f_Y(y)}$ where $f_Y$ is the marginal of $Y$. How can you relate this concept to our definition of $\mathbb{P}(X =x |Y) = \mathbb{E}[1_{(X=x)}|Y]$ and $\mathbb{P}(X = x | Y = y) = \mathbb{E}[1_{(X=x)}|Y = y].$
 
+Solución:
 
+
+Como sabemos, $\mathbb{E}[1_{X=x}|Y]$ es $\sigma(Y)-$medible, por lo que debe existir una función $g$ tal que \[g(Y) = \mathbb{E}[1_{X=x}|Y] \quad \forall \omega \in \Omega.\]
+
+Pero como $Y$ es una v.a. discreta la podemos escribir como 
+\[g(Y) = \sum_{n\in \mathbb{N}}g(y_i)1_{(Y=y_i)} \quad \mbox{con} \quad g(y_i) = \mathbb{E}[1_{(X=x)}|Y=y_i]\]
+
+Por lo tanto
+\[\mathbb{E}[1_{X=x}|Y]  \overset{c.s.}{=}  \sum_{n\in \mathbb{N}}\mathbb{E}[1_{(X=x)}|Y=y_i]1_{(Y=y_i)} \]
+
+Y como se muestra en el ejercicio 19.6 \[\mathbb{E}[1_{X = x}|A] = \frac{1}{\mathbb{P}(A)}\int_A 1_{X = x} d\mathbb{P}\]
+
+Tomando $A = \{Y = y_i\}$ obtenemos que 
+\[\begin{split}
+\mathbb{E}[1_{X = x}|Y = y_i] &= \frac{1}{\mathbb{P}(Y = y_i)}\int_{(Y = y_i)} 1_{X = x} d\mathbb{P}\\\\
+&= \frac{1}{\mathbb{P}(Y = y_i)}\int_\mathbb{R} 1_{(X = x)}1_{(Y = y_i)} d\mathbb{P}\\\\
+&= \frac{1}{\mathbb{P}(Y= y_i)}\mathbb{P}(X= x,Y=y_i) \quad \forall \mathbb{P}(Y = y_i)>0
+\end{split}\]
+
+De esta manera se siguen los dos proximos resultados:
+
+\[\mbox{(1)} \quad \mathbb{E}[1_{X = x}|Y = y_i] = \frac{\mathbb{P}(X= x,Y=y_i) }{\mathbb{P}(Y= y_i)}\]
+
+\[\mbox{(2)} \quad \mathbb{E}[1_{X=x}|Y]  \overset{c.s.}{=}  \sum_{n\in \mathbb{N}} \frac{\mathbb{P}(X= x,Y=y_i)}{\mathbb{P}(Y= y_i)} 1_{(Y=y_i)} \]
