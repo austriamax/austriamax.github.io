@@ -1,0 +1,12 @@
+---
+title: "Parcial IV"
+subtitle: "Aquí encontraras las preguntas del parcial IV"
+---
+
+  1. **[Pregunta 17.1.](https://austriamax.github.io/austriamax.probaP.github.io/P17_1.html)**
+  
+  2. **[Pregunta 19.1.](https://austriamax.github.io/austriamax.probaP.github.io/P19_1.html)**
+  
+  3. **[Pregunta 20.1.](https://austriamax.github.io/austriamax.probaP.github.io/P20_1.html)**
+  
+  

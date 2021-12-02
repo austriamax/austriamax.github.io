@@ -1,0 +1,5 @@
+---
+title: "Pregunta 2, Parcial IV"
+---
+
+### Construya tres v.a. $U$, $V$ y $W$ tales que $\mathbb{E}[\mathbb{E}(U|V)|W] \neq \mathbb{E}[\mathbb{E}(U|W)|V]$. $\mathbb{E}[X|Y] \overset{c.s.}{=} Y$

@@ -7,7 +7,7 @@ subtitle: "Aquí encontraras las preguntas del parcial III"
   
   2. **[Pregunta 15.3.](https://austriamax.github.io/austriamax.probaP.github.io/P15_3.html)**
   
-  3. **[Pregunta 16.6.](https://austriamax.github.io/austriamax.probaP.github.io/P16_6.html)** (El también puedes revisar el ejercicio
+  3. **[Pregunta 16.6.](https://austriamax.github.io/austriamax.probaP.github.io/P16_6.html)** (También puedes revisar el ejercicio
   **[16.3.](https://austriamax.github.io/austriamax.probaP.github.io/P16_3.html)**)
   
   4. **[Pregunta 16.8.](https://austriamax.github.io/austriamax.probaP.github.io/P16_8.html)**
