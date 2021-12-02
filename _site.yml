@@ -10,7 +10,7 @@ navbar:
     - text: "Parcial III"
       href: Parcial3.html
     - text: "Parcial IV"
-      href: CuestionarioPIV.html      
+      href: Parcial4.html      
     - text: "Alumno"
       href: about.html
 output:
